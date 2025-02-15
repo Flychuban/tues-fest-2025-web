@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import SullySitting from '@/app/SullySitting';
 import { Separator } from '@/components/ui/separator';
 import { TbBrandLinktree } from 'react-icons/tb';
 
@@ -106,7 +105,6 @@ const Footer = () => (
 				<Socials />
 			</div>
 		</div>
-		<SullySitting className="absolute -top-[110px] right-10 h-[140px] sm:-top-[160px] sm:right-1/6 sm:h-[200px] sm:w-[200px]" />
 	</footer>
 );
 

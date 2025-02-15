@@ -13,7 +13,6 @@ import VotingLayout from '@/partials/layout/Voting';
 
 // import VoteProvider from '@/context/vote';
 // import VotingLayout from '@/partials/layout/Voting';
-import SullyAnimation from './SullyAnimation';
 
 export const metadata = {
 	title: {
@@ -117,12 +116,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				<Script src="https://www.googletagmanager.com/gtag/js?id=G-1H1H1CR559" strategy="afterInteractive" />
 				<link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any"></link>
 			</head>
-			<body className=" h-full w-screen items-center justify-center overflow-hidden overflow-x-hidden overflow-y-scroll bg-[url(./bg.svg)] bg-repeat text-white">
+			<body className=" h-full w-screen items-center justify-center overflow-hidden overflow-x-hidden overflow-y-scroll bg-bg-color bg-repeat text-white">
 				<div className="">
 					<DayProvider>
 						<Navigation />
 						<VoteProvider>
-							<SullyAnimation />
 							{children}
 							<VotingLayout />
 						</VoteProvider>

@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import SullyHeader from '@/app/SullyHeader';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useDay } from '@/context/day';
 import { TbMapPin, TbMenu2, TbSchool } from 'react-icons/tb';
@@ -321,7 +320,6 @@ const Navigation = () => {
 								</TabsList>
 							</Tabs>
 						</div>
-						<SullyHeader className="absolute top-14 hidden h-[200px] lg:right-5  lg:block" />
 					</div>
 				</div>
 			</div>
