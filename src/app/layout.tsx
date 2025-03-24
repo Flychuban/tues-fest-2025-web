@@ -7,7 +7,6 @@ import './animation.css';
 import './globals.css';
 
 import { Toaster } from '@/components/ui/toaster';
-import { DayProvider } from '@/context/day';
 import VoteProvider from '@/context/vote';
 import VotingLayout from '@/partials/layout/Voting';
 
@@ -118,16 +117,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			</head>
 			<body className=" h-full w-screen items-center justify-center overflow-hidden overflow-x-hidden overflow-y-scroll bg-bg-color bg-repeat text-white">
 				<div className="">
-					<DayProvider>
-						<Navigation />
-						<VoteProvider>
-							{children}
-							<VotingLayout />
-						</VoteProvider>
-						<Toaster />
-						<Footer />
-						<Analytics />
-					</DayProvider>
+					<Navigation />
+					<VoteProvider>
+						{children}
+						<VotingLayout />
+					</VoteProvider>
+					<Toaster />
+					<Footer />
+					<Analytics />
 				</div>
 			</body>
 		</html>

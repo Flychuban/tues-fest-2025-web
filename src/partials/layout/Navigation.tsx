@@ -2,8 +2,6 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { useDay } from '@/context/day';
 import { TbMapPin, TbMenu2, TbSchool } from 'react-icons/tb';
 
 const LINKS = [
@@ -14,10 +12,6 @@ const LINKS = [
 	{
 		href: '/projects',
 		title: 'Проекти',
-	},
-	{
-		href: '/#lectors',
-		title: 'Лектори',
 	},
 	{
 		href: '/#schedule',
@@ -76,8 +70,6 @@ const Linky = ({
 const Navigation = () => {
 	const [scrolled, setScrolled] = useState(false);
 	const [mobileOpen, setMobileOpen] = useState(false);
-	const { day, setDay } = useDay();
-	const [dayValue, setDayValue] = useState(`day-${day}`);
 	const [isClient, setIsClient] = useState(false);
 	const [desktopOpen, setDesktopOpen] = useState(false);
 	const desktopMenuRef = useRef<HTMLDivElement>(null);
@@ -121,22 +113,7 @@ const Navigation = () => {
 	}, [mobileOpen, mobileMenuRef, mobileButtonRef, desktopOpen, desktopMenuRef, desktopButtonRef]);
 
 	useEffect(() => {
-		if (typeof window !== 'undefined') {
-			localStorage.setItem('day', day.toString());
-			setDayValue(day == 1 ? 'day-1' : day == 2 ? 'day-2' : '');
-		}
-	}, [day]);
-
-	useEffect(() => {
 		setIsClient(true);
-		if (typeof window !== 'undefined') {
-			const storedDay = localStorage.getItem('day');
-			if (storedDay) {
-				setDay(parseInt(storedDay));
-				setDayValue(storedDay == '1' ? 'day-1' : storedDay == '2' ? 'day-2' : '');
-			}
-		}
-
 		window.addEventListener('scroll', handleScroll);
 	}, []);
 
@@ -216,41 +193,17 @@ const Navigation = () => {
 							>
 								<ul className="block lg:flex">
 									{LINKS.map((link) => {
-										if (day == 1) {
-											return (
-												<li
-													className="group relative"
-													onClick={() => setMobileOpen(false)}
-													key={link.title}
-												>
-													<Linky className="!mx-4" href={link.href}>
-														{link.title == 'Програма'
-															? day == 1
-																? 'Програма - Ден 1'
-																: 'Програма - Ден 2'
-															: link.title}
-													</Linky>
-												</li>
-											);
-										}
-										if (day == 2) {
-											if (link.title != 'Лектори')
-												return (
-													<li
-														className="group relative"
-														onClick={() => setMobileOpen(false)}
-														key={link.title}
-													>
-														<Linky className="!mx-4" href={link.href}>
-															{link.title === 'Програма'
-																? day === (1 as number)
-																	? 'Програма - Ден 1'
-																	: 'Програма - Ден 2'
-																: link.title}
-														</Linky>
-													</li>
-												);
-										}
+										return (
+											<li
+												className="group relative"
+												onClick={() => setMobileOpen(false)}
+												key={link.title}
+											>
+												<Linky className="!mx-4" href={link.href}>
+													{link.title}
+												</Linky>
+											</li>
+										);
 									})}
 
 									{SCHOOL_LINKS.map((link) => (
@@ -306,19 +259,6 @@ const Navigation = () => {
 								<TbMapPin size={24} />
 								<p>{'София Тех Парк'}</p>
 							</Link>
-
-							<Tabs defaultValue={`${dayValue}`}>
-								<TabsList className="w-[200px] sm:w-min">
-									<div className="flex w-min rounded-lg  border-2">
-										<TabsTrigger value="day-1" onClick={() => setDay(1)} className="text-xl">
-											Ден 1
-										</TabsTrigger>
-										<TabsTrigger value="day-2" onClick={() => setDay(2)} className="text-xl">
-											Ден 2
-										</TabsTrigger>
-									</div>
-								</TabsList>
-							</Tabs>
 						</div>
 					</div>
 				</div>
