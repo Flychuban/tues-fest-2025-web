@@ -2,14 +2,14 @@ export const STATISTICS = [
 	{
 		title: 'Участници',
 		data: [
-			{
-				name: '2016',
-				total: 0,
-			},
-			{
-				name: '2017',
-				total: 0,
-			},
+			// {
+			// 	name: '2016',
+			// 	total: 0,
+			// },
+			// {
+			// 	name: '2017',
+			// 	total: 0,
+			// },
 			{
 				name: '2018',
 				total: 150,
@@ -34,6 +34,10 @@ export const STATISTICS = [
 				name: '2023',
 				total: 234,
 			},
+			{
+				name: '2024',
+				total: 345,
+			},
 		],
 		icon: 'BsPeople',
 		description: 'Участниците са от голямо значение за нас, защото те са тези, които създават събитието.',
@@ -41,14 +45,14 @@ export const STATISTICS = [
 	{
 		title: 'Проекти',
 		data: [
-			{
-				name: '2016',
-				total: 0,
-			},
-			{
-				name: '2017',
-				total: 0,
-			},
+			// {
+			// 	name: '2016',
+			// 	total: 0,
+			// },
+			// {
+			// 	name: '2017',
+			// 	total: 0,
+			// },
 			{
 				name: '2018',
 				total: 60,
@@ -72,6 +76,10 @@ export const STATISTICS = [
 			{
 				name: '2023',
 				total: 129,
+			},
+			{
+				name: '2024',
+				total: 147,
 			},
 		],
 		description: 'Проектите са от голямо значение за нас, защото те са тези, които създават събитието.',

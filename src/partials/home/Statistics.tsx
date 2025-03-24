@@ -132,7 +132,7 @@ function History({
 }) {
 	return (
 		<div className="flex w-full justify-center align-middle xl:mx-10 xl:w-1/6">
-			<div className="my-auto grid h-2/3 grid-cols-4 gap-1 gap-y-0 lg:grid-cols-8 xl:grid-cols-2">
+			<div className="my-[10%] grid h-2/3 grid-cols-4 gap-1 gap-y-0 lg:grid-cols-8 xl:grid-cols-2">
 				{FOLDERS.map((folder) => (
 					<div
 						className="rounded-xl p-5 hover:bg-gradient-to-br hover:shadow-lg sm:hover:cursor-pointer sm:hover:bg-gradient sm:hover:text-black"
