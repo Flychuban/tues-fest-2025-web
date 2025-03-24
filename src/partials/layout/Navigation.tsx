@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import LocationModal from '@/components/LocationModal';
 import { TbMapPin, TbMenu2, TbSchool } from 'react-icons/tb';
 
 const LINKS = [
@@ -72,6 +73,7 @@ const Navigation = () => {
 	const [mobileOpen, setMobileOpen] = useState(false);
 	const [isClient, setIsClient] = useState(false);
 	const [desktopOpen, setDesktopOpen] = useState(false);
+	const [showLocationModal, setShowLocationModal] = useState(false);
 	const desktopMenuRef = useRef<HTMLDivElement>(null);
 	const desktopButtonRef = useRef<HTMLButtonElement>(null);
 	const mobileMenuRef = useRef<HTMLDivElement>(null);
@@ -251,14 +253,14 @@ const Navigation = () => {
 									))}
 								</ul>
 							</nav>
-							<Link
-								href="https://maps.app.goo.gl/RHDd9NVx11hVvQVh6"
-								target="_blank"
+							<button
+								onClick={() => setShowLocationModal(true)}
 								className="mr-2 hidden w-full items-center justify-center gap-2 rounded-lg border border-border px-4 py-2 text-lg sm:flex md:w-60"
 							>
 								<TbMapPin size={24} />
-								<p>{'София Тех Парк'}</p>
-							</Link>
+								<p>{'Ларго'}</p>
+							</button>
+							<LocationModal isOpen={showLocationModal} onClose={() => setShowLocationModal(false)} />
 						</div>
 					</div>
 				</div>
