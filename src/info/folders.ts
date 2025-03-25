@@ -14,8 +14,8 @@ import tf2022 from './folders_images/tf2022_img1.jpg';
 import tf2022_2 from './folders_images/tf2022_img2.jpg';
 import tf2023_2 from './folders_images/tf2023_battlebots.jpg';
 import tf2023 from './folders_images/tf2023_ekip.jpg';
+import tf2024_3 from './folders_images/tf2024_3.jpg';
 import tf2024 from './folders_images/tf2024_img1.jpg';
-import tf2024_2 from './folders_images/tf2024_img2.jpg';
 
 export const FOLDERS = [
 	{
@@ -69,7 +69,7 @@ export const FOLDERS = [
 	{
 		id: 9,
 		name: '2024',
-		image1: tf2024_2,
+		image1: tf2024_3,
 		image2: tf2024,
 	},
 ];

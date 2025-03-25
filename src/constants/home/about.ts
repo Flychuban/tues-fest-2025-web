@@ -8,4 +8,4 @@ export const ABOUT_BUTTON = 'научете повече за ТУЕС';
 export const ABOUT_SUBTEXT =
 	'Вижте програмата на ТУЕС Фест 2024 и следете събитието във Facebook за актуални новини! Разгледайте невероятните проекти на учениците.';
 
-export const ABOUT_IMAGE = '/assets/about/about1.png';
+export const ABOUT_IMAGE = '/assets/about/about2.jpg';
