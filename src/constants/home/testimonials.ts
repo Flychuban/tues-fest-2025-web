@@ -16,7 +16,7 @@ export const TESTIMONIALS = [
     основа да се формираме като личности, които умеят да ценят себе си, околните, труда
     и усилията да пребориш проблемите, и радостта да посрещнеш успехите.`,
 		testimonyName: `Таня\nДинева`,
-		testimonyDesc: `випуск 1995, Team Lead Senoir QA в Astea Solutions`,
+		testimonyDesc: `випуск 1995, Team Lead Senior QA в Astea Solutions`,
 	},
 
 	{
