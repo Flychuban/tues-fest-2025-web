@@ -16,7 +16,7 @@ const Project = ({ project }: { project: ProjectType }) => {
 			<div className="relative mx-auto mt-4 w-[90%]" style={{ paddingTop: '56.25%' }}>
 				<Image
 					key={project.id}
-					src={project.thumbnail || project.images[0]}
+					src={thumbnail}
 					alt={project.title}
 					className="absolute left-0 top-0 rounded-lg object-cover"
 					layout="fill"
@@ -40,7 +40,7 @@ const Project = ({ project }: { project: ProjectType }) => {
 				<VoteButton
 					id={project.id}
 					name={project.title}
-					thumbnail={(project.thumbnail || project.images[0]).src}
+					thumbnail={thumbnail.src}
 					category={project.category}
 				/>
 			</CardContent>
