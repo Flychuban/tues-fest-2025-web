@@ -101,6 +101,7 @@ const ProjectPage = async ({ params }: { params: { projectId: string } }) => {
 		},
 	];
 
+	// FIXME: duplicate code, seen elsewhere
 	const thumbnail = project.thumbnail || project.images[0];
 	invariant(thumbnail, `Project with ID ${project.id} (${project.title}) has no thumbnail or images`);
 
