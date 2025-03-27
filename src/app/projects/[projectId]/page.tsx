@@ -9,6 +9,7 @@ import Gallery from '@/partials/projects/project/Gallery';
 import LinksContainer from '@/partials/projects/project/Links';
 import Video from '@/partials/projects/project/Video';
 import VoteButton from '@/partials/projects/project/VoteButton';
+import invariant from 'tiny-invariant';
 
 import { getProjectById, getProjects } from '../actions';
 
@@ -100,6 +101,9 @@ const ProjectPage = async ({ params }: { params: { projectId: string } }) => {
 		},
 	];
 
+	const thumbnail = project.thumbnail || project.images[0];
+	invariant(thumbnail, `Project with ID ${project.id} (${project.title}) has no thumbnail or images`);
+
 	return (
 		<div className="container">
 			<Suspense fallback={<div>Loading...</div>}>
@@ -123,7 +127,7 @@ const ProjectPage = async ({ params }: { params: { projectId: string } }) => {
 							>
 								<Image
 									key={project.id}
-									src={project.thumbnail || project.images[0]}
+									src={thumbnail}
 									alt={project.title}
 									className="absolute left-0 top-0 rounded-lg object-cover"
 									layout="fill"
@@ -135,7 +139,7 @@ const ProjectPage = async ({ params }: { params: { projectId: string } }) => {
 							<VoteButton
 								id={project.id}
 								name={project.title}
-								thumbnail={(project.thumbnail || project.images[0]).src}
+								thumbnail={thumbnail.src}
 								category={project.category}
 							/>
 						</div>

@@ -11,6 +11,7 @@ import { Podkrepqsht } from '@/constants/home/sponsors';
 // import { Podkrepqsht } from '../_configs/podkrepq';
 import { cn } from '@/lib/utils';
 import { Globe } from 'lucide-react';
+import invariant from 'tiny-invariant';
 
 const readMoreClasses =
 	'rounded-sm font-bold text-black ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring text-black focus-visible:ring-offset-2';
@@ -38,6 +39,9 @@ export default function PodkrepqAutoDisplay({
 		return () => clearInterval(intervalId);
 	}, [liveIndex, podkrepqshti.length, isPaused]);
 
+	const livePodkrepqsht = podkrepqshti[liveIndex];
+	invariant(livePodkrepqsht, 'Invalid sponsor/partner index');
+
 	return (
 		<div className="flex flex-wrap items-center justify-center align-middle">
 			<ul className="relative mx-auto mt-20 w-64 sm:w-72 md:w-80 lg:w-96">
@@ -60,14 +64,14 @@ export default function PodkrepqAutoDisplay({
 			</ul>
 			<div className="ml-10 hidden h-96 items-center md:mt-10 md:flex md:w-[400px] lg:mt-20 lg:w-[600px]">
 				<Card className="flex w-full flex-col p-2">
-					<CardTitle className="pt-5 text-center text-black">{podkrepqshti[liveIndex].name}</CardTitle>
+					<CardTitle className="pt-5 text-center text-black">{livePodkrepqsht.name}</CardTitle>
 					<CardContent className="h-full flex-shrink flex-grow p-5 text-black">
 						<div className="h-full">
-							{shouldShowDescription(podkrepqshti[liveIndex].description) ? (
+							{shouldShowDescription(livePodkrepqsht.description) ? (
 								<>
 									<div className="flex h-24 flex-shrink flex-grow flex-col overflow-clip">
 										<div className="inline-flex h-full flex-1 flex-shrink flex-grow [mask-image:linear-gradient(to_bottom,white,calc(100%-20px),transparent)]">
-											{podkrepqshti[liveIndex].description.split('\n').map((p) => (
+											{livePodkrepqsht.description.split('\n').map((p) => (
 												<p key={p} className="text-black">
 													{p}
 												</p>
@@ -75,23 +79,19 @@ export default function PodkrepqAutoDisplay({
 										</div>
 									</div>
 									<PodkrepqReadMore
-										name={podkrepqshti[liveIndex].name}
-										url={podkrepqshti[liveIndex].url}
-										description={podkrepqshti[liveIndex].description}
+										name={livePodkrepqsht.name}
+										url={livePodkrepqsht.url}
+										description={livePodkrepqsht.description}
 										onOpenChange={setIsPaused}
 									/>
 								</>
 							) : (
 								<div className="flex h-[150px] flex-col items-center justify-center gap-1">
 									<p className="text-center text-xl font-bold">
-										Благодарим на {podkrepqshti[liveIndex].name} за подкрепата!
+										Благодарим на {livePodkrepqsht.name} за подкрепата!
 									</p>
 									<p>
-										<Link
-											href={podkrepqshti[liveIndex].url}
-											className={readMoreClasses}
-											target="_blank"
-										>
+										<Link href={livePodkrepqsht.url} className={readMoreClasses} target="_blank">
 											{readMoreText}
 										</Link>
 									</p>
@@ -100,9 +100,9 @@ export default function PodkrepqAutoDisplay({
 						</div>
 						<div
 							className="flex flex-wrap justify-center align-middle"
-							title={`Издания на Hack TUES, които ${podkrepqshti[liveIndex].name} подкрепи`}
+							title={`Издания на Hack TUES, които ${livePodkrepqsht.name} подкрепи`}
 						>
-							{/* {podkrepqshti[liveIndex].supportedEditions?.map((h) => {
+							{/* {livePodkrepqsht.supportedEditions?.map((h) => {
 								const hackathon = getHackathonById(h);
 								if (hackathon)
 									return (

@@ -73,7 +73,7 @@ const VoteProvider = ({ children }: { children: React.ReactNode }) => {
 
 		// find empty category or last if all are full
 		const [category, , setCategory, setError] =
-			categories.find(([, vote]) => vote === null) || categories[categories.length - 1];
+			categories.find(([, vote]) => vote === null) || categories[categories.length - 1]!;
 		const value = { id, name, image, category };
 
 		setCategory(value);
