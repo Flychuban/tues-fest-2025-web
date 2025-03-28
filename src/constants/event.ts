@@ -11,3 +11,6 @@ export const TF_DATE_STRING = TF_DATE.toLocaleDateString('bg-BG', {
 	month: 'long',
 	year: 'numeric',
 });
+
+export const TUES_FOUNDED_YEAR = 1988;
+export const TUES_AGE = new Date().getFullYear() - TUES_FOUNDED_YEAR;
