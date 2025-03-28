@@ -2,6 +2,8 @@
 
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 
+import { TF_TITLE } from '@/constants/seo';
+
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 
 const Video = ({ name, id }: { name: string; id: string }) => {
@@ -12,7 +14,7 @@ const Video = ({ name, id }: { name: string; id: string }) => {
 			</p>
 		);
 
-	return <LiteYouTubeEmbed id={id} title={`${name} | TUES Fest 2024`} poster="hqdefault" />;
+	return <LiteYouTubeEmbed id={id} title={`${name} | ${TF_TITLE}`} poster="hqdefault" />;
 };
 
 export default Video;

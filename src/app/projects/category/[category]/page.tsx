@@ -2,12 +2,13 @@
 import { Suspense } from 'react';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
+
 import { Card } from '@/components/ui/card';
 import { PROJECT_CATEGORIES, PROJECT_CATEGORY_MAP } from '@/constants/projects';
+import { TF_TITLE } from '@/constants/seo';
 import ProjectsPath from '@/partials/layout/ProjectsPath';
 import ProjectsLoading from '@/partials/projects/loader/ProjectsLoading';
 import Project from '@/partials/projects/project/Project';
-
 import { getProjectsByCategory } from '../../actions';
 
 const PATH: {
@@ -15,7 +16,7 @@ const PATH: {
 	url: string;
 }[] = [
 	{
-		name: 'TUES Fest 2024',
+		name: TF_TITLE,
 		url: '/',
 	},
 	{

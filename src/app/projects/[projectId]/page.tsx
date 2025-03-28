@@ -86,7 +86,7 @@ const ProjectPage = async ({ params }: { params: { projectId: string } }) => {
 
 	const path = [
 		{
-			name: 'TUES Fest 2024',
+			name: TF_TITLE,
 			url: '/',
 		},
 		{

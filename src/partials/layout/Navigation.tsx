@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { TbMapPin, TbMenu2, TbSchool } from 'react-icons/tb';
 
+import { TF_LOCATION, TF_YEAR } from '@/constants/event';
+
 const LINKS = [
 	// {
 	// 	href: '/',
@@ -169,7 +171,7 @@ const Navigation = () => {
 						>
 							TUES <span className=" bg-gradient bg-clip-text font-normal text-transparent ">Fest</span>{' '}
 							<br className="text-xl sm:hidden" />
-							2024
+							{TF_YEAR}
 						</Link>
 					</div>
 					<div className="flex w-min items-center justify-between sm:px-4">
@@ -257,7 +259,7 @@ const Navigation = () => {
 								className="mr-2 hidden w-full items-center justify-center gap-2 rounded-lg border border-border px-4 py-2 text-lg sm:flex md:w-60"
 							>
 								<TbMapPin size={24} />
-								<p>{'София Тех Парк'}</p>
+								<p>{TF_LOCATION}</p>
 							</Link>
 						</div>
 					</div>
