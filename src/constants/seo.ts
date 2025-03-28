@@ -74,7 +74,7 @@ export const OG_METADATA = {
 	siteName: TF_TITLE,
 	images: [
 		{
-			url: 'https:/tuesfest.bg/logo/motto.png',
+			url: 'https://tuesfest.bg/logo/motto.png',
 		},
 	],
 	locale: 'bg-BG',
