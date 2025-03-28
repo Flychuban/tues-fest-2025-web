@@ -1,26 +1,38 @@
+import alexanderBonev from '@/assets/testimonials/alexander-bonev.webp';
+import alexanderTsokev from '@/assets/testimonials/alexander-tsokev.webp';
+import kirilMitov from '@/assets/testimonials/kiril-mitov.webp';
+import kirkov from '@/assets/testimonials/kirkov.png';
+import mitko from '@/assets/testimonials/mitko.webp';
+import plamenPetrov from '@/assets/testimonials/plamen-petrov.webp';
+import radi from '@/assets/testimonials/radi.webp';
+import tanya from '@/assets/testimonials/tanya.webp';
+import veselin from '@/assets/testimonials/veselin.webp';
+import vicky from '@/assets/testimonials/vicky.webp';
+import zarko from '@/assets/testimonials/zarko.webp';
+
 export const TESTIMONIALS_TITLE = 'Мнения за ТУЕС';
 
 export const TESTIMONIALS = [
 	{
-		img: '/assets/testimonials/kirkov.png',
+		img: kirkov,
 		testimonyBody:
 			'Училище, място, общност, хора - уникална "мелница", която всъщност промени и определи траекторията на личния и професионалният ми живот.',
 		testimonyName: 'Петър Кирков',
 		testimonyDesc: 'випуск 1997, национален координатор по киберсигурността на Република България',
 	},
 	{
-		img: '/assets/testimonials/tanya.webp',
+		img: tanya,
 		testimonyBody: `ТУЕС направи прехода от детството към възрастността за нас да е прекрасен,
     романтичен и приключенски период на приятелства, близост, сплотеност, веселби и
     сълзи, в една променлива и нестабилна, но много дружелюбна и грижовна среда. Даде ни
     основа да се формираме като личности, които умеят да ценят себе си, околните, труда
     и усилията да пребориш проблемите, и радостта да посрещнеш успехите.`,
 		testimonyName: `Таня\nДинева`,
-		testimonyDesc: `випуск 1995, Team Lead Senior QA в Astea Solutions`,
+		testimonyDesc: `випуск 1995, Team Lead Senoir QA в Astea Solutions`,
 	},
 
 	{
-		img: '/assets/testimonials/zarko.webp',
+		img: zarko,
 		testimonyBody: `Скоро след като влязох в ТУЕС осъзнах, че са ме приели не в средно училище, а
     направо в нещо като университет. Беше много по-сериозно и по-практически насочено –
     и това адски ми харесваше. Всичко се навърза и ми стана 10 пъти по-интересно, защото
@@ -31,7 +43,7 @@ export const TESTIMONIALS = [
       Кампус X`,
 	},
 	{
-		img: '/assets/testimonials/vicky.webp',
+		img: vicky,
 		testimonyBody: `В ТУЕС развих знания и умения за актуалните тогава технологии, утвърдих
     аналитичното си мислене и доразвих възприятието си за света. Срещнах професионалисти
     в различни области в лицето на преподавателите ни и истински приятели, които и до
@@ -40,7 +52,7 @@ export const TESTIMONIALS = [
 		testimonyDesc: `випуск 2006, Sr remote site monitor в PPD`,
 	},
 	{
-		img: '/assets/testimonials/veselin.webp',
+		img: veselin,
 		testimonyBody: `ТУЕС и неговият уникален модел са основа на IT бранша в България. Нивото на
     училището винаги е било високо – изискванията към самодисциплината и
     самоорганизацията на учениците са съизмерими с тези на студентите в Техническия
@@ -49,7 +61,7 @@ export const TESTIMONIALS = [
 		testimonyDesc: `випуск 1996, Изпълнителен Директор на Софтуер АГ ДЦ България`,
 	},
 	{
-		img: '/assets/testimonials/radi.webp',
+		img: radi,
 		testimonyBody: `ТУЕС за мен е символ на братство – независимо къде, по какъв повод и в каква
     ситуация се засичам с туесари, винаги успяваме да се разберем с две думи. Знам, че
     мога да разчитам на човека срещу мен. Усеща се чувството за принадлежност към едно
@@ -58,7 +70,7 @@ export const TESTIMONIALS = [
 		testimonyDesc: `випуск 2007, Telecommunications and data networks expert, Smartcom`,
 	},
 	{
-		img: '/assets/testimonials/mitko.webp',
+		img: mitko,
 		testimonyBody: `ТУЕС ми даде една невероятна база от знания, която ми позволи да избера правилния
     за мен път за бъдещото ми развитие и спомогна за моя успех. Това е мястото, което
     многократно ми разшири кръгозора на знанията в ИТ областта, задоволявайки моето
@@ -67,27 +79,27 @@ export const TESTIMONIALS = [
 		testimonyDesc: `випуск 2005, старши софтуерен инженер в Google, Швейцария.`,
 	},
 	{
-		img: '/assets/testimonials/plamen-petrov.webp',
+		img: plamenPetrov,
 		testimonyName: 'Пламен Петров',
 		testimonyDesc: `випуск  2005, Ръководител Разработка на софтуерни продукти в Experian`,
 		testimonyBody:
 			'ТУЕС се оказа едно от най-важните решения в живота ми до момента. Несъмнено държи и първото място като най-точното попадение по отношение на образованието ми в ИТ посока. За мен ТУЕС е място, където попаднах в чудесна среда, създадох приятелства и научих занаят. Пет прекрасни, усмихнати години на задоволяване на любопитството ми към технологиите.',
 	},
 	{
-		img: '/assets/testimonials/kiril-mitov.webp',
+		img: kirilMitov,
 		testimonyName: 'Кирил Митов',
 		testimonyDesc: 'випуск 2004, президент на Axlessoft',
 		testimonyBody: 'ТУЕС бе едно от най-важните неща, които съм правил.',
 	},
 	{
-		img: '/assets/testimonials/alexander-bonev.webp',
+		img: alexanderBonev,
 		testimonyName: 'Александър Бонев',
 		testimonyDesc: 'випуск 1995, директор инженерни услуги във VMWare',
 		testimonyBody:
 			'ТУЕС ми даде както хляб ръцете, така и хоби - прекарвам по 12-14 часа зад екрана всеки ден  Даде ми и много приятели, с които поддържаме здрава връзка. Значи много за мен, това е! А спомени много, трудно е да избера. И все пак..',
 	},
 	{
-		img: '/assets/testimonials/alexander-tsokev.webp',
+		img: alexanderTsokev,
 		testimonyName: 'доц. д-р инж. Александър Цокев',
 		testimonyDesc: 'випуск 1997, ръководител  “Advanced Security Operations Center” в Teleink Business Services',
 		testimonyBody:

@@ -3,8 +3,7 @@ import { Suspense } from 'react';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { Card } from '@/components/ui/card';
-import CATEGORY from '@/constants/projects/CATEGORY';
-import CATEGORY_MAP from '@/constants/projects/CATEGORY_MAP';
+import { PROJECT_CATEGORIES, PROJECT_CATEGORY_MAP } from '@/constants/projects';
 import ProjectsPath from '@/partials/layout/ProjectsPath';
 import ProjectsLoading from '@/partials/projects/loader/ProjectsLoading';
 import Project from '@/partials/projects/project/Project';
@@ -31,10 +30,10 @@ const TABS = [
 		category: 'all',
 		href: '/projects',
 	},
-	CATEGORY_MAP.embedded,
-	CATEGORY_MAP.software,
-	CATEGORY_MAP.battlebot,
-	{ ...CATEGORY_MAP.networks, text: 'Мрежи' },
+	PROJECT_CATEGORY_MAP.embedded,
+	PROJECT_CATEGORY_MAP.software,
+	PROJECT_CATEGORY_MAP.battlebot,
+	{ ...PROJECT_CATEGORY_MAP.networks, text: 'Мрежи' },
 ];
 
 const LinkTab = ({ text, href, current }: { text: string; href: string; current: boolean }) => (
@@ -49,7 +48,7 @@ const LinkTab = ({ text, href, current }: { text: string; href: string; current:
 );
 
 export function generateStaticParams() {
-	return Object.keys(CATEGORY).map((category) => ({
+	return Object.keys(PROJECT_CATEGORIES).map((category) => ({
 		category,
 	}));
 }
@@ -63,7 +62,7 @@ const ProjectsPage = async ({
 }) => {
 	const category = params.category.toString();
 
-	if (!Object.hasOwn(CATEGORY, category)) {
+	if (!Object.hasOwn(PROJECT_CATEGORIES, category)) {
 		redirect('/projects');
 	}
 
