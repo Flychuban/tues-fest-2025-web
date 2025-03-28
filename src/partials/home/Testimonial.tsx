@@ -1,11 +1,11 @@
 'use client';
 
 import { useRef } from 'react';
+import Autoplay from 'embla-carousel-autoplay';
+
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { TESTIMONIALS, TESTIMONIALS_TITLE } from '@/constants/home/testimonials';
-import Autoplay from 'embla-carousel-autoplay';
-
 import Quote from './testimonial/Quote';
 
 const Testimonial = () => {
@@ -30,7 +30,7 @@ const Testimonial = () => {
 					>
 						<CarouselContent className="">
 							{TESTIMONIALS.map((item) => (
-								<CarouselItem className="self-center" key={item.img}>
+								<CarouselItem className="self-center" key={item.img.src}>
 									<Quote
 										img={item.img}
 										name={item.testimonyName}
