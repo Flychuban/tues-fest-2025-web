@@ -5,7 +5,7 @@ import invariant from 'tiny-invariant';
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { OG_METADATA } from '@/constants/seo';
+import { OG_METADATA, TF_TITLE, TWITTER_METADATA } from '@/constants/seo';
 import ProjectsPath from '@/partials/layout/ProjectsPath';
 import Contributors from '@/partials/projects/project/Contributors';
 import Gallery from '@/partials/projects/project/Gallery';
@@ -53,10 +53,9 @@ export async function generateMetadata({ params }: { params: { projectId: string
 		title: project.title,
 		description: project.description,
 		twitter: {
-			card: 'summary_large_image',
-			title: `${project.title} | TUES Fest 2024`,
+			...TWITTER_METADATA,
+			title: `${project.title} | ${TF_TITLE}`,
 			description: project.description,
-			creator: '@tuesfest',
 			images: project.images.map((image) => ({
 				url: image.src,
 			})),

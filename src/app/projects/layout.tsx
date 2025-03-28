@@ -1,5 +1,5 @@
-import { TF_YEAR } from '@/constants/event';
-import { OG_METADATA } from '@/constants/seo';
+import { TF_DATE_STRING, TF_LOCATION, TF_YEAR } from '@/constants/event';
+import { OG_METADATA, TF_TITLE, TWITTER_METADATA } from '@/constants/seo';
 
 export const metadata = {
 	title: {
@@ -31,19 +31,16 @@ export const metadata = {
 		'програмиране за ученици',
 	],
 	twitter: {
-		card: 'summary_large_image',
-		title: 'Проекти | ТУЕС Фест 2024',
-		description:
-			'Тук може да откриете проектите на учениците на ТУЕС. Тази година над 120 проекта ще бъдат представени само на 21 април в София Тех Парк - форум Джон Атанасов.',
-		creator: '@tuesfest',
+		...TWITTER_METADATA,
+		title: `Проекти | ${TF_TITLE}`,
+		description: `Тук може да откриете проектите на учениците на ТУЕС. Тази година над 120 проекта ще бъдат представени само на ${TF_DATE_STRING} в ${TF_LOCATION}.`,
 		images: ['https://tuesfest.bg/logo/motto.png'],
 	},
 	assets: ['https://tuesfest.bg/favicon.png', 'https://tuesfest.bg/logo/motto.png', 'https://tuesfest.bg/assets'],
 	openGraph: {
 		...OG_METADATA,
 		title: `Проекти | ${OG_METADATA.siteName}`,
-		description:
-			'Тук може да откриете проектите на учениците на ТУЕС. Тази година над 120 проекта ще бъдат представени само на 21 април в София Тех Парк - форум Джон Атанасов.',
+		description: `Тук може да откриете проектите на учениците на ТУЕС. Тази година над 120 проекта ще бъдат представени само на ${TF_DATE_STRING} в ${TF_LOCATION}.`,
 	},
 };
 

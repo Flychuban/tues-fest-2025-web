@@ -9,7 +9,7 @@ import './globals.css';
 
 import { Toaster } from '@/components/ui/toaster';
 import { TF_YEAR } from '@/constants/event';
-import { FIRST_ARCHIVE_YEAR, KEYWORDS, OG_METADATA, TF_DESCRIPTION, TF_TITLE } from '@/constants/seo';
+import { FIRST_ARCHIVE_YEAR, KEYWORDS, OG_METADATA, TF_DESCRIPTION, TF_TITLE, TWITTER_METADATA } from '@/constants/seo';
 import VoteProvider from '@/context/vote';
 import VotingLayout from '@/partials/layout/Voting';
 
@@ -30,13 +30,7 @@ export const metadata = {
 		shortcut: '/favicon.png',
 		apple: '/favicon.png',
 	},
-	twitter: {
-		card: 'summary_large_image',
-		title: TF_TITLE,
-		description: TF_DESCRIPTION,
-		creator: '@hacktuesfest',
-		images: ['https://tuesfest.bg/logo/motto.png'],
-	},
+	twitter: TWITTER_METADATA,
 	archives: Array.from({ length: TF_YEAR - FIRST_ARCHIVE_YEAR }, (_, i) => `https://${TF_YEAR - i - 1}.tuesfest.bg`),
 	assets: [
 		'https://tuesfest.bg/favicon.png',

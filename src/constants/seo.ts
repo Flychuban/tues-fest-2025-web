@@ -77,3 +77,11 @@ export const OG_METADATA = {
 	locale: 'bg-BG',
 	type: 'website',
 } satisfies Metadata['openGraph'];
+
+export const TWITTER_METADATA = {
+	card: 'summary_large_image',
+	title: TF_TITLE,
+	description: TF_DESCRIPTION,
+	creator: '@hacktuesfest',
+	images: ['https://tuesfest.bg/logo/motto.png'],
+} satisfies Metadata['twitter'];
