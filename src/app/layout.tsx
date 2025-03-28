@@ -9,7 +9,7 @@ import './globals.css';
 
 import { Toaster } from '@/components/ui/toaster';
 import { TF_YEAR } from '@/constants/event';
-import { FIRST_ARCHIVE_YEAR, KEYWORDS, TF_DESCRIPTION, TF_TITLE } from '@/constants/seo';
+import { FIRST_ARCHIVE_YEAR, KEYWORDS, OG_METADATA, TF_DESCRIPTION, TF_TITLE } from '@/constants/seo';
 import VoteProvider from '@/context/vote';
 import VotingLayout from '@/partials/layout/Voting';
 
@@ -44,19 +44,7 @@ export const metadata = {
 		'https://tuesfest.bg/assets',
 		'https://tuesfest.bg/_next/static',
 	],
-	openGraph: {
-		title: TF_TITLE,
-		description: TF_DESCRIPTION,
-		url: 'https://tuesfest.bg',
-		siteName: TF_TITLE,
-		images: [
-			{
-				url: 'https:/tuesfest.bg/logo/motto.png',
-			},
-		],
-		locale: 'bg-BG',
-		type: 'website',
-	},
+	openGraph: OG_METADATA,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

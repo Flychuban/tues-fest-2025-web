@@ -1,3 +1,5 @@
+import { Metadata } from 'next';
+
 import { TF_DATE_STRING, TF_LOCATION, TF_YEAR } from './event';
 
 export const TF_TITLE = `TUES Fest ${TF_YEAR}`;
@@ -61,3 +63,17 @@ export const KEYWORDS = [
 ];
 
 export const FIRST_ARCHIVE_YEAR = 2020;
+
+export const OG_METADATA = {
+	title: TF_TITLE,
+	description: TF_DESCRIPTION,
+	url: 'https://tuesfest.bg',
+	siteName: TF_TITLE,
+	images: [
+		{
+			url: 'https:/tuesfest.bg/logo/motto.png',
+		},
+	],
+	locale: 'bg-BG',
+	type: 'website',
+} satisfies Metadata['openGraph'];
