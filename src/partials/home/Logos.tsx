@@ -1,14 +1,11 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { TbClockHour4, TbMapPin } from 'react-icons/tb';
 
 import { TF_DATE_STRING, TF_LOCATION } from '@/constants/event';
 
 export default function Logos() {
-	const [showLocationModal, setShowLocationModal] = useState(false);
-
 	return (
 		<div className="w-11/12 sm:w-2/3 md:w-3/4 lg:w-1/2">
 			<div className="m-10 hidden rounded-xl border border-[#F2F2F2] bg-opacity-0 bg-clip-padding p-8 drop-shadow-lg backdrop-blur-sm backdrop-filter sm:m-0 sm:border-2 md:block">
