@@ -10,17 +10,17 @@ export const metadata = {
 	description: `Информация за локацията ${TF_TITLE} - Ларго, пл. Независимост, София и как да стигнете до там.`,
 } satisfies Metadata;
 
-// TODO: change the page content in a future commit. THIS IS PLACEHOLDER TEXT
+// TODO: change the page content in a future pull request. THIS IS PLACEHOLDER TEXT
 
 export default function Location() {
 	return (
 		<div className="m-auto min-h-screen max-w-screen-2xl p-8 !pt-28 md:p-12">
-			<div className="rounded-xl border border-[#F2F2F2] bg-opacity-0 bg-clip-padding p-10 drop-shadow-lg backdrop-blur-sm backdrop-filter  sm:border-2">
+			<div className="rounded-xl border border-[#F2F2F2] bg-opacity-0 bg-clip-padding p-10 drop-shadow-lg backdrop-blur-sm backdrop-filter sm:border-2">
 				<h2 className="bg-gradient bg-clip-text pb-4 text-3xl font-black text-transparent sm:text-5xl">
 					Локация
 				</h2>
 
-				<div className="flex flex-col gap-8 !pt-0 sm:flex-row md:pt-12 lg:flex-row">
+				<div className="flex flex-col gap-8 pt-0 sm:flex-row md:pt-12 lg:flex-row">
 					<div className="flex w-full flex-col gap-8 sm:w-[50%]">
 						<p className="text-justify text-xl">
 							Събитието ще се проведе на Х ден от 9:30 в Ларго, пл. Независимост, София. До там може да се
