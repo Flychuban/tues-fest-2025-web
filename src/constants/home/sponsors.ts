@@ -284,7 +284,7 @@ const GAMMA_SPONSORS = [
 		supportedEditions: ['hacktues-infinity'],
 	},
 	{
-		name: 'Nemetschek Bulgaria',
+		name: 'Nemetschek Bulgaria ',
 		logo: nemetschekLogo,
 		url: 'https://www.nemetschek.bg/',
 		description:
@@ -300,7 +300,7 @@ const GAMMA_SPONSORS = [
 		],
 	},
 	{
-		name: 'Ocado Technology',
+		name: 'Ocado Technology ',
 		logo: ocadoTechnologyLogo,
 		url: 'https://www.ocadogroup.com/technology/technology-pioneers/',
 		description:
