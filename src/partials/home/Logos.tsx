@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { TbClockHour4, TbMapPin } from 'react-icons/tb';
 
+import { TF_DATE_STRING, TF_LOCATION } from '@/constants/event';
+
 export default function Logos() {
 	const [showLocationModal, setShowLocationModal] = useState(false);
 
@@ -29,11 +31,11 @@ export default function Logos() {
 					className="flex w-full items-center justify-center gap-2 rounded-lg border border-[#FEFEFE] bg-opacity-0 px-4 py-2 text-lg backdrop-blur-sm backdrop-filter sm:hidden sm:border-2"
 				>
 					<TbMapPin size={24} />
-					<p>{'пл. Независимост'}</p>
+					<p>{TF_LOCATION}</p>
 				</Link>
 				<div className="flex w-full items-center justify-center gap-2 rounded-lg border border-[#FEFEFE] bg-opacity-0 px-4 py-2 text-lg  backdrop-blur-sm backdrop-filter sm:border-2">
 					<TbClockHour4 size={24} />
-					<p>20 и 21 април</p>
+					<p>{TF_DATE_STRING}</p>
 				</div>
 			</div>
 		</div>

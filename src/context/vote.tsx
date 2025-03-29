@@ -1,7 +1,7 @@
 'use client';
 
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
-import CATEGORY from '@/constants/projects/CATEGORY';
+import { PROJECT_CATEGORIES } from '@/constants/projects';
 import { saveVote } from '@/server/vote/actions';
 import { encodeBitmap, projectIdsToMapString } from '@/utils/vote-projects-map';
 
@@ -66,14 +66,14 @@ const VoteProvider = ({ children }: { children: React.ReactNode }) => {
 		if (software?.id === id || embedded?.id === id || battlebot?.id === id) return;
 
 		const categories = [
-			[CATEGORY.embedded, embedded, setEmbedded, setEmbeddedError],
-			[CATEGORY.software, software, setSoftware, setSoftwareError],
-			[CATEGORY.battlebot, battlebot, setBattlebot, setBattlebotError],
+			[PROJECT_CATEGORIES.embedded, embedded, setEmbedded, setEmbeddedError],
+			[PROJECT_CATEGORIES.software, software, setSoftware, setSoftwareError],
+			[PROJECT_CATEGORIES.battlebot, battlebot, setBattlebot, setBattlebotError],
 		] as const;
 
 		// find empty category or last if all are full
 		const [category, , setCategory, setError] =
-			categories.find(([, vote]) => vote === null) || categories[categories.length - 1];
+			categories.find(([, vote]) => vote === null) || categories[categories.length - 1]!;
 		const value = { id, name, image, category };
 
 		setCategory(value);
@@ -92,11 +92,11 @@ const VoteProvider = ({ children }: { children: React.ReactNode }) => {
 		console.log(category);
 		console.log([software, embedded, battlebot]);
 		switch (category) {
-			case CATEGORY.embedded:
-				setEmbedded(software ? { ...software, category: CATEGORY.embedded } : null);
-			case CATEGORY.software:
-				setSoftware(battlebot ? { ...battlebot, category: CATEGORY.software } : null);
-			case CATEGORY.battlebot:
+			case PROJECT_CATEGORIES.embedded:
+				setEmbedded(software ? { ...software, category: PROJECT_CATEGORIES.embedded } : null);
+			case PROJECT_CATEGORIES.software:
+				setSoftware(battlebot ? { ...battlebot, category: PROJECT_CATEGORIES.software } : null);
+			case PROJECT_CATEGORIES.battlebot:
 				setBattlebot(null);
 				break;
 			default:
@@ -206,16 +206,16 @@ const VoteProvider = ({ children }: { children: React.ReactNode }) => {
 	useMemo(() => {
 		if (!anyVotes()) return; // TODO: Fix this, for removing last vote
 
-		localStorage?.setItem(CATEGORY.software, JSON.stringify(software));
-		localStorage?.setItem(CATEGORY.embedded, JSON.stringify(embedded));
-		localStorage?.setItem(CATEGORY.battlebot, JSON.stringify(battlebot));
+		localStorage?.setItem(PROJECT_CATEGORIES.software, JSON.stringify(software));
+		localStorage?.setItem(PROJECT_CATEGORIES.embedded, JSON.stringify(embedded));
+		localStorage?.setItem(PROJECT_CATEGORIES.battlebot, JSON.stringify(battlebot));
 	}, [anyVotes, software, embedded, battlebot]);
 
 	// load from local storage on mount
 	useEffect(() => {
-		const software = localStorage?.getItem(CATEGORY.software);
-		const embedded = localStorage?.getItem(CATEGORY.embedded);
-		const battlebot = localStorage?.getItem(CATEGORY.battlebot);
+		const software = localStorage?.getItem(PROJECT_CATEGORIES.software);
+		const embedded = localStorage?.getItem(PROJECT_CATEGORIES.embedded);
+		const battlebot = localStorage?.getItem(PROJECT_CATEGORIES.battlebot);
 		const email = localStorage?.getItem('email');
 		const name = localStorage?.getItem('name');
 		const hasVerifiedVote = localStorage?.getItem('hasVerifiedVote');

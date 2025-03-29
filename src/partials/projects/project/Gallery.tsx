@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { StaticImageData } from 'next/image';
 import { TbChevronLeft, TbChevronRight, TbX } from 'react-icons/tb';
+import invariant from 'tiny-invariant';
 
 const GalleryModal = ({
 	images,
@@ -106,6 +107,9 @@ const GalleryModal = ({
 		};
 	}, [closeModal, modalRef, next, prev]);
 
+	const activeImage = images[index];
+	invariant(activeImage, 'Invalid gallery image index');
+
 	return (
 		<div className="fixed left-0 top-0 z-[1001] flex h-full w-full items-center justify-center bg-black bg-opacity-50 backdrop-blur-md">
 			<div ref={modalRef} className="relative h-full w-full max-w-screen-lg">
@@ -143,7 +147,7 @@ const GalleryModal = ({
 						<div className="flex h-full items-center justify-center gap-4 p-4">
 							<div className="flex h-full max-h-screen w-full shrink-0 items-center justify-center overflow-hidden object-contain">
 								<img
-									src={images[index].src}
+									src={activeImage.src}
 									alt={`снимка ${index + 1} на проект`}
 									className=" h-full rounded-xl object-contain"
 								/>

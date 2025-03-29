@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import Link from 'next/link';
 import { Links } from '@/app/projects/[projectId]/page';
 import { TbBrandGit, TbBrandGithub, TbBrandGoogleDrive, TbGlobe } from 'react-icons/tb';
+import invariant from 'tiny-invariant';
 
 const Linky = ({ text, url, icon }: { text: string; url: string; icon: ReactNode }) => (
 	<Link
@@ -53,7 +54,9 @@ const GithubLink = ({ repoUrls }: { repoUrls: string[] }) => {
 			</>
 		);
 	}
-	return <Linky text="Код на проекта" url={repoUrls[0]} icon={<GithubIcon repoUrl={repoUrls[0]} size={28} />} />;
+	const firstRepoUrl = repoUrls[0];
+	invariant(firstRepoUrl, 'No repo URLs');
+	return <Linky text="Код на проекта" url={firstRepoUrl} icon={<GithubIcon repoUrl={firstRepoUrl} size={28} />} />;
 };
 
 export default LinksContainer;

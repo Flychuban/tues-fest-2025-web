@@ -1,26 +1,25 @@
 /* eslint-disable @next/next/no-img-element */
+import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Separator } from '@/components/ui/separator';
 import { TbBriefcase, TbHistory, TbSchool, TbTrophy } from 'react-icons/tb';
 
+import { Separator } from '@/components/ui/separator';
+import { TF_YEAR, TUES_AGE } from '@/constants/event';
+
 export const metadata = {
-	title: {
-		default: 'За ТУЕС',
-		template: '%s | TUES Fest 2024',
-	},
-	description:
-		'Научете повече за най-доброто училище в България - Технологично училище "Електронни системи", което през 2022 беше с втори най-висок бал за страната. ТУЕС е училище с 35 години история, което е специализирано в областта на ИТ и единствено в България подготвя специалисти в областта на системно програмиране.',
+	title: 'За ТУЕС',
+	description: `Научете повече за най-доброто училище в България - Технологично училище "Електронни системи", което през 2024 беше с втори най-висок бал за страната. ТУЕС е училище с ${TUES_AGE} години история, което е специализирано в областта на ИТ и единствено в България подготвя специалисти в областта на системно програмиране.`,
 	keywords: [
 		'туес',
 		'туес фест',
-		'туес фест 2024',
+		`туес фест ${TF_YEAR}`,
 		'технологично училище електронни системи',
 		'технологично',
 		'училище',
 		'електронни',
 		'системи',
-		'туес 2024',
+		`туес ${TF_YEAR}`,
 		'кандидатстване',
 		'училища софия',
 		'училища',
@@ -37,7 +36,7 @@ export const metadata = {
 		'минимален бал за туес',
 		'минимален бал софия',
 	],
-};
+} satisfies Metadata;
 
 const AboutPage = () => {
 	return (
@@ -52,8 +51,8 @@ const AboutPage = () => {
 					<div className="flex flex-col gap-4">
 						<p className="text-md text-justify">
 							Технологично училище „Електронни системи“ към Технически Университет - София е
-							специализирано технологично училище от национално значение, което вече 35 годин подготвя
-							бъдещите лидери на ИТ сектора в България и отвъд.
+							специализирано технологично училище от национално значение, което вече {TUES_AGE} годин
+							подготвя бъдещите лидери на ИТ сектора в България и отвъд.
 						</p>
 						<p className="text-md text-justify">
 							Възпитаниците на ТУЕС преминават през задълбочена и специализирана 5-годишна програма, която
@@ -145,6 +144,7 @@ const AboutPage = () => {
 					</ul>
 				</div>
 				<div className="pt-8 md:pt-12">
+					{/* TODO: extract stats to config file */}
 					<div className="flex flex-col gap-4 rounded-xl border border-[#F2F2F2] bg-bg-color bg-transparent p-8 sm:border-2 md:flex-row">
 						<div className="flex w-full flex-col items-center gap-4 rounded-xl border border-[#F2F2F2] bg-[#353444] bg-transparent p-4 sm:border-2">
 							<TbSchool size={64} className="opacity-100" />
@@ -163,7 +163,7 @@ const AboutPage = () => {
 						</div>
 						<div className="flex w-full flex-col items-center gap-4 rounded-xl border border-[#F2F2F2] bg-[#353444] bg-transparent p-4 sm:border-2">
 							<TbHistory size={64} className="opacity-100" />
-							<p className="bg-gradient bg-clip-text text-5xl font-black text-transparent">35</p>
+							<p className="bg-gradient bg-clip-text text-5xl font-black text-transparent">{TUES_AGE}</p>
 							<p className="text-md text-center font-semibold opacity-100">годишна история</p>
 						</div>
 					</div>
