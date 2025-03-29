@@ -7,6 +7,8 @@ import Navigation from '@/partials/layout/Navigation';
 import './animation.css';
 import './globals.css';
 
+import { Viewport } from 'next/dist/lib/metadata/types/extra-types';
+
 import { Toaster } from '@/components/ui/toaster';
 import { TF_YEAR } from '@/constants/event';
 import { FIRST_ARCHIVE_YEAR, KEYWORDS, OG_METADATA, TF_DESCRIPTION, TF_TITLE, TWITTER_METADATA } from '@/constants/seo';
@@ -16,6 +18,12 @@ import VotingLayout from '@/partials/layout/Voting';
 // import VoteProvider from '@/context/vote';
 // import VotingLayout from '@/partials/layout/Voting';
 
+export const viewport = {
+	themeColor: '#141420',
+	width: 'device-width',
+	initialScale: 1,
+};
+
 export const metadata = {
 	title: {
 		default: `TUES Fest ${TF_YEAR}`,
@@ -23,8 +31,6 @@ export const metadata = {
 	},
 	description: TF_DESCRIPTION,
 	keywords: KEYWORDS,
-	viewport: 'width=device-width, initial-scale=1',
-	themeColor: '#141420',
 	icons: {
 		icon: '/favicon.ico',
 		shortcut: '/favicon.png',
