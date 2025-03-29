@@ -3,7 +3,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
-		"dev": "next dev",
+		"dev": "next dev --turbopack",
 		"build": "next build",
 		"postbuild": "next-sitemap",
 		"start": "next start",
@@ -24,25 +24,22 @@
 		"@radix-ui/react-slot": "^1.1.2",
 		"@radix-ui/react-tabs": "^1.1.3",
 		"@radix-ui/react-toast": "^1.2.6",
-		"@t3-oss/env-nextjs": "^0.7.3",
-		"@tailwindcss/line-clamp": "^0.4.4",
-		"@types/node": "18.15.3",
-		"@vercel/analytics": "^0.1.11",
+		"@t3-oss/env-nextjs": "^0.12.0",
+		"@vercel/analytics": "^1.5.0",
 		"animate.css": "^4.1.1",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
 		"dotenv": "^16.4.7",
 		"embla-carousel-autoplay": "^8.5.2",
 		"embla-carousel-react": "^8.5.2",
-		"eslint": "8.36.0",
-		"framer-motion": "^10.18.0",
-		"lucide-react": "^0.314.0",
-		"next": "^14.2.26",
+		"lucide-react": "^0.485.0",
+		"motion": "^12.6.2",
+		"next": "15.2.4",
 		"next-sitemap": "^4.2.3",
 		"nodemailer": "^6.10.0",
 		"postgres": "^3.4.5",
-		"react": "^18.3.1",
-		"react-dom": "^18.3.1",
+		"react": "19.1.0",
+		"react-dom": "19.1.0",
 		"react-error-boundary": "^4.1.2",
 		"react-hook-form": "^7.55.0",
 		"react-icons": "^4.12.0",
@@ -59,20 +56,30 @@
 		"zod": "^3.24.2"
 	},
 	"devDependencies": {
+		"@eslint/eslintrc": "^3.3.1",
+		"@types/node": "^20.17.28",
 		"@types/nodemailer": "^6.4.17",
-		"@types/react": "18.0.28",
-		"@types/react-dom": "18.0.11",
+		"@types/react": "19.0.12",
+		"@types/react-dom": "19.0.4",
 		"@types/uuid": "^9.0.8",
 		"autoprefixer": "^10.4.21",
-		"eslint-config-next": "^14.2.26",
+		"eslint": "^9.23.0",
+		"eslint-config-next": "^15.2.4",
 		"postcss": "^8.5.3",
 		"prettier": "^3.5.3",
 		"prettier-plugin-tailwindcss": "^0.5.14",
-		"tailwindcss": "^3.4.17"
+		"tailwindcss": "^3.4.17",
+		"typescript-eslint": "^8.28.0"
 	},
 	"description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
 	"main": "next-sitemap.config.js",
 	"author": "",
 	"license": "ISC",
-	"packageManager": "pnpm@9.15.4+sha512.b2dc20e2fc72b3e18848459b37359a32064663e5627a51e4c74b2c29dd8e8e0491483c3abb40789cfd578bf362fb6ba8261b05f0387d76792ed6e23ea3b1b6a0"
+	"packageManager": "pnpm@9.15.4+sha512.b2dc20e2fc72b3e18848459b37359a32064663e5627a51e4c74b2c29dd8e8e0491483c3abb40789cfd578bf362fb6ba8261b05f0387d76792ed6e23ea3b1b6a0",
+	"pnpm": {
+		"overrides": {
+			"@types/react": "19.0.12",
+			"@types/react-dom": "19.0.4"
+		}
+	}
 }

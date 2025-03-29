@@ -7,11 +7,9 @@ import Navigation from '@/partials/layout/Navigation';
 import './animation.css';
 import './globals.css';
 
-import { Viewport } from 'next/dist/lib/metadata/types/extra-types';
-
 import { Toaster } from '@/components/ui/toaster';
 import { TF_YEAR } from '@/constants/event';
-import { FIRST_ARCHIVE_YEAR, KEYWORDS, OG_METADATA, TF_DESCRIPTION, TF_TITLE, TWITTER_METADATA } from '@/constants/seo';
+import { FIRST_ARCHIVE_YEAR, KEYWORDS, OG_METADATA, TF_DESCRIPTION, TWITTER_METADATA } from '@/constants/seo';
 import VoteProvider from '@/context/vote';
 import VotingLayout from '@/partials/layout/Voting';
 

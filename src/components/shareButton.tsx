@@ -1,10 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { ReactElement, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { TbShare } from 'react-icons/tb';
 
-const ShareButton = (): JSX.Element => {
+const ShareButton = (): ReactElement => {
 	const path = usePathname();
 
 	const [copied, setCopied] = useState(false);
