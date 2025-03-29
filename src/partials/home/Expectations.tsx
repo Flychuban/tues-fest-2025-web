@@ -1,6 +1,8 @@
+import { ReactElement } from 'react';
+
 import { EXPECTATIONS } from '@/constants/home/expectations';
 
-const Expectation = ({ icon, title, text }: { icon: JSX.Element; title: string; text: string }) => (
+const Expectation = ({ icon, title, text }: { icon: ReactElement; title: string; text: string }) => (
 	<div className=" w-full md:w-2/5 lg:w-1/3 2xl:w-1/4">
 		<div className="group mb-10 h-full rounded-xl border border-[#FEFEFE] bg-opacity-0 p-7 backdrop-blur-sm backdrop-filter transition-all duration-300 hover:scale-105 sm:border-2 sm:backdrop-blur-md">
 			<div className="mb-5 flex h-[72px] w-[72px] items-center justify-center rounded-full bg-stroke">{icon}</div>

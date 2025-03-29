@@ -43,13 +43,14 @@ export type Project = {
 	next_id: number;
 	prev_id: number;
 };
-export async function generateMetadata({ params }: { params: { projectId: string } }) {
-	const projectId = parseInt(params.projectId, 10);
-	const project = await getProjectById(projectId);
+export async function generateMetadata(props: { params: Promise<{ projectId: string }> }) {
+    const params = await props.params;
+    const projectId = parseInt(params.projectId, 10);
+    const project = await getProjectById(projectId);
 
-	if (project === undefined || project === null) notFound();
+    if (project === undefined || project === null) notFound();
 
-	return {
+    return {
 		title: project.title,
 		description: project.description,
 		twitter: {
@@ -79,12 +80,13 @@ export async function generateStaticParams() {
 	}));
 }
 
-const ProjectPage = async ({ params }: { params: { projectId: string } }) => {
-	const projectId = parseInt(params.projectId, 10);
-	const project = await getProjectById(projectId);
-	if (!project) notFound();
+const ProjectPage = async (props: { params: Promise<{ projectId: string }> }) => {
+    const params = await props.params;
+    const projectId = parseInt(params.projectId, 10);
+    const project = await getProjectById(projectId);
+    if (!project) notFound();
 
-	const path = [
+    const path = [
 		{
 			name: TF_TITLE,
 			url: '/',
@@ -99,11 +101,11 @@ const ProjectPage = async ({ params }: { params: { projectId: string } }) => {
 		},
 	];
 
-	// FIXME: duplicate code, seen elsewhere
-	const thumbnail = project.thumbnail || project.images[0];
-	invariant(thumbnail, `Project with ID ${project.id} (${project.title}) has no thumbnail or images`);
+    // FIXME: duplicate code, seen elsewhere
+    const thumbnail = project.thumbnail || project.images[0];
+    invariant(thumbnail, `Project with ID ${project.id} (${project.title}) has no thumbnail or images`);
 
-	return (
+    return (
 		<div className="container">
 			<Suspense fallback={<div>Loading...</div>}>
 				<ProjectsPath path={path} />

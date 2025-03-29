@@ -7,24 +7,31 @@ import Navigation from '@/partials/layout/Navigation';
 import './animation.css';
 import './globals.css';
 
+import { Metadata, Viewport } from 'next';
+
 import { Toaster } from '@/components/ui/toaster';
 import { TF_YEAR } from '@/constants/event';
-import { FIRST_ARCHIVE_YEAR, KEYWORDS, OG_METADATA, TF_DESCRIPTION, TF_TITLE, TWITTER_METADATA } from '@/constants/seo';
+import { FIRST_ARCHIVE_YEAR, KEYWORDS, OG_METADATA, TF_DESCRIPTION, TWITTER_METADATA } from '@/constants/seo';
 import VoteProvider from '@/context/vote';
 import VotingLayout from '@/partials/layout/Voting';
 
 // import VoteProvider from '@/context/vote';
 // import VotingLayout from '@/partials/layout/Voting';
 
-export const metadata = {
+export const viewport: Viewport = {
+	themeColor: '#141420',
+	width: 'device-width',
+	initialScale: 1,
+};
+
+export const metadata: Metadata = {
+	metadataBase: new URL('https://tuesfest.bg'),
 	title: {
 		default: `TUES Fest ${TF_YEAR}`,
 		template: `%s | TUES Fest ${TF_YEAR}`,
 	},
 	description: TF_DESCRIPTION,
 	keywords: KEYWORDS,
-	viewport: 'width=device-width, initial-scale=1',
-	themeColor: '#141420',
 	icons: {
 		icon: '/favicon.ico',
 		shortcut: '/favicon.png',

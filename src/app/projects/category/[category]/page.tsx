@@ -54,24 +54,25 @@ export function generateStaticParams() {
 	}));
 }
 
-const ProjectsPage = async ({
-	params,
-}: {
-	params: {
-		category: string;
-	};
-}) => {
-	const category = params.category.toString();
+const ProjectsPage = async (
+    props: {
+        params: Promise<{
+            category: string;
+        }>;
+    }
+) => {
+    const params = await props.params;
+    const category = params.category.toString();
 
-	if (!Object.hasOwn(PROJECT_CATEGORIES, category)) {
+    if (!Object.hasOwn(PROJECT_CATEGORIES, category)) {
 		redirect('/projects');
 	}
 
-	const projects = await getProjectsByCategory(category);
+    const projects = await getProjectsByCategory(category);
 
-	projects?.sort(() => Math.random() - 0.5);
+    projects?.sort(() => Math.random() - 0.5);
 
-	return (
+    return (
 		<div className="container">
 			<ProjectsPath path={PATH} />
 			<div className="mb-28">

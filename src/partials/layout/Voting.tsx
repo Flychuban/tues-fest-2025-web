@@ -2,10 +2,11 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { motion } from 'motion/react';
+import { TbChevronDown, TbChevronUp, TbX } from 'react-icons/tb';
+
 import { PROJECT_CATEGORY_MAP, ProjectCategoryMapValue } from '@/constants/projects';
 import { useVoteContext, Vote } from '@/context/vote';
-import { motion } from 'framer-motion';
-import { TbChevronDown, TbChevronUp, TbX } from 'react-icons/tb';
 
 const VotingModal = ({ closeModal }: { closeModal: () => void }) => {
 	const { addInfo, validateGivenInfo, getErrors, submitVote, hasVerifiedVote } = useVoteContext();
