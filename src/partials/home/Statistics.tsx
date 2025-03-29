@@ -19,7 +19,7 @@ import { FOLDERS } from '@/info/folders';
 import { FaRegFolder, FaRegFolderOpen } from 'react-icons/fa';
 
 export default function Statistics() {
-	const [selectedFolder, setSelectedFolder] = useState(8);
+	const [selectedFolder, setSelectedFolder] = useState(9);
 
 	return (
 		<div className="block w-full  rounded-xl border border-[#F2F2F2] bg-opacity-0  bg-clip-padding backdrop-blur-sm backdrop-filter sm:border-2  sm:backdrop-blur-md">
@@ -132,7 +132,7 @@ function History({
 }) {
 	return (
 		<div className="flex w-full justify-center align-middle xl:mx-10 xl:w-1/6">
-			<div className="my-auto grid h-2/3 grid-cols-4 gap-1 gap-y-0 lg:grid-cols-8 xl:grid-cols-2">
+			<div className="my-[10%] grid h-2/3 grid-cols-4 gap-1 gap-y-0 lg:grid-cols-8 xl:grid-cols-2">
 				{FOLDERS.map((folder) => (
 					<div
 						className="rounded-xl p-5 hover:bg-gradient-to-br hover:shadow-lg sm:hover:cursor-pointer sm:hover:bg-gradient sm:hover:text-black"

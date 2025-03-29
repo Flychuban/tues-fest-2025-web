@@ -254,8 +254,7 @@ const Navigation = () => {
 								</ul>
 							</nav>
 							<Link
-								href="https://maps.app.goo.gl/RHDd9NVx11hVvQVh6"
-								target="_blank"
+								href={'/location'}
 								className="mr-2 hidden w-full items-center justify-center gap-2 rounded-lg border border-border px-4 py-2 text-lg sm:flex md:w-60"
 							>
 								<TbMapPin size={24} />
