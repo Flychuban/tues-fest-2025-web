@@ -1,8 +1,9 @@
 import Link from 'next/link';
+
 import { Card } from '@/components/ui/card';
+import { TF_TITLE } from '@/constants/seo';
 import ProjectsPath from '@/partials/layout/ProjectsPath';
 import Project from '@/partials/projects/project/Project';
-
 // import Projects from '@/partials/projects/Projects';
 import { getProjects } from './actions';
 
@@ -11,7 +12,7 @@ const PATH: {
 	url: string;
 }[] = [
 	{
-		name: 'TUES Fest 2024',
+		name: TF_TITLE,
 		url: '/',
 	},
 	{

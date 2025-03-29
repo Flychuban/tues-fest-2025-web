@@ -1,5 +1,5 @@
 import ShareButton from '@/components/shareButton';
-import { TYPE } from '@/constants/projects/TYPE';
+import { PROJECT_TYPES } from '@/constants/projects';
 import { TbShare } from 'react-icons/tb';
 
 import Video from './Video';
@@ -32,7 +32,8 @@ const MainInfo = ({
 				<h2 className="text-2xl font-bold">{name}</h2>
 				<div className="flex items-center gap-4">
 					<div className="text-right text-sm opacity-70">
-						{TYPE[type]}, {category}
+						{/* @ts-expect-error TODO: fix */}
+						{PROJECT_TYPES[type]}, {category}
 					</div>
 					{/* <VoteButton id={id} name={name} thumbnail={thumbnail} category={category} /> */}
 				</div>

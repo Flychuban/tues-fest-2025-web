@@ -1,3 +1,4 @@
+import { TF_TITLE } from '@/constants/seo';
 import ProjectsPath from '@/partials/layout/ProjectsPath';
 
 const PATH: {
@@ -5,7 +6,7 @@ const PATH: {
 	url: string;
 }[] = [
 	{
-		name: 'TUES Fest 2024',
+		name: TF_TITLE,
 		url: '/',
 	},
 	{

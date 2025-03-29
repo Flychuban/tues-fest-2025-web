@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import CATEGORY_MAP, { CategoryMapValue } from '@/constants/projects/CATEGORY_MAP';
+import { PROJECT_CATEGORY_MAP, ProjectCategoryMapValue } from '@/constants/projects';
 import { useVoteContext, Vote } from '@/context/vote';
 import { motion } from 'framer-motion';
 import { TbChevronDown, TbChevronUp, TbX } from 'react-icons/tb';
@@ -162,7 +162,7 @@ const VotingCategory = ({
 	error,
 }: {
 	category: Vote | null;
-	cat: CategoryMapValue;
+	cat: ProjectCategoryMapValue;
 	error: boolean | null;
 }) => {
 	const { removeVote } = useVoteContext();
@@ -263,17 +263,17 @@ const VotingOverlay = ({ showModal }: { showModal: () => void }) => {
 							<div className="flex w-full flex-col divide-y divide-stroke">
 								<VotingCategory
 									category={embedded}
-									cat={{ ...CATEGORY_MAP.software, text: 'Избор 1', href: '/projects' }}
+									cat={{ ...PROJECT_CATEGORY_MAP.software, text: 'Избор 1', href: '/projects' }}
 									error={embeddedError}
 								/>
 								<VotingCategory
 									category={software}
-									cat={{ ...CATEGORY_MAP.embedded, text: 'Избор 2', href: '/projects' }}
+									cat={{ ...PROJECT_CATEGORY_MAP.embedded, text: 'Избор 2', href: '/projects' }}
 									error={softwareError}
 								/>
 								<VotingCategory
 									category={battlebot}
-									cat={{ ...CATEGORY_MAP.battlebot, text: 'Избор 3', href: '/projects' }}
+									cat={{ ...PROJECT_CATEGORY_MAP.battlebot, text: 'Избор 3', href: '/projects' }}
 									error={battlebotError}
 								/>
 							</div>

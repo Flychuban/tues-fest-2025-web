@@ -1,16 +1,17 @@
 import { Suspense } from 'react';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
+import invariant from 'tiny-invariant';
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { OG_METADATA, TF_TITLE, TWITTER_METADATA } from '@/constants/seo';
 import ProjectsPath from '@/partials/layout/ProjectsPath';
 import Contributors from '@/partials/projects/project/Contributors';
 import Gallery from '@/partials/projects/project/Gallery';
 import LinksContainer from '@/partials/projects/project/Links';
 import Video from '@/partials/projects/project/Video';
 import VoteButton from '@/partials/projects/project/VoteButton';
-import invariant from 'tiny-invariant';
-
 import { getProjectById, getProjects } from '../actions';
 
 export type Links = {
@@ -52,24 +53,21 @@ export async function generateMetadata({ params }: { params: { projectId: string
 		title: project.title,
 		description: project.description,
 		twitter: {
-			card: 'summary_large_image',
-			title: `${project.title} | TUES Fest 2024`,
+			...TWITTER_METADATA,
+			title: `${project.title} | ${TF_TITLE}`,
 			description: project.description,
-			creator: '@tuesfest',
 			images: project.images.map((image) => ({
 				url: image.src,
 			})),
 		},
 		openGraph: {
-			title: `${project.title} | TUES Fest 2024`,
+			...OG_METADATA,
+			title: `${project.title} | ${OG_METADATA.siteName}`,
 			description: project.description,
 			url: `https://tuesfest.bg/projects/${project.id}`,
-			siteName: 'TUES Fest 2024',
 			images: project.images.map((image) => ({
 				url: image.src,
 			})),
-			locale: 'bg-BG',
-			type: 'website',
 		},
 	};
 }
@@ -88,7 +86,7 @@ const ProjectPage = async ({ params }: { params: { projectId: string } }) => {
 
 	const path = [
 		{
-			name: 'TUES Fest 2024',
+			name: TF_TITLE,
 			url: '/',
 		},
 		{

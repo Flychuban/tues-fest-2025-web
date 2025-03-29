@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react';
 import { TbClockHour4, TbMapPin } from 'react-icons/tb';
 
+import { TF_DATE_STRING, TF_LOCATION } from '@/constants/event';
+
 export default function Logos() {
 	return (
 		<div className="w-11/12 sm:w-2/3 md:w-3/4 lg:w-1/2">
@@ -23,11 +25,11 @@ export default function Logos() {
 			<div className="relative z-20 mx-1/6 mt-8 flex flex-col items-stretch gap-4 text-center sm:mx-auto sm:max-w-md sm:items-center sm:justify-center">
 				<div className="flex w-full items-center justify-center gap-2 rounded-lg border border-[#FEFEFE] bg-opacity-0 px-4 py-2 text-lg backdrop-blur-sm backdrop-filter sm:hidden sm:border-2">
 					<TbMapPin size={24} />
-					<p>{'София Тех Парк'}</p>
+					<p>{TF_LOCATION}</p>
 				</div>
 				<div className="flex w-full items-center justify-center gap-2 rounded-lg border border-[#FEFEFE] bg-opacity-0 px-4 py-2 text-lg  backdrop-blur-sm backdrop-filter sm:border-2">
 					<TbClockHour4 size={24} />
-					<p>20 и 21 април</p>
+					<p>{TF_DATE_STRING}</p>
 				</div>
 			</div>
 		</div>

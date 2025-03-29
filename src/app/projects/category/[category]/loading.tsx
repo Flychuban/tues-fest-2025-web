@@ -1,11 +1,13 @@
-import ProjectsPath from '@/partials/layout/ProjectsPath';
 import { Card } from '@/components/ui/card';
+import { TF_TITLE } from '@/constants/seo';
+import ProjectsPath from '@/partials/layout/ProjectsPath';
+
 const PATH: {
 	name: string;
 	url: string;
 }[] = [
 	{
-		name: 'TUES Fest 2024',
+		name: TF_TITLE,
 		url: '/',
 	},
 	{
@@ -16,12 +18,12 @@ const PATH: {
 
 const ProjectsLoading = () => {
 	return (
-		<div className='container'>
+		<div className="container">
 			<ProjectsPath path={PATH} />
 			<div className="">
 				<section className="pt-8">
 					<div className="mx-4 ">
-					<Card className='opacity-100 bg-black text-white m-4 mb-14 rounded-lg border-2 border-stroke px-5 py-4'>
+						<Card className="m-4 mb-14 rounded-lg border-2 border-stroke bg-black px-5 py-4 text-white opacity-100">
 							<div className="-mx-4 flex flex-wrap items-center justify-between">
 								<div className="w-full px-4">
 									<div className="flex flex-wrap justify-center gap-4 overflow-x-auto lg:justify-start">

@@ -1,34 +1,33 @@
-import { PiChalkboardTeacherLight } from 'react-icons/pi';
-import { TbBusinessplan, TbQuestionMark, TbScale, TbSchool, TbTerminal2 } from 'react-icons/tb';
+import { Code2, GraduationCap, HelpCircle, Presentation, Scale, Users2 } from 'lucide-react';
 
 export const EXPECTATIONS = [
 	{
-		icon: <TbTerminal2 size={34} />,
+		icon: <Code2 size={34} />,
 		title: 'Интригуващи проекти',
 		text: `Разгледайте най-добрите технологични проекти на учениците от ТУЕС в сайта и на livestream програмата на ТУЕС Фест.`,
 	},
 	{
-		icon: <PiChalkboardTeacherLight size={34} />,
+		icon: <Presentation size={34} />,
 		title: 'TUES Inspirational Talks',
 		text: `Тази година на ТУЕС Фест ще се проведат интересни лекции под формата на TED Talks. Може да се гледат както на живо, така и онлайн на нашият стрийм.`,
 	},
 	{
-		icon: <TbScale size={34} />,
+		icon: <Scale size={34} />,
 		title: 'Онлайн гласуване',
 		text: `Гласувайте онлайн за проекта, впечатлил Ви най-много, за да му помогнете да спечели наградата на публиката!`,
 	},
 	{
-		icon: <TbQuestionMark size={34} />,
+		icon: <HelpCircle size={34} />,
 		title: 'Въпроси и отговори',
 		text: `Задавайте своите въпроси, свързани с училището, а ние ще отговорим! Ще можете да се включите в онлайн дискусиите и да се срещнете виртуално със създателите на проектите в ТУЕС Фест.`,
 	},
 	{
-		icon: <TbSchool size={34} />,
+		icon: <GraduationCap size={34} />,
 		title: 'За училището',
 		text: `Научете повече за уникалния образователен модел на ТУЕС и какво прави училището толкова успешно.`,
 	},
 	{
-		icon: <TbBusinessplan size={34} />,
+		icon: <Users2 size={34} />,
 		title: 'Връзка с бизнеса',
 		text: `Научете повече за тясната връзка с ИТ бизнеса, която е ключова за ТУЕС. Чуйте мнението и на бизнес партньорите на училището.`,
 	},

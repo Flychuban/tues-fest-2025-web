@@ -1,6 +1,8 @@
 import Link from 'next/link';
-import { Separator } from '@/components/ui/separator';
 import { TbBrandLinktree } from 'react-icons/tb';
+
+import { Separator } from '@/components/ui/separator';
+import { TF_YEAR } from '@/constants/event';
 
 const Socials = () => (
 	<div className="flex items-center">
@@ -80,7 +82,7 @@ const Moto = () => {
 					style={{ fontFamily: 'origin', fontWeight: 800 }}
 					className="text-md text-center font-origin font-normal !leading-none !tracking-wide drop-shadow-lg"
 				>
-					2024
+					{TF_YEAR}
 				</span>
 			</h1>
 		</div>
@@ -95,7 +97,7 @@ const Footer = () => (
 			</div>
 			<div className="py-4 sm:py-7">
 				<p className="text-center text-base font-medium text-body-color">
-					&copy; 2024 ТУЕС към ТУ-София. Всички права са запазени.
+					&copy; {new Date().getFullYear()} ТУЕС към ТУ-София. Всички права са запазени.
 				</p>
 			</div>
 			<div className="flex justify-center sm:hidden ">
