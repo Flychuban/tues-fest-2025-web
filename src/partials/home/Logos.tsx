@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Clock4, MapPin } from 'lucide-react';
 
+import Countdown from '@/components/countdown';
 import { buttonVariants } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
@@ -32,6 +33,8 @@ export default function EventLanding() {
 					</div>
 
 					<Separator className="bg-border" />
+
+					<Countdown />
 
 					{/* Event details - flex-col on mobile, flex-row on desktop */}
 					<div className="flex flex-col items-stretch gap-4 text-center sm:flex-row sm:gap-6">

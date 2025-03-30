@@ -1,3 +1,4 @@
+import About from '@/partials/home/About';
 import Expectations from '@/partials/home/Expectations';
 import EventLanding from '@/partials/home/Logos';
 import Schedule from '@/partials/home/Schedule';
@@ -12,6 +13,7 @@ export default function Home() {
 				<EventLanding />
 			</section>
 			<div className="mx-6 max-w-screen-2xl md:mx-20 2xl:m-auto">
+				<About />
 				<Statistics />
 			</div>
 			<div className="mx-auto w-full max-w-screen-2xl">

@@ -68,8 +68,8 @@ const Socials = () => (
 const Footer = () => (
 	<footer className="relative z-20 mt-32 border-t bg-opacity-0 backdrop-blur-sm backdrop-filter sm:mt-10 sm:border-t-2 sm:backdrop-blur-md md:mt-14 lg:mt-0">
 		<div className=" block w-full justify-center sm:flex sm:justify-between">
-			<div className="justify-center pt-7 sm:justify-start sm:py-7">
-				<TFLogo className="m-1 sm:pl-6" />
+			<div className="m-1 justify-center pt-7 sm:justify-start sm:py-7 sm:pl-6">
+				<TFLogo className="" />
 			</div>
 			<div className="py-4 sm:py-7">
 				<p className="text-body-color text-center text-base font-medium">

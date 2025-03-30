@@ -22,13 +22,13 @@ function Schedule() {
 	return (
 		<>
 			<section id="schedule" className='gap-16" relative z-20 flex flex-col px-6 py-6 md:px-8'>
-				<h2 className="text-accent-foreground font-title mb-8 text-5xl font-black">Програма</h2>
+				<h2 className="text-primary font-title mb-8 text-5xl font-black">Програма</h2>
 
 				<div className="flex flex-col gap-16 pt-4">
 					{SCHEDULE.map((item) => (
 						<div key={item.title} className="flex flex-col gap-4 sm:flex-row sm:items-start md:gap-6">
 							{/* Time Card */}
-							<Card className="w-full shrink-0 sm:w-32">
+							<Card className="font-title w-full shrink-0 sm:w-32">
 								<CardContent className="flex flex-col items-center justify-center p-4 text-center">
 									<p className="text-primary text-lg font-semibold">{item.start}</p>
 									<Separator className="my-2" />
@@ -39,7 +39,7 @@ function Schedule() {
 							{/* Content Card */}
 							<Card className="w-full">
 								<CardHeader>
-									<CardTitle>{item.title}</CardTitle>
+									<CardTitle className="font-title text-xl">{item.title}</CardTitle>
 								</CardHeader>
 								<Separator className="mx-6" />
 								<CardContent className="text-muted-foreground">{item.description}</CardContent>

@@ -10,7 +10,7 @@ const About = () => (
 		<div className="flex flex-col gap-8 lg:flex-row">
 			{/* Text info */}
 			<div className="flex w-full flex-col gap-4">
-				<h2 className="text-primary text-4xl font-bold sm:text-5xl">{ABOUT_TITLE}</h2>
+				<h2 className="text-primary font-title text-4xl font-bold sm:text-5xl">{ABOUT_TITLE}</h2>
 
 				<p className="text-foreground">
 					Денят на отворените врати на Технологично училище „Електронни системи“ към Техническия университет -

@@ -4,7 +4,7 @@ import PodkrepqAutoDisplay from './sponsors/PodkrepqAutoDisplay';
 const Sponsors = () => (
 	<section id="sponsors" className="relative z-20 mb-20 p-8 md:p-12">
 		<div className="py-4 pb-8">
-			<h2 className="text-accent-foreground font-title text-5xl font-black">Спонсори</h2>
+			<h2 className="text-primary font-title text-5xl font-black">Спонсори</h2>
 		</div>
 		<h2 className="text-accent-foreground font-title mb-4 mt-32 text-center text-3xl font-black">Алфа Спонсори</h2>
 		<PodkrepqAutoDisplay podkrepqshti={ALPHA_SPONSORS} />

@@ -5,8 +5,7 @@ import { useEffect, useState } from 'react';
 import 'animate.css';
 
 import countdownStyles from '@/styles/home/countdown.module.css';
-
-const THE_DATE = new Date('Apr 23, 2023 10:00:00').getTime();
+import { TF_DATE } from '@/constants/event';
 
 const Countdown = () => {
 	const [countdown, setCountdown] = useState({
@@ -17,7 +16,7 @@ const Countdown = () => {
 	});
 
 	const count = () => {
-		const countDate = THE_DATE;
+		const countDate = TF_DATE.getTime();
 		const now = new Date().getTime();
 		const gap = countDate - now;
 
@@ -42,7 +41,7 @@ const Countdown = () => {
 	};
 
 	const getFinalValues = () => {
-		const countDate = THE_DATE;
+		const countDate = TF_DATE.getTime();
 		const now = new Date().getTime();
 		const gap = countDate - now;
 
@@ -110,44 +109,43 @@ const Countdown = () => {
 	const format = (item: number) => (item < 10 ? `0${item}` : item);
 
 	// call countdown function
-	// useEffect(() => {
-	// 	// startCountdown();
-	// 	// const interval = setInterval(count, 1000);
-	// 	// return () => clearInterval(interval);
-	// }, []);
+	useEffect(() => {
+		startCountdown();
+		const interval = setInterval(count, 1000);
+		return () => clearInterval(interval);
+	}, []);
 
 	return (
-		<></>
-		// <div className={countdownStyles.stack /* + ' animate__animated animate__fadeInTopRight' */}>
-		// 	{Array.from({ length: 3 }, (_, i) => (
-		// 		<ul key={i} id={countdownStyles['stack' + i]} className={countdownStyles.countdown + ' gap-4'}>
-		// 			<li id={countdownStyles.days} className="bg-background rounded-xl border border-border">
-		// 				<div className={countdownStyles.number + ' ' + countdownStyles.animate}>
-		// 					{format(countdown.days)}
-		// 				</div>
-		// 				<div className={countdownStyles.label}>дни</div>
-		// 			</li>
-		// 			<li id={countdownStyles.hours} className="bg-background rounded-xl border border-border">
-		// 				<div className={countdownStyles.number + ' ' + countdownStyles.animate}>
-		// 					{format(countdown.hours)}
-		// 				</div>
-		// 				<div className={countdownStyles.label}>часове</div>
-		// 			</li>
-		// 			<li id={countdownStyles.minutes} className="bg-background rounded-xl border border-border">
-		// 				<div className={countdownStyles.number + ' ' + countdownStyles.animate}>
-		// 					{format(countdown.minutes)}
-		// 				</div>
-		// 				<div className={countdownStyles.label}>минути</div>
-		// 			</li>
-		// 			<li id={countdownStyles.seconds} className="bg-background rounded-xl border border-border">
-		// 				<div className={countdownStyles.number + ' ' + countdownStyles.animate}>
-		// 					{format(countdown.seconds)}
-		// 				</div>
-		// 				<div className={countdownStyles.label}>секунди</div>
-		// 			</li>
-		// 		</ul>
-		// 	))}
-		// </div>
+		<div className={countdownStyles.stack /* + ' animate__animated animate__fadeInTopRight' */}>
+			{Array.from({ length: 3 }, (_, i) => (
+				<ul key={i} id={countdownStyles['stack' + i]} className={countdownStyles.countdown + ' gap-4'}>
+					<li id={countdownStyles.days} className="bg-background border-border rounded-xl border">
+						<div className={countdownStyles.number + ' ' + countdownStyles.animate}>
+							{format(countdown.days)}
+						</div>
+						<div className={countdownStyles.label}>дни</div>
+					</li>
+					<li id={countdownStyles.hours} className="bg-background border-border rounded-xl border">
+						<div className={countdownStyles.number + ' ' + countdownStyles.animate}>
+							{format(countdown.hours)}
+						</div>
+						<div className={countdownStyles.label}>часове</div>
+					</li>
+					<li id={countdownStyles.minutes} className="bg-background border-border rounded-xl border">
+						<div className={countdownStyles.number + ' ' + countdownStyles.animate}>
+							{format(countdown.minutes)}
+						</div>
+						<div className={countdownStyles.label}>минути</div>
+					</li>
+					<li id={countdownStyles.seconds} className="bg-background border-border rounded-xl border">
+						<div className={countdownStyles.number + ' ' + countdownStyles.animate}>
+							{format(countdown.seconds)}
+						</div>
+						<div className={countdownStyles.label}>секунди</div>
+					</li>
+				</ul>
+			))}
+		</div>
 	);
 };
 

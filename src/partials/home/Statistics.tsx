@@ -17,7 +17,9 @@ export default function Statistics() {
 		<section id="statistics" className="px-4 py-12 md:px-8">
 			<Card className="bg-background/80 border-border backdrop-blur-sm">
 				<CardContent className="p-6 md:p-8">
-					<h2 className="text-primary mb-8 text-4xl font-bold sm:text-5xl">ТУЕС Фест през годините</h2>
+					<h2 className="text-primary font-title mb-8 text-4xl font-black sm:text-5xl">
+						ТУЕС Фест през годините
+					</h2>
 
 					<div className="block w-full xl:flex xl:gap-8">
 						{/* Folder Navigation */}
@@ -114,7 +116,7 @@ function FolderNavigation({
 }) {
 	return (
 		<div className="w-full xl:w-1/6">
-			<div className="grid grid-cols-4 gap-2 lg:grid-cols-8 xl:grid-cols-2">
+			<div className="grid grid-cols-3 gap-2 lg:grid-cols-9 xl:grid-cols-2">
 				{FOLDERS.map((folder) => (
 					<Button
 						key={folder.id}

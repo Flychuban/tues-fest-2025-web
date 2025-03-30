@@ -19,7 +19,7 @@ const Expectation = ({ icon, title, text }: { icon: ReactElement; title: string;
 
 const Expectations = () => (
 	<section id="expectations" className="px-4 py-12 md:px-8">
-		<h2 className="text-primary mb-8 text-4xl font-black sm:text-5xl">На ТУЕС Фест очаквайте</h2>
+		<h2 className="text-primary font-title mb-8 text-4xl font-black sm:text-5xl">На ТУЕС Фест очаквайте</h2>
 		<div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 			{EXPECTATIONS.map((expectation) => (
 				<Expectation key={expectation.title} {...expectation} />
