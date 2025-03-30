@@ -23,7 +23,7 @@ export default function Statistics() {
 	const [selectedFolder, setSelectedFolder] = useState(9);
 
 	return (
-		<div className="block w-full  rounded-xl border border-[#F2F2F2] bg-opacity-0  bg-clip-padding backdrop-blur-sm backdrop-filter sm:border-2  sm:backdrop-blur-md">
+		<div className="block w-full  rounded-xl border  bg-opacity-0  bg-clip-padding backdrop-blur-sm backdrop-filter  sm:backdrop-blur-md">
 			<About />
 			<div className="px-2 md:px-6 lg:px-10 xl:px-14 ">
 				<h2 className="bg-gradient bg-clip-text p-4 text-4xl font-black text-transparent sm:text-5xl">
@@ -36,7 +36,7 @@ export default function Statistics() {
 						{STATISTICS.map((statistic) => (
 							<Card
 								key={statistic.title}
-								className={`my-4 h-[300px] overflow-hidden rounded-xl border-2 border-[#FEFEFE] bg-transparent bg-opacity-0 bg-clip-padding pl-0 pr-6 pt-6 text-white shadow-none backdrop-blur-sm backdrop-filter md:w-full md:backdrop-blur-md lg:p-6 lg:pr-10`}
+								className={`my-4 h-[300px] overflow-hidden rounded-xl border-2 bg-transparent bg-opacity-0 bg-clip-padding pl-0 pr-6 pt-6 text-white shadow-none backdrop-blur-sm backdrop-filter md:w-full md:backdrop-blur-md lg:p-6 lg:pr-10`}
 							>
 								<div className="m-2 flex justify-center">
 									<HeaderIcon icon={statistic.icon} />
@@ -56,7 +56,7 @@ export default function Statistics() {
 						{STATISTICS.map((statistic) => (
 							<Card
 								key={statistic.title}
-								className="my-4 h-[300px] overflow-hidden rounded-xl border border-[#F2F2F2] bg-opacity-0 bg-clip-padding pl-0 pr-6 pt-6 text-white shadow-none  backdrop-blur-sm backdrop-filter md:mt-10 md:w-full md:backdrop-blur-md lg:p-6 lg:pr-10"
+								className="my-4 h-[300px] overflow-hidden rounded-xl border  bg-opacity-0 bg-clip-padding pl-0 pr-6 pt-6 text-white shadow-none  backdrop-blur-sm backdrop-filter md:mt-10 md:w-full md:backdrop-blur-md lg:p-6 lg:pr-10"
 							>
 								<div className="m-2 flex justify-center">
 									<HeaderIcon icon={statistic.icon} />

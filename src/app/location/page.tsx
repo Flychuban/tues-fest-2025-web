@@ -15,7 +15,7 @@ export const metadata = {
 export default function Location() {
 	return (
 		<div className="m-auto min-h-screen max-w-screen-2xl p-8 !pt-28 md:p-12">
-			<div className="rounded-xl border border-[#F2F2F2] bg-opacity-0 bg-clip-padding p-10 drop-shadow-lg backdrop-blur-sm backdrop-filter sm:border-2">
+			<div className="rounded-xl border  bg-opacity-0 bg-clip-padding p-10 drop-shadow-lg backdrop-blur-sm backdrop-filter">
 				<h2 className="bg-gradient bg-clip-text pb-4 text-3xl font-black text-transparent sm:text-5xl">
 					Локация
 				</h2>
@@ -33,7 +33,7 @@ export default function Location() {
 							им позволява да се позиционират възможно най-бързо в технологичния сектор.
 						</p>
 					</div>
-					<div className="w-full overflow-hidden rounded-lg border border-gray-300 sm:w-[50%]">
+					<div className="border-gray-300 w-full overflow-hidden rounded-lg border sm:w-[50%]">
 						<iframe
 							src={LOCATION_MAP_URL}
 							title="Карта на локацията - Ларго, пл. Независимост, София"
