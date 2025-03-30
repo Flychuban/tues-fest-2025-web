@@ -2,10 +2,11 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { motion } from 'motion/react';
+import { TbChevronDown, TbChevronUp, TbX } from 'react-icons/tb';
+
 import { PROJECT_CATEGORY_MAP, ProjectCategoryMapValue } from '@/constants/projects';
 import { useVoteContext, Vote } from '@/context/vote';
-import { motion } from 'framer-motion';
-import { TbChevronDown, TbChevronUp, TbX } from 'react-icons/tb';
 
 const VotingModal = ({ closeModal }: { closeModal: () => void }) => {
 	const { addInfo, validateGivenInfo, getErrors, submitVote, hasVerifiedVote } = useVoteContext();
@@ -204,7 +205,7 @@ const VotingCategory = ({
 			</div>
 			<button
 				className="p-2 opacity-75 transition-all duration-300 hover:opacity-100"
-				onClick={() => removeVote(category.category as string)}
+				onClick={() => removeVote(category.category!)}
 			>
 				<TbX size={24} />
 			</button>
@@ -282,9 +283,8 @@ const VotingOverlay = ({ showModal }: { showModal: () => void }) => {
 								onClick={
 									!hasVerifiedVote
 										? showModal
-										: () => {
-												submitVote().then(showModal);
-											}
+										: () => void submitVote().then(showModal)
+											
 								}
 							>
 								{!hasVerifiedVote ? 'Гласувай' : 'Запиши глас'}

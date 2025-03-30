@@ -43,7 +43,8 @@ export type Project = {
 	next_id: number;
 	prev_id: number;
 };
-export async function generateMetadata({ params }: { params: { projectId: string } }) {
+export async function generateMetadata(props: { params: Promise<{ projectId: string }> }) {
+	const params = await props.params;
 	const projectId = parseInt(params.projectId, 10);
 	const project = await getProjectById(projectId);
 
@@ -79,7 +80,8 @@ export async function generateStaticParams() {
 	}));
 }
 
-const ProjectPage = async ({ params }: { params: { projectId: string } }) => {
+const ProjectPage = async (props: { params: Promise<{ projectId: string }> }) => {
+	const params = await props.params;
 	const projectId = parseInt(params.projectId, 10);
 	const project = await getProjectById(projectId);
 	if (!project) notFound();
@@ -100,7 +102,7 @@ const ProjectPage = async ({ params }: { params: { projectId: string } }) => {
 	];
 
 	// FIXME: duplicate code, seen elsewhere
-	const thumbnail = project.thumbnail || project.images[0];
+	const thumbnail = project.thumbnail ?? project.images[0];
 	invariant(thumbnail, `Project with ID ${project.id} (${project.title}) has no thumbnail or images`);
 
 	return (
@@ -109,7 +111,7 @@ const ProjectPage = async ({ params }: { params: { projectId: string } }) => {
 				<ProjectsPath path={path} />
 			</Suspense>
 			<div className="container mb-20 pt-16 sm:px-8">
-				<Card className="m-auto w-full border border-stroke bg-black text-white opacity-100 sm:px-4 md:w-[90%] lg:w-[70%]">
+				<Card className="border-stroke m-auto w-full border bg-black text-white opacity-100 sm:px-4 md:w-[90%] lg:w-[70%]">
 					<CardHeader className="pt-10">
 						<CardTitle className="text-center text-3xl">{project.title}</CardTitle>
 					</CardHeader>

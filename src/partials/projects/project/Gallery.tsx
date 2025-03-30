@@ -164,8 +164,6 @@ const Gallery = ({ name, images }: { name: string; images: StaticImageData[] }) 
 	const [modal, setModal] = useState(false);
 	const [index, setIndex] = useState(0);
 
-	console.log(images);
-
 	const openModal = (index: number) => {
 		setIndex(index);
 		setModal(true);

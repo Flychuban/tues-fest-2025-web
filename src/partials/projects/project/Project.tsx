@@ -8,7 +8,7 @@ import invariant from 'tiny-invariant';
 
 const Project = ({ project }: { project: ProjectType }) => {
 	// FIXME: duplicate code, seen elsewhere
-	const thumbnail = project.thumbnail || project.images[0];
+	const thumbnail = project.thumbnail ?? project.images[0];
 	invariant(thumbnail, `Project with ID ${project.id} (${project.title}) has no thumbnail or images`);
 
 	return (

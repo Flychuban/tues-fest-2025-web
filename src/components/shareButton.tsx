@@ -1,18 +1,18 @@
 'use client';
 
-import { useState } from 'react';
+import { ReactElement, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { TbShare } from 'react-icons/tb';
 
-const ShareButton = (): JSX.Element => {
+const ShareButton = (): ReactElement => {
 	const path = usePathname();
 
 	const [copied, setCopied] = useState(false);
 	const [pageURL, setPageURL] = useState('');
 	const [isNativeShare, setNativeShare] = useState(false);
 
-	const handleCopy = () => {
-		navigator?.clipboard.writeText(`${window.location.origin}${path}`);
+	const handleCopy = async () => {
+		await navigator?.clipboard.writeText(`${window.location.origin}${path}`);
 		setCopied(true);
 
 		try {
