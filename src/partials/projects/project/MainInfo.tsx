@@ -1,6 +1,5 @@
 import ShareButton from '@/components/shareButton';
 import { PROJECT_TYPES } from '@/constants/projects';
-import { TbShare } from 'react-icons/tb';
 
 import Video from './Video';
 
@@ -11,8 +10,6 @@ const MainInfo = ({
 	video,
 	type,
 	category,
-	id,
-	thumbnail,
 }: {
 	name: string;
 	video: string;

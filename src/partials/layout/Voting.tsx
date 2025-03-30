@@ -205,7 +205,7 @@ const VotingCategory = ({
 			</div>
 			<button
 				className="p-2 opacity-75 transition-all duration-300 hover:opacity-100"
-				onClick={() => removeVote(category.category as string)}
+				onClick={() => removeVote(category.category!)}
 			>
 				<TbX size={24} />
 			</button>
@@ -283,9 +283,8 @@ const VotingOverlay = ({ showModal }: { showModal: () => void }) => {
 								onClick={
 									!hasVerifiedVote
 										? showModal
-										: () => {
-												submitVote().then(showModal);
-											}
+										: () => void submitVote().then(showModal)
+											
 								}
 							>
 								{!hasVerifiedVote ? 'Гласувай' : 'Запиши глас'}

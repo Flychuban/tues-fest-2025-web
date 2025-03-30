@@ -40,10 +40,10 @@ const CalculatorField = ({ name, label, min, max, value, error, onChange }: any)
 const Calculator = () => {
 	const [result, setResult] = useState(0);
 	const [calculator, setCalculator] = useState<{
-		bgl: any;
-		math: any;
-		math7: any;
-		phys7: any;
+		bgl: number | '';
+		math: number | '';
+		math7: number | '';
+		phys7: number | '';
 	}>(EMPTY_CALC);
 	const [errorCalculator, setErrorCalculator] = useState(EMPTY_ERR);
 
@@ -55,7 +55,7 @@ const Calculator = () => {
 		if (calculator.bgl === '' || calculator.math === '' || calculator.math7 === '' || calculator.phys7 === '')
 			return;
 
-		let errors = EMPTY_ERR;
+		const errors = EMPTY_ERR;
 
 		errors.bgl = calculator.bgl < 0 || calculator.bgl > 100 ? 'НВО по БЕЛ трябва да е между 0 и 100т.' : '';
 

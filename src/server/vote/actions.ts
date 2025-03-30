@@ -2,14 +2,14 @@
 
 import { z } from 'zod';
 
-const submitVoteSchema = z.object({
+const _submitVoteSchema = z.object({
 	email: z.string().email(),
 	name: z.string().trim(),
 	pm: z.string().trim(),
 	cf: z.string().trim(),
 	isSpam: z.literal(false),
 });
-export async function saveVote(data: z.infer<typeof submitVoteSchema>) {
+export async function saveVote(data: z.infer<typeof _submitVoteSchema>) {
 	return {
 		success: false,
 		error: 'изтрих всичкия код, защото не ми се занимава с това',

@@ -1,6 +1,6 @@
-import { ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import Link from 'next/link';
-import { Links } from '@/app/projects/[projectId]/page';
+import { type Links } from '@/app/projects/[projectId]/page';
 import { TbBrandGit, TbBrandGithub, TbBrandGoogleDrive, TbGlobe } from 'react-icons/tb';
 import invariant from 'tiny-invariant';
 

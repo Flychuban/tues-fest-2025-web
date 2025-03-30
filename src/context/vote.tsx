@@ -1,9 +1,10 @@
 'use client';
 
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
+
+import { encodeBitmap, projectIdsToMapString } from '@/utils/vote-projects-map';
 import { PROJECT_CATEGORIES } from '@/constants/projects';
 import { saveVote } from '@/server/vote/actions';
-import { encodeBitmap, projectIdsToMapString } from '@/utils/vote-projects-map';
 
 export interface Vote {
 	id: number;
@@ -73,7 +74,7 @@ const VoteProvider = ({ children }: { children: React.ReactNode }) => {
 
 		// find empty category or last if all are full
 		const [category, , setCategory, setError] =
-			categories.find(([, vote]) => vote === null) || categories[categories.length - 1]!;
+			categories.find(([, vote]) => vote === null) ?? categories[categories.length - 1]!;
 		const value = { id, name, image, category };
 
 		setCategory(value);
@@ -228,9 +229,9 @@ const VoteProvider = ({ children }: { children: React.ReactNode }) => {
 		console.log({ name });
 		console.log({ hasVerifiedVote });
 
-		if (software) setSoftware(JSON.parse(software));
-		if (embedded) setEmbedded(JSON.parse(embedded));
-		if (battlebot) setBattlebot(JSON.parse(battlebot));
+		if (software) setSoftware(JSON.parse(software) as Vote | null);
+		if (embedded) setEmbedded(JSON.parse(embedded) as Vote | null);
+		if (battlebot) setBattlebot(JSON.parse(battlebot) as Vote | null);
 		if (email) setEmail(email);
 		if (name) setName(name);
 		if (hasVerifiedVote) setHasVerifiedVote(hasVerifiedVote === 'true');

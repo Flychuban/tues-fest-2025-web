@@ -11,8 +11,8 @@ const ShareButton = (): ReactElement => {
 	const [pageURL, setPageURL] = useState('');
 	const [isNativeShare, setNativeShare] = useState(false);
 
-	const handleCopy = () => {
-		navigator?.clipboard.writeText(`${window.location.origin}${path}`);
+	const handleCopy = async () => {
+		await navigator?.clipboard.writeText(`${window.location.origin}${path}`);
 		setCopied(true);
 
 		try {

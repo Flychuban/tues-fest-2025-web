@@ -59,7 +59,7 @@ const Linky = ({
 	return (
 		<Link
 			href={href}
-			target={target || '_self'}
+			target={target ?? '_self'}
 			className={`mx-2 flex whitespace-nowrap py-2 text-center text-base font-semibold 
 				text-[#bababa]
 			group-hover:text-white lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${className}`}
@@ -139,7 +139,7 @@ const Navigation = () => {
 		return null;
 	}
 
-	let navbarClasses = [
+	const navbarClasses = [
 		'header',
 		'top-0',
 		'left-0',
