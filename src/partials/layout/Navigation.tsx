@@ -15,6 +15,7 @@ import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTr
 import { TF_LOCATION, TF_YEAR } from '@/constants/event';
 import { TF_TITLE } from '@/constants/seo';
 import { cn } from '@/lib/utils';
+import { TFLogo } from '../home/TFLogo';
 
 const LINKS = [
 	// {
@@ -84,7 +85,7 @@ function NavLink({ href, children, onClick }: { href: string; children: React.Re
 		<Link
 			href={href}
 			onClick={onClick}
-			className="data-[state=open]:bg-accent/50 bg-background hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground data-[state=open]:text-accent-foreground data-[state=open]:hover:bg-accent data-[state=open]:focus:bg-accent group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+			className="data-[state=open]:bg-accent/50 group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[state=open]:text-accent-foreground data-[state=open]:hover:bg-accent data-[state=open]:focus:bg-accent"
 		>
 			{children}
 		</Link>
@@ -114,7 +115,7 @@ export function Navigation() {
 				<div className="flex h-16 w-full items-center justify-between px-4">
 					<div className="flex items-center gap-4">
 						<Link href="/" className="text-lg font-bold">
-							TUES <span className="text-primary">Fest</span> {TF_YEAR}
+							<TFLogo />
 						</Link>
 
 						{/* Desktop Navigation */}

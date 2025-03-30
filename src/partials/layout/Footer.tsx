@@ -3,6 +3,7 @@ import { TbBrandLinktree } from 'react-icons/tb';
 
 import { Separator } from '@/components/ui/separator';
 import { TF_YEAR } from '@/constants/event';
+import { TFLogo } from '../home/TFLogo';
 
 const Socials = () => (
 	<div className="flex items-center">
@@ -64,36 +65,11 @@ const Socials = () => (
 	</div>
 );
 
-const Moto = () => {
-	return (
-		<div className="m-1 sm:pl-6">
-			<h1
-				className="text-md font-origin text-center font-normal !leading-none !tracking-wide drop-shadow-lg"
-				style={{ fontFamily: 'origin', fontWeight: 800 }}
-			>
-				TUES{' '}
-				<span
-					style={{ fontFamily: 'origin', fontWeight: 800 }}
-					className="text-md font-origin text-center font-normal !leading-none !tracking-wide drop-shadow-lg"
-				>
-					Fest
-				</span>{' '}
-				<span
-					style={{ fontFamily: 'origin', fontWeight: 800 }}
-					className="text-md font-origin text-center font-normal !leading-none !tracking-wide drop-shadow-lg"
-				>
-					{TF_YEAR}
-				</span>
-			</h1>
-		</div>
-	);
-};
-
 const Footer = () => (
 	<footer className="relative z-20 mt-32 border-t bg-opacity-0 backdrop-blur-sm backdrop-filter sm:mt-10 sm:border-t-2 sm:backdrop-blur-md md:mt-14 lg:mt-0">
 		<div className=" block w-full justify-center sm:flex sm:justify-between">
 			<div className="justify-center pt-7 sm:justify-start sm:py-7">
-				<Moto />
+				<TFLogo className="m-1 sm:pl-6" />
 			</div>
 			<div className="py-4 sm:py-7">
 				<p className="text-body-color text-center text-base font-medium">

@@ -8,11 +8,15 @@ import './animation.css';
 import './globals.css';
 
 import { Metadata, Viewport } from 'next';
+import { Inter } from 'next/font/google';
+import localFont from 'next/font/local';
+import { GeistSans } from 'geist/font/sans';
 
 import { Toaster } from '@/components/ui/toaster';
 import { TF_YEAR } from '@/constants/event';
 import { FIRST_ARCHIVE_YEAR, KEYWORDS, OG_METADATA, TF_DESCRIPTION, TWITTER_METADATA } from '@/constants/seo';
 import VoteProvider from '@/context/vote';
+import { cn } from '@/lib/utils';
 import VotingLayout from '@/partials/layout/Voting';
 
 // import VoteProvider from '@/context/vote';
@@ -48,6 +52,16 @@ export const metadata: Metadata = {
 	openGraph: OG_METADATA,
 };
 
+// const warzone = localFont({
+// 	src: '../assets/fonts/warzone97.ttf',
+// 	variable: '--font-warzone',
+// });
+
+const origin = localFont({
+	src: '../assets/fonts/origintech.woff',
+	variable: '--font-origin',
+});
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="bg">
@@ -55,7 +69,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				<Script src="https://www.googletagmanager.com/gtag/js?id=G-1H1H1CR559" strategy="afterInteractive" />
 				<link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any"></link>
 			</head>
-			<body className="dark h-full w-screen items-center justify-center overflow-hidden overflow-x-hidden overflow-y-scroll [--header-height:calc(theme(spacing.18))]">
+			<body
+				className={cn(
+					GeistSans.variable,
+					// warzone.variable,
+					origin.variable,
+					'font-sans',
+					'dark h-full w-screen items-center justify-center overflow-hidden overflow-x-hidden overflow-y-scroll [--header-height:calc(theme(spacing.18))]'
+				)}
+			>
 				<div className="">
 					<Navigation />
 					<VoteProvider>
