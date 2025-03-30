@@ -34,7 +34,7 @@ const Category = ({ name, img }: { name: string; img: string }) => (
 
 const ComingSoon = () => (
 	<div className="flex min-h-screen flex-col items-center gap-8 px-8 pb-16 pt-32 md:px-12">
-		<h2 className="bg-gradient bg-clip-text text-5xl font-black text-transparent">Очаквайте скоро</h2>
+		<h2 className="text-accent-foreground font-title text-5xl font-black">Очаквайте скоро</h2>
 		<div className="flex h-full w-full flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap">
 			{CATEGORIES.map((category) => (
 				<Category key={category.name} {...category} />

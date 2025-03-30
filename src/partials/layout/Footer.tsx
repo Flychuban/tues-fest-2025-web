@@ -74,7 +74,7 @@ const Moto = () => {
 				TUES{' '}
 				<span
 					style={{ fontFamily: 'origin', fontWeight: 800 }}
-					className="text-md bg-gradient font-origin bg-clip-text text-center font-normal !leading-none !tracking-wide text-transparent drop-shadow-lg"
+					className="text-md font-origin text-center font-normal !leading-none !tracking-wide drop-shadow-lg"
 				>
 					Fest
 				</span>{' '}

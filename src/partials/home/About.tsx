@@ -11,9 +11,7 @@ const About = () => (
 		<div className="mb-5 flex flex-col items-center gap-8 whitespace-pre-line lg:flex-row">
 			{/* Text info */}
 			<div className="flex w-full flex-col gap-4 text-justify">
-				<h2 className="bg-gradient bg-clip-text text-4xl font-black text-transparent sm:text-5xl">
-					{ABOUT_TITLE}
-				</h2>
+				<h2 className="text-accent-foreground font-title text-4xl font-black sm:text-5xl">{ABOUT_TITLE}</h2>
 				<p className="">
 					Денят на отворените врати на Технологично училище “Електронни системи” към Техническия университет -
 					София, познат като ТУЕС ФЕСТ, наближава. Той ще се проведе на 20 и 21 април 2024 година на

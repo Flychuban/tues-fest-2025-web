@@ -42,7 +42,7 @@ const AboutPage = () => {
 	return (
 		<div className="m-auto min-h-screen max-w-screen-2xl p-8 !pt-28 md:p-12">
 			<div className="rounded-xl border  bg-opacity-0 bg-clip-padding p-10 drop-shadow-lg backdrop-blur-sm backdrop-filter ">
-				<h2 className="bg-gradient bg-clip-text pb-4 text-3xl font-black text-transparent sm:text-5xl">
+				<h2 className="text-accent-foreground font-title pb-4 text-3xl font-black sm:text-5xl">
 					За ТУЕС
 					{/* <Separator className="bg-black h-1 rounded-lg mt-2 w-auto" /> */}
 				</h2>
@@ -99,7 +99,7 @@ const AboutPage = () => {
 					</div>
 				</div>
 				<div className="flex flex-col gap-4 pt-8 md:pt-12">
-					<h3 className="bg-gradient -mb-2 bg-clip-text pb-2 text-3xl font-black text-transparent sm:text-5xl">
+					<h3 className="bg-gradient -mb-2 pb-2 text-3xl font-black sm:text-5xl">
 						Обучение
 						{/* <Separator className="bg-black h-1 rounded-lg mt-2 w-auto" /> */}
 					</h3>
@@ -148,28 +148,28 @@ const AboutPage = () => {
 					<div className="bg-bg-color flex flex-col gap-4 rounded-xl border  bg-transparent p-8 md:flex-row">
 						<div className="flex w-full flex-col items-center gap-4 rounded-xl border  bg-[#353444] bg-transparent p-4">
 							<TbSchool size={64} className="opacity-100" />
-							<p className="bg-gradient bg-clip-text text-5xl font-black text-transparent">2846</p>
+							<p className="text-accent-foregroundtext-5xl font-black">2846</p>
 							<p className="text-md text-center font-semibold opacity-100">завършили ученици</p>
 						</div>
 						<div className="flex w-full flex-col items-center gap-4 rounded-xl border  bg-[#353444] bg-transparent p-4">
 							<TbTrophy size={64} className="opacity-100" />
-							<p className="bg-gradient bg-clip-text text-5xl font-black text-transparent">87</p>
+							<p className="text-accent-foregroundtext-5xl font-black">87</p>
 							<p className="text-md text-center font-semibold opacity-100">награди и отличия</p>
 						</div>
 						<div className="flex w-full flex-col items-center gap-4 rounded-xl border  bg-[#353444] bg-transparent p-4">
 							<TbBriefcase size={64} className="opacity-100" />
-							<p className="bg-gradient bg-clip-text text-5xl font-black text-transparent">140</p>
+							<p className="text-accent-foregroundtext-5xl font-black">140</p>
 							<p className="text-md text-center font-semibold opacity-100">стажа на година</p>
 						</div>
 						<div className="flex w-full flex-col items-center gap-4 rounded-xl border  bg-[#353444] bg-transparent p-4">
 							<TbHistory size={64} className="opacity-100" />
-							<p className="bg-gradient bg-clip-text text-5xl font-black text-transparent">{TUES_AGE}</p>
+							<p className="text-accent-foregroundtext-5xl font-black">{TUES_AGE}</p>
 							<p className="text-md text-center font-semibold opacity-100">годишна история</p>
 						</div>
 					</div>
 				</div>
 				<div className="flex flex-col gap-4 pt-8 md:pt-12">
-					<h3 className="bg-gradient -mb-2 bg-clip-text pb-2 text-3xl font-black text-transparent sm:text-5xl">
+					<h3 className="bg-gradient -mb-2 pb-2 text-3xl font-black sm:text-5xl">
 						ТУЕС постига успехите си благодарение на
 						{/* <Separator className="bg-black h-1 rounded-lg mt-2 w-auto" /> */}
 					</h3>
@@ -194,7 +194,7 @@ const AboutPage = () => {
 					</ul>
 				</div>
 				<div className="flex flex-col gap-6 pt-8 md:pt-12">
-					<h2 className="bg-gradient bg-clip-text text-3xl font-black text-transparent sm:text-5xl">
+					<h2 className="text-accent-foregroundtext-3xl font-black sm:text-5xl">
 						Hack TUES
 						{/* <Separator className="bg-black h-1 rounded-lg mt-2 w-auto" /> */}
 					</h2>
@@ -231,10 +231,8 @@ const AboutPage = () => {
 					</p>
 					<p className="text-justify">
 						Тази година се проведе{' '}
-						<span className="bg-gradient bg-clip-text font-semibold text-transparent">
-							десетото юбилейно издание
-						</span>
-						. Можете да видите повече информация{' '}
+						<span className="text-accent-foregroundfont-semibold">десетото юбилейно издание</span>. Можете
+						да видите повече информация{' '}
 						<Link href="https://hacktues.bg" target="_blank">
 							<u>тук</u>
 						</Link>

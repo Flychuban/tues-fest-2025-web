@@ -20,7 +20,7 @@ function Schedule() {
 	return (
 		<>
 			<section id="schedule" className='gap-16" relative z-20 flex flex-col px-6 py-6 md:px-8'>
-				<h2 className="bg-gradient mb-8 bg-clip-text text-5xl font-black text-transparent">Програма</h2>
+				<h2 className="text-accent-foreground font-title mb-8 text-5xl font-black">Програма</h2>
 
 				<div className="flex flex-col gap-16 pt-4">
 					{SCHEDULE_DAY1.map((item) => {

@@ -26,7 +26,7 @@ export default function Statistics() {
 		<div className="block w-full  rounded-xl border  bg-opacity-0  bg-clip-padding backdrop-blur-sm backdrop-filter  sm:backdrop-blur-md">
 			<About />
 			<div className="px-2 md:px-6 lg:px-10 xl:px-14 ">
-				<h2 className="bg-gradient bg-clip-text p-4 text-4xl font-black text-transparent sm:text-5xl">
+				<h2 className="text-accent-foreground font-title p-4 text-4xl font-black sm:text-5xl">
 					ТУЕС Фест през годините
 				</h2>
 				<div className="block w-full xl:flex">

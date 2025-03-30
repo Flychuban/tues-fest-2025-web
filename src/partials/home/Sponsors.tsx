@@ -4,26 +4,18 @@ import PodkrepqAutoDisplay from './sponsors/PodkrepqAutoDisplay';
 const Sponsors = () => (
 	<section id="sponsors" className="relative z-20 mb-20 p-8 md:p-12">
 		<div className="py-4 pb-8">
-			<h2 className="bg-gradient bg-clip-text text-5xl font-black text-transparent">Спонсори</h2>
+			<h2 className="text-accent-foreground font-title text-5xl font-black">Спонсори</h2>
 		</div>
-		<h2 className="bg-gradient mb-4 mt-32 bg-clip-text text-center text-3xl font-black text-transparent">
-			Алфа Спонсори
-		</h2>
+		<h2 className="text-accent-foreground font-title mb-4 mt-32 text-center text-3xl font-black">Алфа Спонсори</h2>
 		<PodkrepqAutoDisplay podkrepqshti={ALPHA_SPONSORS} />
-		<h2 className="bg-gradient mb-4 mt-32 bg-clip-text text-center text-3xl font-black text-transparent">
-			Бета Спонсори
-		</h2>
+		<h2 className="text-accent-foreground font-title mb-4 mt-32 text-center text-3xl font-black">Бета Спонсори</h2>
 
 		<PodkrepqAutoDisplay podkrepqshti={BETA_SPONSORS} />
-		<h2 className="bg-gradient mb-4 mt-32 bg-clip-text text-center text-3xl font-black text-transparent">
-			Гама Спонсори
-		</h2>
+		<h2 className="text-accent-foreground font-title mb-4 mt-32 text-center text-3xl font-black">Гама Спонсори</h2>
 		<PodkrepqAutoDisplay podkrepqshti={GAMMA_SPONSORS} />
-		<h2 className="bg-gradient mb-4 mt-32 bg-clip-text text-center text-3xl font-black text-transparent">
-			Партньори
-		</h2>
+		<h2 className="text-accent-foreground font-title mb-4 mt-32 text-center text-3xl font-black">Партньори</h2>
 		<PodkrepqAutoDisplay podkrepqshti={PARTNERS} />
-		<h2 className="bg-gradient mb-4 mt-32 bg-clip-text text-center text-3xl font-black text-transparent">
+		<h2 className="text-accent-foreground font-title mb-4 mt-32 text-center text-3xl font-black">
 			Медийни Партньори
 		</h2>
 		<PodkrepqAutoDisplay podkrepqshti={MEDIA_PARTNERS} />

@@ -15,9 +15,7 @@ export const metadata = {
 export default function NotFound() {
 	return (
 		<div className="flex h-screen w-full flex-col items-center justify-center gap-8">
-			<h1 className="bg-gradient bg-clip-text text-5xl font-black text-transparent">
-				404 - Няма такъв проект :(
-			</h1>
+			<h1 className="text-accent-foreground font-title text-5xl font-black">404 - Няма такъв проект :(</h1>
 			<Link
 				href="/projects"
 				className="hover:bg-primary inline-flex items-center justify-center whitespace-nowrap rounded-md bg-[#353444] px-5 py-[10px] text-base font-semibold text-white transition-all"

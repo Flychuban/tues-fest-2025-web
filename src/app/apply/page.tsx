@@ -53,9 +53,7 @@ const ApplyPage = () => (
 		<div className="">
 			<div className="p-8 !pt-0 md:p-12">
 				<div className="flex flex-col gap-4 rounded-xl border  bg-opacity-0 bg-clip-padding p-8  drop-shadow-lg backdrop-blur-sm backdrop-filter sm:p-10  sm:backdrop-blur-sm">
-					<h2 className="bg-gradient bg-clip-text text-3xl font-black text-transparent sm:text-5xl">
-						Защо ТУЕС?
-					</h2>
+					<h2 className="text-accent-foreground font-title text-3xl font-black sm:text-5xl">Защо ТУЕС?</h2>
 					<p className="text-justify">
 						Технологично училище „Електронни системи“ към Технически Университет - София е специализирано
 						технологично училище от национално значение, което вече {TUES_AGE} години подготвя бъдещите
@@ -97,9 +95,7 @@ const ApplyPage = () => (
 			<div className="px-8 pb-8 md:px-12 md:pb-12">
 				<div className="flex flex-col items-stretch gap-8 lg:flex-row">
 					<div className="flex flex-col gap-4 rounded-xl border  bg-opacity-0  bg-clip-padding p-8 drop-shadow-lg backdrop-blur-sm backdrop-filter sm:p-10 sm:backdrop-blur-sm">
-						<h2 className="bg-gradient bg-clip-text text-3xl font-black text-transparent sm:text-5xl">
-							Как да кандидатствам?
-						</h2>
+						<h2 className="text-accent-foregroundtext-3xl font-black sm:text-5xl">Как да кандидатствам?</h2>
 						<p className="text-justify">
 							За учебната 2024/2025 година в ТУЕС към ТУ-София ще се приемат ученици по следните
 							специалности:

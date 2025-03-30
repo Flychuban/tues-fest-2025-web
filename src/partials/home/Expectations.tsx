@@ -14,7 +14,7 @@ const Expectation = ({ icon, title, text }: { icon: ReactElement; title: string;
 
 const Expectations = () => (
 	<section id="expectations" className="relative z-20 flex flex-col gap-8 p-8 md:px-12">
-		<h2 className="bg-gradient bg-clip-text text-5xl font-black text-transparent">На ТУЕС Фест очаквайте</h2>
+		<h2 className="font-title text-5xl font-black text-accent-foreground">На ТУЕС Фест очаквайте</h2>
 		<div className="flex flex-wrap items-stretch justify-center gap-4">
 			{EXPECTATIONS.map((expectation) => (
 				<Expectation key={expectation.title} {...expectation} />
