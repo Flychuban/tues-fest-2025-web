@@ -16,7 +16,7 @@ export default function Location() {
 	return (
 		<div className="m-auto min-h-screen max-w-screen-2xl p-8 !pt-28 md:p-12">
 			<div className="rounded-xl border  bg-opacity-0 bg-clip-padding p-10 drop-shadow-lg backdrop-blur-sm backdrop-filter">
-				<h2 className="font-title pb-4 text-3xl font-black text-accent-foreground sm:text-5xl">Локация</h2>
+				<h2 className="font-title text-accent-foreground pb-4 text-3xl font-black sm:text-5xl">Локация</h2>
 
 				<div className="flex flex-col gap-8 pt-0 sm:flex-row md:pt-12 lg:flex-row">
 					<div className="flex w-full flex-col gap-8 sm:w-[50%]">
@@ -31,7 +31,7 @@ export default function Location() {
 							им позволява да се позиционират възможно най-бързо в технологичния сектор.
 						</p>
 					</div>
-					<div className="border-gray-300 w-full overflow-hidden rounded-lg border sm:w-[50%]">
+					<div className="w-full overflow-hidden rounded-lg border border-gray-300 sm:w-[50%]">
 						<iframe
 							src={LOCATION_MAP_URL}
 							title="Карта на локацията - Ларго, пл. Независимост, София"
