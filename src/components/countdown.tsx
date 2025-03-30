@@ -2,10 +2,8 @@
 
 import { useEffect, useState } from 'react';
 
-import 'animate.css';
-
-import countdownStyles from '@/styles/home/countdown.module.css';
 import { TF_DATE } from '@/constants/event';
+import { cn } from '@/lib/utils';
 
 const Countdown = () => {
 	const [countdown, setCountdown] = useState({
@@ -116,35 +114,141 @@ const Countdown = () => {
 	}, []);
 
 	return (
-		<div className={countdownStyles.stack /* + ' animate__animated animate__fadeInTopRight' */}>
+		<div className="text-foreground/80 grid grid-cols-1 text-center text-5xl font-bold">
 			{Array.from({ length: 3 }, (_, i) => (
-				<ul key={i} id={countdownStyles['stack' + i]} className={countdownStyles.countdown + ' gap-4'}>
-					<li id={countdownStyles.days} className="bg-background border-border rounded-xl border">
-						<div className={countdownStyles.number + ' ' + countdownStyles.animate}>
+				<ul
+					key={i}
+					className={cn(
+						'text-foreground/80 mt-4 flex items-center justify-center gap-4 py-4 text-4xl font-bold',
+						'col-start-1 row-start-1',
+						'animate-in fade-in-0 zoom-in-95 duration-300',
+						// Glitch effect styles
+						'odd:glitch-odd even:glitch-even'
+					)}
+					style={
+						{
+							// Use proper typing for CSS variables
+							'--stack-height': `calc(100% / 3 - 1px)`,
+							'--index': `${i}`,
+							'--inverse-index': `calc(2 - ${i})`,
+							'--clip-top': `calc(var(--stack-height) * var(--index))`,
+							'--clip-bottom': `calc(var(--stack-height) * var(--inverse-index))`,
+							clipPath: 'inset(var(--clip-top) 0 var(--clip-bottom) 0)',
+							animation: `stack 340ms cubic-bezier(0.46, 0.29, 0, 1.24) 1 backwards calc(${i} * 120ms), glitch 2s ease infinite 2s alternate-reverse`,
+						} as React.CSSProperties
+					}
+				>
+					<li className="border-border bg-card text-card-foreground xs:h-20 xs:w-20 flex h-32 w-32 flex-col items-center justify-center rounded-xl border shadow-sm transition-all sm:h-24 sm:w-24 md:h-28 md:w-28">
+						<span className="animate-countUp xs:text-xl text-4xl sm:text-2xl md:text-3xl">
 							{format(countdown.days)}
-						</div>
-						<div className={countdownStyles.label}>дни</div>
+						</span>
+						<span className="text-muted-foreground xs:text-sm text-xl font-light sm:text-base md:text-lg">
+							{countdown.days === 1 ? 'ден' : 'дни'}
+						</span>
 					</li>
-					<li id={countdownStyles.hours} className="bg-background border-border rounded-xl border">
-						<div className={countdownStyles.number + ' ' + countdownStyles.animate}>
+					<li className="border-border bg-card text-card-foreground xs:h-20 xs:w-20 flex h-32 w-32 flex-col items-center justify-center rounded-xl border shadow-sm transition-all sm:h-24 sm:w-24 md:h-28 md:w-28">
+						<span className="animate-countUp xs:text-xl text-4xl sm:text-2xl md:text-3xl">
 							{format(countdown.hours)}
-						</div>
-						<div className={countdownStyles.label}>часове</div>
+						</span>
+						<span className="text-muted-foreground xs:text-sm text-xl font-light sm:text-base md:text-lg">
+							{countdown.hours === 1 ? 'час' : 'часове'}
+						</span>
 					</li>
-					<li id={countdownStyles.minutes} className="bg-background border-border rounded-xl border">
-						<div className={countdownStyles.number + ' ' + countdownStyles.animate}>
+					<li className="border-border bg-card text-card-foreground xs:h-20 xs:w-20 flex h-32 w-32 flex-col items-center justify-center rounded-xl border shadow-sm transition-all sm:h-24 sm:w-24 md:h-28 md:w-28">
+						<span className="animate-countUp xs:text-xl text-4xl sm:text-2xl md:text-3xl">
 							{format(countdown.minutes)}
-						</div>
-						<div className={countdownStyles.label}>минути</div>
+						</span>
+						<span className="text-muted-foreground xs:text-sm text-xl font-light sm:text-base md:text-lg">
+							{countdown.minutes === 1 ? 'минута' : 'минути'}
+						</span>
 					</li>
-					<li id={countdownStyles.seconds} className="bg-background border-border rounded-xl border">
-						<div className={countdownStyles.number + ' ' + countdownStyles.animate}>
+					<li className="border-border bg-card text-card-foreground xs:h-20 xs:w-20 flex h-32 w-32 flex-col items-center justify-center rounded-xl border shadow-sm transition-all sm:h-24 sm:w-24 md:h-28 md:w-28">
+						<span className="animate-countUp xs:text-xl text-4xl sm:text-2xl md:text-3xl">
 							{format(countdown.seconds)}
-						</div>
-						<div className={countdownStyles.label}>секунди</div>
+						</span>
+						<span className="text-muted-foreground xs:text-sm text-xl font-light sm:text-base md:text-lg">
+							{countdown.seconds === 1 ? 'секунда' : 'секунди'}
+						</span>
 					</li>
 				</ul>
 			))}
+
+			{/* Add the CSS for glitch effect animations */}
+			<style jsx global>{`
+				@keyframes stack {
+					0% {
+						opacity: 0;
+						transform: translateX(-50%);
+						text-shadow:
+							-2px 3px 0 hsl(var(--destructive)),
+							2px -3px 0 hsl(var(--primary));
+					}
+					60% {
+						opacity: 0.5;
+						transform: translateX(50%);
+					}
+					80% {
+						transform: none;
+						opacity: 1;
+						text-shadow:
+							2px -3px 0 hsl(var(--destructive)),
+							-2px 3px 0 hsl(var(--primary));
+					}
+					100% {
+						text-shadow: none;
+					}
+				}
+
+				@keyframes glitch {
+					0% {
+						text-shadow:
+							-2px 3px 0 hsl(var(--destructive)),
+							2px -3px 0 hsl(var(--primary));
+						transform: translate(var(--glitch-translate));
+					}
+					2% {
+						text-shadow:
+							2px -3px 0 hsl(var(--destructive)),
+							-2px 3px 0 hsl(var(--primary));
+					}
+					4%,
+					100% {
+						text-shadow: none;
+						transform: none;
+					}
+				}
+
+				@keyframes countUp {
+					0% {
+						opacity: 0;
+					}
+					100% {
+						opacity: 1;
+					}
+				}
+
+				.glitch-odd {
+					--glitch-translate: 8px;
+				}
+
+				.glitch-even {
+					--glitch-translate: -8px;
+				}
+
+				.animate-countUp {
+					animation: countUp 0.75s ease-in forwards;
+				}
+
+				/* Responsive layout for mobile */
+				@media screen and (max-width: 410px) {
+					ul {
+						display: grid;
+						grid-template-columns: 1fr 1fr;
+						grid-template-rows: 1fr 1fr;
+						gap: 1rem;
+					}
+				}
+			`}</style>
 		</div>
 	);
 };

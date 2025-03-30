@@ -10,8 +10,7 @@ export const TFLogo = (props: React.ComponentProps<'span'>) => {
 				props.className
 			)}
 		>
-			TUES Fest{' '}
-			<span className="text-[oklch(0.6231782112201628_0.1879276416268245_259.7964101376824)]">{TF_YEAR}</span>
+			TUES Fest <span className="text-indigo-500">{TF_YEAR}</span>
 		</span>
 	);
 };
