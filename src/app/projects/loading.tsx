@@ -23,23 +23,23 @@ const ProjectsLoading = () => {
 			<div className="">
 				<section className="pt-8">
 					<div className="mx-4 ">
-						<Card className="m-4 mb-14 rounded-lg border-2 border-stroke bg-black px-5 py-4 text-white opacity-100">
+						<Card className="m-4 mb-14 rounded-lg border-2 bg-black px-5 py-4 text-white opacity-100">
 							<div className="-mx-4 flex flex-wrap items-center justify-between">
 								<div className="w-full px-4">
 									<div className="flex flex-wrap justify-center gap-4 overflow-x-auto lg:justify-start">
-										<button className="inline-flex items-center justify-center whitespace-nowrap rounded-md bg-[#353444] px-5 py-[10px] text-base font-semibold text-white transition-all hover:bg-primary">
+										<button className="hover:bg-primary inline-flex items-center justify-center whitespace-nowrap rounded-md bg-[#353444] px-5 py-[10px] text-base font-semibold text-white transition-all">
 											Всички
 										</button>
-										<button className="inline-flex items-center justify-center whitespace-nowrap rounded-md bg-[#353444] px-5 py-[10px] text-base font-semibold text-white transition-all hover:bg-primary">
+										<button className="hover:bg-primary inline-flex items-center justify-center whitespace-nowrap rounded-md bg-[#353444] px-5 py-[10px] text-base font-semibold text-white transition-all">
 											Хардуер
 										</button>
-										<button className="inline-flex items-center justify-center whitespace-nowrap rounded-md bg-[#353444] px-5 py-[10px] text-base font-semibold text-white transition-all hover:bg-primary">
+										<button className="hover:bg-primary inline-flex items-center justify-center whitespace-nowrap rounded-md bg-[#353444] px-5 py-[10px] text-base font-semibold text-white transition-all">
 											Софтуер
 										</button>
-										<button className="inline-flex items-center justify-center whitespace-nowrap rounded-md bg-[#353444] px-5 py-[10px] text-base font-semibold text-white transition-all hover:bg-primary">
+										<button className="hover:bg-primary inline-flex items-center justify-center whitespace-nowrap rounded-md bg-[#353444] px-5 py-[10px] text-base font-semibold text-white transition-all">
 											Battle Bots
 										</button>
-										<button className="inline-flex items-center justify-center whitespace-nowrap rounded-md bg-[#353444] px-5 py-[10px] text-base font-semibold text-white transition-all hover:bg-primary">
+										<button className="hover:bg-primary inline-flex items-center justify-center whitespace-nowrap rounded-md bg-[#353444] px-5 py-[10px] text-base font-semibold text-white transition-all">
 											Мрежи
 										</button>
 									</div>

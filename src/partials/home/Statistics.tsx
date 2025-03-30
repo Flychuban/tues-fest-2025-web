@@ -1,113 +1,92 @@
 'use client';
 
-import { Card, CardContent, CardDescription, CardTitle } from '@/components/ui/card';
-import { STATISTICS } from '@/info/statistics';
-import { BsPeople } from 'react-icons/bs';
-import { FaRegBuilding } from 'react-icons/fa';
-import { GrAchievement } from 'react-icons/gr';
-import { PiProjectorScreenChart } from 'react-icons/pi';
-import { TbSTurnDown } from 'react-icons/tb';
-import { Bar, BarChart, Cell, ResponsiveContainer, XAxis, YAxis } from 'recharts';
-
-import About from './About';
-
-import './styles.css';
-
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { Folder, FolderOpen } from 'lucide-react';
+import { Bar, BarChart, Cell, ResponsiveContainer, XAxis, YAxis } from 'recharts';
+
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { FOLDERS } from '@/info/folders';
-import { FaRegFolder, FaRegFolderOpen } from 'react-icons/fa';
+import { STATISTICS } from '@/info/statistics';
 
 export default function Statistics() {
-	const [selectedFolder, setSelectedFolder] = useState(9);
+	const [selectedFolderIndex, setSelectedFolderIndex] = useState(9);
 
 	return (
-		<div className="block w-full  rounded-xl border border-[#F2F2F2] bg-opacity-0  bg-clip-padding backdrop-blur-sm backdrop-filter sm:border-2  sm:backdrop-blur-md">
-			<About />
-			<div className="px-2 md:px-6 lg:px-10 xl:px-14 ">
-				<h2 className="bg-gradient bg-clip-text p-4 text-4xl font-black text-transparent sm:text-5xl">
-					ТУЕС Фест през годините
-				</h2>
-				<div className="block w-full xl:flex">
-					<History selectedFolder={selectedFolder} setSelectedFolder={setSelectedFolder} />
+		<section id="statistics" className="px-4 py-12 md:px-8">
+			<Card className="bg-background/80 border-border backdrop-blur-sm">
+				<CardContent className="p-6 md:p-8">
+					<h2 className="text-primary mb-8 text-4xl font-bold sm:text-5xl">ТУЕС Фест през годините</h2>
 
-					<div className="hidden w-full p-2 xl:block xl:w-1/3">
-						{STATISTICS.map((statistic) => (
-							<Card
-								key={statistic.title}
-								className={`my-4 h-[300px] overflow-hidden rounded-xl border-2 border-[#FEFEFE] bg-transparent bg-opacity-0 bg-clip-padding pl-0 pr-6 pt-6 text-white shadow-none backdrop-blur-sm backdrop-filter md:w-full md:backdrop-blur-md lg:p-6 lg:pr-10`}
-							>
-								<div className="m-2 flex justify-center">
-									<HeaderIcon icon={statistic.icon} />
-									<CardTitle className="ml-2">{statistic.title}</CardTitle>
-								</div>
-								<div className="bg-transparent">
-									<BarStatistic selectedFolder={selectedFolder} data={statistic.data} />
-								</div>
-							</Card>
-						))}
+					<div className="block w-full xl:flex xl:gap-8">
+						{/* Folder Navigation */}
+						<FolderNavigation
+							selectedFolderIndex={selectedFolderIndex}
+							setSelectedFolderIndex={setSelectedFolderIndex}
+						/>
+
+						{/* Desktop Statistics */}
+						<div className="hidden w-full xl:block xl:w-1/3">
+							<StatisticsCards selectedFolderIndex={selectedFolderIndex} />
+						</div>
+
+						{/* Images Container */}
+						<div className="py-16 xl:hidden">
+							<ImagesContainer selectedFolderIndex={selectedFolderIndex} />
+						</div>
+						<ImagesContainer
+							className="hidden xl:block xl:w-1/2"
+							selectedFolderIndex={selectedFolderIndex}
+						/>
+
+						{/* Mobile/Tablet Statistics */}
+						<div className="block w-full xl:hidden">
+							<StatisticsCards selectedFolderIndex={selectedFolderIndex} />
+						</div>
 					</div>
-					<div className="pb-28 pt-28 xl:hidden">
-						<ImagesContainer selectedFolder={selectedFolder} />
-					</div>
-					<ImagesContainer className="hidden xl:block" selectedFolder={selectedFolder} />
-					<div className="block w-full p-2 lg:flex lg:gap-6 xl:hidden xl:w-1/3">
-						{STATISTICS.map((statistic) => (
-							<Card
-								key={statistic.title}
-								className="my-4 h-[300px] overflow-hidden rounded-xl border border-[#F2F2F2] bg-opacity-0 bg-clip-padding pl-0 pr-6 pt-6 text-white shadow-none  backdrop-blur-sm backdrop-filter md:mt-10 md:w-full md:backdrop-blur-md lg:p-6 lg:pr-10"
-							>
-								<div className="m-2 flex justify-center">
-									<HeaderIcon icon={statistic.icon} />
-									<CardTitle className="ml-2">{statistic.title}</CardTitle>
-								</div>
-								<div>
-									<BarStatistic selectedFolder={selectedFolder} data={statistic.data} />
-								</div>
-							</Card>
-						))}
-					</div>
-				</div>
-			</div>
+				</CardContent>
+			</Card>
+		</section>
+	);
+}
+
+function StatisticsCards({ selectedFolderIndex }: { selectedFolderIndex: number }) {
+	return (
+		<div className="space-y-6 lg:grid lg:grid-cols-2 lg:gap-6 lg:space-y-0 xl:flex xl:flex-col">
+			{STATISTICS.map((statistic) => (
+				<Card key={statistic.title} className="bg-card/80 border-border backdrop-blur-sm">
+					<CardHeader className="flex flex-row items-center gap-2">
+						<statistic.icon className="text-primary h-5 w-5" />
+						<CardTitle>{statistic.title}</CardTitle>
+					</CardHeader>
+					<CardContent>
+						<BarStatistic selectedFolderIndex={selectedFolderIndex} data={statistic.data} />
+					</CardContent>
+				</Card>
+			))}
 		</div>
 	);
 }
 
-function HeaderIcon({ icon }: { icon: string }) {
-	switch (icon) {
-		case 'TbSTurnDown':
-			return <TbSTurnDown size={24} />;
-		case 'BsPeople':
-			return <BsPeople size={24} />;
-		case 'PiProjectorScreenChart':
-			return <PiProjectorScreenChart size={24} />;
-		case 'FaRegBuilding':
-			return <FaRegBuilding size={24} />;
-		case 'GrAchievement':
-			return <GrAchievement size={24} />;
-		default:
-			return null;
-	}
-}
-
 function BarStatistic({
-	selectedFolder,
+	selectedFolderIndex,
 	data,
 }: {
-	selectedFolder: number;
+	selectedFolderIndex: number;
 	data: {
 		name: string;
 		total: number;
 	}[];
 }) {
-	const folder = FOLDERS.find((folder) => folder.id == selectedFolder);
+	const folder = FOLDERS.find((folder) => folder.id === selectedFolderIndex);
 
 	return (
-		<ResponsiveContainer width="100%" className="my-6" height={200}>
+		<ResponsiveContainer width="100%" height={200}>
 			<BarChart data={data}>
-				<XAxis dataKey="name" stroke="#fff" fontSize={12} tickLine={false} axisLine={false} />
+				<XAxis dataKey="name" stroke="currentColor" fontSize={12} tickLine={false} axisLine={false} />
 				<YAxis
-					stroke="#fff"
+					stroke="currentColor"
 					fontSize={12}
 					tickLine={false}
 					axisLine={false}
@@ -115,7 +94,10 @@ function BarStatistic({
 				/>
 				<Bar dataKey="total" radius={[4, 4, 0, 0]}>
 					{data.map((entry, index) => (
-						<Cell key={`cell-${index}`} fill={folder?.name == entry.name ? '#fbebb7' : 'currentColor'} />
+						<Cell
+							key={`cell-${index}`}
+							fill={folder?.name === entry.name ? 'var(--primary)' : 'var(--muted)'}
+						/>
 					))}
 				</Bar>
 			</BarChart>
@@ -123,39 +105,38 @@ function BarStatistic({
 	);
 }
 
-function History({
-	selectedFolder,
-	setSelectedFolder,
+function FolderNavigation({
+	selectedFolderIndex,
+	setSelectedFolderIndex,
 }: {
-	selectedFolder: number;
-	setSelectedFolder: (id: number) => void;
+	selectedFolderIndex: number;
+	setSelectedFolderIndex: (id: number) => void;
 }) {
 	return (
-		<div className="flex w-full justify-center align-middle xl:mx-10 xl:w-1/6">
-			<div className="my-[10%] grid h-2/3 grid-cols-4 gap-1 gap-y-0 lg:grid-cols-8 xl:grid-cols-2">
+		<div className="w-full xl:w-1/6">
+			<div className="grid grid-cols-4 gap-2 lg:grid-cols-8 xl:grid-cols-2">
 				{FOLDERS.map((folder) => (
-					<div
-						className="rounded-xl p-5 hover:bg-gradient-to-br hover:shadow-lg sm:hover:cursor-pointer sm:hover:bg-gradient sm:hover:text-black"
+					<Button
 						key={folder.id}
-						onClick={() => setSelectedFolder(folder.id)}
+						variant={selectedFolderIndex === folder.id ? 'default' : 'outline'}
+						className="flex h-auto flex-col items-center gap-2 p-4"
+						onClick={() => setSelectedFolderIndex(folder.id)}
 					>
-						<div className="w-[36px] md:w-[40px] lg:w-[56px]">
-							{selectedFolder == folder.id ? (
-								<FaRegFolderOpen size="100%" />
-							) : (
-								<FaRegFolder size="100%" />
-							)}
-						</div>
-						<h1 className="text-xl">{folder.name}</h1>
-					</div>
+						{selectedFolderIndex === folder.id ? (
+							<FolderOpen className="h-8 w-8" />
+						) : (
+							<Folder className="h-8 w-8" />
+						)}
+						<span>{folder.name}</span>
+					</Button>
 				))}
 			</div>
 		</div>
 	);
 }
 
-function ImagesContainer({ selectedFolder, className }: { selectedFolder: number; className?: string | undefined }) {
-	const folder = FOLDERS.find((folder) => folder.id == selectedFolder);
+function ImagesContainer({ selectedFolderIndex, className }: { selectedFolderIndex: number; className?: string }) {
+	const folder = FOLDERS.find((folder) => folder.id === selectedFolderIndex);
 	const [isFirstImageVisible, setIsFirstImageVisible] = useState(false);
 	const [isSecondImageVisible, setIsSecondImageVisible] = useState(false);
 
@@ -175,28 +156,36 @@ function ImagesContainer({ selectedFolder, className }: { selectedFolder: number
 			clearTimeout(timer1);
 			clearTimeout(timer2);
 		};
-	}, [selectedFolder]);
+	}, [selectedFolderIndex]);
 
-	if (folder) {
-		return (
-			<div className={`relative w-full p-10 py-12 xl:w-1/2 ${className}`}>
-				<div
-					className={`scaleUp absolute left-2 top-4/12  z-20 w-[280px]  overflow-hidden rounded-xl sm:left-6 sm:w-[310px] lg:-top-4/12 lg:left-1/12 lg:w-[360px] lg:overflow-visible xl:left-6 xl:top-2/12 xl:w-[400px] xl:overflow-hidden 2xl:w-[450px] ${
-						isFirstImageVisible ? 'visible' : 'hidden'
-					}`}
-				>
-					<Image key={`${folder.id} image 1`} alt={`${folder?.name} image 1`} src={folder.image1} />
-				</div>
-				<div
-					className={`scaleUp absolute bottom-1/12 right-2 z-30  w-[280px] overflow-hidden rounded-xl sm:right-6 sm:w-[310px] lg:-bottom-10 lg:right-1/12 lg:w-[360px] lg:overflow-visible xl:bottom-10 xl:right-10 xl:w-[400px] xl:overflow-hidden 2xl:w-[450px] ${
-						isSecondImageVisible ? 'visible' : 'hidden'
-					}`}
-				>
-					<Image key={`${folder.id} image 2`} alt={`${folder?.name} image 2`} src={folder.image2} />
-				</div>
+	if (!folder) return null;
+
+	return (
+		<div className={`relative h-[500px] ${className ?? 'w-full'}`}>
+			<div
+				className={`absolute left-4 top-4 z-20 w-[280px] overflow-hidden rounded-lg shadow-lg transition-all 
+          duration-500 sm:w-[310px] lg:w-[360px] xl:w-[400px] 2xl:w-[450px] 
+          ${isFirstImageVisible ? 'translate-y-0 opacity-100' : '-translate-y-8 opacity-0'}`}
+			>
+				<Image
+					key={`${folder.id}-image-1`}
+					alt={`${folder.name} image 1`}
+					src={folder.image1 || '/placeholder.svg'}
+					className="h-auto w-full"
+				/>
 			</div>
-		);
-	} else {
-		return null;
-	}
+			<div
+				className={`absolute bottom-4 right-4 z-30 w-[280px] overflow-hidden rounded-lg shadow-lg transition-all 
+          duration-500 sm:w-[310px] lg:w-[360px] xl:w-[400px] 2xl:w-[450px] 
+          ${isSecondImageVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
+			>
+				<Image
+					key={`${folder.id}-image-2`}
+					alt={`${folder.name} image 2`}
+					src={folder.image2 || '/placeholder.svg'}
+					className="h-auto w-full"
+				/>
+			</div>
+		</div>
+	);
 }

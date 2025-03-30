@@ -1,3 +1,6 @@
+import { BsPeople } from "react-icons/bs";
+import { PiProjectorScreenChart } from "react-icons/pi";
+
 export const STATISTICS = [
 	{
 		title: 'Участници',
@@ -39,7 +42,7 @@ export const STATISTICS = [
 				total: 345,
 			},
 		],
-		icon: 'BsPeople',
+		icon: BsPeople,
 		description: 'Участниците са от голямо значение за нас, защото те са тези, които създават събитието.',
 	},
 	{
@@ -83,7 +86,7 @@ export const STATISTICS = [
 			},
 		],
 		description: 'Проектите са от голямо значение за нас, защото те са тези, които създават събитието.',
-		icon: 'PiProjectorScreenChart',
+		icon: PiProjectorScreenChart,
 	},
 	// {
 	// 	title: 'Спонсори и Партньори',
@@ -121,7 +124,7 @@ export const STATISTICS = [
 	// 			total: 41,
 	// 		},
 	// 	],
-	// 	icon: 'FaRegBuilding',
+	// 	icon: FaRegBuilding,
 	// 	description: 'Спонсорите и партньорите ни са от голямо значение за провеждането на събитието.',
 	// },
 	// {
@@ -160,7 +163,7 @@ export const STATISTICS = [
 	// 			total: 0,
 	// 		},
 	// 	],
-	// 	icon: 'GrAchievement',
+	// 	icon: GrAchievement,
 	// 	description: 'Всяка година се награждават най-добрите проекти в различни категории.',
 	// },
 ];

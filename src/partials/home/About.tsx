@@ -1,75 +1,82 @@
 import Link from 'next/link';
-import { ABOUT_BUTTON, ABOUT_IMAGE, ABOUT_SUBTEXT, ABOUT_TEXT, ABOUT_TITLE } from '@/constants/home/about';
+import { ExternalLink } from 'lucide-react';
 
-import 'animate.css';
-
-import Image from 'next/image';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { ABOUT_BUTTON, ABOUT_IMAGE, ABOUT_TITLE } from '@/constants/home/about';
 
 const About = () => (
-	<section id="about" className="p-8 md:p-12">
-		<div className="mb-5 flex flex-col items-center gap-8 whitespace-pre-line lg:flex-row">
+	<section id="about" className="px-4 py-12 md:px-8">
+		<div className="flex flex-col gap-8 lg:flex-row">
 			{/* Text info */}
-			<div className="flex w-full flex-col gap-4 text-justify">
-				<h2 className="bg-gradient bg-clip-text text-4xl font-black text-transparent sm:text-5xl">
-					{ABOUT_TITLE}
-				</h2>
-				<p className="">
-					Денят на отворените врати на Технологично училище “Електронни системи” към Техническия университет -
+			<div className="flex w-full flex-col gap-4">
+				<h2 className="text-primary text-4xl font-bold sm:text-5xl">{ABOUT_TITLE}</h2>
+
+				<p className="text-foreground">
+					Денят на отворените врати на Технологично училище „Електронни системи“ към Техническия университет -
 					София, познат като ТУЕС ФЕСТ, наближава. Той ще се проведе на 20 и 21 април 2024 година на
-					територията на София Тех Парк в Иновационен Форум “Джон Атанасов”.
+					територията на София Тех Парк в Иновационен Форум „Джон Атанасов“.
 				</p>
-				<p className="">
+
+				<p className="text-foreground">
 					Ще имате възможност да се запознаете с ТУЕС към ТУ-София отблизо и с това какво ни прави различното
-					училище: {'\n'}✔️ Връзката ни с ИТ бизнеса; {'\n'}✔️ Образователния ни модел;{'\n'}✔️ Силната и
-					задружна общност;{'\n'}✔️ Връзката между настоящи и завършили възпитаници; {'\n'}✔️ Специалностите и
-					предметите, които се изучават в ТУЕС към ТУ-София.
+					училище:
 				</p>
-				<p className="">
+
+				<ul className="text-foreground">
+					<li>✔️ Връзката ни с ИТ бизнеса; </li>
+					<li>✔️ Образователния ни модел;</li>
+					<li>✔️ Силната и задружна общност;</li>
+					<li>✔️ Връзката между настоящи и завършили възпитаници; </li>
+					<li>✔️ Специалностите и предметите, които се изучават в ТУЕС към ТУ-София.</li>
+				</ul>
+
+				<p className="text-foreground">
 					TUES FEST 2024 &quot;Expand your horizon & Celebration through Innovation&quot; се организира от
 					ученици за ученици! Доброволческият екип на организаторите вярват, че за поредна година ще покажат
 					на света какво е да си ученик в ТУЕС към ТУ - София.
 				</p>
-				<p>
+
+				<p className="text-foreground">
 					Следете страницата на събитието{' '}
 					<Link
 						href="https://www.facebook.com/HackTUES"
 						target="_blank"
-						className="cursor-pointer font-semibold text-sand underline"
+						className="text-primary hover:text-primary/80 font-medium underline underline-offset-4"
 					>
 						Hack TUES § TUES FEST
 					</Link>
 					!
 				</p>
 
-				{/* <i>{ABOUT_SUBTEXT}</i> */}
+				<Button asChild variant="default" size="lg" className="font-bold uppercase">
+					<Link href="https://elsys-bg.org" target="_blank" className="flex items-center gap-2">
+						{ABOUT_BUTTON}
+						<ExternalLink className="h-4 w-4" />
+					</Link>
+				</Button>
 			</div>
+
 			{/* Image */}
 			<div className="w-full">
-				<div className="animate__backInRight overflow-hidden rounded-md animate__animated">
+				<div className="overflow-hidden rounded-lg">
 					<img
-						src={ABOUT_IMAGE}
-						alt=""
-						className="aspect-video w-full rounded-md object-cover object-bottom shadow-2xl outline-none"
+						src={ABOUT_IMAGE || '/placeholder.svg'}
+						alt="TUES FEST"
+						className="aspect-video w-full rounded-lg object-cover object-bottom shadow-md transition-all duration-300 hover:scale-105"
 					/>
 				</div>
 			</div>
 		</div>
-		<div className="w-full justify-center lg:w-1/2">
-			<Link
-				href={'https://elsys-bg.org'}
-				target="_blank"
-				className="text-md m-auto my-4 w-fit text-nowrap rounded-md bg-gradient px-4 py-2 font-bold uppercase shadow-2xl transition-transform duration-300 hover:scale-105 sm:text-xl md:mx-1/4"
-			>
-				<span
-					style={{
-						textShadow: '3px 3px 13px rgba(0, 0, 0, 0.4)',
-					}}
-					className="text-zinc"
-				>
-					{ABOUT_BUTTON}
-				</span>
-			</Link>
-		</div>
+
+		{/* <div className="mt-8 flex justify-center">
+					<Button asChild variant="default" size="lg" className="font-bold uppercase">
+						<Link href="https://elsys-bg.org" target="_blank" className="flex items-center gap-2">
+							{ABOUT_BUTTON}
+							<ExternalLink className="h-4 w-4" />
+						</Link>
+					</Button>
+				</div> */}
 	</section>
 );
 

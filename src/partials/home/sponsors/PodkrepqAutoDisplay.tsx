@@ -3,6 +3,9 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Globe } from 'lucide-react';
+import invariant from 'tiny-invariant';
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardTitle } from '@/components/ui/card';
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
@@ -10,11 +13,9 @@ import { Podkrepqsht } from '@/constants/home/sponsors';
 // import { getHackathonById } from '../_configs/archive';
 // import { Podkrepqsht } from '../_configs/podkrepq';
 import { cn } from '@/lib/utils';
-import { Globe } from 'lucide-react';
-import invariant from 'tiny-invariant';
 
 const readMoreClasses =
-	'rounded-sm font-bold text-black ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring text-black focus-visible:ring-offset-2';
+	'rounded-sm font-bold ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2';
 const readMoreText = 'Покажи повече';
 
 export default function PodkrepqAutoDisplay({
@@ -64,17 +65,15 @@ export default function PodkrepqAutoDisplay({
 			</ul>
 			<div className="ml-10 hidden h-96 items-center md:mt-10 md:flex md:w-[400px] lg:mt-20 lg:w-[600px]">
 				<Card className="flex w-full flex-col p-2">
-					<CardTitle className="pt-5 text-center text-black">{livePodkrepqsht.name}</CardTitle>
-					<CardContent className="h-full flex-shrink flex-grow p-5 text-black">
+					<CardTitle className="pt-5 text-center">{livePodkrepqsht.name}</CardTitle>
+					<CardContent className="h-full flex-shrink flex-grow p-5">
 						<div className="h-full">
 							{shouldShowDescription(livePodkrepqsht.description) ? (
 								<>
 									<div className="flex h-24 flex-shrink flex-grow flex-col overflow-clip">
 										<div className="inline-flex h-full flex-1 flex-shrink flex-grow [mask-image:linear-gradient(to_bottom,white,calc(100%-20px),transparent)]">
 											{livePodkrepqsht.description.split('\n').map((p) => (
-												<p key={p} className="text-black">
-													{p}
-												</p>
+												<p key={p}>{p}</p>
 											))}
 										</div>
 									</div>
@@ -139,7 +138,7 @@ function PodkrepqReadMore({
 			<DialogTrigger asChild>
 				<button className={readMoreClasses}>{readMoreText}</button>
 			</DialogTrigger>
-			<DialogContent className="bg-white">
+			<DialogContent>
 				<DialogHeader>
 					<DialogTitle>{name}</DialogTitle>
 				</DialogHeader>

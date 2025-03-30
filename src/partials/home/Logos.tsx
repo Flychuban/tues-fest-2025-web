@@ -1,40 +1,63 @@
 'use client';
 
 import Link from 'next/link';
-import { TbClockHour4, TbMapPin } from 'react-icons/tb';
+import { Clock4, MapPin } from 'lucide-react';
 
+import { buttonVariants } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { Separator } from '@/components/ui/separator';
 import { TF_DATE_STRING, TF_LOCATION } from '@/constants/event';
+import { cn } from '@/lib/utils';
 
-export default function Logos() {
+export default function EventLanding() {
 	return (
-		<div className="w-11/12 sm:w-2/3 md:w-3/4 lg:w-1/2">
-			<div className="m-10 hidden rounded-xl border border-[#F2F2F2] bg-opacity-0 bg-clip-padding p-8 drop-shadow-lg backdrop-blur-sm backdrop-filter sm:m-0 sm:border-2 md:block">
-				<div className="flex w-full">
-					<img src={'/35.png'} alt="35elsys" className="h-1/12 w-2/6" />
-					<img src="moto1.png" alt="tues-fest-moto" className="h-1/12 w-2/3" />
-				</div>
-			</div>
-			<div className="m-2 mt-16 block rounded-xl border border-[#F2F2F2] bg-opacity-0 bg-clip-padding p-3 drop-shadow-lg backdrop-blur-sm backdrop-filter sm:m-0 sm:border-2 md:hidden">
-				<img src={'/assets/TitleMobile.webp'} alt="titleMobile" className="w-full" />
-				<div className="flex w-full">
-					<img src={'/35.png'} alt="35elsys" className="h-1/12 w-2/6" />
-					<img src="moto1.png" alt="tues-fest-moto" className="h-1/12 w-2/3" />
-				</div>
-			</div>
+		<div className="mx-auto w-11/12 sm:w-2/3 md:w-3/4 lg:w-1/2">
+			<Card className="bg-background/80 border-border backdrop-blur-sm">
+				<CardContent className="flex flex-col gap-6 p-4 sm:p-6 md:p-8">
+					{/* Desktop logo section */}
+					<div className="hidden md:block">
+						<div className="flex w-full">
+							<img src="/35.png" alt="35elsys" className="h-auto w-2/6" />
+							<img src="/moto1.png" alt="tues-fest-moto" className="h-auto w-2/3" />
+						</div>
+					</div>
 
-			<div className="relative z-20 mx-1/6 mt-8 flex flex-col items-stretch gap-4 text-center sm:mx-auto sm:max-w-md sm:items-center sm:justify-center">
-				<Link
-					href="/location"
-					className="flex w-full items-center justify-center gap-2 rounded-lg border border-[#FEFEFE] bg-opacity-0 px-4 py-2 text-lg backdrop-blur-sm backdrop-filter sm:hidden sm:border-2"
-				>
-					<TbMapPin size={24} />
-					<p>{TF_LOCATION}</p>
-				</Link>
-				<div className="flex w-full items-center justify-center gap-2 rounded-lg border border-[#FEFEFE] bg-opacity-0 px-4 py-2 text-lg  backdrop-blur-sm backdrop-filter sm:border-2">
-					<TbClockHour4 size={24} />
-					<p>{TF_DATE_STRING}</p>
-				</div>
-			</div>
+					{/* Mobile logo section */}
+					<div className="block md:hidden">
+						<img src="/assets/TitleMobile.webp" alt="titleMobile" className="w-full" />
+						<div className="mt-2 flex w-full">
+							<img src="/35.png" alt="35elsys" className="h-auto w-2/6" />
+							<img src="/moto1.png" alt="tues-fest-moto" className="h-auto w-2/3" />
+						</div>
+					</div>
+
+					<Separator className="bg-border" />
+
+					{/* Event details - flex-col on mobile, flex-row on desktop */}
+					<div className="flex flex-col items-stretch gap-4 text-center sm:flex-row sm:gap-6">
+						<div
+							className={cn(
+								buttonVariants({ variant: 'outline' }),
+								'flex h-auto w-full items-center justify-center gap-2 sm:flex-1'
+							)}
+						>
+							<Clock4 className="text-primary h-5 w-5" />
+							<p className="text-foreground">{TF_DATE_STRING}</p>
+						</div>
+
+						<Link
+							href="/location"
+							className={cn(
+								buttonVariants({ variant: 'outline' }),
+								'flex h-auto w-full items-center justify-center gap-2 sm:flex-1'
+							)}
+						>
+							<MapPin className="text-primary h-5 w-5" />
+							<span>{TF_LOCATION}</span>
+						</Link>
+					</div>
+				</CardContent>
+			</Card>
 		</div>
 	);
 }

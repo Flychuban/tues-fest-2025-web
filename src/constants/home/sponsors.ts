@@ -1,3 +1,51 @@
+import a1Logo from '@/sponsors/alpha/a1.png';
+import appolicaLogo from '@/sponsors/alpha/appolica.png';
+import boschECSLogo from '@/sponsors/alpha/bosch-engineering-center-sofia.png';
+import codbexLogo from '@/sponsors/alpha/codbex-orange-logo.png';
+import dxcLogo from '@/sponsors/alpha/dxc.png';
+import elevenVenturesLogo from '@/sponsors/alpha/eleven-ventures.png';
+import limeChainLogo from '@/sponsors/alpha/limechain.png';
+import m2m from '@/sponsors/alpha/m2m.png';
+import sapLogo from '@/sponsors/alpha/sap.png';
+import stenikLogo from '@/sponsors/alpha/stenik.png';
+import tbsLogo from '@/sponsors/alpha/tbs.png';
+import trading212Logo from '@/sponsors/alpha/trading212.png';
+import yettelLogo from '@/sponsors/alpha/yettelLogo.png';
+
+import chaosLogo from '@/sponsors/beta/chaos1.png';
+import devrixLogo from '@/sponsors/beta/devrix.png';
+import experianLogo from '@/sponsors/beta/experian.png';
+import haemimontLogo from '@/sponsors/beta/haemimont.png';
+import ibm from '@/sponsors/beta/ibm.jpg';
+import itGixLogo from '@/sponsors/beta/itGix.png';
+import nettera from '@/sponsors/beta/nettera.png';
+import sirmaLogo from '@/sponsors/beta/sirma.png';
+import stamsoftLogo from '@/sponsors/beta/stamsoft.png';
+import storpool from '@/sponsors/beta/storpool.png';
+import strypesLogo from '@/sponsors/beta/strypes.png';
+import telebidProLogo from '@/sponsors/beta/telebidPro.png';
+import tumbaSolutionsLogo from '@/sponsors/beta/tumba-solutions.png';
+
+import accediaLogo from '@/sponsors/gamma/accedia.png';
+import asteaSolutionsLogo from '@/sponsors/gamma/astea-solutions.png';
+import globalFoundriesLogo from '@/sponsors/gamma/globalfoundries.png';
+import nemetschekLogo from '@/sponsors/gamma/nemetschek.png';
+import ocadoTechnologyLogo from '@/sponsors/gamma/ocado-technology.png';
+import progressLogo from '@/sponsors/gamma/progress.png';
+
+import aztuesLogo from '@/sponsors/partners/aztues.png';
+import boniLogo from '@/sponsors/partners/boni.png';
+import cometLogo from '@/sponsors/partners/comet.png';
+import corporateLogo from '@/sponsors/partners/corporate.png';
+import culligan from '@/sponsors/partners/culligan.jpg';
+import dominosLogo from '@/sponsors/partners/dominos.png';
+import greenCherryLogo from '@/sponsors/partners/green_cherry.png';
+import jmrLogo from '@/sponsors/partners/joker-media-rental.png';
+import pureWaterLogo from '@/sponsors/partners/pure_water.png';
+import remoLogo from '@/sponsors/partners/remo-mebeli.png';
+import smartcomLogo from '@/sponsors/partners/smartcom.png';
+import sofiaTechParkLogo from '@/sponsors/partners/sofia-tech-park.png';
+
 import darikBusinessReviewLogo from '@/media//dbr.webp';
 import bloombergLogo from '@/media/bloomberg.png';
 import bnrLogo from '@/media/bnr.png';
@@ -10,61 +58,6 @@ import karieribgLogo from '@/media/karieribg.png';
 import managerLogo from '@/media/manager.webp';
 import obektiBgLogo from '@/media/obekti.jpg';
 import ttlMedia from '@/media/ttl.png';
-//Partners
-import a1Logo from '@/sponsors/alpha/a1.png';
-import appolicaLogo from '@/sponsors/alpha/appolica.png';
-import boschECSLogo from '@/sponsors/alpha/bosch-engineering-center-sofia.png';
-import codbexLogo from '@/sponsors/alpha/codbex-orange-logo.png';
-import dxcLogo from '@/sponsors/alpha/dxc.png';
-import elevenVenturesLogo from '@/sponsors/alpha/eleven-ventures.png';
-import limeChainLogo from '@/sponsors/alpha/limechain.png';
-//Media
-
-//Alpha sponsors
-import m2m from '@/sponsors/alpha/m2m.png';
-import sapLogo from '@/sponsors/alpha/sap.png';
-import stenikLogo from '@/sponsors/alpha/stenik.png';
-import tbsLogo from '@/sponsors/alpha/tbs.png';
-import trading212Logo from '@/sponsors/alpha/trading212.png';
-import yettelLogo from '@/sponsors/alpha/yettelLogo.png';
-import chaosLogo from '@/sponsors/beta/chaos1.png';
-import devrixLogo from '@/sponsors/beta/devrix.png';
-import experianLogo from '@/sponsors/beta/experian.png';
-import haemimontLogo from '@/sponsors/beta/haemimont.png';
-import ibm from '@/sponsors/beta/ibm.jpg';
-import itGixLogo from '@/sponsors/beta/itGix.png';
-import nettera from '@/sponsors/beta/nettera.png';
-import sirmaLogo from '@/sponsors/beta/sirma.png';
-import stamsoftLogo from '@/sponsors/beta/stamsoft.png';
-//Alpha sponsors
-
-//Beta sponsors
-import storpool from '@/sponsors/beta/storpool.png';
-import strypesLogo from '@/sponsors/beta/strypes.png';
-import telebidProLogo from '@/sponsors/beta/telebidPro.png';
-import tumbaSolutionsLogo from '@/sponsors/beta/tumba-solutions.png';
-//Beta sponsors
-
-//Gamma sponsors
-import accediaLogo from '@/sponsors/gamma/accedia.png';
-import asteaSolutionsLogo from '@/sponsors/gamma/astea-solutions.png';
-import globalFoundriesLogo from '@/sponsors/gamma/globalfoundries.png';
-import nemetschekLogo from '@/sponsors/gamma/nemetschek.png';
-import ocadoTechnologyLogo from '@/sponsors/gamma/ocado-technology.png';
-import progressLogo from '@/sponsors/gamma/progress.png';
-import aztuesLogo from '@/sponsors/partners/aztues.png';
-import boniLogo from '@/sponsors/partners/boni.png';
-import cometLogo from '@/sponsors/partners/comet.png';
-import corporateLogo from '@/sponsors/partners/corporate.png';
-import culligan from '@/sponsors/partners/culligan.jpg';
-import dominosLogo from '@/sponsors/partners/dominos.png';
-import greenCherryLogo from '@/sponsors/partners/green_cherry.png';
-//Gamma sponsors
-import jmrLogo from '@/sponsors/partners/joker-media-rental.png';
-import pureWaterLogo from '@/sponsors/partners/pure_water.png';
-import remoLogo from '@/sponsors/partners/remo-mebeli.png';
-import smartcomLogo from '@/sponsors/partners/smartcom.png';
-import sofiaTechParkLogo from '@/sponsors/partners/sofia-tech-park.png';
 
 const ALPHA_SPONSORS = [
 	{
@@ -284,7 +277,7 @@ const GAMMA_SPONSORS = [
 		supportedEditions: ['hacktues-infinity'],
 	},
 	{
-		name: 'Nemetschek Bulgaria',
+		name: 'Nemetschek Bulgaria ',
 		logo: nemetschekLogo,
 		url: 'https://www.nemetschek.bg/',
 		description:
@@ -300,7 +293,7 @@ const GAMMA_SPONSORS = [
 		],
 	},
 	{
-		name: 'Ocado Technology',
+		name: 'Ocado Technology ',
 		logo: ocadoTechnologyLogo,
 		url: 'https://www.ocadogroup.com/technology/technology-pioneers/',
 		description:

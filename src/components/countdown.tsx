@@ -121,25 +121,25 @@ const Countdown = () => {
 		// <div className={countdownStyles.stack /* + ' animate__animated animate__fadeInTopRight' */}>
 		// 	{Array.from({ length: 3 }, (_, i) => (
 		// 		<ul key={i} id={countdownStyles['stack' + i]} className={countdownStyles.countdown + ' gap-4'}>
-		// 			<li id={countdownStyles.days} className="bg-bg-color rounded-xl border border-border">
+		// 			<li id={countdownStyles.days} className="bg-background rounded-xl border border-border">
 		// 				<div className={countdownStyles.number + ' ' + countdownStyles.animate}>
 		// 					{format(countdown.days)}
 		// 				</div>
 		// 				<div className={countdownStyles.label}>дни</div>
 		// 			</li>
-		// 			<li id={countdownStyles.hours} className="bg-bg-color rounded-xl border border-border">
+		// 			<li id={countdownStyles.hours} className="bg-background rounded-xl border border-border">
 		// 				<div className={countdownStyles.number + ' ' + countdownStyles.animate}>
 		// 					{format(countdown.hours)}
 		// 				</div>
 		// 				<div className={countdownStyles.label}>часове</div>
 		// 			</li>
-		// 			<li id={countdownStyles.minutes} className="bg-bg-color rounded-xl border border-border">
+		// 			<li id={countdownStyles.minutes} className="bg-background rounded-xl border border-border">
 		// 				<div className={countdownStyles.number + ' ' + countdownStyles.animate}>
 		// 					{format(countdown.minutes)}
 		// 				</div>
 		// 				<div className={countdownStyles.label}>минути</div>
 		// 			</li>
-		// 			<li id={countdownStyles.seconds} className="bg-bg-color rounded-xl border border-border">
+		// 			<li id={countdownStyles.seconds} className="bg-background rounded-xl border border-border">
 		// 				<div className={countdownStyles.number + ' ' + countdownStyles.animate}>
 		// 					{format(countdown.seconds)}
 		// 				</div>

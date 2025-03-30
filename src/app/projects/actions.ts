@@ -1,5 +1,6 @@
 import React from 'react';
 import { unstable_cache } from 'next/cache';
+
 import TF2024ProjectsAdapter from '@/app/projects/adapter';
 
 const adapter = TF2024ProjectsAdapter();
