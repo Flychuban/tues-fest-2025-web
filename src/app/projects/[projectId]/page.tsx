@@ -111,7 +111,7 @@ const ProjectPage = async (props: { params: Promise<{ projectId: string }> }) =>
 				<ProjectsPath path={path} />
 			</Suspense>
 			<div className="container mb-20 pt-16 sm:px-8">
-				<Card className="border-stroke m-auto w-full border bg-black text-white opacity-100 sm:px-4 md:w-[90%] lg:w-[70%]">
+				<Card className="m-auto w-full border bg-black text-white opacity-100 sm:px-4 md:w-[90%] lg:w-[70%]">
 					<CardHeader className="pt-10">
 						<CardTitle className="text-center text-3xl">{project.title}</CardTitle>
 					</CardHeader>

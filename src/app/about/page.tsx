@@ -1,6 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
 import { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
 import { TbBriefcase, TbHistory, TbSchool, TbTrophy } from 'react-icons/tb';
 
@@ -80,7 +78,7 @@ const AboutPage = () => {
 										className="relative flex h-full flex-col gap-2 rounded-xl bg-transparent p-3 backdrop-blur-md"
 									>
 										<h4 className="text-xl font-bold">Компютърни мрежи</h4>
-										<div className="bg-stroke h-[1px] w-full" />
+										<Separator />
 										<p className="text-md">
 											Първата крачка към вълнуващата инженерна професия. Ще учите за проектиране
 											на електроника, комуникации, мрежи, роботика и IoT.

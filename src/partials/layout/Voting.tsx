@@ -41,7 +41,7 @@ const VotingModal = ({ closeModal }: { closeModal: () => void }) => {
 		<div className="fixed left-0 top-0 z-50 flex h-screen w-screen items-center justify-center bg-black bg-opacity-50">
 			{!showLast && !showResult && (
 				<div className="flex h-full w-full items-center justify-center">
-					<div className="border-border bg-bg-color z-50 w-full max-w-2xl rounded-lg border p-4">
+					<div className="z-50 w-full max-w-2xl rounded-lg border border-border bg-background p-4">
 						<div className="flex items-center justify-between">
 							<h2 className="text-2xl font-bold">Още малко остава</h2>
 							<button
@@ -63,14 +63,14 @@ const VotingModal = ({ closeModal }: { closeModal: () => void }) => {
 								<input
 									type="text"
 									id="name"
-									className={`bg-bg-color w-full border ${
+									className={`w-full border bg-background ${
 										nameError ? 'border-error' : 'border-border'
 									} rounded-lg p-2`}
 									value={info.name}
 									placeholder="Иван Иванов"
 									onChange={(e) => setInfo({ ...info, name: e.target.value })}
 								/>
-								{votingError || (nameError && <p className="text-error text-sm">Моля, въведете име</p>)}
+								{votingError || (nameError && <p className="text-sm text-error">Моля, въведете име</p>)}
 							</div>
 							<div className="flex w-full flex-col gap-2">
 								<label htmlFor="email" className="text-sm font-medium">
@@ -79,7 +79,7 @@ const VotingModal = ({ closeModal }: { closeModal: () => void }) => {
 								<input
 									type="email"
 									id="email"
-									className={`bg-bg-color w-full border ${
+									className={`w-full border bg-background ${
 										emailError ? 'border-error' : 'border-border'
 									} rounded-lg p-2`}
 									value={info.email}
@@ -87,11 +87,11 @@ const VotingModal = ({ closeModal }: { closeModal: () => void }) => {
 									onChange={(e) => setInfo({ ...info, email: e.target.value })}
 								/>
 								{votingError ||
-									(emailError && <p className="text-error  text-sm">Моля, въведете валиден имейл</p>)}
+									(emailError && <p className="text-sm  text-error">Моля, въведете валиден имейл</p>)}
 							</div>
 						</div>
 						<button
-							className="bg-primary-color border-stroke bg-border hover:bg-primary mt-4 w-full rounded-lg border py-2 font-bold text-white transition-all duration-300"
+							className="bg-primary-color mt-4 w-full rounded-lg border bg-border py-2 font-bold text-white transition-all duration-300 hover:bg-primary"
 							onClick={handleInfo}
 						>
 							Потвърди
@@ -102,21 +102,21 @@ const VotingModal = ({ closeModal }: { closeModal: () => void }) => {
 			{showLast && (
 				<div className="fixed left-0 top-0 z-50 flex h-full w-full items-center justify-center bg-black bg-opacity-50">
 					<div className="flex h-full w-full items-center justify-center">
-						<div className="border-border bg-bg-color z-50 w-full max-w-2xl rounded-lg border p-4">
+						<div className="z-50 w-full max-w-2xl rounded-lg border border-border bg-background p-4">
 							<p className="text-error">
 								Сигурни ли сте, че искате да използвате{' '}
-								<span className="text-error font-bold italic underline">{info.email}</span>, за да
+								<span className="font-bold italic text-error underline">{info.email}</span>, за да
 								получите линк за потвърждение?
 							</p>
 							<div className="mt-4 flex w-full items-center justify-between gap-4">
 								<button
-									className="bg-primary-color border-stroke bg-border hover:bg-primary w-1/2 rounded-lg border py-2 font-bold text-white transition-all duration-300"
+									className="bg-primary-color w-1/2 rounded-lg border bg-border py-2 font-bold text-white transition-all duration-300 hover:bg-primary"
 									onClick={handleVote}
 								>
 									Гласувай
 								</button>
 								<button
-									className="border-border bg-bg-color w-1/2 rounded-lg border p-2 transition-all duration-300"
+									className="w-1/2 rounded-lg border border-border bg-background p-2 transition-all duration-300"
 									onClick={() => setShowLast(false)}
 								>
 									Отказ
@@ -129,7 +129,7 @@ const VotingModal = ({ closeModal }: { closeModal: () => void }) => {
 			{showResult && (
 				<div className="fixed left-0 top-0 z-50 flex h-full w-full items-center justify-center bg-black bg-opacity-50">
 					<div className="flex h-full w-full items-center justify-center">
-						<div className="border-border bg-bg-color z-50 w-full max-w-2xl rounded-lg border p-4">
+						<div className="z-50 w-full max-w-2xl rounded-lg border border-border bg-background p-4">
 							{votingError ? (
 								<p className="text-error">
 									Възникна грешка при гласуването. Моля, опитайте отново.
@@ -144,7 +144,7 @@ const VotingModal = ({ closeModal }: { closeModal: () => void }) => {
 								<p className="text-success">Вашият глас бе актуализиран успешно!</p>
 							)}
 							<button
-								className="bg-primary-color border-stroke bg-border hover:bg-primary mt-4 w-full rounded-lg border py-2 font-bold text-white transition-all duration-300"
+								className="bg-primary-color mt-4 w-full rounded-lg border bg-border py-2 font-bold text-white transition-all duration-300 hover:bg-primary"
 								onClick={() => handleClose()}
 							>
 								ОК
@@ -175,7 +175,7 @@ const VotingCategory = ({
 				className={`flex w-full items-center justify-between py-2 ${error ? '!text-error' : ''}`}
 			>
 				<div className="flex items-center gap-4">
-					<div className="border-border bg-bg-color flex h-12 w-12 items-center justify-center rounded-full border" />
+					<div className="flex h-12 w-12 items-center justify-center rounded-full border border-border bg-background" />
 					<p className={`text-md line-clamp-1 font-bold ${error ? '!text-error' : ''}`}>{cat.text}</p>
 				</div>
 				<p className="p-2 text-sm font-medium opacity-75 transition-all duration-300 hover:opacity-100">
@@ -188,7 +188,7 @@ const VotingCategory = ({
 	return (
 		<div className={`flex w-full items-center justify-between py-2 ${error ? '!text-error' : ''}`}>
 			<div className="flex items-center gap-4">
-				<div className="border-border bg-bg-color relative flex aspect-square h-12 w-12 shrink-0 items-center justify-center overflow-hidden break-words rounded-full border">
+				<div className="relative flex aspect-square h-12 w-12 shrink-0 items-center justify-center overflow-hidden break-words rounded-full border border-border bg-background">
 					<img
 						src={category.image ?? ''}
 						alt={category.name}
@@ -227,7 +227,7 @@ const VotingOverlay = ({ showModal }: { showModal: () => void }) => {
 					<div
 						className={`mx-4 w-full sm:w-96 ${
 							minimized ? 'flex h-16 items-center' : 'h-[26rem] pt-4'
-						} border-border bg-bg-color rounded-xl border bg-opacity-75 p-2  drop-shadow-lg backdrop-blur-md transition-all duration-300`}
+						} rounded-xl border border-border bg-background bg-opacity-75 p-2  drop-shadow-lg backdrop-blur-md transition-all duration-300`}
 					>
 						<div className={`relative ${minimized ? 'h-fit w-full shrink-0' : 'h-16'}`}>
 							<div className="relative flex w-full items-center justify-between px-4">
@@ -245,7 +245,7 @@ const VotingOverlay = ({ showModal }: { showModal: () => void }) => {
 									</span>
 								</p>
 								<button
-									className="border-border bg-bg-color hover:border-stroke hover:bg-border rounded-full border bg-opacity-75 p-2 transition-all duration-300"
+									className="rounded-full border border-border bg-background bg-opacity-75 p-2 transition-all duration-300 hover:hover:bg-border"
 									onClick={() => setMinimized(!minimized)}
 								>
 									{!minimized ? (
@@ -261,7 +261,7 @@ const VotingOverlay = ({ showModal }: { showModal: () => void }) => {
 								minimized ? 'hidden' : 'block'
 							}`}
 						>
-							<div className="divide-stroke flex w-full flex-col divide-y">
+							<div className="flex w-full flex-col divide-y divide-stroke">
 								<VotingCategory
 									category={embedded}
 									cat={{ ...PROJECT_CATEGORY_MAP.software, text: 'Избор 1', href: '/projects' }}
@@ -279,7 +279,7 @@ const VotingOverlay = ({ showModal }: { showModal: () => void }) => {
 								/>
 							</div>
 							<button
-								className="border-border bg-primary hover:border-stroke hover:bg-primary flex items-center justify-center rounded-xl border bg-opacity-75 px-6 py-2 text-lg font-bold transition-all duration-300"
+								className="flex items-center justify-center rounded-xl border border-border bg-primary bg-opacity-75 px-6 py-2 text-lg font-bold transition-all duration-300 hover:hover:bg-primary"
 								onClick={
 									!hasVerifiedVote
 										? showModal

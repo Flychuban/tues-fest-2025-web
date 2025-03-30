@@ -21,7 +21,7 @@ const ProjectsPath = ({
 	return (
 		<section className="pt-28">
 			<div className="container">
-				<Card className="border-stroke mx-4 rounded-lg border-2 bg-black px-8 py-5 text-white opacity-100">
+				<Card className="mx-4 rounded-lg border-2 bg-black px-8 py-5 text-white opacity-100">
 					<ul className="items-cente flex flex-wrap gap-3 text-ellipsis">
 						{path.map((item) => (
 							<>

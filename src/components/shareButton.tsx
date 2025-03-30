@@ -34,7 +34,7 @@ const ShareButton = (): ReactElement => {
 	return (
 		<div className="absolute right-0 top-0 z-10 p-4">
 			<button
-				className="hover:bg-bg-color-hover border-border bg-bg-color flex items-center gap-2 rounded-xl border-2 px-4 py-2"
+				className="hover:bg-background-hover flex items-center gap-2 rounded-xl border-2 border-border bg-background px-4 py-2"
 				onClick={handleCopy}
 			>
 				<TbShare className="h-6 w-6" />
