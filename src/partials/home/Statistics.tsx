@@ -161,7 +161,7 @@ function ImagesContainer({ selectedFolderIndex, className }: { selectedFolderInd
 	if (!folder) return null;
 
 	return (
-		<div className={`relative h-[500px] ${className || 'w-full'}`}>
+		<div className={`relative h-[500px] ${className ?? 'w-full'}`}>
 			<div
 				className={`absolute left-4 top-4 z-20 w-[280px] overflow-hidden rounded-lg shadow-lg transition-all 
           duration-500 sm:w-[310px] lg:w-[360px] xl:w-[400px] 2xl:w-[450px] 
