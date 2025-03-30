@@ -9,7 +9,7 @@ import Testimonial from '@/partials/home/Testimonial';
 
 export default function Home() {
 	return (
-		<main className="m-auto">
+		<main className="mx-auto">
 			<section className="flex min-h-screen w-full flex-col items-center justify-center gap-4 overflow-hidden p-1 pt-4 sm:p-4 md:gap-16 ">
 				<Logos />
 			</section>
