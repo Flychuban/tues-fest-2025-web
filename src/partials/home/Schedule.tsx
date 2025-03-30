@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
-import { SCHEDULE_DAY1 } from '@/constants/home/schedule';
+import { SCHEDULE } from '@/constants/home/schedule';
 
 function Schedule() {
 	useEffect(() => {
@@ -25,7 +25,7 @@ function Schedule() {
 				<h2 className="text-accent-foreground font-title mb-8 text-5xl font-black">Програма</h2>
 
 				<div className="flex flex-col gap-16 pt-4">
-					{SCHEDULE_DAY1.map((item) => (
+					{SCHEDULE.map((item) => (
 						<div key={item.title} className="flex flex-col gap-4 sm:flex-row sm:items-start md:gap-6">
 							{/* Time Card */}
 							<Card className="w-full shrink-0 sm:w-32">
@@ -38,18 +38,11 @@ function Schedule() {
 
 							{/* Content Card */}
 							<Card className="w-full">
-								<CardHeader className="pb-2">
+								<CardHeader>
 									<CardTitle>{item.title}</CardTitle>
 								</CardHeader>
 								<Separator className="mx-6" />
-								<CardContent className="pt-4">
-									<div
-										className="text-muted-foreground"
-										dangerouslySetInnerHTML={{
-											__html: item.description,
-										}}
-									/>
-								</CardContent>
+								<CardContent className="text-muted-foreground">{item.description}</CardContent>
 							</Card>
 						</div>
 					))}
