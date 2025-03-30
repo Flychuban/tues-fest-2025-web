@@ -1,16 +1,16 @@
 // Този файл е генериран автоматично от архивираните проекти на TUES Fest 2024. Безопасно е да го редактирате ръчно.
 
-type ProjectAdapter = {}; // TODO: import predefined
+type ProjectAdapter = object; // TODO: import predefined
 
 export default function TF2024ProjectsAdapter() {
 	return {
-		async getProjects() {
+		async getProjects(this: void) {
 			return PROJECTS;
 		},
-		async getProjectsByCategory(category: string) {
+		async getProjectsByCategory(this: void, category: string) {
 			return PROJECTS.filter((project) => project.category === category);
 		},
-		async getProjectById(id: number) {
+		async getProjectById(this: void, id: number) {
 			return PROJECTS.find((project) => project.id === id) ?? null;
 		},
 	} satisfies ProjectAdapter;

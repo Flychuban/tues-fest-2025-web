@@ -44,13 +44,13 @@ export type Project = {
 	prev_id: number;
 };
 export async function generateMetadata(props: { params: Promise<{ projectId: string }> }) {
-    const params = await props.params;
-    const projectId = parseInt(params.projectId, 10);
-    const project = await getProjectById(projectId);
+	const params = await props.params;
+	const projectId = parseInt(params.projectId, 10);
+	const project = await getProjectById(projectId);
 
-    if (project === undefined || project === null) notFound();
+	if (project === undefined || project === null) notFound();
 
-    return {
+	return {
 		title: project.title,
 		description: project.description,
 		twitter: {
@@ -81,12 +81,12 @@ export async function generateStaticParams() {
 }
 
 const ProjectPage = async (props: { params: Promise<{ projectId: string }> }) => {
-    const params = await props.params;
-    const projectId = parseInt(params.projectId, 10);
-    const project = await getProjectById(projectId);
-    if (!project) notFound();
+	const params = await props.params;
+	const projectId = parseInt(params.projectId, 10);
+	const project = await getProjectById(projectId);
+	if (!project) notFound();
 
-    const path = [
+	const path = [
 		{
 			name: TF_TITLE,
 			url: '/',
@@ -101,17 +101,17 @@ const ProjectPage = async (props: { params: Promise<{ projectId: string }> }) =>
 		},
 	];
 
-    // FIXME: duplicate code, seen elsewhere
-    const thumbnail = project.thumbnail || project.images[0];
-    invariant(thumbnail, `Project with ID ${project.id} (${project.title}) has no thumbnail or images`);
+	// FIXME: duplicate code, seen elsewhere
+	const thumbnail = project.thumbnail ?? project.images[0];
+	invariant(thumbnail, `Project with ID ${project.id} (${project.title}) has no thumbnail or images`);
 
-    return (
+	return (
 		<div className="container">
 			<Suspense fallback={<div>Loading...</div>}>
 				<ProjectsPath path={path} />
 			</Suspense>
 			<div className="container mb-20 pt-16 sm:px-8">
-				<Card className="m-auto w-full border border-stroke bg-black text-white opacity-100 sm:px-4 md:w-[90%] lg:w-[70%]">
+				<Card className="border-stroke m-auto w-full border bg-black text-white opacity-100 sm:px-4 md:w-[90%] lg:w-[70%]">
 					<CardHeader className="pt-10">
 						<CardTitle className="text-center text-3xl">{project.title}</CardTitle>
 					</CardHeader>
