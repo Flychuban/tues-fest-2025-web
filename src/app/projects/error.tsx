@@ -16,7 +16,7 @@ export default function Error({ error, reset }: { error: Error; reset: () => voi
 				Нещо се обърка, пробвай пак
 			</h2>
 			<button
-				className="mt-8 rounded-md bg-primary px-5 py-2 text-white transition-all hover:scale-105"
+				className="bg-primary mt-8 rounded-md px-5 py-2 text-white transition-all hover:scale-105"
 				onClick={
 					// Attempt to recover by trying to re-render the segment
 					() => reset()

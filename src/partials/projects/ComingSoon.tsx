@@ -28,7 +28,7 @@ const Category = ({ name, img }: { name: string; img: string }) => (
 		<div className="absolute flex h-full w-full items-center justify-center">
 			<h3 className="text-center text-3xl font-bold text-white drop-shadow-2xl">{name}</h3>
 		</div>
-		<img src={img} alt={name} className="h-full w-full  rounded-lg border border-stroke object-cover" />
+		<img src={img} alt={name} className="border-stroke h-full  w-full rounded-lg border object-cover" />
 	</div>
 );
 

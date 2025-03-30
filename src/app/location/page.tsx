@@ -33,7 +33,7 @@ export default function Location() {
 							им позволява да се позиционират възможно най-бързо в технологичния сектор.
 						</p>
 					</div>
-					<div className="border-gray-300 w-full overflow-hidden rounded-lg border sm:w-[50%]">
+					<div className="w-full overflow-hidden rounded-lg border border-gray-300 sm:w-[50%]">
 						<iframe
 							src={LOCATION_MAP_URL}
 							title="Карта на локацията - Ларго, пл. Независимост, София"

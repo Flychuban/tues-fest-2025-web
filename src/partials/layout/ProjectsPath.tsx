@@ -2,6 +2,7 @@
 
 import { use, useEffect } from 'react';
 import Link from 'next/link';
+
 import { Card } from '@/components/ui/card';
 
 const ProjectsPath = ({
@@ -20,7 +21,7 @@ const ProjectsPath = ({
 	return (
 		<section className="pt-28">
 			<div className="container">
-				<Card className="mx-4 rounded-lg opacity-100 bg-black text-white border-2 border-stroke px-8 py-5">
+				<Card className="border-stroke mx-4 rounded-lg border-2 bg-black px-8 py-5 text-white opacity-100">
 					<ul className="items-cente flex flex-wrap gap-3 text-ellipsis">
 						{path.map((item) => (
 							<>

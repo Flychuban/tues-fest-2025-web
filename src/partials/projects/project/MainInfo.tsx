@@ -1,9 +1,6 @@
 import ShareButton from '@/components/shareButton';
 import { PROJECT_TYPES } from '@/constants/projects';
-
 import Video from './Video';
-
-// import VoteButton from './VoteButton';
 
 const MainInfo = ({
 	name,
@@ -19,8 +16,8 @@ const MainInfo = ({
 	thumbnail: string;
 }) => (
 	<div className="flex w-full max-w-screen-lg gap-4">
-		<div className="w-full shrink rounded-xl border-2 border-border bg-bg-color">
-			<div className="relative aspect-video overflow-hidden rounded-xl border-b-2 border-b-border">
+		<div className="border-border bg-bg-color w-full shrink rounded-xl border-2">
+			<div className="border-b-border relative aspect-video overflow-hidden rounded-xl border-b-2">
 				{/* Share Button */}
 				<ShareButton />
 				<Video name={name} id={video} />

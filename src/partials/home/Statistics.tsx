@@ -1,7 +1,5 @@
 'use client';
 
-import { Card, CardContent, CardDescription, CardTitle } from '@/components/ui/card';
-import { STATISTICS } from '@/info/statistics';
 import { BsPeople } from 'react-icons/bs';
 import { FaRegBuilding } from 'react-icons/fa';
 import { GrAchievement } from 'react-icons/gr';
@@ -9,14 +7,17 @@ import { PiProjectorScreenChart } from 'react-icons/pi';
 import { TbSTurnDown } from 'react-icons/tb';
 import { Bar, BarChart, Cell, ResponsiveContainer, XAxis, YAxis } from 'recharts';
 
+import { Card, CardContent, CardDescription, CardTitle } from '@/components/ui/card';
+import { STATISTICS } from '@/info/statistics';
 import About from './About';
 
 import './styles.css';
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { FOLDERS } from '@/info/folders';
 import { FaRegFolder, FaRegFolderOpen } from 'react-icons/fa';
+
+import { FOLDERS } from '@/info/folders';
 
 export default function Statistics() {
 	const [selectedFolder, setSelectedFolder] = useState(9);
@@ -135,7 +136,7 @@ function History({
 			<div className="my-[10%] grid h-2/3 grid-cols-4 gap-1 gap-y-0 lg:grid-cols-8 xl:grid-cols-2">
 				{FOLDERS.map((folder) => (
 					<div
-						className="rounded-xl p-5 hover:bg-gradient-to-br hover:shadow-lg sm:hover:cursor-pointer sm:hover:bg-gradient sm:hover:text-black"
+						className="sm:hover:bg-gradient rounded-xl p-5 hover:bg-gradient-to-br hover:shadow-lg sm:hover:cursor-pointer sm:hover:text-black"
 						key={folder.id}
 						onClick={() => setSelectedFolder(folder.id)}
 					>
@@ -181,14 +182,14 @@ function ImagesContainer({ selectedFolder, className }: { selectedFolder: number
 		return (
 			<div className={`relative w-full p-10 py-12 xl:w-1/2 ${className}`}>
 				<div
-					className={`scaleUp absolute left-2 top-4/12  z-20 w-[280px]  overflow-hidden rounded-xl sm:left-6 sm:w-[310px] lg:-top-4/12 lg:left-1/12 lg:w-[360px] lg:overflow-visible xl:left-6 xl:top-2/12 xl:w-[400px] xl:overflow-hidden 2xl:w-[450px] ${
+					className={`scaleUp top-4/12 lg:-top-4/12 lg:left-1/12  xl:top-2/12 absolute  left-2 z-20 w-[280px] overflow-hidden rounded-xl sm:left-6 sm:w-[310px] lg:w-[360px] lg:overflow-visible xl:left-6 xl:w-[400px] xl:overflow-hidden 2xl:w-[450px] ${
 						isFirstImageVisible ? 'visible' : 'hidden'
 					}`}
 				>
 					<Image key={`${folder.id} image 1`} alt={`${folder?.name} image 1`} src={folder.image1} />
 				</div>
 				<div
-					className={`scaleUp absolute bottom-1/12 right-2 z-30  w-[280px] overflow-hidden rounded-xl sm:right-6 sm:w-[310px] lg:-bottom-10 lg:right-1/12 lg:w-[360px] lg:overflow-visible xl:bottom-10 xl:right-10 xl:w-[400px] xl:overflow-hidden 2xl:w-[450px] ${
+					className={`scaleUp bottom-1/12 lg:right-1/12 absolute right-2  z-30 w-[280px] overflow-hidden rounded-xl sm:right-6 sm:w-[310px] lg:-bottom-10 lg:w-[360px] lg:overflow-visible xl:bottom-10 xl:right-10 xl:w-[400px] xl:overflow-hidden 2xl:w-[450px] ${
 						isSecondImageVisible ? 'visible' : 'hidden'
 					}`}
 				>

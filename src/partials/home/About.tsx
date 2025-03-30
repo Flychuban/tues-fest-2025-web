@@ -1,4 +1,5 @@
 import Link from 'next/link';
+
 import { ABOUT_BUTTON, ABOUT_IMAGE, ABOUT_SUBTEXT, ABOUT_TEXT, ABOUT_TITLE } from '@/constants/home/about';
 
 import 'animate.css';
@@ -34,7 +35,7 @@ const About = () => (
 					<Link
 						href="https://www.facebook.com/HackTUES"
 						target="_blank"
-						className="cursor-pointer font-semibold text-sand underline"
+						className="text-sand cursor-pointer font-semibold underline"
 					>
 						Hack TUES § TUES FEST
 					</Link>
@@ -45,7 +46,7 @@ const About = () => (
 			</div>
 			{/* Image */}
 			<div className="w-full">
-				<div className="animate__backInRight overflow-hidden rounded-md animate__animated">
+				<div className="animate__backInRight animate__animated overflow-hidden rounded-md">
 					<img
 						src={ABOUT_IMAGE}
 						alt=""
@@ -58,7 +59,7 @@ const About = () => (
 			<Link
 				href={'https://elsys-bg.org'}
 				target="_blank"
-				className="text-md m-auto my-4 w-fit text-nowrap rounded-md bg-gradient px-4 py-2 font-bold uppercase shadow-2xl transition-transform duration-300 hover:scale-105 sm:text-xl md:mx-1/4"
+				className="text-md bg-gradient md:mx-1/4 m-auto my-4 w-fit text-nowrap rounded-md px-4 py-2 font-bold uppercase shadow-2xl transition-transform duration-300 hover:scale-105 sm:text-xl"
 			>
 				<span
 					style={{

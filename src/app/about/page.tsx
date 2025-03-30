@@ -67,7 +67,7 @@ const AboutPage = () => {
 										className="relative flex h-full flex-col gap-2 rounded-xl bg-transparent p-3 backdrop-blur-md"
 									>
 										<h4 className="text-xl font-bold">Системно програмиране</h4>
-										<div className="h-[1px] w-full bg-stroke" />
+										<div className="bg-stroke h-[1px] w-full" />
 										<p className="text-md">
 											Най-задълбочената училищна програма по програмиране в България, която е
 											незаменим трамплин за всеки с амбиции за кариера в ИТ сектора.
@@ -80,7 +80,7 @@ const AboutPage = () => {
 										className="relative flex h-full flex-col gap-2 rounded-xl bg-transparent p-3 backdrop-blur-md"
 									>
 										<h4 className="text-xl font-bold">Компютърни мрежи</h4>
-										<div className="h-[1px] w-full bg-stroke" />
+										<div className="bg-stroke h-[1px] w-full" />
 										<p className="text-md">
 											Първата крачка към вълнуващата инженерна професия. Ще учите за проектиране
 											на електроника, комуникации, мрежи, роботика и IoT.
@@ -90,7 +90,7 @@ const AboutPage = () => {
 							</div>
 						</div>
 					</div>
-					<div className="w-full max-w-3xl shrink-0 overflow-hidden rounded-xl border border-[#F2F2F2] bg-bg-color bg-transparent sm:border-2 lg:block lg:w-2/5">
+					<div className="bg-bg-color w-full max-w-3xl shrink-0 overflow-hidden rounded-xl border border-[#F2F2F2] bg-transparent sm:border-2 lg:block lg:w-2/5">
 						<img
 							src="/assets/about/about.png"
 							alt="Ученици на ТУЕС (Технологично училище “Електронни системи” към Технически Университет - София)"
@@ -99,7 +99,7 @@ const AboutPage = () => {
 					</div>
 				</div>
 				<div className="flex flex-col gap-4 pt-8 md:pt-12">
-					<h3 className="-mb-2 bg-gradient bg-clip-text pb-2 text-3xl font-black text-transparent sm:text-5xl">
+					<h3 className="bg-gradient -mb-2 bg-clip-text pb-2 text-3xl font-black text-transparent sm:text-5xl">
 						Обучение
 						{/* <Separator className="bg-black h-1 rounded-lg mt-2 w-auto" /> */}
 					</h3>
@@ -145,7 +145,7 @@ const AboutPage = () => {
 				</div>
 				<div className="pt-8 md:pt-12">
 					{/* TODO: extract stats to config file */}
-					<div className="flex flex-col gap-4 rounded-xl border border-[#F2F2F2] bg-bg-color bg-transparent p-8 sm:border-2 md:flex-row">
+					<div className="bg-bg-color flex flex-col gap-4 rounded-xl border border-[#F2F2F2] bg-transparent p-8 sm:border-2 md:flex-row">
 						<div className="flex w-full flex-col items-center gap-4 rounded-xl border border-[#F2F2F2] bg-[#353444] bg-transparent p-4 sm:border-2">
 							<TbSchool size={64} className="opacity-100" />
 							<p className="bg-gradient bg-clip-text text-5xl font-black text-transparent">2846</p>
@@ -169,7 +169,7 @@ const AboutPage = () => {
 					</div>
 				</div>
 				<div className="flex flex-col gap-4 pt-8 md:pt-12">
-					<h3 className="-mb-2 bg-gradient bg-clip-text pb-2 text-3xl font-black text-transparent sm:text-5xl">
+					<h3 className="bg-gradient -mb-2 bg-clip-text pb-2 text-3xl font-black text-transparent sm:text-5xl">
 						ТУЕС постига успехите си благодарение на
 						{/* <Separator className="bg-black h-1 rounded-lg mt-2 w-auto" /> */}
 					</h3>

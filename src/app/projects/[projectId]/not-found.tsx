@@ -20,7 +20,7 @@ export default function NotFound() {
 			</h1>
 			<Link
 				href="/projects"
-				className="inline-flex items-center justify-center whitespace-nowrap rounded-md bg-[#353444] px-5 py-[10px] text-base font-semibold text-white transition-all hover:bg-primary"
+				className="hover:bg-primary inline-flex items-center justify-center whitespace-nowrap rounded-md bg-[#353444] px-5 py-[10px] text-base font-semibold text-white transition-all"
 			>
 				Върни се към проектите
 			</Link>

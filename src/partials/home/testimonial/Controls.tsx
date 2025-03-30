@@ -4,13 +4,13 @@ const Controls = ({ handlePrev, handleNext }: { handlePrev: () => void; handleNe
 	<div className="flex items-center justify-center gap-2">
 		<button
 			onClick={handlePrev}
-			className="rounded-lg border border-stroke bg-bg-color p-2 text-2xl hover:opacity-90"
+			className="border-stroke bg-bg-color rounded-lg border p-2 text-2xl hover:opacity-90"
 		>
 			<TbChevronLeft />
 		</button>
 		<button
 			onClick={handleNext}
-			className="rounded-lg border border-stroke bg-bg-color p-2 text-2xl hover:opacity-90"
+			className="border-stroke bg-bg-color rounded-lg border p-2 text-2xl hover:opacity-90"
 		>
 			<TbChevronRight />
 		</button>

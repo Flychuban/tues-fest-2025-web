@@ -42,7 +42,7 @@ const LinkTab = ({ text, href, current }: { text: string; href: string; current:
 		href={href}
 		className={`inline-flex items-center justify-center whitespace-nowrap rounded-md ${
 			current ? 'border border-white' : 'bg-[#353444]'
-		} px-5 py-[10px] text-base font-semibold text-white transition-all hover:bg-primary`}
+		} hover:bg-primary px-5 py-[10px] text-base font-semibold text-white transition-all`}
 	>
 		{text}
 	</Link>
@@ -54,31 +54,29 @@ export function generateStaticParams() {
 	}));
 }
 
-const ProjectsPage = async (
-    props: {
-        params: Promise<{
-            category: string;
-        }>;
-    }
-) => {
-    const params = await props.params;
-    const category = params.category.toString();
+const ProjectsPage = async (props: {
+	params: Promise<{
+		category: string;
+	}>;
+}) => {
+	const params = await props.params;
+	const category = params.category.toString();
 
-    if (!Object.hasOwn(PROJECT_CATEGORIES, category)) {
+	if (!Object.hasOwn(PROJECT_CATEGORIES, category)) {
 		redirect('/projects');
 	}
 
-    const projects = await getProjectsByCategory(category);
+	const projects = await getProjectsByCategory(category);
 
-    projects?.sort(() => Math.random() - 0.5);
+	projects?.sort(() => Math.random() - 0.5);
 
-    return (
+	return (
 		<div className="container">
 			<ProjectsPath path={PATH} />
 			<div className="mb-28">
 				<section className="pt-8">
 					<div className="mx-4">
-						<Card className="m-4 mb-14 rounded-lg border-2 border-stroke bg-black px-5 py-4 text-white opacity-100">
+						<Card className="border-stroke m-4 mb-14 rounded-lg border-2 bg-black px-5 py-4 text-white opacity-100">
 							<div className="z-50 -mx-4 flex flex-wrap items-center justify-between">
 								<div className="w-full px-4">
 									<div className="flex flex-wrap justify-center gap-4 overflow-x-auto lg:justify-start">

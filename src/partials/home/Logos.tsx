@@ -22,7 +22,7 @@ export default function Logos() {
 				</div>
 			</div>
 
-			<div className="relative z-20 mx-1/6 mt-8 flex flex-col items-stretch gap-4 text-center sm:mx-auto sm:max-w-md sm:items-center sm:justify-center">
+			<div className="mx-1/6 relative z-20 mt-8 flex flex-col items-stretch gap-4 text-center sm:mx-auto sm:max-w-md sm:items-center sm:justify-center">
 				<Link
 					href="/location"
 					className="flex w-full items-center justify-center gap-2 rounded-lg border border-[#FEFEFE] bg-opacity-0 px-4 py-2 text-lg backdrop-blur-sm backdrop-filter sm:hidden sm:border-2"

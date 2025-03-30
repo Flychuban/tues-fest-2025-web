@@ -23,7 +23,7 @@ const Testimonial = () => {
 						opts={{
 							loop: true,
 						}}
-						className="w-full max-w-5/6 lg:max-w-1/2"
+						className="max-w-5/6 lg:max-w-1/2 w-full"
 						plugins={[plugin.current]}
 						onMouseEnter={plugin.current.stop}
 						onMouseLeave={plugin.current.reset}

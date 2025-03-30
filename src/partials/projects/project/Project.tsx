@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import type { ProjectType } from '@/app/projects/actions';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import VoteButton from '@/partials/projects/project/VoteButton';
 import { FaYoutube } from 'react-icons/fa';
 import invariant from 'tiny-invariant';
+
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import type { ProjectType } from '@/app/projects/actions';
+import VoteButton from '@/partials/projects/project/VoteButton';
 
 const Project = ({ project }: { project: ProjectType }) => {
 	// FIXME: duplicate code, seen elsewhere
@@ -25,7 +26,7 @@ const Project = ({ project }: { project: ProjectType }) => {
 			</div>
 			<CardHeader className="flex flex-row items-center justify-between">
 				<Link
-					className="text-xl font-semibold hover:cursor-pointer hover:text-sand"
+					className="hover:text-sand text-xl font-semibold hover:cursor-pointer"
 					href={`/projects/${project.id}`}
 				>
 					{project.title}
@@ -50,7 +51,7 @@ const Project = ({ project }: { project: ProjectType }) => {
 
 const YoutubeLink = ({ href }: { href: string }) => {
 	return (
-		<div className="m-1 rounded-lg p-1 duration-100 hover:scale-110 hover:text-error">
+		<div className="hover:text-error m-1 rounded-lg p-1 duration-100 hover:scale-110">
 			<Link href={href}>
 				<FaYoutube size={32} />
 			</Link>
