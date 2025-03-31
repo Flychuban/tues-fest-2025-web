@@ -4,12 +4,12 @@ import { Slot } from '@radix-ui/react-slot';
 import { cn } from '@/lib/utils';
 
 const sizeVariants = {
-	xs: 'text-xl md:text-2xl',
-	sm: 'text-2xl md:text-3xl',
-	md: 'text-3xl md:text-4xl',
-	lg: 'text-4xl md:text-5xl',
-	xl: 'text-5xl md:text-6xl',
-	'2xl': 'text-6xl md:text-7xl',
+	xs: 'text-lg md:text-2xl',
+	sm: 'text-xl md:text-3xl',
+	md: 'text-2xl md:text-4xl',
+	lg: 'text-3xl md:text-5xl',
+	xl: 'text-4xl md:text-6xl',
+	'2xl': 'text-5xl md:text-7xl',
 };
 
 interface GradientHeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {
