@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { TbBrandLinktree } from 'react-icons/tb';
 
 import { Separator } from '@/components/ui/separator';
-import { TF_YEAR } from '@/constants/event';
 import { TFLogo } from '../home/TFLogo';
 
 const Socials = () => (

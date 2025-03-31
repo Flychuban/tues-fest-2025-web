@@ -133,7 +133,7 @@ export function Navigation() {
 							<DropdownMenuTrigger asChild>
 								<Button className="hidden sm:inline-flex" variant="secondary" size="lg">
 									<TbSchool className="mr-2 h-4 w-4" />
-									<Link href="#">За ТУЕС</Link>
+									За ТУЕС
 								</Button>
 							</DropdownMenuTrigger>
 							<DropdownMenuContent>
@@ -159,10 +159,11 @@ export function Navigation() {
 								</Button>
 							</SheetTrigger>
 							<SheetContent side="right" className="gap-2 sm:max-w-sm">
-								<SheetTitle>
-									{/* TODO: actual logo */}
-									<SheetHeader>TF Logo Here</SheetHeader>
-								</SheetTitle>
+								<SheetHeader>
+									<SheetTitle className="m-auto py-3">
+										<TFLogo />
+									</SheetTitle>
+								</SheetHeader>
 								<div className="grid gap-4">
 									{LINKS.map((link) => (
 										<NavLink key={link.title} href={link.href}>
