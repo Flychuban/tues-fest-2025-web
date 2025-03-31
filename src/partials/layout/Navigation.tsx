@@ -111,7 +111,7 @@ export function Navigation() {
 				isScrolled ? 'bg-background/90 backdrop-blur-sm' : 'bg-transparent'
 			)}
 		>
-			<div className="container flex h-[var(--header-height)] items-center justify-center">
+			<div className="h-(--header-height) container flex items-center justify-center">
 				<div className="flex h-16 w-full items-center justify-between px-4">
 					<div className="flex items-center gap-4">
 						<Link href="/" className="text-lg font-bold">
