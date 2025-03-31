@@ -16,40 +16,33 @@ export default function Statistics() {
 
 	return (
 		<section id="statistics" className="px-4 py-12 md:px-8">
-			<Card className="bg-background/80 border-border backdrop-blur-sm">
-				<CardContent className="p-6 md:p-8">
-					<GradientHeading size="lg" className="mb-8">
-						ТУЕС Фест през годините
-					</GradientHeading>
+			<GradientHeading size="lg" className="mb-8">
+				ТУЕС Фест през годините
+			</GradientHeading>
 
-					<div className="block w-full xl:flex xl:gap-8">
-						{/* Folder Navigation */}
-						<FolderNavigation
-							selectedFolderIndex={selectedFolderIndex}
-							setSelectedFolderIndex={setSelectedFolderIndex}
-						/>
+			<div className="block w-full xl:flex xl:gap-8">
+				{/* Folder Navigation */}
+				<FolderNavigation
+					selectedFolderIndex={selectedFolderIndex}
+					setSelectedFolderIndex={setSelectedFolderIndex}
+				/>
 
-						{/* Desktop Statistics */}
-						<div className="hidden w-full xl:block xl:w-1/3">
-							<StatisticsCards selectedFolderIndex={selectedFolderIndex} />
-						</div>
+				{/* Desktop Statistics */}
+				<div className="hidden w-full xl:block xl:w-1/3">
+					<StatisticsCards selectedFolderIndex={selectedFolderIndex} />
+				</div>
 
-						{/* Images Container */}
-						<div className="py-16 xl:hidden">
-							<ImagesContainer selectedFolderIndex={selectedFolderIndex} />
-						</div>
-						<ImagesContainer
-							className="hidden xl:block xl:w-1/2"
-							selectedFolderIndex={selectedFolderIndex}
-						/>
+				{/* Images Container */}
+				<div className="py-16 xl:hidden">
+					<ImagesContainer selectedFolderIndex={selectedFolderIndex} />
+				</div>
+				<ImagesContainer className="hidden xl:block xl:w-1/2" selectedFolderIndex={selectedFolderIndex} />
 
-						{/* Mobile/Tablet Statistics */}
-						<div className="block w-full xl:hidden">
-							<StatisticsCards selectedFolderIndex={selectedFolderIndex} />
-						</div>
-					</div>
-				</CardContent>
-			</Card>
+				{/* Mobile/Tablet Statistics */}
+				<div className="block w-full xl:hidden">
+					<StatisticsCards selectedFolderIndex={selectedFolderIndex} />
+				</div>
+			</div>
 		</section>
 	);
 }
