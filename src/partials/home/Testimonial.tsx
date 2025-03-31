@@ -5,12 +5,12 @@ import Autoplay from 'embla-carousel-autoplay';
 
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { GradientHeading } from '@/components/ui/gradient-heading';
-import { ScrollArea } from '@/components/ui/scroll-area';
 import { TESTIMONIALS, TESTIMONIALS_TITLE } from '@/constants/home/testimonials';
 import Quote from './testimonial/Quote';
 
 const Testimonial = () => {
 	const plugin = useRef(Autoplay({ delay: 5000, stopOnInteraction: true }));
+
 	return (
 		<section className="relative z-20 min-h-[36rem] w-full p-8 md:p-12">
 			<div className="flex h-full min-h-full flex-col justify-between gap-8">
