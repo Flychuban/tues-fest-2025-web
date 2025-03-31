@@ -111,7 +111,7 @@ export function Navigation() {
 				isScrolled ? 'bg-background/90 backdrop-blur-sm' : 'bg-transparent'
 			)}
 		>
-			<div className="container flex h-[var(--header-height)] items-center justify-center">
+			<div className="h-(--header-height) container flex items-center justify-center">
 				<div className="flex h-16 w-full items-center justify-between px-4">
 					<div className="flex items-center gap-4">
 						<Link href="/" className="text-lg font-bold">
@@ -133,7 +133,7 @@ export function Navigation() {
 							<DropdownMenuTrigger asChild>
 								<Button className="hidden sm:inline-flex" variant="secondary" size="lg">
 									<TbSchool className="mr-2 h-4 w-4" />
-									<Link href="#">За ТУЕС</Link>
+									За ТУЕС
 								</Button>
 							</DropdownMenuTrigger>
 							<DropdownMenuContent>
@@ -159,10 +159,11 @@ export function Navigation() {
 								</Button>
 							</SheetTrigger>
 							<SheetContent side="right" className="gap-2 sm:max-w-sm">
-								<SheetTitle>
-									{/* TODO: actual logo */}
-									<SheetHeader>TF Logo Here</SheetHeader>
-								</SheetTitle>
+								<SheetHeader>
+									<SheetTitle className="m-auto py-3">
+										<TFLogo />
+									</SheetTitle>
+								</SheetHeader>
 								<div className="grid gap-4">
 									{LINKS.map((link) => (
 										<NavLink key={link.title} href={link.href}>

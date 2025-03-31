@@ -72,8 +72,8 @@ export default function PodkrepqAutoDisplay({
 								<>
 									<div className="flex h-24 flex-shrink flex-grow flex-col overflow-clip">
 										<div className="inline-flex h-full flex-1 flex-shrink flex-grow [mask-image:linear-gradient(to_bottom,white,calc(100%-20px),transparent)]">
-											{livePodkrepqsht.description.split('\n').map((p) => (
-												<p key={p}>{p}</p>
+											{livePodkrepqsht.description.split('\n').map((p, i) => (
+												<p key={i}>{p}</p>
 											))}
 										</div>
 									</div>

@@ -8,7 +8,7 @@ import './animation.css';
 import './globals.css';
 
 import { Metadata, Viewport } from 'next';
-import { Inter } from 'next/font/google';
+import { Rubik_Mono_One } from 'next/font/google';
 import localFont from 'next/font/local';
 import { GeistSans } from 'geist/font/sans';
 
@@ -57,9 +57,20 @@ export const metadata: Metadata = {
 // 	variable: '--font-warzone',
 // });
 
-const origin = localFont({
-	src: '../assets/fonts/origintech.woff',
-	variable: '--font-origin',
+const rubikMonoOne = Rubik_Mono_One({
+	subsets: ['latin', 'cyrillic'],
+	weight: '400',
+	variable: '--font-rubik-mono-one',
+});
+
+// const origin = localFont({
+// 	src: '../assets/fonts/origintech.woff',
+// 	variable: '--font-origin',
+// });
+
+const glitch = localFont({
+	src: '../assets/fonts/glitch.woff2',
+	variable: '--font-glitch',
 });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -73,9 +84,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				className={cn(
 					GeistSans.variable,
 					// warzone.variable,
-					origin.variable,
+					rubikMonoOne.variable,
+					glitch.variable,
+					// origin.variable,
 					'font-sans',
-					'dark h-full w-screen items-center justify-center overflow-hidden overflow-x-hidden overflow-y-scroll [--header-height:calc(theme(spacing.18))]'
+					'dark h-full w-screen items-center justify-center overflow-hidden overflow-x-hidden overflow-y-scroll [--header-height:calc(theme(spacing.20))]'
 				)}
 			>
 				<div className="">

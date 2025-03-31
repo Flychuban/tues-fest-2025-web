@@ -1,3 +1,5 @@
+import { Card, CardContent } from '@/components/ui/card';
+import About from '@/partials/home/About';
 import Expectations from '@/partials/home/Expectations';
 import EventLanding from '@/partials/home/Logos';
 import Schedule from '@/partials/home/Schedule';
@@ -12,7 +14,12 @@ export default function Home() {
 				<EventLanding />
 			</section>
 			<div className="mx-6 max-w-screen-2xl md:mx-20 2xl:m-auto">
-				<Statistics />
+				<Card className="bg-background/80 border-border backdrop-blur-sm">
+					<CardContent className="p-6 md:p-8">
+						<About />
+						<Statistics />
+					</CardContent>
+				</Card>
 			</div>
 			<div className="mx-auto w-full max-w-screen-2xl">
 				<Expectations />

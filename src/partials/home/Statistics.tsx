@@ -7,6 +7,7 @@ import { Bar, BarChart, Cell, ResponsiveContainer, XAxis, YAxis } from 'recharts
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { GradientHeading } from '@/components/ui/gradient-heading';
 import { FOLDERS } from '@/info/folders';
 import { STATISTICS } from '@/info/statistics';
 
@@ -15,38 +16,33 @@ export default function Statistics() {
 
 	return (
 		<section id="statistics" className="px-4 py-12 md:px-8">
-			<Card className="bg-background/80 border-border backdrop-blur-sm">
-				<CardContent className="p-6 md:p-8">
-					<h2 className="text-primary mb-8 text-4xl font-bold sm:text-5xl">ТУЕС Фест през годините</h2>
+			<GradientHeading size="lg" className="mb-8">
+				ТУЕС Фест през годините
+			</GradientHeading>
 
-					<div className="block w-full xl:flex xl:gap-8">
-						{/* Folder Navigation */}
-						<FolderNavigation
-							selectedFolderIndex={selectedFolderIndex}
-							setSelectedFolderIndex={setSelectedFolderIndex}
-						/>
+			<div className="block w-full xl:flex xl:gap-8">
+				{/* Folder Navigation */}
+				<FolderNavigation
+					selectedFolderIndex={selectedFolderIndex}
+					setSelectedFolderIndex={setSelectedFolderIndex}
+				/>
 
-						{/* Desktop Statistics */}
-						<div className="hidden w-full xl:block xl:w-1/3">
-							<StatisticsCards selectedFolderIndex={selectedFolderIndex} />
-						</div>
+				{/* Desktop Statistics */}
+				<div className="hidden w-full xl:block xl:w-1/3">
+					<StatisticsCards selectedFolderIndex={selectedFolderIndex} />
+				</div>
 
-						{/* Images Container */}
-						<div className="py-16 xl:hidden">
-							<ImagesContainer selectedFolderIndex={selectedFolderIndex} />
-						</div>
-						<ImagesContainer
-							className="hidden xl:block xl:w-1/2"
-							selectedFolderIndex={selectedFolderIndex}
-						/>
+				{/* Images Container */}
+				<div className="py-16 xl:hidden">
+					<ImagesContainer selectedFolderIndex={selectedFolderIndex} />
+				</div>
+				<ImagesContainer className="hidden xl:block xl:w-1/2" selectedFolderIndex={selectedFolderIndex} />
 
-						{/* Mobile/Tablet Statistics */}
-						<div className="block w-full xl:hidden">
-							<StatisticsCards selectedFolderIndex={selectedFolderIndex} />
-						</div>
-					</div>
-				</CardContent>
-			</Card>
+				{/* Mobile/Tablet Statistics */}
+				<div className="block w-full xl:hidden">
+					<StatisticsCards selectedFolderIndex={selectedFolderIndex} />
+				</div>
+			</div>
 		</section>
 	);
 }
@@ -114,7 +110,7 @@ function FolderNavigation({
 }) {
 	return (
 		<div className="w-full xl:w-1/6">
-			<div className="grid grid-cols-4 gap-2 lg:grid-cols-8 xl:grid-cols-2">
+			<div className="grid grid-cols-3 gap-2 lg:grid-cols-9 xl:grid-cols-2">
 				{FOLDERS.map((folder) => (
 					<Button
 						key={folder.id}

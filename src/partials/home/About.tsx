@@ -3,6 +3,7 @@ import { ExternalLink } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { GradientHeading } from '@/components/ui/gradient-heading';
 import { ABOUT_BUTTON, ABOUT_IMAGE, ABOUT_TITLE } from '@/constants/home/about';
 
 const About = () => (
@@ -10,7 +11,7 @@ const About = () => (
 		<div className="flex flex-col gap-8 lg:flex-row">
 			{/* Text info */}
 			<div className="flex w-full flex-col gap-4">
-				<h2 className="text-primary text-4xl font-bold sm:text-5xl">{ABOUT_TITLE}</h2>
+				<GradientHeading size="lg">{ABOUT_TITLE}</GradientHeading>
 
 				<p className="text-foreground">
 					Денят на отворените врати на Технологично училище „Електронни системи“ към Техническия университет -

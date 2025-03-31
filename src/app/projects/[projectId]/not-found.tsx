@@ -1,5 +1,7 @@
 import Link from 'next/link';
 
+import { Button } from '@/components/ui/button';
+import { GradientHeading } from '@/components/ui/gradient-heading';
 import { OG_METADATA } from '@/constants/seo';
 
 export const metadata = {
@@ -15,13 +17,10 @@ export const metadata = {
 export default function NotFound() {
 	return (
 		<div className="flex h-screen w-full flex-col items-center justify-center gap-8">
-			<h1 className="text-accent-foreground font-title text-5xl font-black">404 - Няма такъв проект :(</h1>
-			<Link
-				href="/projects"
-				className="hover:bg-primary inline-flex items-center justify-center whitespace-nowrap rounded-md bg-[#353444] px-5 py-[10px] text-base font-semibold text-white transition-all"
-			>
-				Върни се към проектите
-			</Link>
+			<GradientHeading size="lg">404 - Няма такъв проект :(</GradientHeading>
+			<Button asChild size="lg">
+				<Link href="/projects">Върни се към проектите</Link>
+			</Button>
 		</div>
 	);
 }

@@ -77,7 +77,9 @@
 
 	--font-sans: var(--font-geist-sans), 'sans-serif';
 	/* --font-warzone: var(--font-warzone), 'sans-serif'; */
-	--font-origin: var(--font-origin), 'sans-serif';
+	--font-title: var(--font-rubik-mono-one), 'sans-serif';
+	--font-glitch: var(--font-glitch), 'sans-serif';
+	/* --font-origin: var(--font-origin), 'sans-serif'; */
 }
 
 @layer base {

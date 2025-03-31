@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 
+import { GradientHeading } from '@/components/ui/gradient-heading';
 import { TF_TITLE } from '@/constants/seo';
 
 const LOCATION_MAP_URL =
@@ -16,7 +17,7 @@ export default function Location() {
 	return (
 		<div className="m-auto min-h-screen max-w-screen-2xl p-8 !pt-28 md:p-12">
 			<div className="rounded-xl border  bg-opacity-0 bg-clip-padding p-10 drop-shadow-lg backdrop-blur-sm backdrop-filter">
-				<h2 className="font-title text-accent-foreground pb-4 text-3xl font-black sm:text-5xl">Локация</h2>
+				<GradientHeading size="lg">Локация</GradientHeading>
 
 				<div className="flex flex-col gap-8 pt-0 sm:flex-row md:pt-12 lg:flex-row">
 					<div className="flex w-full flex-col gap-8 sm:w-[50%]">
