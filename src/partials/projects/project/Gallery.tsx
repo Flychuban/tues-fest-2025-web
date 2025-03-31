@@ -124,7 +124,7 @@ const GalleryModal = ({
 				</div>
 				<div className="absolute left-0 top-1/2 z-[1001] p-4 !pl-10">
 					<button
-						className="border-border bg-background hover:hover:bg-border flex items-center gap-2 rounded-xl border-2 px-4 py-2 transition-all duration-300 ease-in-out"
+						className="border-border bg-background hover:bg-border flex items-center gap-2 rounded-xl border-2 px-4 py-2 transition-all duration-300 ease-in-out"
 						onClick={prev}
 					>
 						<span className="text-sm">
@@ -134,7 +134,7 @@ const GalleryModal = ({
 				</div>
 				<div className="absolute right-0 top-1/2 z-[1001] p-4 pr-10">
 					<button
-						className="border-border bg-background hover:hover:bg-border flex items-center gap-2 rounded-xl border-2 px-4 py-2 transition-all duration-300 ease-in-out"
+						className="border-border bg-background hover:bg-border flex items-center gap-2 rounded-xl border-2 px-4 py-2 transition-all duration-300 ease-in-out"
 						onClick={next}
 					>
 						<span className="text-sm">

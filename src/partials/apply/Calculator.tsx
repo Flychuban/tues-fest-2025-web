@@ -131,7 +131,7 @@ const Calculator = () => {
 				</form>
 				{result !== 0 && (
 					<div className="flex aspect-square h-48  w-48 items-center justify-center rounded-full border  p-8 backdrop-blur-sm sm:backdrop-blur-md">
-						<p className="text-accent-foregroundtext-5xl font-black">{result.toFixed(2)}</p>
+						<p className="text-accent-foreground text-5xl font-black">{result.toFixed(2)}</p>
 					</div>
 				)}
 				{!result && result === 0 && (
