@@ -88,7 +88,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 					glitch.variable,
 					// origin.variable,
 					'font-sans',
-					'dark h-full w-screen items-center justify-center overflow-hidden overflow-x-hidden overflow-y-scroll [--header-height:calc(theme(spacing.20))]'
+					'dark h-full w-screen items-center justify-center overflow-hidden overflow-x-hidden overflow-y-scroll bg-[url(../assets/wave-36.jpg)] bg-cover bg-fixed bg-center [--header-height:calc(theme(spacing.20))] lg:bg-[url(../assets/wave-39.jpg)]'
 				)}
 			>
 				<div className="">
