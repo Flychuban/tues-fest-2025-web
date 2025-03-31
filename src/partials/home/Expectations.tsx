@@ -1,6 +1,7 @@
 import type { ReactElement } from 'react';
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { GradientHeading } from '@/components/ui/gradient-heading';
 import { EXPECTATIONS } from '@/constants/home/expectations';
 
 const Expectation = ({ icon, title, text }: { icon: ReactElement; title: string; text: string }) => (
@@ -19,7 +20,9 @@ const Expectation = ({ icon, title, text }: { icon: ReactElement; title: string;
 
 const Expectations = () => (
 	<section id="expectations" className="px-4 py-12 md:px-8">
-		<h2 className="text-primary font-title mb-8 text-4xl font-black sm:text-5xl">На ТУЕС Фест очаквайте</h2>
+		<GradientHeading size="lg" className="mb-8">
+			На ТУЕС Фест очаквайте
+		</GradientHeading>
 		<div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 			{EXPECTATIONS.map((expectation) => (
 				<Expectation key={expectation.title} {...expectation} />

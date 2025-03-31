@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { GradientHeading } from '@/components/ui/gradient-heading';
 import { Separator } from '@/components/ui/separator';
 import { SCHEDULE } from '@/constants/home/schedule';
 
@@ -22,7 +23,9 @@ function Schedule() {
 	return (
 		<>
 			<section id="schedule" className='gap-16" relative z-20 flex flex-col px-6 py-6 md:px-8'>
-				<h2 className="text-primary font-title mb-8 text-5xl font-black">Програма</h2>
+				<GradientHeading size="lg" className="mb-8">
+					Програма
+				</GradientHeading>
 
 				<div className="flex flex-col gap-16 pt-4">
 					{SCHEDULE.map((item) => (

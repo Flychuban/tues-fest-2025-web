@@ -7,6 +7,7 @@ import { Bar, BarChart, Cell, ResponsiveContainer, XAxis, YAxis } from 'recharts
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { GradientHeading } from '@/components/ui/gradient-heading';
 import { FOLDERS } from '@/info/folders';
 import { STATISTICS } from '@/info/statistics';
 
@@ -17,9 +18,9 @@ export default function Statistics() {
 		<section id="statistics" className="px-4 py-12 md:px-8">
 			<Card className="bg-background/80 border-border backdrop-blur-sm">
 				<CardContent className="p-6 md:p-8">
-					<h2 className="text-primary font-title mb-8 text-4xl font-black sm:text-5xl">
+					<GradientHeading size="lg" className="mb-8">
 						ТУЕС Фест през годините
-					</h2>
+					</GradientHeading>
 
 					<div className="block w-full xl:flex xl:gap-8">
 						{/* Folder Navigation */}

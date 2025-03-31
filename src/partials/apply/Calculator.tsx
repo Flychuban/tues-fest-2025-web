@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from 'react';
 
+import { GradientHeading } from '@/components/ui/gradient-heading';
+
 const EMPTY_CALC = {
 	bgl: 0,
 	math: 0,
@@ -80,7 +82,7 @@ const Calculator = () => {
 	return (
 		<div className="relative z-10 flex w-full shrink-0 flex-col gap-5 overflow-hidden rounded-xl border  bg-opacity-0 bg-clip-padding p-8 drop-shadow-lg backdrop-blur-sm backdrop-filter  sm:p-10 sm:backdrop-blur-sm md:w-full lg:w-96 xl:w-[38rem] ">
 			<div className="flex w-fit flex-col gap-1">
-				<h2 className="text-accent-foreground font-title text-3xl font-black sm:text-5xl">Изчисли си БАЛ-а</h2>
+				<GradientHeading size="lg">Изчисли си БАЛ-а</GradientHeading>
 				<p className="text-sm opacity-70">
 					Друг начин, по който може да си изчислиш бала, е да ползваш този калкулатор
 				</p>

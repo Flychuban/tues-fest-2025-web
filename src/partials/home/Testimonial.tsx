@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import Autoplay from 'embla-carousel-autoplay';
 
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { GradientHeading } from '@/components/ui/gradient-heading';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { TESTIMONIALS, TESTIMONIALS_TITLE } from '@/constants/home/testimonials';
 import Quote from './testimonial/Quote';
@@ -14,7 +15,7 @@ const Testimonial = () => {
 		<section className="relative z-20 min-h-[36rem] w-full p-8 md:p-12">
 			<div className="flex h-full min-h-full flex-col justify-between gap-8">
 				<div className="flex flex-col items-center justify-between gap-8 sm:flex-row">
-					<h2 className="text-accent-foreground font-title text-5xl font-black">{TESTIMONIALS_TITLE}</h2>
+					<GradientHeading size="lg">{TESTIMONIALS_TITLE}</GradientHeading>
 				</div>
 				<div className="flex justify-center">
 					<Carousel

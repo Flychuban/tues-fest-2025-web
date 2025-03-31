@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { TbBriefcase, TbHistory, TbSchool, TbTrophy } from 'react-icons/tb';
 
+import { GradientHeading } from '@/components/ui/gradient-heading';
 import { Separator } from '@/components/ui/separator';
 import { TF_YEAR, TUES_AGE } from '@/constants/event';
 
@@ -40,10 +41,9 @@ const AboutPage = () => {
 	return (
 		<div className="m-auto min-h-screen max-w-screen-2xl p-8 !pt-28 md:p-12">
 			<div className="rounded-xl border  bg-opacity-0 bg-clip-padding p-10 drop-shadow-lg backdrop-blur-sm backdrop-filter ">
-				<h2 className="text-accent-foreground font-title pb-4 text-3xl font-black sm:text-5xl">
+				<GradientHeading className="mb-5" size="lg">
 					За ТУЕС
-					{/* <Separator className="bg-black h-1 rounded-lg mt-2 w-auto" /> */}
-				</h2>
+				</GradientHeading>
 
 				<div className="flex flex-col items-center gap-8 !pt-0 md:pt-12 lg:flex-row">
 					<div className="flex flex-col gap-4">
@@ -97,10 +97,10 @@ const AboutPage = () => {
 					</div>
 				</div>
 				<div className="flex flex-col gap-4 pt-8 md:pt-12">
-					<h3 className="bg-gradient -mb-2 pb-2 text-3xl font-black sm:text-5xl">
+					<h2 className="bg-gradient -mb-2 pb-2 text-3xl font-black sm:text-5xl">
 						Обучение
 						{/* <Separator className="bg-black h-1 rounded-lg mt-2 w-auto" /> */}
-					</h3>
+					</h2>
 
 					<p className="text-lg opacity-100">Освен специализирания учебен план ТУЕС предлага:</p>
 					<ul className="flex w-full flex-col gap-4">
@@ -167,10 +167,10 @@ const AboutPage = () => {
 					</div>
 				</div>
 				<div className="flex flex-col gap-4 pt-8 md:pt-12">
-					<h3 className="bg-gradient -mb-2 pb-2 text-3xl font-black sm:text-5xl">
+					<h2 className="bg-gradient -mb-2 pb-2 text-3xl font-black sm:text-5xl">
 						ТУЕС постига успехите си благодарение на
 						{/* <Separator className="bg-black h-1 rounded-lg mt-2 w-auto" /> */}
-					</h3>
+					</h2>
 
 					<ul className="flex w-full flex-col gap-4">
 						<li className="text-md rounded-xl border  bg-opacity-0 bg-clip-padding p-4 drop-shadow-lg backdrop-blur-sm backdrop-filter">
@@ -192,10 +192,10 @@ const AboutPage = () => {
 					</ul>
 				</div>
 				<div className="flex flex-col gap-6 pt-8 md:pt-12">
-					<h2 className="text-accent-foregroundtext-3xl font-black sm:text-5xl">
+					<h1 className="text-accent-foregroundtext-3xl font-black sm:text-5xl">
 						Hack TUES
 						{/* <Separator className="bg-black h-1 rounded-lg mt-2 w-auto" /> */}
-					</h2>
+					</h1>
 
 					<p className="text-justify">
 						HackTUES е едно от ключовите събития за ТУЕС, в което ученици от училището в отбори от по 3 - 5
