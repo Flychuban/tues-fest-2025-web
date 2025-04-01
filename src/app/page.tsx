@@ -9,12 +9,12 @@ import Testimonial from '@/partials/home/Testimonial';
 
 export default function Home() {
 	return (
-		<main className="mx-auto">
-			<section className="flex min-h-screen w-full flex-col items-center justify-center gap-4 overflow-hidden p-1 pt-4 sm:p-4 md:gap-16 ">
+		<>
+			<section className="flex min-h-[calc(100vh-var(--header-height))] w-full flex-col items-center justify-center gap-4 overflow-hidden p-1 pt-4 sm:p-4 md:gap-16 ">
 				<EventLanding />
 			</section>
 			<div className="mx-6 max-w-screen-2xl md:mx-20 2xl:m-auto">
-				<Card className="bg-background/80 border-border backdrop-blur-sm">
+				<Card>
 					<CardContent className="p-6 md:p-8">
 						<About />
 						<Statistics />
@@ -27,6 +27,6 @@ export default function Home() {
 				<Sponsors />
 				<Testimonial />
 			</div>
-		</main>
+		</>
 	);
 }

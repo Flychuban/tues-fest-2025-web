@@ -5,12 +5,12 @@ import { GradientHeading } from '@/components/ui/gradient-heading';
 import { EXPECTATIONS } from '@/constants/home/expectations';
 
 const Expectation = ({ icon, title, text }: { icon: ReactElement; title: string; text: string }) => (
-	<Card className="bg-card/80 border-border h-full backdrop-blur-sm transition-all duration-300 hover:scale-105">
+	<Card className="h-full transition-all duration-300 hover:scale-105">
 		<CardHeader>
 			<div className="bg-primary/10 mb-4 flex h-16 w-16 items-center justify-center rounded-full">
 				<div className="text-primary">{icon}</div>
 			</div>
-			<CardTitle className="text-xl">{title}</CardTitle>
+			<CardTitle className="text-2xl">{title}</CardTitle>
 		</CardHeader>
 		<CardContent>
 			<p className="text-muted-foreground">{text}</p>

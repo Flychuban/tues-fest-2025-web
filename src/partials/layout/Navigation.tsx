@@ -107,8 +107,8 @@ export function Navigation() {
 	return (
 		<header
 			className={cn(
-				'fixed top-0 z-50 flex w-full items-center justify-center px-4 shadow-sm transition-colors duration-300',
-				isScrolled ? 'bg-background/90 backdrop-blur-sm' : 'bg-transparent'
+				'sticky top-0 z-50 flex w-full items-center justify-center border-b px-4 shadow-sm backdrop-blur-lg transition-colors duration-300',
+				isScrolled ? 'bg-background/80' : 'bg-background/70'
 			)}
 		>
 			<div className="h-(--header-height) container flex items-center justify-center">

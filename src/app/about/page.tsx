@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { TbBriefcase, TbHistory, TbSchool, TbTrophy } from 'react-icons/tb';
 
+import { Card } from '@/components/ui/card';
 import { GradientHeading } from '@/components/ui/gradient-heading';
 import { Separator } from '@/components/ui/separator';
 import { TF_YEAR, TUES_AGE } from '@/constants/event';
@@ -37,10 +38,10 @@ export const metadata = {
 	],
 } satisfies Metadata;
 
-const AboutPage = () => {
+export default function AboutPage() {
 	return (
-		<div className="m-auto min-h-screen max-w-screen-2xl p-8 !pt-28 md:p-12">
-			<div className="rounded-xl border  bg-opacity-0 bg-clip-padding p-10 drop-shadow-lg backdrop-blur-sm backdrop-filter ">
+		<div className="p-8 md:p-12">
+			<Card className="p-10">
 				<GradientHeading className="mb-5" size="lg">
 					За ТУЕС
 				</GradientHeading>
@@ -49,7 +50,7 @@ const AboutPage = () => {
 					<div className="flex flex-col gap-4">
 						<p className="text-md text-justify">
 							Технологично училище „Електронни системи“ към Технически Университет - София е
-							специализирано технологично училище от национално значение, което вече {TUES_AGE} годин
+							специализирано технологично училище от национално значение, което вече {TUES_AGE} години
 							подготвя бъдещите лидери на ИТ сектора в България и отвъд.
 						</p>
 						<p className="text-md text-justify">
@@ -237,9 +238,7 @@ const AboutPage = () => {
 						.
 					</p>
 				</div>
-			</div>
+			</Card>
 		</div>
 	);
-};
-
-export default AboutPage;
+}

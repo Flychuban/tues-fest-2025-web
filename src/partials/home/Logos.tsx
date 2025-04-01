@@ -13,7 +13,7 @@ import { cn } from '@/lib/utils';
 export default function EventLanding() {
 	return (
 		<div className="mx-auto w-11/12 sm:w-2/3 md:w-3/4 lg:w-1/2">
-			<Card className="bg-background/80 border-border backdrop-blur-sm">
+			<Card>
 				<CardContent className="flex flex-col gap-6 p-4 sm:p-6 md:p-8">
 					{/* Logo section */}
 					<div className="relative flex flex-col items-center justify-center text-center">

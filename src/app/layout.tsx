@@ -88,19 +88,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 					glitch.variable,
 					// origin.variable,
 					'font-sans',
-					'dark h-full w-screen items-center justify-center overflow-hidden overflow-x-hidden overflow-y-scroll bg-[url(../assets/wave-36.jpg)] bg-cover bg-fixed bg-center [--header-height:calc(theme(spacing.20))] lg:bg-[url(../assets/wave-39.jpg)]'
+					'dark h-full w-screen items-center justify-center overflow-hidden overflow-x-hidden overflow-y-scroll bg-[url(../assets/wave-36.jpg)] bg-cover bg-fixed bg-center [--footer-height:calc(theme(spacing.24))] [--header-height:calc(theme(spacing.20))] lg:bg-[url(../assets/wave-39.jpg)]'
 				)}
 			>
-				<div className="">
-					<Navigation />
-					<VoteProvider>
+				<Navigation />
+				<VoteProvider>
+					<main className="mx-auto min-h-[calc(100vh-var(--header-height)-var(--footer-height))] max-w-screen-2xl">
 						{children}
-						<VotingLayout />
-					</VoteProvider>
-					<Toaster />
-					<Footer />
-					<Analytics />
-				</div>
+					</main>
+					<VotingLayout />
+				</VoteProvider>
+				<Toaster />
+				<Footer />
+				<Analytics />
 			</body>
 		</html>
 	);
