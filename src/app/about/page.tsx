@@ -8,7 +8,7 @@ import { TF_YEAR, TUES_AGE } from '@/constants/event';
 
 export const metadata = {
 	title: 'За ТУЕС',
-	description: `Научете повече за най-доброто училище в България - Технологично училище "Електронни системи", което през 2024 беше с втори най-висок бал за страната. ТУЕС е училище с ${TUES_AGE} години история, което е специализирано в областта на ИТ и единствено в България подготвя специалисти в областта на системно програмиране.`,
+	description: `Научете повече за най-доброто училище в България - Технологично училище "Електронни системи", което през 2025 беше с втори най-висок бал за страната. ТУЕС е училище с ${TUES_AGE} години история, което е специализирано в областта на ИТ и единствено в България подготвя специалисти в областта на системно програмиране.`,
 	keywords: [
 		'туес',
 		'туес фест',
@@ -65,6 +65,7 @@ const AboutPage = () => {
 										className="relative flex h-full flex-col gap-2 rounded-xl bg-transparent p-3 backdrop-blur-md"
 									>
 										<h4 className="text-xl font-bold">Системно програмиране</h4>
+										<Separator />
 										<div className="bg-stroke h-[1px] w-full" />
 										<p className="text-md">
 											Най-задълбочената училищна програма по програмиране в България, която е
@@ -82,6 +83,20 @@ const AboutPage = () => {
 										<p className="text-md">
 											Първата крачка към вълнуващата инженерна професия. Ще учите за проектиране
 											на електроника, комуникации, мрежи, роботика и IoT.
+										</p>
+									</Link>
+								</div>
+								<div className="relative overflow-hidden rounded-xl border  bg-opacity-0 bg-clip-padding p-[2px] drop-shadow-lg backdrop-blur-sm backdrop-filter">
+									<Link
+										href="https://elsys-bg.org/priem/specialnost-sistemno-programirane"
+										className="relative flex h-full flex-col gap-2 rounded-xl bg-transparent p-3 backdrop-blur-md"
+									>
+										<h4 className="text-xl font-bold">Програмиране на изкуствен интелект</h4>
+										<Separator />
+										<div className="bg-stroke h-[1px] w-full" />
+										<p className="text-md">
+											Специалността, която ще ви подготви за работа в една от най-бързо развиващите
+											се области на ИТ. Ще се научите да създавате софтуер, който може да мисли и да се учи сам.
 										</p>
 									</Link>
 								</div>
@@ -229,7 +244,7 @@ const AboutPage = () => {
 					</p>
 					<p className="text-justify">
 						Тази година се проведе{' '}
-						<span className="text-accent-foregroundfont-semibold">десетото юбилейно издание</span>. Можете
+						<span className="text-accent-foregroundfont-semibold">единадесетото издание</span>. Можете
 						да видите повече информация{' '}
 						<Link href="https://hacktues.bg" target="_blank">
 							<u>тук</u>

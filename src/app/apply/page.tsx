@@ -103,10 +103,13 @@ const ApplyPage = () => (
 						</p>
 						<ul className="flex flex-col gap-4">
 							<li className="text-md rounded-xl border   p-4 backdrop-blur-sm sm:backdrop-blur-md">
-								Системно програмиране с код 4810201 – 3 паралелки, всяка по 26 ученици
+								Системно програмиране – 2 паралелки, всяка по 26 ученици
 							</li>
 							<li className="text-md rounded-xl border   p-4 backdrop-blur-sm sm:backdrop-blur-md">
-								Компютърни мрежи с код 5230502 – 1 паралелка от 26 ученици
+								Компютърни мрежи – 1 паралелка от 26 ученици
+							</li>
+							<li className="text-md rounded-xl border   p-4 backdrop-blur-sm sm:backdrop-blur-md">
+								Програмиране на изкуствен интелект – 1 паралелка от 26 ученици
 							</li>
 						</ul>
 						<p>Балът се образува от сбора на:</p>
