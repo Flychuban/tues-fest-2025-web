@@ -174,7 +174,7 @@ const Countdown = () => {
 			))}
 
 			{/* Add the CSS for glitch effect animations */}
-			<style jsx global>{`
+			<style jsx>{`
 				@keyframes stack {
 					0% {
 						opacity: 0;
