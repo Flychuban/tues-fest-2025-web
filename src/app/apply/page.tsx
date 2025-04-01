@@ -61,7 +61,7 @@ const ApplyPage = () => (
 						лидери на ИТ сектора в България и отвъд.
 					</p>
 					<p className="text-justify">
-						За 2024 година, ТУЕС се нареди на второ място по минимален бал на първо класиране в 7-и клас!
+						За 2025 година, ТУЕС се нареди на второ място по минимален бал на първо класиране в 7-и клас!
 					</p>
 					<div className="relative flex w-full flex-col items-start gap-8 lg:flex-row">
 						<div className="flex w-full flex-col gap-4">
@@ -98,7 +98,7 @@ const ApplyPage = () => (
 					<div className="flex flex-col gap-4 rounded-xl border  bg-opacity-0  bg-clip-padding p-8 drop-shadow-lg backdrop-blur-sm backdrop-filter sm:p-10 sm:backdrop-blur-sm">
 						<GradientHeading>Как да кандидатствам?</GradientHeading>
 						<p className="text-justify">
-							За учебната 2024/2025 година в ТУЕС към ТУ-София ще се приемат ученици по следните
+							За учебната 2025/2026 година в ТУЕС към ТУ-София ще се приемат ученици по следните
 							специалности:
 						</p>
 						<ul className="flex flex-col gap-4">

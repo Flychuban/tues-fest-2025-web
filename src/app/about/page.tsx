@@ -49,7 +49,7 @@ const AboutPage = () => {
 					<div className="flex flex-col gap-4">
 						<p className="text-md text-justify">
 							Технологично училище „Електронни системи“ към Технически Университет - София е
-							специализирано технологично училище от национално значение, което вече {TUES_AGE} годин
+							специализирано технологично училище от национално значение, което вече {TUES_AGE} години
 							подготвя бъдещите лидери на ИТ сектора в България и отвъд.
 						</p>
 						<p className="text-md text-justify">
@@ -146,12 +146,12 @@ const AboutPage = () => {
 					<div className="bg-bg-color flex flex-col gap-4 rounded-xl border  bg-transparent p-8 md:flex-row">
 						<div className="flex w-full flex-col items-center gap-4 rounded-xl border  bg-[#353444] bg-transparent p-4">
 							<TbSchool size={64} className="opacity-100" />
-							<p className="text-accent-foregroundtext-5xl font-black">2846</p>
+							<p className="text-accent-foregroundtext-5xl font-black">3012</p>
 							<p className="text-md text-center font-semibold opacity-100">завършили ученици</p>
 						</div>
 						<div className="flex w-full flex-col items-center gap-4 rounded-xl border  bg-[#353444] bg-transparent p-4">
 							<TbTrophy size={64} className="opacity-100" />
-							<p className="text-accent-foregroundtext-5xl font-black">87</p>
+							<p className="text-accent-foregroundtext-5xl font-black">96</p>
 							<p className="text-md text-center font-semibold opacity-100">награди и отличия</p>
 						</div>
 						<div className="flex w-full flex-col items-center gap-4 rounded-xl border  bg-[#353444] bg-transparent p-4">
@@ -211,8 +211,8 @@ const AboutPage = () => {
 						ясна представа за реалната работна обстановка.
 					</p>
 					<img
-						src="/assets/about/hacktuesX.png"
-						alt="HackTUES 9 организатори"
+						src="/assets/about/ht11_image.jpg"
+						alt="HackTUES 11 организатори"
 						className="m-auto w-full max-w-3xl rounded-xl border  bg-transparent"
 					/>
 					<p className="text-justify">
