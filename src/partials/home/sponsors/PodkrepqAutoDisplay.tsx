@@ -30,9 +30,7 @@ export default function PodkrepqAutoDisplay({
 	invariant(!startIndex || (startIndex >= 0 && startIndex < podkrepqshti.length), 'startIndex must be a valid index');
 
 	const [liveIndex, setLiveIndex] = useState(startIndex ?? 0);
-	// const [isPaused, setIsPaused] = useState(false);
-	const isPaused = true;
-	const setIsPaused = () => {};
+	const [isPaused, setIsPaused] = useState(false);
 	const nextIndex = liveIndex < podkrepqshti.length - 1 ? liveIndex + 1 : 0;
 	const prevIndex = liveIndex === 0 ? podkrepqshti.length - 1 : liveIndex - 1;
 	const prevPervIndex = prevIndex === 0 ? podkrepqshti.length - 1 : prevIndex - 1;
