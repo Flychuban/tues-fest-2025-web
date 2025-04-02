@@ -30,7 +30,9 @@ export default function PodkrepqAutoDisplay({
 	invariant(!startIndex || (startIndex >= 0 && startIndex < podkrepqshti.length), 'startIndex must be a valid index');
 
 	const [liveIndex, setLiveIndex] = useState(startIndex ?? 0);
-	const [isPaused, setIsPaused] = useState(false);
+	// const [isPaused, setIsPaused] = useState(false);
+	const isPaused = true;
+	const setIsPaused = () => {};
 	const nextIndex = liveIndex < podkrepqshti.length - 1 ? liveIndex + 1 : 0;
 	const prevIndex = liveIndex === 0 ? podkrepqshti.length - 1 : liveIndex - 1;
 	const prevPervIndex = prevIndex === 0 ? podkrepqshti.length - 1 : prevIndex - 1;
@@ -75,7 +77,7 @@ export default function PodkrepqAutoDisplay({
 							{shouldShowDescription(livePodkrepqsht.description) ? (
 								<>
 									<div className="flex h-24 flex-shrink flex-grow flex-col overflow-clip">
-										<div className="inline-flex h-full flex-1 flex-shrink flex-grow [mask-image:linear-gradient(to_bottom,white,calc(100%-20px),transparent)]">
+										<div className="inline-flex h-full flex-1 flex-shrink flex-grow flex-col [mask-image:linear-gradient(to_bottom,white,calc(100%-20px),transparent)]">
 											{livePodkrepqsht.description.split('\n').map((p, i) => (
 												<p key={i}>{p}</p>
 											))}
