@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from 'react';
 
+import { Card } from '@/components/ui/card';
 import { GradientHeading } from '@/components/ui/gradient-heading';
+import { cn } from '@/lib/utils';
 
 const EMPTY_CALC = {
 	bgl: 0,
@@ -39,7 +41,7 @@ const CalculatorField = ({ name, label, min, max, value, error, onChange }: any)
 	);
 };
 
-const Calculator = () => {
+const Calculator = ({ className }: { className?: string }) => {
 	const [result, setResult] = useState(0);
 	const [calculator, setCalculator] = useState<{
 		bgl: number | '';
@@ -80,9 +82,9 @@ const Calculator = () => {
 	}, [calculator]);
 
 	return (
-		<div className="relative z-10 flex w-full shrink-0 flex-col gap-5 overflow-hidden rounded-xl border  bg-opacity-0 bg-clip-padding p-8 drop-shadow-lg backdrop-blur-sm backdrop-filter  sm:p-10 sm:backdrop-blur-sm md:w-full lg:w-96 xl:w-[38rem] ">
+		<Card className={cn('p-10', className)}>
 			<div className="flex w-fit flex-col gap-1">
-				<GradientHeading size="lg">Изчисли си БАЛ-а</GradientHeading>
+				<GradientHeading size="md">Изчисли си Бала</GradientHeading>
 				<p className="text-sm opacity-70">
 					Друг начин, по който може да си изчислиш бала, е да ползваш този калкулатор
 				</p>
@@ -138,7 +140,7 @@ const Calculator = () => {
 					<div className="flex aspect-square h-48  w-48 items-center justify-center rounded-full border  p-8 backdrop-blur-sm sm:backdrop-blur-md" />
 				)}
 			</div>
-		</div>
+		</Card>
 	);
 };
 

@@ -1,4 +1,4 @@
-import { Contributor } from '@/app/projects/[projectId]/page';
+import { Contributor } from '@/app/_projects/[projectId]/page';
 
 const Contributors = ({ contributors }: { contributors: Contributor[] }) => (
 	<div className="w-full max-w-screen-lg">

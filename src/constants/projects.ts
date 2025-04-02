@@ -36,3 +36,5 @@ export const PROJECT_CATEGORY_MAP = Object.entries(PROJECT_CATEGORIES).reduce(
 export type ProjectCategoryMapValue = (typeof PROJECT_CATEGORY_MAP)[keyof typeof PROJECT_CATEGORY_MAP];
 
 export const PROJECT_CATEGORY_LIST = Object.values(PROJECT_CATEGORY_MAP);
+
+export const PROJECT_REGISTRATION_FORM_URL = 'https://forms.gle/PjaNKUqpYcuFXLHu6';
