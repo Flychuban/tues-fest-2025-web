@@ -40,7 +40,7 @@ export const metadata = {
 
 export default function AboutPage() {
 	return (
-		<div className="p-8 md:p-12">
+		<div className="p-4 md:p-12">
 			<Card className="p-10">
 				<GradientHeading className="mb-5" size="lg">
 					За ТУЕС
@@ -96,8 +96,9 @@ export default function AboutPage() {
 										<Separator />
 										<div className="bg-stroke h-[1px] w-full" />
 										<p className="text-md">
-											Специалността, която ще ви подготви за работа в една от най-бързо развиващите
-											се области на ИТ. Ще се научите да създавате софтуер, който може да мисли и да се учи сам.
+											Специалността, която ще ви подготви за работа в една от най-бързо
+											развиващите се области на ИТ. Ще се научите да създавате софтуер, който може
+											да мисли и да се учи сам.
 										</p>
 									</Link>
 								</div>
@@ -245,8 +246,8 @@ export default function AboutPage() {
 					</p>
 					<p className="text-justify">
 						Тази година се проведе{' '}
-						<span className="text-accent-foregroundfont-semibold">единадесетото издание</span>. Можете
-						да видите повече информация{' '}
+						<span className="text-accent-foregroundfont-semibold">единадесетото издание</span>. Можете да
+						видите повече информация{' '}
 						<Link href="https://hacktues.bg" target="_blank">
 							<u>тук</u>
 						</Link>

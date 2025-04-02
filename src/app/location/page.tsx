@@ -53,7 +53,7 @@ export const metadata = {
 
 export default function Location() {
 	return (
-		<div className="px-8 pt-28 md:p-12">
+		<div className="p-4 md:p-12">
 			<Card className="p-10">
 				<GradientHeading size="lg">Локация</GradientHeading>
 

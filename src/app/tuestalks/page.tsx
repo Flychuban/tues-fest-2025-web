@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 const TUESTalksPage = () => (
-	<div className="flex h-[calc(100vh-var(--header-height)-var(--footer-height))] items-center justify-center p-8 md:p-12">
+	<div className="flex h-[calc(100vh-var(--header-height)-var(--footer-height))] items-center justify-center p-4 md:p-12">
 		<iframe
 			className="animate-in fade-in w-[90%] max-w-[960px] overflow-hidden rounded-xl duration-1000 sm:w-[60%]"
 			src="https://open.spotify.com/embed/show/2HGIZmqHAFtNwfXOrlTu7v?utm_source=generator"

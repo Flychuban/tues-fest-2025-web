@@ -51,7 +51,7 @@ export const metadata = {
 };
 
 const ApplyPage = () => (
-	<div className="flex w-full flex-col gap-8 p-8 md:grid md:grid-cols-5 md:p-12">
+	<div className="flex w-full flex-col gap-8 p-4 md:grid md:grid-cols-5 md:p-12">
 		<Card className="p-10 md:col-span-5">
 			<GradientHeading>Защо ТУЕС?</GradientHeading>
 			<p className="text-justify">
