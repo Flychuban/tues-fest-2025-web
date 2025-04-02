@@ -7,6 +7,9 @@ import Sponsors from '@/partials/home/Sponsors';
 import Statistics from '@/partials/home/Statistics';
 import Testimonial from '@/partials/home/Testimonial';
 
+export const runtime = 'edge';
+export const revalidate = 0;
+
 export default function Home() {
 	return (
 		<main className="mx-auto">
