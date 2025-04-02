@@ -75,7 +75,10 @@ const glitch = localFont({
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
-		<html lang="bg">
+		<html
+			lang="bg"
+			className="scroll-pt-(--header-height) dark [--footer-height:calc(theme(spacing.24))] [--header-height:calc(theme(spacing.20))]"
+		>
 			<head>
 				<Script src="https://www.googletagmanager.com/gtag/js?id=G-1H1H1CR559" strategy="afterInteractive" />
 				<link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any"></link>
@@ -88,7 +91,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 					glitch.variable,
 					// origin.variable,
 					'font-sans',
-					'dark h-full w-screen items-center justify-center overflow-hidden overflow-x-hidden overflow-y-scroll bg-[url(../assets/wave-36.jpg)] bg-cover bg-fixed bg-center [--footer-height:calc(theme(spacing.24))] [--header-height:calc(theme(spacing.20))] lg:bg-[url(../assets/wave-39.jpg)]'
+					'dark h-full w-screen items-center justify-center overflow-hidden overflow-x-hidden overflow-y-scroll bg-[url(../assets/wave-36.jpg)] bg-cover bg-fixed bg-center lg:bg-[url(../assets/wave-39.jpg)]'
 				)}
 			>
 				<Navigation />

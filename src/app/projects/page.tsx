@@ -1,94 +1,36 @@
 import Link from 'next/link';
+import { Rocket } from 'lucide-react';
 
-import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { GradientHeading } from '@/components/ui/gradient-heading';
+import { PROJECT_REGISTRATION_FORM_URL } from '@/constants/projects';
 import { TF_TITLE } from '@/constants/seo';
-import ProjectsPath from '@/partials/layout/ProjectsPath';
-import Project from '@/partials/projects/project/Project';
-// import Projects from '@/partials/projects/Projects';
-import { getProjects } from './actions';
 
-const PATH: {
-	name: string;
-	url: string;
-}[] = [
-	{
-		name: TF_TITLE,
-		url: '/',
-	},
-	{
-		name: 'Проекти',
-		url: '',
-	},
-];
-
-const TABS = [
-	{
-		text: 'Всички',
-		href: '/projects',
-	},
-	{
-		text: 'Хардуер',
-		href: '/projects/category/embedded',
-	},
-	{
-		text: 'Софтуер',
-		href: '/projects/category/software',
-	},
-	{
-		text: 'Battle Bots',
-		href: '/projects/category/battlebot',
-	},
-	{
-		text: 'Мрежи',
-		href: '/projects/category/networks',
-	},
-];
-
-const LinkTab = ({ text, href, current }: { text: string; href: string; current: boolean }) => (
-	<Link
-		href={href}
-		className={`inline-flex items-center justify-center whitespace-nowrap rounded-md ${
-			current ? 'border border-white' : 'bg-[#353444]'
-		} hover:bg-primary px-5 py-[10px] text-base font-semibold text-white transition-all`}
-	>
-		{text}
-	</Link>
-);
-
-const ProjectsPage = async () => {
-	const projects = await getProjects();
-	//shuffle projects
-	projects.sort(() => Math.random() - 0.5);
-
+export default function ProjectsComingSoonPage() {
 	return (
-		<div className="container">
-			<ProjectsPath path={PATH} />
-			<div className="mb-28">
-				<section className="pt-8">
-					<div className="m-auto sm:mx-4">
-						<Card className="m-4 mb-14 rounded-lg border-2 bg-black px-5 py-4 text-white opacity-100">
-							<div className="z-50 -mx-4 flex flex-wrap items-center justify-between">
-								<div className="w-full px-4">
-									<div className="flex flex-wrap justify-center gap-4 overflow-x-auto lg:justify-start">
-										{TABS.map((tab) => (
-											<LinkTab key={tab.href} {...tab} current={tab.text === 'Всички'} />
-										))}
-									</div>
-								</div>
-							</div>
-						</Card>
-					</div>
-				</section>
-				<div className="inline-grid w-full grid-cols-1 sm:m-4 md:grid-cols-2 lg:grid-cols-3">
-					{projects ? (
-						projects.map((project) => <Project key={project.title} project={project} />)
-					) : (
-						<div>Loading...</div>
-					)}
-				</div>
-			</div>
+		<div className="flex h-full w-full items-center justify-center p-4 md:p-12">
+			<Card className="w-full max-w-3xl gap-7 p-10 sm:text-center">
+				<CardHeader>
+					<GradientHeading size="md" className="text-center">
+						<CardTitle>Проектите все още се регистрират!</CardTitle>
+					</GradientHeading>
+					<CardDescription>
+						<p>
+							Все още можеш да участваш в {TF_TITLE} със свой проект. Регистрирай се сега! Регистрацията
+							затваря на <time dateTime="06.04.2025 23:59">06.04.2025 23:59</time>
+						</p>
+					</CardDescription>
+				</CardHeader>
+				<CardFooter className="flex justify-center">
+					<Button size="xl" className="font-bold uppercase" asChild>
+						<Link href={PROJECT_REGISTRATION_FORM_URL} target="_blank">
+							<Rocket className="mr-2 size-5" />
+							<span>Участвай с проект</span>
+						</Link>
+					</Button>
+				</CardFooter>
+			</Card>
 		</div>
 	);
-};
-
-export default ProjectsPage;
+}
