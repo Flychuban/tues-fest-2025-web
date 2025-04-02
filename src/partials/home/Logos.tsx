@@ -1,13 +1,15 @@
 'use client';
 
 import Link from 'next/link';
-import { Clock4, MapPin } from 'lucide-react';
+import { ChevronDown, Clock4, MapPin, Rocket } from 'lucide-react';
 
 import Countdown from '@/components/countdown';
-import { buttonVariants } from '@/components/ui/button';
+import { Button, buttonVariants } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { TF_DATE_STRING, TF_LOCATION, TF_YEAR } from '@/constants/event';
+import { PROJECT_REGISTRATION_FORM_URL } from '@/constants/projects';
 import { cn } from '@/lib/utils';
 
 export default function EventLanding() {
@@ -34,31 +36,60 @@ export default function EventLanding() {
 
 					<Countdown />
 
+					<Button size="xl" className="font-bold uppercase" asChild>
+						<Link href={PROJECT_REGISTRATION_FORM_URL} target="_blank">
+							<Rocket className="mr-2 size-5" />
+							<span>Участвай с проект</span>
+						</Link>
+					</Button>
+
 					{/* Event details - flex-col on mobile, flex-row on desktop */}
 					<div className="flex flex-col items-stretch gap-4 text-center sm:flex-row sm:gap-6">
 						<div
 							className={cn(
-								buttonVariants({ variant: 'outline' }),
-								'flex h-auto w-full items-center justify-center gap-2 sm:flex-1'
+								buttonVariants({ variant: 'outline', size: 'xl' }),
+								'flex w-full items-center justify-center gap-2 sm:flex-1'
 							)}
 						>
 							<Clock4 className="text-primary h-5 w-5" />
 							<p className="text-foreground">{TF_DATE_STRING}</p>
 						</div>
 
-						<Link
-							href="/location"
-							className={cn(
-								buttonVariants({ variant: 'outline' }),
-								'flex h-auto w-full items-center justify-center gap-2 sm:flex-1'
-							)}
+						<Button
+							variant="outline"
+							size="xl"
+							asChild
+							className="flex w-full items-center justify-center gap-2 sm:flex-1"
 						>
-							<MapPin className="text-primary h-5 w-5" />
-							<span>{TF_LOCATION}</span>
-						</Link>
+							<Link href="/location">
+								<MapPin className="text-primary h-5 w-5" />
+								<span>{TF_LOCATION}</span>
+							</Link>
+						</Button>
 					</div>
 				</CardContent>
 			</Card>
+			<div className="hidden justify-center py-6 sm:flex">
+				<TooltipProvider>
+					<Tooltip>
+						<TooltipTrigger asChild>
+							<Button
+								asChild
+								variant="secondary"
+								size="icon"
+								className="bg-secondary/50 size-12 backdrop-blur-lg motion-safe:animate-bounce"
+							>
+								<Link href="#about">
+									<ChevronDown className="stroke-[4]" size={24} />
+								</Link>
+							</Button>
+						</TooltipTrigger>
+						<TooltipContent>
+							<p>Виж повече</p>
+						</TooltipContent>
+					</Tooltip>
+				</TooltipProvider>
+			</div>
 		</div>
 	);
 }
