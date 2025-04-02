@@ -36,6 +36,7 @@ const VoteButton = ({
 	};
 
 	return (
+		// @ts-expect-error because this will be removed in the future
 		null && (
 			<Button className="bg-sand text-black" onClick={handleClick} size="lg">
 				{!vote ? 'Гласувай' : 'Премахни глас'}
