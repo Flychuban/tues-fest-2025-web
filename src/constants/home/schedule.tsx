@@ -1,115 +1,45 @@
+import { start } from "repl";
+
 export const SCHEDULE = [
 	{
-		start: '9:00',
+		start: '10:00',
 		end: '10:30',
-		title: '35x TUES',
-		description: '',
+		title: 'Откриваща церемония',
+		description: 'Започваме с вдъхновяващо откриване, в което ще участват специални гости от технологичния и образователния сектор. Ще чуете мотивиращи думи, които ще ви потопят в атмосферата на денят на постиженията в ТУЕС и ще дадат старт на ден, изпълнен с иновации и креативност.',
 		icon: '',
 		pos: 'left',
 	},
 	{
-		start: '10:45',
-		end: '11:30',
-		title: 'ТУЕС',
-		description: (
-			<ul className="flex flex-col gap-2 pt-2">
-				<li className="bg-background rounded-xl border px-4 py-2">Отвътре навън</li>
-				<li className="bg-background rounded-xl border px-4 py-2">Общността ТУЕС</li>
-				<li className="bg-background rounded-xl border px-4 py-2">
-					Животът след ТУЕС. Уроци от моите академични и професионални премеждия.
-				</li>
-			</ul>
-		),
-		icon: '',
-		pos: 'right',
-	},
-	{
-		start: '11:30',
-		end: '12:15',
-		title: 'Промяната - единствената константа',
-		description: (
-			<ul className="flex flex-col gap-2 pt-2">
-				<li className="bg-background rounded-xl border px-4 py-2">
-					Нашият успех е заради вас - учениците на ТУЕС.
-				</li>
-				<li className="bg-background rounded-xl border px-4 py-2">Житейският път след ТУЕС отвъд океана</li>
-				<li className="bg-background rounded-xl border px-4 py-2">
-					Иновациите, които се раждат на най-неочакваните места
-				</li>
-			</ul>
-		),
-		icon: '',
-		pos: 'right',
-	},
-	{
-		start: '12:30',
-		end: '13:15',
-		title: 'Киберсигурни',
-		description: (
-			<ul className="flex flex-col gap-2 pt-2">
-				<li className="bg-background rounded-xl border px-4 py-2">Киберсигурност - какво следва?</li>
-				<li className="bg-background rounded-xl border px-4 py-2">
-					Изкуството да управляваш уязвимости: защита на приложения, мрежи и системи от хакерски атаки
-				</li>
-				<li className="bg-background rounded-xl border px-4 py-2">Приемате ли бисквитки? </li>
-			</ul>
-		),
-		icon: '',
-		pos: 'left',
-	},
-	{
-		start: '13:15',
-		end: '14:00',
-		title: 'Пътят към бъдещето',
-		description: (
-			<ul className="flex flex-col gap-2 pt-2">
-				<li className="bg-background rounded-xl border px-4 py-2">
-					Изкуствения интелект в съвременното обучение
-				</li>
-				<li className="bg-background rounded-xl border px-4 py-2">
-					Тайната на вечната младост (и съвсем мъничко безсмъртие)
-				</li>
-				<li className="bg-background rounded-xl border px-4 py-2">
-					Какво да вземем по пътя си, за да стигнем, където искаме?
-				</li>
-			</ul>
-		),
-		icon: '',
-		pos: 'left',
-	},
-	{
-		start: '15:00',
-		end: '16:30',
-		title: 'Battle Bots - полуфинали',
-		description: ' Ще имате възможността да се насладите на полуфиналните битки на Battle Bots.',
-		icon: '',
-		pos: 'left',
-	},
-	{
-		start: '16:30',
-		end: '19:00',
+		start: '10:30',
+		end: '17:00',
 		title: 'Изложение на ученически проекти',
 		description: (
-			<>
-				Всеки посетител ще има възможността:
-				<ul className="flex flex-col gap-2 pt-2">
-					<li className="bg-background rounded-xl border px-4 py-2">
-						Да разгледа <strong>150 ученически проекта</strong> и да поговори с техните създатели
-					</li>
-					<li className="bg-background rounded-xl border px-4 py-2">
-						Да се запознае със спонсорите на събитието
-					</li>
-					<li className="bg-background rounded-xl border px-4 py-2">
-						Да говори с членове на извънкласни клубове в ТУЕС и с други ученици от училището
-					</li>
-					<li className="bg-background rounded-xl border px-4 py-2">
-						Да гласува за любимия си ученически проект
-					</li>
-				</ul>
-			</>
+			<ul className="flex flex-col gap-2 pt-2">
+				<li className="bg-background rounded-xl border px-4 py-2">
+					Всеки посетител ще има възможността:
+				</li>
+				<li className="bg-background rounded-xl border px-4 py-2">Да разгледа <b>150 ученически проекта</b> и да поговори с техните създатели</li>
+				<li className="bg-background rounded-xl border px-4 py-2">
+					Да гласува за любимия си ученически проект
+				</li>
+				<li className="bg-background rounded-xl border px-4 py-2">
+					Да се запознае със спонсорите на събитието
+				</li>
+				<li className="bg-background rounded-xl border px-4 py-2">
+					Да говори с членове на извънкласни клубове в ТУЕС и с други ученици от училището
+				</li>
+			</ul>
 		),
 		icon: '',
 		pos: 'right',
+	},
+	{
+		start: '17:30',
+		end: '20:00',
+		title: 'Закриваща церемония',
+		description: 'Време е за награждаване на победителите в различните категории на TUES Fest 2025. Започва се с наградите на нашите спонсори и партньори и след това с почетните първи три места във всяка категория.',
+		icon: '',
+		pos: 'left',
 	},
 ];
 

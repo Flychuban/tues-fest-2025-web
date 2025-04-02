@@ -55,7 +55,7 @@ const ApplyPage = () => (
 		<Card className="p-10 md:col-span-5">
 			<GradientHeading>Защо ТУЕС?</GradientHeading>
 			<p className="text-justify">
-				Технологично училище „Електронни системи“ към Технически Университет - София е специализирано
+				Технологично училище „Електронни системи" към Технически Университет - София е специализирано
 				технологично училище от национално значение, което вече {TUES_AGE} години подготвя бъдещите лидери на ИТ
 				сектора в България и отвъд.
 			</p>
@@ -95,14 +95,17 @@ const ApplyPage = () => (
 		<Card className="p-10 md:col-span-3">
 			<GradientHeading size="md">Как да кандидатст&shy;вам?</GradientHeading>
 			<p className="text-justify">
-				За учебната 2024/2025 година в ТУЕС към ТУ-София ще се приемат ученици по следните специалности:
+				За учебната 2025/2026 година в ТУЕС към ТУ-София ще се приемат ученици по следните специалности:
 			</p>
 			<ul className="flex flex-col gap-4">
-				<li className="text-md rounded-xl border   p-4 backdrop-blur-sm sm:backdrop-blur-md">
-					Системно програмиране с код 4810201 – 3 паралелки, всяка по 26 ученици
+				<li className="text-md rounded-xl border p-4 backdrop-blur-sm sm:backdrop-blur-md">
+					Системно програмиране – 2 паралелки, всяка по 26 ученици
 				</li>
-				<li className="text-md rounded-xl border   p-4 backdrop-blur-sm sm:backdrop-blur-md">
-					Компютърни мрежи с код 5230502 – 1 паралелка от 26 ученици
+				<li className="text-md rounded-xl border p-4 backdrop-blur-sm sm:backdrop-blur-md">
+					Компютърни мрежи – 1 паралелка от 26 ученици
+				</li>
+				<li className="text-md rounded-xl border p-4 backdrop-blur-sm sm:backdrop-blur-md">
+					Програмиране на изкуствен интелект – 1 паралелка от 26 ученици
 				</li>
 			</ul>
 			<p>Балът се образува от сбора на:</p>
