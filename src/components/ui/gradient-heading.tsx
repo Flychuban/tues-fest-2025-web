@@ -25,7 +25,7 @@ export function GradientHeading({ asChild, size = 'lg', className, children, ...
 		<Comp
 			className={cn(
 				'font-title bg-clip-text font-black text-transparent',
-				'from-primary bg-gradient-to-r to-indigo-500',
+				'from-primary via-primary bg-gradient-to-r via-10% to-indigo-500',
 				'transition-transform duration-500 ease-out group-hover:scale-[1.01]',
 				'[text-shadow:0_0_25px_rgba(245,66,109,0.15),0_0_20px_rgba(99,102,241,0.15)]',
 				sizeVariants[size],

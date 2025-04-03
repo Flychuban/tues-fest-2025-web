@@ -280,12 +280,7 @@ const VotingOverlay = ({ showModal }: { showModal: () => void }) => {
 							</div>
 							<button
 								className="border-border bg-primary hover:hover:bg-primary flex items-center justify-center rounded-xl border bg-opacity-75 px-6 py-2 text-lg font-bold transition-all duration-300"
-								onClick={
-									!hasVerifiedVote
-										? showModal
-										: () => void submitVote().then(showModal)
-											
-								}
+								onClick={!hasVerifiedVote ? showModal : () => void submitVote().then(showModal)}
 							>
 								{!hasVerifiedVote ? 'Гласувай' : 'Запиши глас'}
 							</button>
@@ -332,6 +327,7 @@ const VotingLayout = () => {
 	}
 
 	return (
+		// @ts-expect-error because this will be removed in the future
 		null && (
 			<>
 				{showOverlay && !showModal && <VotingOverlay showModal={continueVoting} />}

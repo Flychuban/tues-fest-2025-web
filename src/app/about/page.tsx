@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { TbBriefcase, TbHistory, TbSchool, TbTrophy } from 'react-icons/tb';
 
+import { Card } from '@/components/ui/card';
 import { GradientHeading } from '@/components/ui/gradient-heading';
 import { Separator } from '@/components/ui/separator';
 import { TF_YEAR, TUES_AGE } from '@/constants/event';
@@ -37,10 +38,10 @@ export const metadata = {
 	],
 } satisfies Metadata;
 
-const AboutPage = () => {
+export default function AboutPage() {
 	return (
-		<div className="m-auto min-h-screen max-w-screen-2xl p-8 !pt-28 md:p-12">
-			<div className="rounded-xl border  bg-opacity-0 bg-clip-padding p-10 drop-shadow-lg backdrop-blur-sm backdrop-filter ">
+		<div className="p-4 md:p-12">
+			<Card className="p-10">
 				<GradientHeading className="mb-5" size="lg">
 					За ТУЕС
 				</GradientHeading>
@@ -95,8 +96,9 @@ const AboutPage = () => {
 										<Separator />
 										<div className="bg-stroke h-[1px] w-full" />
 										<p className="text-md">
-											Специалността, която ще ви подготви за работа в една от най-бързо развиващите
-											се области на ИТ. Ще се научите да създавате софтуер, който може да мисли и да се учи сам.
+											Специалността, която ще ви подготви за работа в една от най-бързо
+											развиващите се области на ИТ. Ще се научите да създавате софтуер, който може
+											да мисли и да се учи сам.
 										</p>
 									</Link>
 								</div>
@@ -244,17 +246,15 @@ const AboutPage = () => {
 					</p>
 					<p className="text-justify">
 						Тази година се проведе{' '}
-						<span className="text-accent-foregroundfont-semibold">единадесетото издание</span>. Можете
-						да видите повече информация{' '}
+						<span className="text-accent-foregroundfont-semibold">единадесетото издание</span>. Можете да
+						видите повече информация{' '}
 						<Link href="https://hacktues.bg" target="_blank">
 							<u>тук</u>
 						</Link>
 						.
 					</p>
 				</div>
-			</div>
+			</Card>
 		</div>
 	);
-};
-
-export default AboutPage;
+}

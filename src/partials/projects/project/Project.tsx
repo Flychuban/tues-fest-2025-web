@@ -4,7 +4,7 @@ import { FaYoutube } from 'react-icons/fa';
 import invariant from 'tiny-invariant';
 
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import type { ProjectType } from '@/app/projects/actions';
+import type { ProjectType } from '@/app/_projects/actions';
 import VoteButton from '@/partials/projects/project/VoteButton';
 
 const Project = ({ project }: { project: ProjectType }) => {
