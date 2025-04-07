@@ -6,7 +6,7 @@ import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from '@/comp
 import { GradientHeading } from '@/components/ui/gradient-heading';
 import { TF_TITLE } from '@/constants/seo';
 
-export default function ProjectComingSoonPage({ params }: { params: { id: string } }) {
+export default function ProjectComingSoonPage() {
 	return (
 		<div className="flex h-full w-full items-center justify-center p-4 md:p-12">
 			<Card className="w-full max-w-3xl gap-7 p-10 sm:text-center">
