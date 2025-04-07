@@ -167,7 +167,7 @@ export function TwitterTitleImage(props: {
 				</p>
 
 				{/* Twitter-specific call to action */}
-				{(props.date || props.location) && (
+				{(props.date ?? props.location) && (
 					<div tw="flex flex-col items-center">
 						<p style={{ fontFamily: 'Rubik Mono One' }} tw="text-2xl text-[#f8fafc]/80 tracking-wider">
 							{props.date && <span>{props.date}</span>}
