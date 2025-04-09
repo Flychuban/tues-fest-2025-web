@@ -11,7 +11,7 @@ export default {
 			{
 				source: '/vote',
 				destination: '/projects',
-				permanent: false,
+				permanent: false, // fear of commitment
 			},
 		];
 	},

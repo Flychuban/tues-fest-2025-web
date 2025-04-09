@@ -43,12 +43,7 @@ export const metadata: Metadata = {
 	},
 	twitter: TWITTER_METADATA,
 	archives: Array.from({ length: TF_YEAR - FIRST_ARCHIVE_YEAR }, (_, i) => `https://${TF_YEAR - i - 1}.tuesfest.bg`),
-	assets: [
-		'https://tuesfest.bg/favicon.png',
-		'https://tuesfest.bg/logo/motto.png',
-		'https://tuesfest.bg/assets',
-		'https://tuesfest.bg/_next/static',
-	],
+	assets: ['https://tuesfest.bg/favicon.png', 'https://tuesfest.bg/assets', 'https://tuesfest.bg/_next/static'],
 	openGraph: OG_METADATA,
 };
 
