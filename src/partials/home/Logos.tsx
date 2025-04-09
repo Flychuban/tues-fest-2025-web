@@ -36,13 +36,6 @@ export default function EventLanding() {
 
 					<Countdown />
 
-					<Button size="xl" className="font-bold uppercase" asChild>
-						<Link href={PROJECT_REGISTRATION_FORM_URL} target="_blank">
-							<Rocket className="mr-2 size-5" />
-							<span>Участвай с проект</span>
-						</Link>
-					</Button>
-
 					{/* Event details - flex-col on mobile, flex-row on desktop */}
 					<div className="flex flex-col items-stretch gap-4 text-center sm:flex-row sm:gap-6">
 						<div
