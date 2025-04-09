@@ -18,7 +18,10 @@ export const SCHEDULE = [
 				<li className="bg-background rounded-xl border px-4 py-2">
 					Всеки посетител ще има възможността:
 				</li>
-				<li className="bg-background rounded-xl border px-4 py-2">Да разгледа <b>150 ученически проекта</b> и да поговори с техните създатели</li>
+				<li className="bg-background rounded-xl border px-4 py-2">Да разгледа <b>120 ученически проекта</b> и да поговори с техните създатели</li>
+				<li className="bg-background rounded-xl border px-4 py-2">
+					Да се запознае с <b>преподавателския екип</b> от ТУЕС
+				</li>
 				<li className="bg-background rounded-xl border px-4 py-2">
 					Да гласува за любимия си ученически проект
 				</li>
