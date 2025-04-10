@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { TbBrandGit, TbBrandGithub, TbBrandGoogleDrive, TbGlobe } from 'react-icons/tb';
 import invariant from 'tiny-invariant';
 
-import { type Links } from '@/app/_projects/[projectId]/page';
+import { type Links } from '@/app/projects/[projectId]/page';
 
 const Linky = ({ text, url, icon }: { text: string; url: string; icon: ReactNode }) => (
 	<Link
