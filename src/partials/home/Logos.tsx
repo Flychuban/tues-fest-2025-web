@@ -9,7 +9,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { TF_DATE_STRING, TF_LOCATION, TF_YEAR } from '@/constants/event';
-import { PROJECT_REGISTRATION_FORM_URL } from '@/constants/projects';
 import { cn } from '@/lib/utils';
 
 export default function EventLanding() {
@@ -35,6 +34,13 @@ export default function EventLanding() {
 					<Separator className="bg-border" />
 
 					<Countdown />
+
+					<Button size="xl" className="font-bold uppercase" asChild>
+						<Link href="/projects">
+							<Rocket className="mr-2 size-5" />
+							<span>Разгледай проектите</span>
+						</Link>
+					</Button>
 
 					{/* Event details - flex-col on mobile, flex-row on desktop */}
 					<div className="flex flex-col items-stretch gap-4 text-center sm:flex-row sm:gap-6">
