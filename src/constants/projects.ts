@@ -1,3 +1,5 @@
+import { toLowerCase } from 'string-ts';
+
 export const PROJECT_TYPES = {
 	extra: 'Извънкласна дейност',
 	class: 'Курсов проект',
@@ -15,19 +17,23 @@ export const PROJECT_CATEGORIES = {
 
 export type ProjectCategory = keyof typeof PROJECT_CATEGORIES;
 
+export function isProjectCategory(value: string): value is ProjectCategory {
+	return Object.hasOwn(PROJECT_CATEGORIES, value);
+}
+
 export const PROJECT_CATEGORY_MAP = Object.entries(PROJECT_CATEGORIES).reduce(
 	(acc, [key, value]) => ({
 		...acc,
 		[key]: {
 			text: value,
-			href: `/projects/category/${key.toLowerCase()}`,
+			href: `/projects/category/${toLowerCase(key)}`,
 			category: key,
 		},
 	}),
 	{} as {
-		[key in keyof typeof PROJECT_CATEGORIES]: {
-			text: string;
-			href: string;
+		[key in ProjectCategory]: {
+			text: (typeof PROJECT_CATEGORIES)[key];
+			href: `/projects/category/${Lowercase<key>}`;
 			category: key;
 		};
 	}
