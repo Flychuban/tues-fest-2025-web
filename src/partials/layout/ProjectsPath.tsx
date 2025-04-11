@@ -22,7 +22,7 @@ const ProjectsPath = ({ path }: { path?: PathItem[] | null | undefined }) => {
 	if (!path) return null;
 
 	return (
-		<section className="pt-10">
+		<section>
 			<Card className="rounded-lg border-2 px-8 py-5">
 				<Breadcrumb>
 					<BreadcrumbList className="text-white">

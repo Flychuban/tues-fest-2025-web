@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { OG_METADATA, TF_TITLE, TWITTER_METADATA } from '@/constants/seo';
 import ProjectsPath from '@/partials/layout/ProjectsPath';
+import { ProjectContainer } from '@/partials/projects/project-container';
 import Contributors from '@/partials/projects/project/Contributors';
 import Gallery from '@/partials/projects/project/Gallery';
 import LinksContainer from '@/partials/projects/project/Links';
@@ -107,7 +108,7 @@ const ProjectPage = async (props: { params: Promise<{ projectId: string }> }) =>
 	invariant(thumbnail, `Project with ID ${project.id} (${project.title}) has no thumbnail or images`);
 
 	return (
-		<div className="container mx-auto space-y-5 px-3">
+		<ProjectContainer>
 			<ProjectsPath path={path} />
 			<div className="container">
 				<Card className="m-auto w-full border sm:px-4 md:w-[90%] lg:w-[80%]">
@@ -163,7 +164,7 @@ const ProjectPage = async (props: { params: Promise<{ projectId: string }> }) =>
 				</div>
 				<LinksContainer links={project.links} />
 			</div>
-		</div>
+		</ProjectContainer>
 	);
 };
 
