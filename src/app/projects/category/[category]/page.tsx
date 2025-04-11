@@ -1,5 +1,4 @@
-// IMPORTATN - THIS IS THE DUMBES SOLUTION, BUT I WANT SWEEEET SERVER COMPONENTS
-import Link from 'next/link';
+import { Metadata, ResolvingMetadata } from 'next';
 import { redirect } from 'next/navigation';
 
 import { isProjectCategory, PROJECT_CATEGORIES, PROJECT_CATEGORY_MAP } from '@/constants/projects';
@@ -16,7 +15,7 @@ const PATH: PathItem[] = [
 	},
 	{
 		name: 'Проекти',
-		url: '',
+		url: '/projects',
 	},
 ];
 
@@ -26,11 +25,46 @@ export function generateStaticParams() {
 	}));
 }
 
-export default async function ProjectsPage(props: {
+type PageProps = {
 	params: Promise<{
 		category: string;
 	}>;
-}) {
+};
+
+export async function generateMetadata(props: PageProps, parent: ResolvingMetadata): Promise<Metadata> {
+	const params = await props.params;
+	const category = params.category.toString();
+
+	if (!isProjectCategory(category)) {
+		return {};
+	}
+
+	const newDescriptionSentence = `Разгледайте ученическите проекти на ${TF_TITLE} в категорията "${PROJECT_CATEGORIES[category]}"`;
+
+	const alterDescription = (original: string) => {
+		const sentences = original.split('.');
+		sentences[0] = newDescriptionSentence;
+		return sentences.join('.');
+	};
+
+	const parentMetadata = await parent;
+
+	return {
+		title: `Категория "${PROJECT_CATEGORIES[category]}" – Проекти на ${TF_TITLE}`,
+		description: alterDescription(parentMetadata.description ?? ''),
+		openGraph: {
+			title: `Категория "${PROJECT_CATEGORIES[category]}" – Проекти на ${TF_TITLE}`,
+			description: `${newDescriptionSentence}.`,
+		},
+		twitter: {
+			title: `Проекти в ${PROJECT_CATEGORIES[category]} на ${TF_TITLE}`,
+			description: `${newDescriptionSentence}.`,
+			card: 'summary_large_image',
+		},
+	};
+}
+
+export default async function ProjectsPage(props: PageProps) {
 	const params = await props.params;
 	const category = params.category.toString();
 
@@ -44,7 +78,7 @@ export default async function ProjectsPage(props: {
 
 	return (
 		<div className="container mx-auto space-y-5 px-3">
-			<ProjectsPath path={PATH} />
+			<ProjectsPath path={[...PATH, { name: PROJECT_CATEGORIES[category], url: '' }]} />
 
 			{/* HACK: weird inconsistency in the names, this is a code smell... */}
 			<ProjectFilter current={category === 'networks' ? 'Мрежи' : PROJECT_CATEGORIES[category]} />
