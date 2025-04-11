@@ -43,6 +43,7 @@ export type Project = {
 	next_id: number;
 	prev_id: number;
 };
+
 export async function generateMetadata(props: { params: Promise<{ projectId: string }> }) {
 	const params = await props.params;
 	const projectId = parseInt(params.projectId, 10);
@@ -106,12 +107,10 @@ const ProjectPage = async (props: { params: Promise<{ projectId: string }> }) =>
 	invariant(thumbnail, `Project with ID ${project.id} (${project.title}) has no thumbnail or images`);
 
 	return (
-		<div className="container">
-			<Suspense fallback={<div>Loading...</div>}>
-				<ProjectsPath path={path} />
-			</Suspense>
-			<div className="container mb-20 pt-16 sm:px-8">
-				<Card className="m-auto w-full border bg-black text-white opacity-100 sm:px-4 md:w-[90%] lg:w-[70%]">
+		<div className="container mx-auto space-y-5 px-3">
+			<ProjectsPath path={path} />
+			<div className="container">
+				<Card className="m-auto w-full border sm:px-4 md:w-[90%] lg:w-[80%]">
 					<CardHeader className="pt-10">
 						<CardTitle className="text-center text-3xl">{project.title}</CardTitle>
 					</CardHeader>
@@ -144,17 +143,19 @@ const ProjectPage = async (props: { params: Promise<{ projectId: string }> }) =>
 								category={project.category}
 							/>
 						</div>
-						{project.description.length > 250 ? (
+						{/* {project.description.length > 250 ? (
 							<ScrollArea className="text-md my-4 h-[150px] overflow-y-scroll sm:text-lg">
-								{project.description}
+								<ProjectDescription description={project.description} />
 							</ScrollArea>
-						) : (
-							<CardDescription className="text-md my-6 sm:text-lg">{project.description}</CardDescription>
-						)}
+						) : ( */}
+						<CardDescription className="prose prose-sm prose-slate sm:prose-lg mx-auto max-w-none">
+							<ProjectDescription description={project.description} />
+						</CardDescription>
+						{/* )} */}
 						<Contributors contributors={project.contributors} />
 					</CardContent>
 				</Card>
-				<div className="m-auto mx-auto mt-4 w-[96%] md:w-[90%] lg:w-[70%]">
+				<div className="m-auto mx-auto mt-4 w-[96%] md:w-[90%] lg:w-[80%]">
 					<Gallery
 						name={project.title}
 						images={project.images.length > 0 ? project.images : [project.thumbnail!]}
@@ -165,5 +166,9 @@ const ProjectPage = async (props: { params: Promise<{ projectId: string }> }) =>
 		</div>
 	);
 };
+
+function ProjectDescription({ description }: { description: string }) {
+	return description.split('\n').map((paragraph, index) => <p key={index}>{paragraph}</p>);
+}
 
 export default ProjectPage;

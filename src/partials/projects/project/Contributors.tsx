@@ -1,4 +1,6 @@
+import { buttonVariants } from '@/components/ui/button';
 import { Contributor } from '@/app/projects/[projectId]/page';
+import { cn } from '@/lib/utils';
 
 const Contributors = ({ contributors }: { contributors: Contributor[] }) => (
 	<div className="w-full max-w-screen-lg">
@@ -7,7 +9,10 @@ const Contributors = ({ contributors }: { contributors: Contributor[] }) => (
 				{contributors?.map((creator) => (
 					<div
 						key={creator?.name}
-						className="border-border bg-background hover:bg-sand flex w-full items-center gap-2 rounded-xl border-2 px-4 py-2 hover:text-black md:w-[calc(50%-1rem)]"
+						className={cn(
+							buttonVariants({ variant: 'outline', size: 'xl' }),
+							'w-full md:w-[calc(50%-1rem)]'
+						)}
 					>
 						<p className="flex w-full break-before-avoid flex-col gap-1 whitespace-pre-line text-center sm:block">
 							{creator?.name} <span className="text-sm opacity-70">от {creator?.class} клас</span>
