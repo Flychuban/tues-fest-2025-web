@@ -50,7 +50,9 @@ export async function generateMetadata(props: PageProps, parent: ResolvingMetada
 	const parentMetadata = await parent;
 
 	return {
-		title: `Категория "${PROJECT_CATEGORIES[category]}" – Проекти на ${TF_TITLE}`,
+		title: {
+			absolute: `${PROJECT_CATEGORIES[category]} – Проекти на ${TF_TITLE}`,
+		},
 		description: alterDescription(parentMetadata.description ?? ''),
 		openGraph: {
 			title: `Категория "${PROJECT_CATEGORIES[category]}" – Проекти на ${TF_TITLE}`,
