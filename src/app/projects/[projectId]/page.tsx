@@ -117,13 +117,13 @@ const ProjectPage = async (props: { params: Promise<{ projectId: string }> }) =>
 					</CardHeader>
 					<CardContent className="my-4">
 						{project.youtubeId && (
-							<div className="m-auto w-full overflow-hidden rounded-xl border-2 border-white">
+							<div className="m-auto w-full overflow-hidden rounded-xl border-2">
 								<Video name={project.title} id={project.youtubeId} />
 							</div>
 						)}
 						{!project.youtubeId && (
 							<div
-								className="relative m-auto w-full rounded-xl border-2 border-white"
+								className="relative m-auto w-full rounded-xl border-2"
 								style={{ paddingTop: '56.25%' }}
 							>
 								<Image
