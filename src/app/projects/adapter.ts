@@ -215,8 +215,6 @@ import project122$image3 from '@/../public/projects/122/3.webp';
 import project122$image4 from '@/../public/projects/122/4.webp';
 import project122$image5 from '@/../public/projects/122/5.webp';
 import project123$image1 from '@/../public/projects/123/1.webp';
-// new imports
-import project115$thumbnail from '@/../public/projects/115/thumbnail.webp';
 
 type ProjectAdapter = {}; // TODO: import predefined
 
@@ -246,7 +244,7 @@ export const PROJECTS = [
                 "https://github.com/Drone-project-TUES/Drone"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "ghUBjMAwjRg",
         "contributors": [
             {
                 "name": "Никола Георгиев",
@@ -273,7 +271,7 @@ export const PROJECTS = [
     },
     {
         "id": 2,
-        "title": " Разработка на софтуер за създаване на тестови структури на физически  правила ",
+        "title": "Разработка на софтуер за създаване на тестови структури на физически  правила",
         "category": "software",
         "description": "Проектът представя разработка на софтуер за автоматизирано създаване и верификация на тестови структури по технология 65LPe. Проектът включва изграждане на потребителски интерфейс за избор на физически правила, генериране и визуализация на тестови структури (площ, ширина, отстояние, ограждане, припокриване), както и проверка на съответствието им чрез DRC инструменти.",
         "links": {
@@ -282,7 +280,7 @@ export const PROJECTS = [
                 "https://github.com/ADASisi/thesis-testcasegen"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "bwcpNNv8J7U",
         "contributors": [
             {
                 "name": "Силвия Антова ",
@@ -303,7 +301,7 @@ export const PROJECTS = [
                 "https://github.com/CooDiiNgg/8-bit_computer"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "LXtlesY5er4",
         "contributors": [
             {
                 "name": "Николай Вълканов",
@@ -332,7 +330,7 @@ export const PROJECTS = [
                 "https://github.com/MechkarovTUES/ACIG"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "oqrwjK35PXI",
         "contributors": [
             {
                 "name": "Александър Мечкаров",
@@ -359,7 +357,7 @@ export const PROJECTS = [
                 "https://github.com/Ivailo2707/AeroSAR-2.0"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "pY87RSfS-Mo",
         "contributors": [
             {
                 "name": "Ивайло Русинчовски",
@@ -398,7 +396,7 @@ export const PROJECTS = [
                 "https://github.com/stefan587/AeroSense/settings/access?guidance_task="
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "JyB83ALjIJ4",
         "contributors": [
             {
                 "name": "Стефан Конев",
@@ -427,7 +425,7 @@ export const PROJECTS = [
                 "github.com/AGIBotTF"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "3Mx1ZGoJDiA",
         "contributors": [
             {
                 "name": "Антон Христов",
@@ -464,7 +462,7 @@ export const PROJECTS = [
                 "https://github.com/KaloyanYanev08/AMA_HackTues11"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "WuK_ZP7cvlY",
         "contributors": [
             {
                 "name": "Мартин Филипов",
@@ -501,7 +499,7 @@ export const PROJECTS = [
                 "https://github.com/EvgeniyaGo/Artify"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "zIdZEqG1SBc",
         "contributors": [
             {
                 "name": "Евгения Голубева",
@@ -526,7 +524,7 @@ export const PROJECTS = [
                 "https://github.com/KillLaker53/AtopiCare"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "KnucGn-b2A4",
         "contributors": [
             {
                 "name": "Петър Петров",
@@ -561,7 +559,7 @@ export const PROJECTS = [
                 "https://github.com/BorbiAl/Hack_Tues_11"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "W8U2thj-vPI",
         "contributors": [
             {
                 "name": "Велина Цанева ",
@@ -590,7 +588,7 @@ export const PROJECTS = [
                 "https://github.com/ScripterEve/HT11"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "5ikMwbkVIX0",
         "contributors": [
             {
                 "name": "Ева Георгиева",
@@ -627,7 +625,7 @@ export const PROJECTS = [
                 "https://github.com/demiralyubenova/better-me"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "gOun0ZLs5jE",
         "contributors": [
             {
                 "name": "Демира Любенова",
@@ -670,7 +668,7 @@ export const PROJECTS = [
                 "https://github.com/Ne-Se-Chete/CableUndefined-Embedded"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "PlZsPEHdY-o",
         "contributors": [
             {
                 "name": "Борислав Миланов",
@@ -712,7 +710,7 @@ export const PROJECTS = [
                 "https://github.com/Simoo2010/HACKTUES.git"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "pLGuj4Gzp50",
         "contributors": [
             {
                 "name": "Симеон Великов",
@@ -752,7 +750,7 @@ export const PROJECTS = [
                 "https://github.com/mi60sumaz/DiplomnaRabota"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "Ah0e3sk12mg",
         "contributors": [
             {
                 "name": "Михаил Петров",
@@ -773,7 +771,7 @@ export const PROJECTS = [
                 "https://github.com/DMyashkov/timemanager"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "RkBgncjZyGU",
         "contributors": [
             {
                 "name": "Дамян Мяшков",
@@ -799,7 +797,7 @@ export const PROJECTS = [
                 "https://github.com/AvatarZorak/TUESFest2025"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "iItnkC_qVxQ",
         "contributors": [
             {
                 "name": "Александър Христов",
@@ -820,7 +818,7 @@ export const PROJECTS = [
                 "https://github.com/mangoPeveca/tuesFest2025"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "Yl7k27E2yMU",
         "contributors": [
             {
                 "name": "Ростислав Ангелов ",
@@ -841,7 +839,7 @@ export const PROJECTS = [
                 "https://github.com/ImpairedAsp5640/DigiSpesti"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "i0DXzSa1dPI",
         "contributors": [
             {
                 "name": "Владислав Дойчинов",
@@ -874,7 +872,7 @@ export const PROJECTS = [
                 "https://github.com/Hehrd/Discord-Bot-Project"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "XTwmWGtF6R4",
         "contributors": [
             {
                 "name": "Александър Дянков",
@@ -899,7 +897,7 @@ export const PROJECTS = [
                 "https://github.com/A13xand33r/DROPX"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "5m7zGA6M1nk",
         "contributors": [
             {
                 "name": "Александър Асенов ",
@@ -936,7 +934,7 @@ export const PROJECTS = [
                 "https://github.com/GeorgiMPastrakov/EchoMe"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "a2khq0KlHFc",
         "contributors": [
             {
                 "name": "Георги Пъстраков",
@@ -957,7 +955,7 @@ export const PROJECTS = [
                 "https://github.com/KonstantinZlatew/HackTues11"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "xNkqNjZvGnU",
         "contributors": [
             {
                 "name": "Валентин Йотов",
@@ -994,7 +992,7 @@ export const PROJECTS = [
                 "https://github.com/mmoonniiee/diplomna"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "6SNW49ZAUWs",
         "contributors": [
             {
                 "name": "Мартина Бикова",
@@ -1015,7 +1013,7 @@ export const PROJECTS = [
                 "https://github.com/Paco2006/Embedded-Computer"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "K_dtAmlJd4k",
         "contributors": [
             {
                 "name": "Евгени Попов",
@@ -1038,7 +1036,7 @@ export const PROJECTS = [
                 "https://github.com/martindoychinov07/exclusive-fire-detector"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "WBxW2EaLlUw",
         "contributors": [
             {
                 "name": "Мартин Дойчинов",
@@ -1074,7 +1072,7 @@ export const PROJECTS = [
                 "A3"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "E_vgnCyv8i0",
         "contributors": [
             {
                 "name": "Вихър Рангелов",
@@ -1120,7 +1118,7 @@ export const PROJECTS = [
                 "https://github.com/ivanAleksandrov09/HACKTUES-11-Let-me-code"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "sZcCLUjW0GI",
         "contributors": [
             {
                 "name": "Иван Александров",
@@ -1157,7 +1155,7 @@ export const PROJECTS = [
                 "https://github.com/Belichkata/Firebender"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "_ivkSZ-2U_Y",
         "contributors": [
             {
                 "name": "Борис Беличев",
@@ -1182,7 +1180,7 @@ export const PROJECTS = [
                 "https://github.com/AlehandroDjadjev/FirmFlow"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "-fmZNQizZq0",
         "contributors": [
             {
                 "name": "Александър Дачев",
@@ -1219,7 +1217,7 @@ export const PROJECTS = [
                 "https://github.com/x2oreo/FitAI"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "lBeGO3C4oxM",
         "contributors": [
             {
                 "name": "Калоян Гаврилов",
@@ -1252,7 +1250,7 @@ export const PROJECTS = [
                 "https://github.com/vladidraganov/Flow"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "WdI3fn3-Ip0",
         "contributors": [
             {
                 "name": "Деян Голосманов",
@@ -1268,7 +1266,7 @@ export const PROJECTS = [
     },
     {
         "id": 35,
-        "title": "Forza FERRARI ",
+        "title": "Forza FERRARI",
         "category": "software",
         "description": "Проектът Forza Ferrari представлява иновативно бизнес решение за куриерски фирми, което цели да осигури по-бързо и по-ефективно доставяне на пратки до крайните потребители.",
         "links": {
@@ -1279,7 +1277,7 @@ export const PROJECTS = [
                 "https://github.com/BorimirGanchev/RouteOptimizer-Frontend"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "q5ye-4ZcoD4",
         "contributors": [
             {
                 "name": "Боримир Ганчев ",
@@ -1300,7 +1298,7 @@ export const PROJECTS = [
                 "https://github.com/dimitarNzhelev/event-management"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "xDMLj5V4W7A",
         "contributors": [
             {
                 "name": "Димитър Желев ",
@@ -1327,7 +1325,7 @@ export const PROJECTS = [
                 "https://github.com/Ralchev123/GPS-TRACKER"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "0ABVinQ8KnI",
         "contributors": [
             {
                 "name": "Никола Ралчев",
@@ -1351,7 +1349,7 @@ export const PROJECTS = [
                 "https://github.com/CodenameSource/GRAID"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "hXiGG7xfBMg",
         "contributors": [
             {
                 "name": "Калоян Миладинов",
@@ -1374,7 +1372,7 @@ export const PROJECTS = [
                 "https://github.com/Agorbanoff/Introduction-to-script-languages.git"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "yL5VpeyyCgU",
         "contributors": [
             {
                 "name": "Александър Горбанов",
@@ -1397,7 +1395,7 @@ export const PROJECTS = [
             "demoUrl": null,
             "repoUrls": []
         },
-        "youtubeId": null,
+        "youtubeId": "cFWG4ZlXdZw",
         "contributors": [
             {
                 "name": "Ирена Сербезова",
@@ -1422,7 +1420,7 @@ export const PROJECTS = [
                 "https://github.com/sanguineblade/HackTUES-pqsucniq-geng.git"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "xAEwdKr4ZVw",
         "contributors": [
             {
                 "name": "Борис Боянски",
@@ -1459,7 +1457,7 @@ export const PROJECTS = [
                 "https://github.com/IvaAMarinova/Thesis-HomeTour"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "JlzhGA55dWQ",
         "contributors": [
             {
                 "name": "Ива Маринова",
@@ -1471,7 +1469,7 @@ export const PROJECTS = [
     },
     {
         "id": 43,
-        "title": "HRBuddy ",
+        "title": "HRBuddy",
         "category": "software",
         "description": "HR-buddy - Уеб приложение, базирано на микросървизна архитектура, което подпомага собствениците на бизнес при оценката на потенциални или настоящи служители. Чрез интелигентно скрейпване и AI-базирана обработка системата предоставя анализ по пет ключови фактора, подпомагайки вземането на информирани HR решения.",
         "links": {
@@ -1480,7 +1478,7 @@ export const PROJECTS = [
                 "https://github.com/bobikenobi12/HACKTUES11"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "bI_DFQeK-L4",
         "contributors": [
             {
                 "name": "Антон Станков ",
@@ -1517,7 +1515,7 @@ export const PROJECTS = [
                 "https://github.com/krsultov/identiPay"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "OKYEM43Z_Ls",
         "contributors": [
             {
                 "name": "Крум Султов",
@@ -1538,7 +1536,7 @@ export const PROJECTS = [
                 "https://github.com/j7zd/dr"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "yNYBM6tsRsw",
         "contributors": [
             {
                 "name": "Огнян Разсадов ",
@@ -1561,7 +1559,7 @@ export const PROJECTS = [
                 "https://github.com/BrawlstarsMaster/Jepeto"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "A__CsPZ8R9Y",
         "contributors": [
             {
                 "name": "Явор Минковски ",
@@ -1590,7 +1588,7 @@ export const PROJECTS = [
                 "https://github.com/IvaAMarinova/Katy-Feeder"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "V2FrvQdTuWA",
         "contributors": [
             {
                 "name": "Ива Маринова",
@@ -1615,7 +1613,7 @@ export const PROJECTS = [
                 "https://github.com/Walk3r11/killerfrequency"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "oyBkjbhLHjw",
         "contributors": [
             {
                 "name": "Калоян Томов ",
@@ -1645,7 +1643,7 @@ export const PROJECTS = [
                 "https://gitlab.com/kypo9720603/blue-team-kypo.git"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "wLv_22RVRIU",
         "contributors": [
             {
                 "name": "Елена Чернева",
@@ -1670,7 +1668,7 @@ export const PROJECTS = [
                 "https://github.com/Martin-Andonov/diplomna2024"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "51LtjwDMHEo",
         "contributors": [
             {
                 "name": "Мартин Андонов",
@@ -1701,7 +1699,7 @@ export const PROJECTS = [
                 "https://github.com/rosen1710/medPager"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "y90E6dZLGco",
         "contributors": [
             {
                 "name": "Росен Маринов",
@@ -1737,7 +1735,7 @@ export const PROJECTS = [
                 "https://github.com/Ilinats/meds-tracker"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "AyVqTbMu4PU",
         "contributors": [
             {
                 "name": "Илина Цанова",
@@ -1762,7 +1760,7 @@ export const PROJECTS = [
                 "https://github.com/MagdalenaNikiforova/MENTA"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "GXvOQwaC9dk",
         "contributors": [
             {
                 "name": "Магдалена Никифорова",
@@ -1783,7 +1781,7 @@ export const PROJECTS = [
                 "https://github.com/Mr-TopG/TUES-Battle-Bots"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "c5RgfDXvRTI",
         "contributors": [
             {
                 "name": "Илия Илиев",
@@ -1824,7 +1822,7 @@ export const PROJECTS = [
                 "https://github.com/false-positive/moneta"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "B5fMqtCxrbo",
         "contributors": [
             {
                 "name": "Божидар Павлов",
@@ -1861,7 +1859,7 @@ export const PROJECTS = [
                 "https://github.com/p-ivanovv/Mladi-Bogati-Tuesari"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "YrZWDSMiZKE",
         "contributors": [
             {
                 "name": "Деян Нъков",
@@ -1898,7 +1896,7 @@ export const PROJECTS = [
                 "https://github.com/Nikieprogramach/HackTues11"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "nNMvKGvn_Oo",
         "contributors": [
             {
                 "name": "Габриел Петров",
@@ -1927,7 +1925,7 @@ export const PROJECTS = [
                 "https://github.com/MihCom9/NeuroFit"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "MCwwqFN2yY8",
         "contributors": [
             {
                 "name": "Борис Калеканов ",
@@ -1964,7 +1962,7 @@ export const PROJECTS = [
                 "https://github.com/43r361/OpenWing"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "uzub1C1fSdo",
         "contributors": [
             {
                 "name": "Александър Шестаков",
@@ -2019,7 +2017,7 @@ export const PROJECTS = [
                 "https://github.com/GogoManev/pretty-bad-platformer-game"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "yCcBsbxi7bM",
         "contributors": [
             {
                 "name": "Георги Манев",
@@ -2051,7 +2049,7 @@ export const PROJECTS = [
                 "https://github.com/JustZhivko/PIONEER-TUES-FEST-2025"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "sNfC4sBi7L0",
         "contributors": [
             {
                 "name": "Живко Увалиев",
@@ -2089,7 +2087,7 @@ export const PROJECTS = [
                 "https://github.com/Sveji/PlanTheMeet"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "sRpRpNtDa6U",
         "contributors": [
             {
                 "name": "Мартин Велчев",
@@ -2126,7 +2124,7 @@ export const PROJECTS = [
                 "https://github.com/fimo3/promedon"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "b2eEwdvMiOg",
         "contributors": [
             {
                 "name": "Серафим Ковачевич",
@@ -2138,7 +2136,7 @@ export const PROJECTS = [
     },
     {
         "id": 65,
-        "title": "Punching Arcade Machine ",
+        "title": "Punching Arcade Machine",
         "category": "embedded",
         "description": "Боксова круша, която измерва силата на удара, с която е ударена, като изчислява времето, за което крушата се мести от вертикално в хоризонтално състояние ",
         "links": {
@@ -2147,7 +2145,7 @@ export const PROJECTS = [
                 "https://github.com/TheUnforgivenI/PunchingArcadeMachine"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "0zMh1XB6RC4",
         "contributors": [
             {
                 "name": "Мартин Йосифов",
@@ -2189,7 +2187,7 @@ export const PROJECTS = [
                 "https://github.com/dr-programmer/qbit"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "lbHEYXmpPDw",
         "contributors": [
             {
                 "name": "Дарий Топузов",
@@ -2216,7 +2214,7 @@ export const PROJECTS = [
                 "https://github.com/Bobisan/Raspberry-Pi-4B-handheld-TuesFest2025"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "pdXC9jSBdrg",
         "contributors": [
             {
                 "name": "Борис Стрински",
@@ -2237,7 +2235,7 @@ export const PROJECTS = [
                 "https://github.com/airifqiry/ReFinder"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "SYFgPZgJKSg",
         "contributors": [
             {
                 "name": "Айрис Ясенова",
@@ -2270,7 +2268,7 @@ export const PROJECTS = [
                 "https://github.com/KNProNooob/RiceBOX"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "tfSP1DhPPp4",
         "contributors": [
             {
                 "name": "Кристиан Николов",
@@ -2324,7 +2322,7 @@ export const PROJECTS = [
                 "https://github.com/nikolasachkov/RideMartUI"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "y3e0pTWshpo",
         "contributors": [
             {
                 "name": "Никола Сачков",
@@ -2345,7 +2343,7 @@ export const PROJECTS = [
                 "https://gitlab.itgix.com/elsys/petar-petrov"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "ZKvC3YzqNAY",
         "contributors": [
             {
                 "name": "Петър Петров",
@@ -2372,7 +2370,7 @@ export const PROJECTS = [
                 "https://github.com/KristiyanAbrashkov/SeaBattle_TuesFest.git"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "0Xi3cSJKRao",
         "contributors": [
             {
                 "name": "Кристиян Абрашков",
@@ -2398,7 +2396,7 @@ export const PROJECTS = [
                 "https://github.com/Gabo1234567890/Sense-Sphere.git"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "aMMx0JJC1Ts",
         "contributors": [
             {
                 "name": "Габриел Ненов",
@@ -2427,7 +2425,7 @@ export const PROJECTS = [
                 "https://github.com/atanas-rujinov/shoot-alien"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "mZ0IOXVhxnQ",
         "contributors": [
             {
                 "name": "Атанас Ружинов",
@@ -2456,7 +2454,7 @@ export const PROJECTS = [
                 "https://github.com/ImpairedAsp5640/SignSmart"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "cuwhxSYmDs0",
         "contributors": [
             {
                 "name": "Александър Георгиев",
@@ -2499,7 +2497,7 @@ export const PROJECTS = [
                 "https://github.com/HyperRaptor/Simon-Said"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "3xud8Hk64tQ",
         "contributors": [
             {
                 "name": "Симеон Алексиев",
@@ -2520,7 +2518,7 @@ export const PROJECTS = [
                 "https://github.com/NickProgrammerGaming/SmartBastoon"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "3h_b_xREizY",
         "contributors": [
             {
                 "name": "Павел Симеонов",
@@ -2553,7 +2551,7 @@ export const PROJECTS = [
     },
     {
         "id": 78,
-        "title": "Smart Glasses ",
+        "title": "Smart Glasses",
         "category": "embedded",
         "description": "Custom-built wearable smart glasses system by a highly specialized board that connects to your phone and use Al to assist you in real time. Capture text with the built-in camera, get instant answers from ChatGPT, navigate with step-by-step directions, track your movement, and never miss a calendar event.",
         "links": {
@@ -2562,7 +2560,7 @@ export const PROJECTS = [
                 "https://github.com/yasenOfficial/SmartGlasses"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "pYvFCD4uprU",
         "contributors": [
             {
                 "name": "Мария Конева ",
@@ -2591,7 +2589,7 @@ export const PROJECTS = [
                 "https://github.com/DunevTsvetomir/HACKTUES11"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "qzNkEm-DLM4",
         "contributors": [
             {
                 "name": "Калоян Георгиев ",
@@ -2611,7 +2609,7 @@ export const PROJECTS = [
     },
     {
         "id": 80,
-        "title": "Smart Mirror ",
+        "title": "Smart Mirror",
         "category": "embedded",
         "description": "Иновативно оледало, на което ще се изписва температурата в стаята, влагата и часа. Самото огледало ще се включва чрез сензор за движение.",
         "links": {
@@ -2620,7 +2618,7 @@ export const PROJECTS = [
                 "https://github.com/kebaaaaaa/SmartMirror"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "OGJjB21HbhI",
         "contributors": [
             {
                 "name": "Момчил Владимиров ",
@@ -2649,7 +2647,7 @@ export const PROJECTS = [
                 "https://github.com/YavorPenev/TUES_FEST11_Legends.git"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "MpxpUVjfFaE",
         "contributors": [
             {
                 "name": "Явор Пенев",
@@ -2690,7 +2688,7 @@ export const PROJECTS = [
                 "https://github.com/yorizova/HackTUES11"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "bWyi3eRHls4",
         "contributors": [
             {
                 "name": "Йоана Ризова",
@@ -2727,7 +2725,7 @@ export const PROJECTS = [
                 "https://github.com/daravader/SmoothScore"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "TYoEfzkRx8M",
         "contributors": [
             {
                 "name": "Дара Панайотова ",
@@ -2748,7 +2746,7 @@ export const PROJECTS = [
                 "https://github.com/VenelinZhelev/SofiaParking"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "mqF3YcIfwqE",
         "contributors": [
             {
                 "name": "Георги Манев",
@@ -2775,7 +2773,7 @@ export const PROJECTS = [
                 "https://github.com/KaloianPenchev/Speakle"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "FUJb6Kpryrk",
         "contributors": [
             {
                 "name": "Калоян Пенчев",
@@ -2796,7 +2794,7 @@ export const PROJECTS = [
                 "https://github.com/VaskoVelev/Sprout"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "a5CJXo1NZ1E",
         "contributors": [
             {
                 "name": "Васил Велев",
@@ -2829,7 +2827,7 @@ export const PROJECTS = [
                 "https://github.com/boyanbgeorgiev/StampR"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "Ncm3RWJbEVs",
         "contributors": [
             {
                 "name": "Боян Георгиев",
@@ -2845,7 +2843,7 @@ export const PROJECTS = [
     },
     {
         "id": 89,
-        "title": "Startify ",
+        "title": "Startify",
         "category": "software",
         "description": "Startify is a mobile app that connects entrepreneurs, investors, and clients. It allows you to create a business idea and provides the necessary documentation to help you develop it into a company. Additionally, you can invest in existing ideas or companies with legal documents ensuring your investment's security. The app also enables you to find partners to collaborate on your idea or join someone else's venture. Moreover, Startify can schedule meetings with investors or team members based on their availability, ensuring efficient time management. Furthermore, you can always chat with anyone!",
         "links": {
@@ -2854,7 +2852,7 @@ export const PROJECTS = [
                 "https://github.com/Gabo1234567890/Startify.git"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "xeVlLBR_yaI",
         "contributors": [
             {
                 "name": "Таня Колева",
@@ -2879,7 +2877,7 @@ export const PROJECTS = [
                 "https://github.com/Toxic-Fuel/Steel-Storm"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "5GAr1A-6yhE",
         "contributors": [
             {
                 "name": "Йордан Йончев",
@@ -2922,7 +2920,7 @@ export const PROJECTS = [
                 "https://github.com/plamenyalamov/ProjectAriana.git"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "UwO89LTxaVQ",
         "contributors": [
             {
                 "name": "Пламен Ялъмов",
@@ -2943,7 +2941,7 @@ export const PROJECTS = [
                 "https://github.com/ekaterinakrunewa/Buff-Buhtichki-hacktues11"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "PySWUy_RSSA",
         "contributors": [
             {
                 "name": "Сияна Топузова",
@@ -2976,7 +2974,7 @@ export const PROJECTS = [
                 "https://github.com/atanas-rujinov/toilet-finder"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "7Gq3sB493Us",
         "contributors": [
             {
                 "name": "Атанас Ружинов",
@@ -2997,7 +2995,7 @@ export const PROJECTS = [
                 "https://github.com/FoxVl2/TUES-FEST.git"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "XjUTPzW50gs",
         "contributors": [
             {
                 "name": "Владимир Живков",
@@ -3030,7 +3028,7 @@ export const PROJECTS = [
                 "https://github.com/zlati-coding/cak_cak_cak_cak"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "MddaVWvtSFs",
         "contributors": [
             {
                 "name": "Даниел Икономов",
@@ -3065,7 +3063,7 @@ export const PROJECTS = [
                 "https://github.com/Mladen-Robotics/VitalLink.git"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "xUofeEMr_Xs",
         "contributors": [
             {
                 "name": "Младен Михалков",
@@ -3092,7 +3090,7 @@ export const PROJECTS = [
                 "https://github.com/DebelToni/vrutka"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "bpI_LwdTHx8",
         "contributors": [
             {
                 "name": "Стоян Иванов",
@@ -3131,7 +3129,7 @@ export const PROJECTS = [
                 "https://github.com/SectorCT/WayPoint"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "OQO2fIt2DVE",
         "contributors": [
             {
                 "name": "Светослав Илиев",
@@ -3168,7 +3166,7 @@ export const PROJECTS = [
                 "https://github.com/ZaDumiteOrg"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "DzPAkbYjamU",
         "contributors": [
             {
                 "name": "Екатерина Димитрова",
@@ -3189,7 +3187,7 @@ export const PROJECTS = [
                 "https://github.com/Papaya345/TUESFEST2025"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "8lm5vjcQC0k",
         "contributors": [
             {
                 "name": "Михаел Иванов",
@@ -3212,7 +3210,7 @@ export const PROJECTS = [
                 "https://github.com/inevg/dmvpn_diploma"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "dG-dmnUgRNs",
         "contributors": [
             {
                 "name": "Иоан Евгениев",
@@ -3233,7 +3231,7 @@ export const PROJECTS = [
                 "https://github.com/StefyVP/Multicast-traffic.git"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "6JuTwWg5Ras",
         "contributors": [
             {
                 "name": "Стефани Пенчева",
@@ -3254,7 +3252,7 @@ export const PROJECTS = [
                 "https://github.com/Boyan7577/Diplomna_Rabota"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "FFZF_uA0SWA",
         "contributors": [
             {
                 "name": "Боян Жечев",
@@ -3292,7 +3290,7 @@ export const PROJECTS = [
     },
     {
         "id": 105,
-        "title": "Изграждане на свързаност между два отделни доставчика на услуги, посредством Inter-AS Option C спрямо RFC 4364 ",
+        "title": "Изграждане на свързаност между два отделни доставчика на услуги, посредством Inter-AS Option C спрямо RFC 4364",
         "category": "networks",
         "description": "Този проект е посветен на изграждането на свързаност между два отделни доставчика на услуги посредством Inter-AS Option C, дефиниран в RFC 4364. Основната цел е да се демонстрира как този подход може да бъде приложен за осигуряване на сигурна и ефективна комуникация между мрежите на различни доставчици.",
         "links": {
@@ -3325,7 +3323,7 @@ export const PROJECTS = [
                 "https://github.com/Paco2006/HCTYEC"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "MtQRpn4zJoY",
         "contributors": [
             {
                 "name": "Павел Симеонов",
@@ -3350,7 +3348,7 @@ export const PROJECTS = [
                 "https://github.com/Mrgoblings/AnasOS"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "8C9j_Yk_2wI",
         "contributors": [
             {
                 "name": "Емил Момчев",
@@ -3392,7 +3390,7 @@ export const PROJECTS = [
                 "https://github.com/Chochi44/decoder-design.git"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "1BAzn4cxExs",
         "contributors": [
             {
                 "name": "Чавдара Белева",
@@ -3413,7 +3411,7 @@ export const PROJECTS = [
                 "https://github.com/nikolpeneva/ruchko"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "ueQp4Tt453Q",
         "contributors": [
             {
                 "name": "Никол Пенева",
@@ -3438,7 +3436,7 @@ export const PROJECTS = [
                 "https://github.com/Bobisan/Lightmeter_TuesFest2025"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "fhUmtV7vroE",
         "contributors": [
             {
                 "name": "Борис Стрински",
@@ -3484,7 +3482,7 @@ export const PROJECTS = [
                 "https://github.com/atanas-rujinov/SIV-2"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "0o8gT9L3YXE",
         "contributors": [
             {
                 "name": "Атанас Ружинов",
@@ -3541,7 +3539,7 @@ export const PROJECTS = [
                 "https://github.com/alt-plus-f4/kato-za-final-embed"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "iRzh81fwE2s",
         "contributors": [
             {
                 "name": "Мартин Андонов",
@@ -3564,7 +3562,7 @@ export const PROJECTS = [
                 "class": "12 Б"
             }
         ],
-        "thumbnail": project115$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -3579,7 +3577,7 @@ export const PROJECTS = [
                 "https://github.com/NickZach2036/ELSYS-Diploma-thesis-Frontend"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "nP-lKq1fdlk",
         "contributors": [
             {
                 "name": "Николай Захариев",
@@ -3603,7 +3601,7 @@ export const PROJECTS = [
                 "https://github.com/Maycheto/Balkanskite_momi"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "01HLbzocMXA",
         "contributors": [
             {
                 "name": "Диляна Василева",
@@ -3642,7 +3640,7 @@ export const PROJECTS = [
                 "https://github.com/smookie77/DoroWatch"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "7y6ykKIYjLs",
         "contributors": [
             {
                 "name": "Антоан Цонков",
@@ -3680,7 +3678,7 @@ export const PROJECTS = [
                 "https://github.com/hristobelchinov/sparmate"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "tZEZwNgdwVg",
         "contributors": [
             {
                 "name": "Христо Белчинов",
@@ -3715,7 +3713,7 @@ export const PROJECTS = [
                 "https://github.com/MasterDavidG/Learneez"
             ]
         },
-        "youtubeId": null,
+        "youtubeId": "-qZjxfL0BLc",
         "contributors": [
             {
                 "name": "Давид Панамски",
