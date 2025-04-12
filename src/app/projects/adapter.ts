@@ -24,6 +24,41 @@ import project6$thumbnail from '@/../public/projects/6/thumbnail.webp';
 import project7$thumbnail from '@/../public/projects/7/thumbnail.webp';
 import project8$thumbnail from '@/../public/projects/8/thumbnail.webp';
 import project9$thumbnail from '@/../public/projects/9/thumbnail.webp';
+import project11$thumbnail from '@/../public/projects/11/thumbnail.webp';
+import project12$thumbnail from '@/../public/projects/12/thumbnail.webp';
+import project19$thumbnail from '@/../public/projects/19/thumbnail.webp';
+import project20$thumbnail from '@/../public/projects/20/thumbnail.webp';
+import project21$thumbnail from '@/../public/projects/21/thumbnail.webp';
+import project24$thumbnail from '@/../public/projects/24/thumbnail.webp';
+import project27$thumbnail from '@/../public/projects/27/thumbnail.webp';
+import project33$thumbnail from '@/../public/projects/33/thumbnail.webp';
+import project35$thumbnail from '@/../public/projects/35/thumbnail.webp';
+import project40$thumbnail from '@/../public/projects/40/thumbnail.webp';
+import project43$thumbnail from '@/../public/projects/43/thumbnail.webp';
+import project46$thumbnail from '@/../public/projects/46/thumbnail.webp';
+import project52$thumbnail from '@/../public/projects/52/thumbnail.webp';
+import project53$thumbnail from '@/../public/projects/53/thumbnail.webp';
+import project57$thumbnail from '@/../public/projects/57/thumbnail.webp';
+import project58$thumbnail from '@/../public/projects/58/thumbnail.webp';
+import project67$thumbnail from '@/../public/projects/67/thumbnail.webp';
+import project68$thumbnail from '@/../public/projects/68/thumbnail.webp';
+import project70$thumbnail from '@/../public/projects/70/thumbnail.webp';
+import project73$thumbnail from '@/../public/projects/73/thumbnail.webp';
+import project74$thumbnail from '@/../public/projects/74/thumbnail.webp';
+import project76$thumbnail from '@/../public/projects/76/thumbnail.webp';
+import project79$thumbnail from '@/../public/projects/79/thumbnail.webp';
+import project83$thumbnail from '@/../public/projects/83/thumbnail.webp';
+import project87$thumbnail from '@/../public/projects/87/thumbnail.webp';
+import project88$thumbnail from '@/../public/projects/88/thumbnail.webp';
+import project89$thumbnail from '@/../public/projects/89/thumbnail.webp';
+import project92$thumbnail from '@/../public/projects/92/thumbnail.webp';
+import project94$thumbnail from '@/../public/projects/94/thumbnail.webp';
+import project98$thumbnail from '@/../public/projects/98/thumbnail.webp';
+import project101$thumbnail from '@/../public/projects/101/thumbnail.webp';
+import project102$thumbnail from '@/../public/projects/102/thumbnail.webp';
+import project111$thumbnail from '@/../public/projects/111/thumbnail.webp';
+import project113$thumbnail from '@/../public/projects/113/thumbnail.webp';
+import project115$thumbnail from '@/../public/projects/115/thumbnail.webp';
 import project10$image1 from '@/../public/projects/10/1.webp';
 import project13$image1 from '@/../public/projects/13/1.webp';
 import project13$image2 from '@/../public/projects/13/2.webp';
@@ -542,7 +577,7 @@ export const PROJECTS = [
 				class: '9 А',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project11$thumbnail,
 		images: [],
 	},
 	{
@@ -578,7 +613,7 @@ export const PROJECTS = [
 				class: '9 В',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project12$thumbnail,
 		images: [],
 	},
 	{
@@ -765,7 +800,7 @@ export const PROJECTS = [
 				class: '12 Г',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project19$thumbnail,
 		images: [],
 	},
 	{
@@ -797,7 +832,7 @@ export const PROJECTS = [
 				class: '8 А',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project20$thumbnail,
 		images: [],
 	},
 	{
@@ -820,7 +855,7 @@ export const PROJECTS = [
 				class: '9 А',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project21$thumbnail,
 		images: [],
 	},
 	{
@@ -907,7 +942,7 @@ export const PROJECTS = [
 				class: '11 А',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project24$thumbnail,
 		images: [],
 	},
 	{
@@ -971,7 +1006,7 @@ export const PROJECTS = [
 				class: '11 Б',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project27$thumbnail,
 		images: [],
 	},
 	{
@@ -1141,7 +1176,7 @@ export const PROJECTS = [
 				class: '10 А',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project33$thumbnail,
 		images: [],
 	},
 	{
@@ -1189,7 +1224,7 @@ export const PROJECTS = [
 				class: '11 А',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project35$thumbnail,
 		images: [],
 	},
 	{
@@ -1295,7 +1330,7 @@ export const PROJECTS = [
 				class: '9 Г',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project40$thumbnail,
 		images: [],
 	},
 	{
@@ -1387,7 +1422,7 @@ export const PROJECTS = [
 				class: '11 Г',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project43$thumbnail,
 		images: [],
 	},
 	{
@@ -1455,7 +1490,7 @@ export const PROJECTS = [
 				class: '11 В',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project46$thumbnail,
 		images: [],
 	},
 	{
@@ -1515,11 +1550,7 @@ export const PROJECTS = [
 		links: {
 			demoUrl: null,
 			repoUrls: [
-				'Red',
-				'Team:',
 				'https://gitlab.com/kypo9720603/red-team-kypo.git',
-				'Blue',
-				'Team:',
 				'https://gitlab.com/kypo9720603/blue-team-kypo.git',
 			],
 		},
@@ -1609,7 +1640,7 @@ export const PROJECTS = [
 				class: '11 А',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project52$thumbnail,
 		images: [],
 	},
 	{
@@ -1629,7 +1660,7 @@ export const PROJECTS = [
 				class: '12 Г',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project53$thumbnail,
 		images: [],
 	},
 	{
@@ -1764,7 +1795,7 @@ export const PROJECTS = [
 				class: '11 Г',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project57$thumbnail,
 		images: [],
 	},
 	{
@@ -1800,7 +1831,7 @@ export const PROJECTS = [
 				class: '9 Г',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project58$thumbnail,
 		images: [],
 	},
 	{
@@ -2039,7 +2070,7 @@ export const PROJECTS = [
 				class: '10 Г',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project67$thumbnail,
 		images: [],
 	},
 	{
@@ -2070,7 +2101,7 @@ export const PROJECTS = [
 				class: '8 Г',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project68$thumbnail,
 		images: [],
 	},
 	{
@@ -2118,18 +2149,7 @@ export const PROJECTS = [
 		links: {
 			demoUrl: null,
 			repoUrls: [
-				'Сървърна',
-				'част',
-				'на',
-				'приложението',
-				'-',
 				'https://github.com/nikolasachkov/RideMart',
-				';',
-				'Клиентска',
-				'част',
-				'на',
-				'приложението',
-				'-',
 				'https://github.com/nikolasachkov/RideMartUI',
 			],
 		},
@@ -2140,7 +2160,7 @@ export const PROJECTS = [
 				class: '12 В',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project70$thumbnail,
 		images: [],
 	},
 	{
@@ -2208,7 +2228,7 @@ export const PROJECTS = [
 				class: '11 А',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project73$thumbnail,
 		images: [],
 	},
 	{
@@ -2236,7 +2256,7 @@ export const PROJECTS = [
 				class: '11 В',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project74$thumbnail,
 		images: [],
 	},
 	{
@@ -2292,7 +2312,7 @@ export const PROJECTS = [
 				class: '11 А',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project76$thumbnail,
 		images: [],
 	},
 	{
@@ -2384,7 +2404,7 @@ export const PROJECTS = [
 				class: '10 Г',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project79$thumbnail,
 		images: [],
 	},
 	{
@@ -2500,7 +2520,7 @@ export const PROJECTS = [
 				class: '9 А',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project83$thumbnail,
 		images: [],
 	},
 	{
@@ -2576,7 +2596,7 @@ export const PROJECTS = [
 				class: '11 А',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project87$thumbnail,
 		images: [],
 	},
 	{
@@ -2600,7 +2620,7 @@ export const PROJECTS = [
 				class: '9 А',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project88$thumbnail,
 		images: [],
 	},
 	{
@@ -2624,7 +2644,7 @@ export const PROJECTS = [
 				class: '11 А',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project89$thumbnail,
 		images: [],
 	},
 	{
@@ -2712,7 +2732,7 @@ export const PROJECTS = [
 				class: '9 Б',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project92$thumbnail,
 		images: [],
 	},
 	{
@@ -2763,7 +2783,7 @@ export const PROJECTS = [
 				class: '8 В',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project94$thumbnail,
 		images: [],
 	},
 	{
@@ -2889,7 +2909,7 @@ export const PROJECTS = [
 				class: '11 В',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project98$thumbnail,
 		images: [],
 	},
 	{
@@ -2948,7 +2968,7 @@ export const PROJECTS = [
 				class: '12 Г',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project101$thumbnail,
 		images: [],
 	},
 	{
@@ -2968,7 +2988,7 @@ export const PROJECTS = [
 				class: '12 Г',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project102$thumbnail,
 		images: [],
 	},
 	{
@@ -3160,7 +3180,7 @@ export const PROJECTS = [
 				class: '10 Г',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project111$thumbnail,
 		images: [],
 	},
 	{
@@ -3204,7 +3224,7 @@ export const PROJECTS = [
 				class: '12 Б',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project113$thumbnail,
 		images: [],
 	},
 	{
@@ -3267,7 +3287,7 @@ export const PROJECTS = [
 				class: '12 Б',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project115$thumbnail,
 		images: [],
 	},
 	{
