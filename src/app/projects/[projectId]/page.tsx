@@ -1,14 +1,13 @@
-import { Suspense } from 'react';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import invariant from 'tiny-invariant';
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { ScrollArea } from '@/components/ui/scroll-area';
 import { OG_METADATA, TF_TITLE, TWITTER_METADATA } from '@/constants/seo';
 import ProjectsPath from '@/partials/layout/ProjectsPath';
 import { ProjectContainer } from '@/partials/projects/project-container';
 import Contributors from '@/partials/projects/project/Contributors';
+import { ProjectDescription } from '@/partials/projects/project/Description';
 import Gallery from '@/partials/projects/project/Gallery';
 import LinksContainer from '@/partials/projects/project/Links';
 import Video from '@/partials/projects/project/Video';
@@ -167,9 +166,5 @@ const ProjectPage = async (props: { params: Promise<{ projectId: string }> }) =>
 		</ProjectContainer>
 	);
 };
-
-function ProjectDescription({ description }: { description: string }) {
-	return description.split('\n').map((paragraph, index) => <p key={index}>{paragraph}</p>);
-}
 
 export default ProjectPage;

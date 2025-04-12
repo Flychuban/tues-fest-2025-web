@@ -16,7 +16,7 @@ const MainInfo = ({
 	thumbnail: string;
 }) => (
 	<div className="flex w-full max-w-screen-lg gap-4">
-		<div className="border-border bg-background w-full shrink rounded-xl border-2">
+		<div className="border-border bg-background w-full shrink rounded-xl border">
 			<div className="border-b-border relative aspect-video overflow-hidden rounded-xl border-b-2">
 				{/* Share Button */}
 				<ShareButton />
