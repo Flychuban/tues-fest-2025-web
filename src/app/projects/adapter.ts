@@ -981,7 +981,7 @@ export const PROJECTS = [
 		description: 'Inter AS Option B',
 		links: {
 			demoUrl: null,
-			repoUrls: ['tva', 'sa', 'mreji', 'kuv', 'github,', 'canva', 'iska', 'da', 'se', 'plashta', 'za', 'A3'],
+			repoUrls: [],
 		},
 		youtubeId: 'E_vgnCyv8i0',
 		contributors: [
