@@ -262,7 +262,7 @@ const VotingOverlay = ({ showModal }: { showModal: () => void }) => {
 							}`}
 						>
 							<div className="divide-stroke flex w-full flex-col divide-y">
-								<VotingCategory
+								{/* <VotingCategory
 									category={embedded}
 									cat={{ ...PROJECT_CATEGORY_MAP.software, text: 'Избор 1', href: '/projects' }}
 									error={embeddedError}
@@ -276,7 +276,7 @@ const VotingOverlay = ({ showModal }: { showModal: () => void }) => {
 									category={battlebot}
 									cat={{ ...PROJECT_CATEGORY_MAP.battlebot, text: 'Избор 3', href: '/projects' }}
 									error={battlebotError}
-								/>
+								/> */}
 							</div>
 							<button
 								className="border-border bg-primary hover:hover:bg-primary flex items-center justify-center rounded-xl border bg-opacity-75 px-6 py-2 text-lg font-bold transition-all duration-300"
