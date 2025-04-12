@@ -1,18 +1,16 @@
 // Този файл е генериран автоматично от проектите на TUES Fest 2025. Безопасно е да го редактирате ръчно, но промените ще бъдат загубени при следващо генериране.
 
-
+import DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE from '@/../public/logo/motto.png'
 import project1$thumbnail from '@/../public/projects/1/thumbnail.webp';
 import project1$image1 from '@/../public/projects/1/1.webp';
 import project1$image2 from '@/../public/projects/1/2.webp';
 import project2$thumbnail from '@/../public/projects/2/thumbnail.webp';
-import None from '@/../public/projects/3/thumbnail.webp';
 import project4$thumbnail from '@/../public/projects/4/thumbnail.webp';
 import project4$image1 from '@/../public/projects/4/1.webp';
 import project4$image2 from '@/../public/projects/4/2.webp';
 import project4$image3 from '@/../public/projects/4/3.webp';
 import project4$image4 from '@/../public/projects/4/4.webp';
 import project4$image5 from '@/../public/projects/4/5.webp';
-import None from '@/../public/projects/5/thumbnail.webp';
 import project5$image1 from '@/../public/projects/5/1.webp';
 import project5$image2 from '@/../public/projects/5/2.webp';
 import project5$image3 from '@/../public/projects/5/3.webp';
@@ -25,10 +23,7 @@ import project6$image3 from '@/../public/projects/6/3.webp';
 import project7$thumbnail from '@/../public/projects/7/thumbnail.webp';
 import project8$thumbnail from '@/../public/projects/8/thumbnail.webp';
 import project9$thumbnail from '@/../public/projects/9/thumbnail.webp';
-import None from '@/../public/projects/10/thumbnail.webp';
 import project10$image1 from '@/../public/projects/10/1.webp';
-import None from '@/../public/projects/11/thumbnail.webp';
-import None from '@/../public/projects/12/thumbnail.webp';
 import project13$thumbnail from '@/../public/projects/13/thumbnail.webp';
 import project13$image1 from '@/../public/projects/13/1.webp';
 import project13$image2 from '@/../public/projects/13/2.webp';
@@ -44,33 +39,23 @@ import project15$thumbnail from '@/../public/projects/15/thumbnail.webp';
 import project15$image1 from '@/../public/projects/15/1.webp';
 import project15$image2 from '@/../public/projects/15/2.webp';
 import project16$thumbnail from '@/../public/projects/16/thumbnail.webp';
-import None from '@/../public/projects/17/thumbnail.webp';
 import project17$image1 from '@/../public/projects/17/1.webp';
 import project17$image2 from '@/../public/projects/17/2.webp';
 import project17$image3 from '@/../public/projects/17/3.webp';
 import project17$image4 from '@/../public/projects/17/4.webp';
 import project18$thumbnail from '@/../public/projects/18/thumbnail.webp';
-import None from '@/../public/projects/19/thumbnail.webp';
-import None from '@/../public/projects/20/thumbnail.webp';
-import None from '@/../public/projects/21/thumbnail.webp';
 import project22$thumbnail from '@/../public/projects/22/thumbnail.webp';
 import project22$image1 from '@/../public/projects/22/1.webp';
 import project22$image2 from '@/../public/projects/22/2.webp';
 import project22$image3 from '@/../public/projects/22/3.webp';
 import project23$thumbnail from '@/../public/projects/23/thumbnail.webp';
-import None from '@/../public/projects/24/thumbnail.webp';
 import project25$thumbnail from '@/../public/projects/25/thumbnail.webp';
-import None from '@/../public/projects/26/thumbnail.webp';
 import project26$image1 from '@/../public/projects/26/1.webp';
-import None from '@/../public/projects/27/thumbnail.webp';
 import project28$thumbnail from '@/../public/projects/28/thumbnail.webp';
-import None from '@/../public/projects/29/thumbnail.webp';
 import project30$thumbnail from '@/../public/projects/30/thumbnail.webp';
 import project31$thumbnail from '@/../public/projects/31/thumbnail.webp';
 import project32$thumbnail from '@/../public/projects/32/thumbnail.webp';
-import None from '@/../public/projects/33/thumbnail.webp';
 import project34$thumbnail from '@/../public/projects/34/thumbnail.webp';
-import None from '@/../public/projects/35/thumbnail.webp';
 import project36$thumbnail from '@/../public/projects/36/thumbnail.webp';
 import project36$image1 from '@/../public/projects/36/1.webp';
 import project36$image2 from '@/../public/projects/36/2.webp';
@@ -83,49 +68,37 @@ import project37$image2 from '@/../public/projects/37/2.webp';
 import project38$thumbnail from '@/../public/projects/38/thumbnail.webp';
 import project38$image1 from '@/../public/projects/38/1.webp';
 import project39$thumbnail from '@/../public/projects/39/thumbnail.webp';
-import None from '@/../public/projects/40/thumbnail.webp';
 import project41$thumbnail from '@/../public/projects/41/thumbnail.webp';
 import project42$thumbnail from '@/../public/projects/42/thumbnail.webp';
-import None from '@/../public/projects/43/thumbnail.webp';
 import project44$thumbnail from '@/../public/projects/44/thumbnail.webp';
-import None from '@/../public/projects/45/thumbnail.webp';
 import project45$image1 from '@/../public/projects/45/1.webp';
-import None from '@/../public/projects/46/thumbnail.webp';
 import project47$thumbnail from '@/../public/projects/47/thumbnail.webp';
 import project48$thumbnail from '@/../public/projects/48/thumbnail.webp';
 import project49$thumbnail from '@/../public/projects/49/thumbnail.webp';
 import project49$image1 from '@/../public/projects/49/1.webp';
 import project49$image2 from '@/../public/projects/49/2.webp';
 import project49$image3 from '@/../public/projects/49/3.webp';
-import None from '@/../public/projects/50/thumbnail.webp';
 import project50$image1 from '@/../public/projects/50/1.webp';
 import project50$image2 from '@/../public/projects/50/2.webp';
 import project50$image3 from '@/../public/projects/50/3.webp';
 import project50$image4 from '@/../public/projects/50/4.webp';
 import project50$image5 from '@/../public/projects/50/5.webp';
-import None from '@/../public/projects/51/thumbnail.webp';
 import project51$image1 from '@/../public/projects/51/1.webp';
 import project51$image2 from '@/../public/projects/51/2.webp';
-import None from '@/../public/projects/52/thumbnail.webp';
-import None from '@/../public/projects/53/thumbnail.webp';
 import project54$thumbnail from '@/../public/projects/54/thumbnail.webp';
 import project54$image1 from '@/../public/projects/54/1.webp';
 import project54$image2 from '@/../public/projects/54/2.webp';
 import project54$image3 from '@/../public/projects/54/3.webp';
 import project55$thumbnail from '@/../public/projects/55/thumbnail.webp';
 import project56$thumbnail from '@/../public/projects/56/thumbnail.webp';
-import None from '@/../public/projects/57/thumbnail.webp';
-import None from '@/../public/projects/58/thumbnail.webp';
 import project59$thumbnail from '@/../public/projects/59/thumbnail.webp';
 import project59$image1 from '@/../public/projects/59/1.webp';
 import project59$image2 from '@/../public/projects/59/2.webp';
 import project59$image3 from '@/../public/projects/59/3.webp';
 import project59$image4 from '@/../public/projects/59/4.webp';
-import None from '@/../public/projects/60/thumbnail.webp';
 import project61$thumbnail from '@/../public/projects/61/thumbnail.webp';
 import project61$image1 from '@/../public/projects/61/1.webp';
 import project61$image2 from '@/../public/projects/61/2.webp';
-import None from '@/../public/projects/62/thumbnail.webp';
 import project62$image1 from '@/../public/projects/62/1.webp';
 import project62$image2 from '@/../public/projects/62/2.webp';
 import project62$image3 from '@/../public/projects/62/3.webp';
@@ -143,42 +116,32 @@ import project66$image2 from '@/../public/projects/66/2.webp';
 import project66$image3 from '@/../public/projects/66/3.webp';
 import project66$image4 from '@/../public/projects/66/4.webp';
 import project66$image5 from '@/../public/projects/66/5.webp';
-import None from '@/../public/projects/67/thumbnail.webp';
-import None from '@/../public/projects/68/thumbnail.webp';
 import project69$thumbnail from '@/../public/projects/69/thumbnail.webp';
 import project69$image1 from '@/../public/projects/69/1.webp';
 import project69$image2 from '@/../public/projects/69/2.webp';
 import project69$image3 from '@/../public/projects/69/3.webp';
 import project69$image4 from '@/../public/projects/69/4.webp';
-import None from '@/../public/projects/70/thumbnail.webp';
 import project71$thumbnail from '@/../public/projects/71/thumbnail.webp';
 import project71$image1 from '@/../public/projects/71/1.webp';
 import project71$image2 from '@/../public/projects/71/2.webp';
 import project71$image3 from '@/../public/projects/71/3.webp';
 import project71$image4 from '@/../public/projects/71/4.webp';
 import project71$image5 from '@/../public/projects/71/5.webp';
-import None from '@/../public/projects/72/thumbnail.webp';
 import project72$image1 from '@/../public/projects/72/1.webp';
 import project72$image2 from '@/../public/projects/72/2.webp';
 import project72$image3 from '@/../public/projects/72/3.webp';
 import project72$image4 from '@/../public/projects/72/4.webp';
-import None from '@/../public/projects/73/thumbnail.webp';
-import None from '@/../public/projects/74/thumbnail.webp';
-import None from '@/../public/projects/75/thumbnail.webp';
 import project75$image1 from '@/../public/projects/75/1.webp';
 import project75$image2 from '@/../public/projects/75/2.webp';
 import project75$image3 from '@/../public/projects/75/3.webp';
 import project75$image4 from '@/../public/projects/75/4.webp';
 import project75$image5 from '@/../public/projects/75/5.webp';
-import None from '@/../public/projects/76/thumbnail.webp';
 import project77$thumbnail from '@/../public/projects/77/thumbnail.webp';
 import project77$image1 from '@/../public/projects/77/1.webp';
 import project77$image2 from '@/../public/projects/77/2.webp';
 import project77$image3 from '@/../public/projects/77/3.webp';
 import project77$image4 from '@/../public/projects/77/4.webp';
 import project78$thumbnail from '@/../public/projects/78/thumbnail.webp';
-import None from '@/../public/projects/79/thumbnail.webp';
-import None from '@/../public/projects/80/thumbnail.webp';
 import project80$image1 from '@/../public/projects/80/1.webp';
 import project80$image2 from '@/../public/projects/80/2.webp';
 import project80$image3 from '@/../public/projects/80/3.webp';
@@ -187,13 +150,9 @@ import project81$image1 from '@/../public/projects/81/1.webp';
 import project81$image2 from '@/../public/projects/81/2.webp';
 import project81$image3 from '@/../public/projects/81/3.webp';
 import project82$thumbnail from '@/../public/projects/82/thumbnail.webp';
-import None from '@/../public/projects/83/thumbnail.webp';
 import project84$thumbnail from '@/../public/projects/84/thumbnail.webp';
 import project84$image1 from '@/../public/projects/84/1.webp';
 import project86$thumbnail from '@/../public/projects/86/thumbnail.webp';
-import None from '@/../public/projects/87/thumbnail.webp';
-import None from '@/../public/projects/88/thumbnail.webp';
-import None from '@/../public/projects/89/thumbnail.webp';
 import project90$thumbnail from '@/../public/projects/90/thumbnail.webp';
 import project90$image1 from '@/../public/projects/90/1.webp';
 import project90$image2 from '@/../public/projects/90/2.webp';
@@ -201,21 +160,15 @@ import project90$image3 from '@/../public/projects/90/3.webp';
 import project90$image4 from '@/../public/projects/90/4.webp';
 import project90$image5 from '@/../public/projects/90/5.webp';
 import project91$thumbnail from '@/../public/projects/91/thumbnail.webp';
-import None from '@/../public/projects/92/thumbnail.webp';
 import project93$thumbnail from '@/../public/projects/93/thumbnail.webp';
-import None from '@/../public/projects/94/thumbnail.webp';
 import project95$thumbnail from '@/../public/projects/95/thumbnail.webp';
 import project95$image1 from '@/../public/projects/95/1.webp';
 import project96$thumbnail from '@/../public/projects/96/thumbnail.webp';
 import project96$image1 from '@/../public/projects/96/1.webp';
 import project97$thumbnail from '@/../public/projects/97/thumbnail.webp';
 import project97$image1 from '@/../public/projects/97/1.webp';
-import None from '@/../public/projects/98/thumbnail.webp';
 import project99$thumbnail from '@/../public/projects/99/thumbnail.webp';
-import None from '@/../public/projects/100/thumbnail.webp';
 import project100$image1 from '@/../public/projects/100/1.webp';
-import None from '@/../public/projects/101/thumbnail.webp';
-import None from '@/../public/projects/102/thumbnail.webp';
 import project103$thumbnail from '@/../public/projects/103/thumbnail.webp';
 import project103$image1 from '@/../public/projects/103/1.webp';
 import project103$image2 from '@/../public/projects/103/2.webp';
@@ -226,25 +179,19 @@ import project105$image1 from '@/../public/projects/105/1.webp';
 import project105$image2 from '@/../public/projects/105/2.webp';
 import project106$thumbnail from '@/../public/projects/106/thumbnail.webp';
 import project107$thumbnail from '@/../public/projects/107/thumbnail.webp';
-import None from '@/../public/projects/108/thumbnail.webp';
 import project109$thumbnail from '@/../public/projects/109/thumbnail.webp';
 import project110$thumbnail from '@/../public/projects/110/thumbnail.webp';
-import None from '@/../public/projects/111/thumbnail.webp';
-import None from '@/../public/projects/112/thumbnail.webp';
-import None from '@/../public/projects/113/thumbnail.webp';
 import project114$thumbnail from '@/../public/projects/114/thumbnail.webp';
 import project114$image1 from '@/../public/projects/114/1.webp';
 import project114$image2 from '@/../public/projects/114/2.webp';
 import project114$image3 from '@/../public/projects/114/3.webp';
 import project114$image4 from '@/../public/projects/114/4.webp';
 import project114$image5 from '@/../public/projects/114/5.webp';
-import None from '@/../public/projects/115/thumbnail.webp';
 import project116$thumbnail from '@/../public/projects/116/thumbnail.webp';
 import project116$image1 from '@/../public/projects/116/1.webp';
 import project116$image2 from '@/../public/projects/116/2.webp';
 import project117$thumbnail from '@/../public/projects/117/thumbnail.webp';
 import project117$image1 from '@/../public/projects/117/1.webp';
-import None from '@/../public/projects/118/thumbnail.webp';
 import project118$image1 from '@/../public/projects/118/1.webp';
 import project118$image2 from '@/../public/projects/118/2.webp';
 import project118$image3 from '@/../public/projects/118/3.webp';
@@ -267,10 +214,9 @@ import project122$image2 from '@/../public/projects/122/2.webp';
 import project122$image3 from '@/../public/projects/122/3.webp';
 import project122$image4 from '@/../public/projects/122/4.webp';
 import project122$image5 from '@/../public/projects/122/5.webp';
-import None from '@/../public/projects/123/thumbnail.webp';
 import project123$image1 from '@/../public/projects/123/1.webp';
-import None from '@/../public/projects/124/thumbnail.webp';
-import None from '@/../public/projects/125/thumbnail.webp';
+// new imports
+import project115$thumbnail from '@/../public/projects/115/thumbnail.webp';
 
 type ProjectAdapter = {}; // TODO: import predefined
 
@@ -295,10 +241,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "911 е иновативен дрон, проектиран да действа като автономен спасител и доставчик в извънредни ситуации. Оборудван с термокамери, GPS навигация и система за разпознаване на гласови сигнали, дронът може бързо да локализира хора в беда и да доставя спешни медицински консумативи, храна, вода или комуникационни устройства. Подходящ е за трудно достъпни терени като планини, гори или зони след бедствия. 911 цели да намали времето за реакция при инциденти и да подпомогне спасителните екипи с точна и навременна подкрепа.",
         "links": {
-            "repoUrl": "https://github.com/Drone-project-TUES/Drone",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/Drone-project-TUES/Drone"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Никола Георгиев",
@@ -329,10 +277,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "Проектът представя разработка на софтуер за автоматизирано създаване и верификация на тестови структури по технология 65LPe. Проектът включва изграждане на потребителски интерфейс за избор на физически правила, генериране и визуализация на тестови структури (площ, ширина, отстояние, ограждане, припокриване), както и проверка на съответствието им чрез DRC инструменти.",
         "links": {
-            "repoUrl": "https://github.com/ADASisi/thesis-testcasegen",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/ADASisi/thesis-testcasegen"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Силвия Антова ",
@@ -348,10 +298,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Логиката на 8-битов компютър направена само със градивни елементи и логически схеми, разположени на поредица от бредборди.",
         "links": {
-            "repoUrl": "https://github.com/CooDiiNgg/8-bit_computer",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/CooDiiNgg/8-bit_computer"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Николай Вълканов",
@@ -366,7 +318,7 @@ export const PROJECTS = [
                 "class": "11 В"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -375,10 +327,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Система за 3D реконструкция на терени от стерео изображения, заснети с безпилотен летателен апарат, която автоматично генерира и обединява гео-реферирани точкови облаци в прецизен триизмерен модел на околната среда.",
         "links": {
-            "repoUrl": "https://github.com/MechkarovTUES/ACIG",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/MechkarovTUES/ACIG"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Александър Мечкаров",
@@ -400,10 +354,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Радиоуправляем самолет, предназначен за издирване на хора в труднопроходим терен. За целта използва обикновена и термална камера, както и прибори за улесняване на управлението. Изграден е на база миналогодишния AeroSAR",
         "links": {
-            "repoUrl": "https://github.com/Ivailo2707/AeroSAR-2.0",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/Ivailo2707/AeroSAR-2.0"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Ивайло Русинчовски",
@@ -422,7 +378,7 @@ export const PROJECTS = [
                 "class": "11 А"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": null,
         "images": [
             project5$image1,
             project5$image2,
@@ -437,10 +393,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "AeroSense е интелигентна система, която следи и подобрява качеството на въздуха в реално време.",
         "links": {
-            "repoUrl": "https://github.com/stefan587/AeroSense/settings/access?guidance_task=",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/stefan587/AeroSense/settings/access?guidance_task="
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Стефан Конев",
@@ -464,10 +422,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Роботизиран асистент, състоящ се от 2 механизирани ръце, които взаимодействат със околната му среда. Използва камери, за да разбира средата му по-добре и взима решения с изкуствен интелект. Можеш свободно да говориш с него, а и той ще те познае ;)",
         "links": {
-            "repoUrl": "github.com/AGIBotTF",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "github.com/AGIBotTF"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Антон Христов",
@@ -499,10 +459,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "AMA е AI time management асистент, който улеснява твоето всекидневие, както и се погрижва за това да водиш по-здравословен начин на живот.",
         "links": {
-            "repoUrl": "https://github.com/KaloyanYanev08/AMA_HackTues11",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/KaloyanYanev08/AMA_HackTues11"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Мартин Филипов",
@@ -534,10 +496,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Artify e поларграф - рисуваща машина, която използва два мотора, ремъци и силата на гравитацията, за да се движи. Изображенията се преобразуват в координати чрез специален софтуер, който управлява моторите. Резултатът е векторна рисунка или портрет.",
         "links": {
-            "repoUrl": "https://github.com/EvgeniyaGo/Artify",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/EvgeniyaGo/Artify"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Евгения Голубева",
@@ -557,10 +521,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "Мобилно приложение, съсредоточено върху хората, страдащи от атопичен дерматит, представляващи 30% от населението на земята. Целта му е да улесни лечението и поддържането на здравата кожа на пациента, като притежава следните функционалности.\nСлед като потребителят се регистрира/влезе в приложението се открива прозорец с главната функционалност - Поле за заснемане на снимка или качване на такава, което е предназначено за снимане на възпален участък от кожата на пациента. При заснемане на възпаления участък, снимката се изпраща на Machine Learning Model - ResNet50 ,специализиран в разпознаване на изображения, като той е обучен лично от нас с наш личен dataset от 600 снимки и dataset от Интернет на още 1000 снимки, като чрез Augmentation са постигнати 7200 снимки. Те биват класифицирани в 6 категории от нас в зависимост от тежестта на екземата. След обработка на изображението от ML модела, той връща класификация за тежестта на екземата, съвет, който е препоръчително да се последва(с какво да се намажеш, как да се намажем, през колко време и т.н.) и евентуална консултация с лекар. Всеки отделен потребител има история на своите снимки и анализи и може да проследява подобряване/влошаване с времето.\nВтората функционалност е имплементирана с цел предотвратяване на възпаление в кожата от хранителни алергии. Тъй като атопитчният дерматит е автоимунно заболяване и има храни, към които кожата реагира остро, нашето решение е поле, в което въвеждаш своето хранене, и като резултат се връщат(посредством GPT API) потенциалните съставки в храненето, които могат да причинят възпаление, с какво могат да бъдат заместени - техни алтернативи и % шанс кожата да се възпали след това хранене.\nТретата функционалност представлява вътрешен форум за приложението, в който потребителите могат да споделят проблеми, и други, срещали подобен проблем да дават своето мнение по въпроса под съответната тема.\nЧетвъртата функционалност цели да предотврати дългосрочни последици за човешкия организъм от слънчевата радиация. Посредством API извличаме UV индекса на конкретно местоположение и го показваме на екрана, като също се дава препоръка с какъв фактор слънцезащитен крем да се намаже потребителя. Това е от изключителна важност, защото хората с атопичен дерматит са с много тънка кожна бариера или въобще имат липса на такава, което може да доведе до рак на кожата при дългосрочно облъчване на светлина с висок UV индекс и това е една превенция от голяма важност.",
         "links": {
-            "repoUrl": "https://github.com/KillLaker53/AtopiCare",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/KillLaker53/AtopiCare"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Петър Петров",
@@ -579,7 +545,7 @@ export const PROJECTS = [
                 "class": "12 А"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": null,
         "images": [
             project10$image1
         ]
@@ -590,10 +556,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "Масово учениците в българските гимназии казват, че почти за всяко контролно започват да учат деня преди това. В ТУЕС това са 70% от деветокласниците. С bAIganio можеш да разпределиш равномерно ученето за контролно чрез избиране на един от стандартизираните учебници на МОН за даден предмет и клас и да въведеш точно кои уроци ще включва. Най-ценното обаче е, че всеки ден до зададената от теб дата приложението ти напомня да направиш бърз и ефективен тест, който AI приготвя специално за теб. Чрез стрийкове, in-app класация с други потребители и значки за изпълнени цели, bAIganio те държи мотивиран, и ефективно преминаваш предстоящите изпитвания.",
         "links": {
-            "repoUrl": "https://github.com/BorbiAl/Hack_Tues_11",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/BorbiAl/Hack_Tues_11"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Велина Цанева ",
@@ -608,7 +576,7 @@ export const PROJECTS = [
                 "class": "9 А"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -617,10 +585,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "BetterBites е уебсайт, който предлага алтернативи на неподходящи храни и продукти според конкретни заболявания и алергии. Потребителите могат да въведат своето заболяване и желаната храна (например спагети), след което ще получат по-здравословни алтернативи.Проектът е създаден с цел да помага на хората да правят по-здравословни избори, съобразени със здравословното им състояние. Платформата предоставя персонализирани препоръки, базирани на въведената информация за заболяванията и алергии.",
         "links": {
-            "repoUrl": "https://github.com/ScripterEve/HT11",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/ScripterEve/HT11"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Ева Георгиева",
@@ -643,7 +613,7 @@ export const PROJECTS = [
                 "class": "9 В"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -652,10 +622,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "Better Me е проект, целящ да помогне на хората да станат по-добра версия на себе си. Главният компонент на проекта е, че обучава с уроци на тема \"Финансова грамотност\" потребителя, след което те правят тестове за проверка на знанията си и стават по-финансово грамотни. Освен финансова грамотност, проекта цели и да помогне с time management-a на потребителя си, като си разпределя задачи за различнични дни.",
         "links": {
-            "repoUrl": "https://github.com/demiralyubenova/better-me",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/demiralyubenova/better-me"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Демира Любенова",
@@ -693,10 +665,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Проектът \"Cable Undefined\" представлява иновативно решение, което съчетава хардуер, софтуер и изкуствен интелект, за да улесни създаването и управлението на електронни схеми. Чрез използването на интелигентна матрица от мултиплексори, системата елиминира необходимостта от физически кабели, като предлага модерна и ефективна алтернатива за прототипиране. Уеб платформата осигурява интуитивен интерфейс за проектиране, диагностика и съвместна работа в реално време.",
         "links": {
-            "repoUrl": "https://github.com/Ne-Se-Chete/CableUndefined-Embedded",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/Ne-Se-Chete/CableUndefined-Embedded"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Борислав Миланов",
@@ -733,10 +707,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "Приложения за ръководство за лични финанси",
         "links": {
-            "repoUrl": "https://github.com/Simoo2010/HACKTUES.git",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/Simoo2010/HACKTUES.git"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Симеон Великов",
@@ -771,10 +747,12 @@ export const PROJECTS = [
         "category": "networks",
         "description": "Centralised Cluster Management - Проект и Дипломна работа на тема: Реализиране и централно управление на среда с множество Kubernetes клъстери посредством Cluster API.",
         "links": {
-            "repoUrl": "https://github.com/mi60sumaz/DiplomnaRabota",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/mi60sumaz/DiplomnaRabota"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Михаил Петров",
@@ -790,17 +768,19 @@ export const PROJECTS = [
         "category": "software",
         "description": "Приложение за менижиране на времето, чрез което можеш да опишеш времето си по възможно най-добрия начин, така че после да идентифицираш трендове и да разбереш какви промени трябва да направиш за увеличаване на собствената продуктивност. Просто пускаш stopwatch и казваш какво правиш в момента чрез tag.\n\nИнтересното е, че начина, по който описваш времето си се разделят на дейности, проекти и задачи, всички от които могат да бъдат представени като дърво с клони (нестед структура) Например Учене -> Училище -> Програмиране -> Алгоритми и Структури от Данни -> Домашно -> Проект за края на годината. Ти изграждаш това дърво веднъж и после само казваш върху кой клон работиш в момента. Ходейки по всеки клон, можеш да гледаш колко време отделяш за всяка една дейност.",
         "links": {
-            "repoUrl": "https://github.com/DMyashkov/timemanager",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/DMyashkov/timemanager"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Дамян Мяшков",
                 "class": "11 В"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": null,
         "images": [
             project17$image1,
             project17$image2,
@@ -814,10 +794,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "Оркестриране на облачна инфраструктура през Kubernetes клъстер чрез Crossplane, в която да бъда предоставено демо уеб приложение, което доказва нейната достоверност и работоспособност. За реализацията на проекта е надигната облачна инфраструктура в AWS, в центъра на която стои Kubernetes клъстер, в който посредством Crossplane е надигната друга облачна инфраструктура, в която да бъде хостнато уеб приложение. Новосъздадената инфраструктура също е Kubernetes клъстер. Уеб приложението, което представлява електронен дневник с елементарни функционалности е контейнеризирано и предоставено през инфраструктурния клъстер, като за управление както на неговите Kubernetes манифести, така и на Crossplane манифестите, е използвани GitOps инструментът ArgoCD.",
         "links": {
-            "repoUrl": "https://github.com/AvatarZorak/TUESFest2025",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/AvatarZorak/TUESFest2025"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Александър Христов",
@@ -833,17 +815,19 @@ export const PROJECTS = [
         "category": "networks",
         "description": "Проектът демонстрира един от най-новите и иноввативни начини за комуникация в модерните центрове за данни, като елиминира използването на традиционните Layer 2 протоколи.",
         "links": {
-            "repoUrl": "https://github.com/mangoPeveca/tuesFest2025",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/mangoPeveca/tuesFest2025"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Ростислав Ангелов ",
                 "class": "12 Г"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -852,10 +836,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "\"DigiSpesti\" представлява уебсайт, който предоставя на потребителите платформа за управление на личните финанси. След успешен вход, потребителите могат да следят различни аспекти на своите финансови дейности като приходи, разходи, спестявания, както и да добавят всички свои транзакции и финансови операции. Сайтът предлага възможността да се поставят цели за спестявания, да се планира бюджет и да се следи напредъкът във времето.",
         "links": {
-            "repoUrl": "https://github.com/ImpairedAsp5640/DigiSpesti",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/ImpairedAsp5640/DigiSpesti"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Владислав Дойчинов",
@@ -874,7 +860,7 @@ export const PROJECTS = [
                 "class": "8 А"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -883,10 +869,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "Дискорд бот за бази данни",
         "links": {
-            "repoUrl": "https://github.com/Hehrd/Discord-Bot-Project",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/Hehrd/Discord-Bot-Project"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Александър Дянков",
@@ -897,7 +885,7 @@ export const PROJECTS = [
                 "class": "9 А"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -906,10 +894,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Дрон за доставки",
         "links": {
-            "repoUrl": "https://github.com/A13xand33r/DROPX",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/A13xand33r/DROPX"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Александър Асенов ",
@@ -941,10 +931,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "EchoMe е уеб платформа за клониране на глас с помощта на изкуствен интелект. Чрез нея можеш да запишеш или качиш свой глас, след което да въведеш текст, който системата произнася със синтетичен глас, звучащ като теб. ",
         "links": {
-            "repoUrl": "https://github.com/GeorgiMPastrakov/EchoMe",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/GeorgiMPastrakov/EchoMe"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Георги Пъстраков",
@@ -960,10 +952,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Проектът анализира химичния състав на почвата (N, P, K, температура и влажност) и с помощта на изкуствен интелект препоръчва кои култури са най-подходящи за отглеждане върху нея. Данните се визуализират в мобилно приложение, където потребителят получава както анализи, така и персонализирани съвети. Освен това, системата може да отговаря на въпроси свързани с изискванията на различни култури към почвата, базирайки се на надеждни източници и AI знания. Целта е да подпомогне устойчивото и здравословно земеделие.",
         "links": {
-            "repoUrl": "https://github.com/KonstantinZlatew/HackTues11",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/KonstantinZlatew/HackTues11"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Валентин Йотов",
@@ -986,7 +980,7 @@ export const PROJECTS = [
                 "class": "11 А"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -995,10 +989,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "Платформа за изработване и публикуване на учебна програма за учебни заведения - дипломната ми работа :)",
         "links": {
-            "repoUrl": "https://github.com/mmoonniiee/diplomna",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/mmoonniiee/diplomna"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Мартина Бикова",
@@ -1014,17 +1010,19 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Проектът представлява минимална операционна система за микроконтролери, способна да зарежда и изпълнява компилирани програми от SD карта. При стартиране, BIOS модулът зарежда bootloader, който може динамично да зарежда и изпълнява други бинарни програми директно в оперативната памет. Самата операционна система също се намира на SD картата и се зарежда по време на работа, което позволява лесна актуализация и модулност. Изпълнението на програмите става чрез директно извикване на код от RAM с поддръжка на базови интерфейси, комуникация и хардуерен достъп. Проектът има за цел да създаде гъвкава и мащабируема среда за микроконтролерни системи.",
         "links": {
-            "repoUrl": "https://github.com/Paco2006/Embedded-Computer",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/Paco2006/Embedded-Computer"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Евгени Попов",
                 "class": "12 Г"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": null,
         "images": [
             project26$image1
         ]
@@ -1035,10 +1033,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Нашата ексклузивна пожарна система иновативно и морално помага за следене на пожари в затворени помещения. Уникалните сензори за газ, пламък и движение в колаборация с ключовия мултиплексор, креативно подават уникални информационни пакети към имиджовото ни приложение.  Тези информационни пакети истински съдържат информация кога е станал пожарът и дали има движение в даденото помещение. Проактивната комуникация на мултиплексора с ексклузивните сензори показва с визия, че могат да се поставят такива сензори в много помещения и да се проследяват устойчиво от едно устройство. Нашият проект е безспорен лидер с визия сред провокативната конкуренция.",
         "links": {
-            "repoUrl": "https://github.com/martindoychinov07/exclusive-fire-detector",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/martindoychinov07/exclusive-fire-detector"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Мартин Дойчинов",
@@ -1049,7 +1049,7 @@ export const PROJECTS = [
                 "class": "11 Б"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -1058,10 +1058,23 @@ export const PROJECTS = [
         "category": "networks",
         "description": "Inter AS Option B",
         "links": {
-            "repoUrl": "tva sa mreji kuv github, canva iska da se plashta za A3 ",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "tva",
+                "sa",
+                "mreji",
+                "kuv",
+                "github,",
+                "canva",
+                "iska",
+                "da",
+                "se",
+                "plashta",
+                "za",
+                "A3"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Вихър Рангелов",
@@ -1077,10 +1090,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "Fairganize е платформа, която ви позволява да създадете свой собствен дигитален DAO — децентрализирана и прозрачна организация, в която решенията се вземат от общността, а не от централен лидер. Създавайте предложения, провеждайте избори и общувайте честно и автономно — всичко това, захранвано от Internet Computer.\nFairganize е Dapp, деплойнът върху Internet Computer Blockchain.",
         "links": {
-            "repoUrl": "https://github.com/AntonStankov/fairganize",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/AntonStankov/fairganize"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Борис Стоянов",
@@ -1091,7 +1106,7 @@ export const PROJECTS = [
                 "class": "11 Г"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -1100,10 +1115,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "Financial Dashboard: Вашите финанси сигурно разпределени!\n\nНе можете да управите финансите си? Чудите се къде отиват парите Ви? Трудно Ви е да следите приходите и разходите си?\n\nС Financial Dashboard можете да следите всичко това:\n\nTransaction form: Тук можете да въвеждате вашите парични средства и за какво са Ви послужили.\n\nАвтоматично въвеждане на финансите: Освен чрез ръчно, можете да свържете вашата банкова сметка и данните за транзакциите Ви автоматично ще се въведат в статистиките.\n\nСледене на разходи: чрез диаграма можете да виждате къде отива всеки процент от финансите Ви.\n\nПо-умно управление на финансите чрез AI - обобщение на транзакциите и много други функционалности!",
         "links": {
-            "repoUrl": "https://github.com/ivanAleksandrov09/HACKTUES-11-Let-me-code",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/ivanAleksandrov09/HACKTUES-11-Let-me-code"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Иван Александров",
@@ -1135,10 +1152,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Проектът Firebender позволява управление на огън чрез движения на ръцете, създавайки ефекта на истинско „контролиране“ на огъня. С удари потребителят активира огнени струи, превръщайки фантазията в реалност.",
         "links": {
-            "repoUrl": "https://github.com/Belichkata/Firebender",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/Belichkata/Firebender"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Борис Беличев",
@@ -1158,10 +1177,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "Най-добрата платформа за започване на стартъп в България.",
         "links": {
-            "repoUrl": "https://github.com/AlehandroDjadjev/FirmFlow",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/AlehandroDjadjev/FirmFlow"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Александър Дачев",
@@ -1193,10 +1214,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "FitAI е екосистема (мобилно приложение и VS code extension), която помага на програмистите да подобрят здравето си",
         "links": {
-            "repoUrl": "https://github.com/x2oreo/FitAI",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/x2oreo/FitAI"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Калоян Гаврилов",
@@ -1215,7 +1238,7 @@ export const PROJECTS = [
                 "class": "10 А"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -1224,10 +1247,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "Flow е приложение за изграждане на навици, което превръща ежедневието ти в приключение. Изпълнявай предизвикателства, събирай XP, повишавай нивата на своите умения и поддържай серия от успехи – всичко това, докато ставаш по-добра версия на себе си.",
         "links": {
-            "repoUrl": "https://github.com/vladidraganov/Flow",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/vladidraganov/Flow"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Деян Голосманов",
@@ -1247,17 +1272,21 @@ export const PROJECTS = [
         "category": "software",
         "description": "Проектът Forza Ferrari представлява иновативно бизнес решение за куриерски фирми, което цели да осигури по-бързо и по-ефективно доставяне на пратки до крайните потребители.",
         "links": {
-            "repoUrl": "https://github.com/BorimirGanchev/RouteOptimizer-Teraform      https://github.com/BorimirGanchev/RouteOptimizer-Backend      https://github.com/BorimirGanchev/RouteOptimizer-Frontend",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/BorimirGanchev/RouteOptimizer-Teraform",
+                "https://github.com/BorimirGanchev/RouteOptimizer-Backend",
+                "https://github.com/BorimirGanchev/RouteOptimizer-Frontend"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Боримир Ганчев ",
                 "class": "11 А"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -1266,10 +1295,12 @@ export const PROJECTS = [
         "category": "networks",
         "description": "Проектът представлява платформа за менажиране на събития в облачна среда, насочена към наблюдение, визуализация и управление на предупреждения от приложения, работещи в Kubernetes клъстер. Основната цел е да улесни системните администратори при откриване и анализ на проблеми в реално време чрез централизирана визуализация, персонализирани правила за предупреждения и историческо съхранение на аларми. Решението включва демо уеб приложение, което генерира трафик и метрики, платформа за визуализация на предупреждения и агент, който съхранява аларми в Data Warehouse за дългосрочен анализ. Цялата система е внедрена в AWS инфраструктура с автоматизация чрез Terraform и Kubernetes.\\nИзползвани технологии:\\n- Next.js – за клиентските интерфейси на демо приложението и платформата за менажиране\\n- Tailwind CSS + Shadcn/ui – за стилизиране на интерфейсите\\n- PostgreSQL – база данни за съхранение на данни от демо приложението\\n- Golang – за реализация на агента за предупреждения\\n- Apache Doris – Data Warehouse за дългосрочно съхранение на предупреждения\\n- Prometheus + Alertmanager + Grafana (kube-prometheus-stack) – за събиране, анализ и визуализация на метрики\\n- Kubernetes (AWS EKS) – за оркестрация на контейнерите\\n- Docker – за контейнеризация на компонентите\\n- Terraform – за изграждане на инфраструктура като код (IaC)\\n- AWS – облачна платформа за хостване на инфраструктурата",
         "links": {
-            "repoUrl": "https://github.com/dimitarNzhelev/event-management",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/dimitarNzhelev/event-management"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Димитър Желев ",
@@ -1291,10 +1322,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "GPS-T е устройство за следене на МПС-та и други вещи с цел предпазване от кражба. GPS-T се свързва или директно към МПС-то с кабел за захранване или с преносима батерия например. След като се активира ако някой премести МПС-то ви то ще получите SMS с кординати къде се случва и ако устройството е свързано към интернет ще получите и имейл даващ същата информация. Има и web платформа където може да следите локацията в реално време и да видите пътя, който е изминал ако почне да се движи.",
         "links": {
-            "repoUrl": "https://github.com/Ralchev123/GPS-TRACKER",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/Ralchev123/GPS-TRACKER"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Никола Ралчев",
@@ -1313,10 +1346,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "GRAID (Graph-based Rapid Avoidance and Intelligent Decisioning) е система за автономно управление на дронове, разработена с цел бързо и интелигентно избягване на препятствия. Тя комбинира компютърно зрение, използващо изображения от бордовите камери, и графови алгоритми, за да осигури реално-времеви навигационни решения в сложни среди.\n\n    - Graph-based (на базата на графи) – Околната среда се представя чрез графови структури (възли и ръбове), което позволява ефективно моделиране на възможните траектории и намиране на оптимални маршрути за избягване на препятствия.\n\n    - Rapid Avoidance (бързо избягване) – Системата е проектирана за незабавна реакция, което е ключово за дронове, опериращи в динамична или непредсказуема среда.\n\n    - Intelligent Decisioning (интелигентно вземане на решения) – GRAID не разчита на предварително зададени маршрути, а използва алгоритми, които в реално време изчисляват най-подходящото действие на база на текущата ситуация.\n\nЗа още информация: https://codenamesource.github.io/GRAID/",
         "links": {
-            "repoUrl": "https://github.com/CodenameSource/GRAID",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/CodenameSource/GRAID"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Калоян Миладинов",
@@ -1334,10 +1369,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "Приложение, което помага да станеш най-пространствената версия на себе си",
         "links": {
-            "repoUrl": "https://github.com/Agorbanoff/Introduction-to-script-languages.git",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/Agorbanoff/Introduction-to-script-languages.git"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Александър Горбанов",
@@ -1357,10 +1394,10 @@ export const PROJECTS = [
         "category": "software",
         "description": "Сайт за самодиагноза на спортни травми.",
         "links": {
-            "repoUrl": "",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": []
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Ирена Сербезова",
@@ -1371,7 +1408,7 @@ export const PROJECTS = [
                 "class": "9 Г"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -1380,10 +1417,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Healthy Sitting е иновативен проект, който използва изкуствен интелект за подобряване на стойката и здравето при седене. Системата анализира в реално време позата на потребителя чрез камера или сензори и дава персонализирана обратна връзка, за да насърчава правилно и здравословно седене. ",
         "links": {
-            "repoUrl": "https://github.com/sanguineblade/HackTUES-pqsucniq-geng.git",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/sanguineblade/HackTUES-pqsucniq-geng.git"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Борис Боянски",
@@ -1415,10 +1454,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "Пазарът на недвижими имоти в България е огромен, но купувачите губят време в огледи на неподходящи имоти, а продавачите търпят загуби при всяко неуспешно представяне. Сегашните решения като снимки и ограничени 3D обиколки не предават реално усещане за пространството. Проучванията показват, че 75% от купувачите предпочитат интерактивни виртуални турове, които значително влияят на решението им за покупка.\n\nВ борба с този проблем създадох дипломната си разработка HomeTour — онлайн платформа, която пренася клиентите в бъдещия им дом, още преди той да бъде построен.\n\nHomeTour предлага галерия от апартаменти с детайлни 3D визуализации, създадени с помощта на Unity Game Engine. Тази технология позволява на потребителите да се разходят напълно свободно из пространствата, да усетят атмосферата на имота и да вземат информирано решение, без да губят време за излишни огледи.",
         "links": {
-            "repoUrl": "https://github.com/IvaAMarinova/Thesis-HomeTour",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/IvaAMarinova/Thesis-HomeTour"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Ива Маринова",
@@ -1434,10 +1475,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "HR-buddy - Уеб приложение, базирано на микросървизна архитектура, което подпомага собствениците на бизнес при оценката на потенциални или настоящи служители. Чрез интелигентно скрейпване и AI-базирана обработка системата предоставя анализ по пет ключови фактора, подпомагайки вземането на информирани HR решения.",
         "links": {
-            "repoUrl": "https://github.com/bobikenobi12/HACKTUES11",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/bobikenobi12/HACKTUES11"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Антон Станков ",
@@ -1460,7 +1503,7 @@ export const PROJECTS = [
                 "class": "11 Г"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -1469,10 +1512,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "IdentiPay: Secure. Private. Cardless. Pay instantly using your verified digital identity, managed effortlessly in the identiPay wallet. Are you ready to experience the future of truly secure transactions?",
         "links": {
-            "repoUrl": "https://github.com/krsultov/identiPay",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/krsultov/identiPay"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Крум Султов",
@@ -1488,17 +1533,19 @@ export const PROJECTS = [
         "category": "software",
         "description": "IDntΦ (Identify) е услуга за личностна верификация на база документ за самоличност. Системата изполва ИИ за да сравни снимката на документа с лицето на притежателя. Тя също изважда нужната информация от документа. Уникалното за тази система е, че прави всички изчисления в RAM и не пази лична информация на сървъра.",
         "links": {
-            "repoUrl": "https://github.com/j7zd/dr",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/j7zd/dr"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Огнян Разсадов ",
                 "class": "12 В"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": null,
         "images": [
             project45$image1
         ]
@@ -1509,10 +1556,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Battle bot с цел унищожаване на конкуренцията за да може да се види величието на ресторант Джепето!",
         "links": {
-            "repoUrl": "https://github.com/BrawlstarsMaster/Jepeto",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/BrawlstarsMaster/Jepeto"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Явор Минковски ",
@@ -1527,7 +1576,7 @@ export const PROJECTS = [
                 "class": "11 В"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -1536,10 +1585,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Голям проблем при домашните любимци, а най-вече при котките, е затлъстяването след кастрация. За да помогнем на нашата котка Кати да остане здрава и във форма, създадохме Katy-Feeder - интелигентна котешка хранилка, която измерва теглото на котката при всяко хранене и автоматично дозира количеството храна според нуждите ѝ. Хранилката разполага и с купичка за вода, която се допълва автоматично, за да осигури постоянен достъп до прясна вода.\n\nЗа удобство на стопанина Katy-Feeder предлага онлайн потребителски интерфейс, който позволява лесен достъп до данните за домашния любимец и предоставя опции за персонализиране на хранителния режим.",
         "links": {
-            "repoUrl": "https://github.com/IvaAMarinova/Katy-Feeder",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/IvaAMarinova/Katy-Feeder"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Ива Маринова",
@@ -1559,10 +1610,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Радио което ще може да се управлява чрез сайт (в момента на писането сайт няма, защото цифровия потенциометър се развали, но това е идеята)",
         "links": {
-            "repoUrl": "https://github.com/Walk3r11/killerfrequency",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/Walk3r11/killerfrequency"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Калоян Томов ",
@@ -1582,10 +1635,17 @@ export const PROJECTS = [
         "category": "networks",
         "description": "KYPOOO е проектът ми за дипломна работа :)\nЦелта ми е, чрез използване на платформи с отворен код, основно KYPO CRP, да създавам интерактивни обучения по киберсигурност, чрез които да се обучават хора на какъвто и да е етап в развитието си.\nКато за момента съм създала две обучения - Red Team (предлага практическо въведение в нападателните техники) и Blue Team (учи учениците как да защитят компрометирана система и да намалят уязвимостите на дадена система).\nНа деня на отворените врати ще мога да ви разкажа повече за KYPOOO - от това как съм подкарала платформара, до лично да тествате уменията си на живо ;)\n(на живо ще е по-добре обещавам Т-Т)",
         "links": {
-            "repoUrl": "Red Team: https://gitlab.com/kypo9720603/red-team-kypo.git Blue Team: https://gitlab.com/kypo9720603/blue-team-kypo.git",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "Red",
+                "Team:",
+                "https://gitlab.com/kypo9720603/red-team-kypo.git",
+                "Blue",
+                "Team:",
+                "https://gitlab.com/kypo9720603/blue-team-kypo.git"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Елена Чернева",
@@ -1605,10 +1665,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Прототип на бордови компютър за наносателит, отговарящ на стандарта Cubesat.",
         "links": {
-            "repoUrl": "https://github.com/Martin-Andonov/diplomna2024",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/Martin-Andonov/diplomna2024"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Мартин Андонов",
@@ -1619,7 +1681,7 @@ export const PROJECTS = [
                 "class": "12 Б"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": null,
         "images": [
             project50$image1,
             project50$image2,
@@ -1634,10 +1696,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "medPager е проект, който цели да улесни комуникацията между всички медицински лица в една болница. Представлява иновативна система, която използва изкуствен интелект, на който медицинската сестра изпраща описание на симптомите на даден пациент и след това системата изпраща известие за него само на лекарите, които са специалисти в съответната област на медицината. Всяко съобщение съдържа номера на стаята, където е пациента и код на проблема по ICD-10 класификацията. Тези съобщения ще пристигат само на пейджърите на лекарите, които са специалисти по дадената специалност.",
         "links": {
-            "repoUrl": "https://github.com/rosen1710/medPager",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/rosen1710/medPager"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Росен Маринов",
@@ -1656,7 +1720,7 @@ export const PROJECTS = [
                 "class": "12 А"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": null,
         "images": [
             project51$image1,
             project51$image2
@@ -1668,10 +1732,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "Чисто и просто приложение за организиране на вашите лекарства, планиране на напомняния, което помага никога да не пропускате доза или срок на годност.",
         "links": {
-            "repoUrl": "https://github.com/Ilinats/meds-tracker",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/Ilinats/meds-tracker"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Илина Цанова",
@@ -1682,7 +1748,7 @@ export const PROJECTS = [
                 "class": "11 А"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -1691,17 +1757,19 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Робот, управляван от raspberry pi 4, чиято главна цел е да служи като психолог. Използва изкуственият интелект на ollama - samantha от mistral, за да генерира отговори, които после се преобразуват в говор чрез Piper AI. А въпросите на потребителя се превръщат от говор в текст чрез python библиотеката vosk.\n",
         "links": {
-            "repoUrl": "https://github.com/MagdalenaNikiforova/MENTA",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/MagdalenaNikiforova/MENTA"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Магдалена Никифорова",
                 "class": "12 Г"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -1710,10 +1778,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Тази бойна машина е изградена от здрава неръждаема стомана, задвижвана е от преизползвани мотори от ховърборд и се управлява чрез система, базирана на ESP32. Тя вече е доказала своите качества на арената на BattleBots и е готова за още екшън.",
         "links": {
-            "repoUrl": "https://github.com/Mr-TopG/TUES-Battle-Bots",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/Mr-TopG/TUES-Battle-Bots"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Илия Илиев",
@@ -1749,10 +1819,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "Moneta е интерактивна уеб платформа, която помага на деца и ученици да изградят финансова грамотност чрез реалистични симулации. Те влизат в ролята на финансови съветници, като помагат на приятел да управлява парите си разумно през различни етапи от живота. Всяко тяхно решение оформя бъдещето му – водейки до различни резултати и визуализации на потенциалния му живот.\n\nЗа да направи ученето още по-ефективно, Moneta включва и финансов консултант, който насочва потребителя към образовани решения. За допълнителна мотивация, в платформата има класация, където участниците могат да се съревновават и да докажат, че са най-добрите финансови стратези!\n\nПлатформата е с учебна цел и не предоставя финансови съвети.",
         "links": {
-            "repoUrl": "https://github.com/false-positive/moneta",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/false-positive/moneta"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Божидар Павлов",
@@ -1784,10 +1856,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "Software за бързо и лесно разпределяне на смени на работници.",
         "links": {
-            "repoUrl": "https://github.com/p-ivanovv/Mladi-Bogati-Tuesari",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/p-ivanovv/Mladi-Bogati-Tuesari"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Деян Нъков",
@@ -1819,10 +1893,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "NAPI е система подпомагаща на НАП и редовния гражданин, който го интересува историята от покупките му, да следи какво бива купувано под формата на дигитални бележки.",
         "links": {
-            "repoUrl": "https://github.com/Nikieprogramach/HackTues11",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/Nikieprogramach/HackTues11"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Габриел Петров",
@@ -1837,7 +1913,7 @@ export const PROJECTS = [
                 "class": "11 Г"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -1846,10 +1922,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "NeuroFit е иновативно тренировъчно устройство, предназначено да оптимизира тренировките ви с обратна връзка в реално време, базиран на AI анализ. Независимо дали сте спортист, фитнес ентусиаст или начинаещ, NeuroFit ви помага да тренирате по-интелигентно, а не само по-интензивно, като подобрява вашата форма, проследява представянето и предотвратява наранявания.",
         "links": {
-            "repoUrl": "https://github.com/MihCom9/NeuroFit",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/MihCom9/NeuroFit"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Борис Калеканов ",
@@ -1872,7 +1950,7 @@ export const PROJECTS = [
                 "class": "9 Г"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -1881,10 +1959,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "OpenWing is a custom-built quadcopter designed and developed by Alexander Shestakov, Alexander Malinov, and Lora Apostolova. This project showcases a quadcopter with a custom flight controller based on the ESP32 microcontroller, integrating various sensors and control systems for stable flight and precise maneuverability.",
         "links": {
-            "repoUrl": "https://github.com/43r361/OpenWing",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/43r361/OpenWing"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Александър Шестаков",
@@ -1913,17 +1993,19 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Безжично устройство за прелистване на страници в Kindle с Bluetooth дистанционно управление.\nПроектът използва ESP32 микроконтролер, който получава сигнал от Bluetooth дистанционното и активира реле, което симулира докосване на екрана на Kindle чрез медни ленти, свързани към капацитивната повърхност на екрана. Това позволява на потребителя да прелиства страниците на Kindle без да докосва устройството, създавайки удобство и безконтактно взаимодействие.\n",
         "links": {
-            "repoUrl": "https://github.com/Ilinats/wireless-kindle-page-turner",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/Ilinats/wireless-kindle-page-turner"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Илина Цанова",
                 "class": "11 А"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -1932,10 +2014,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "Metroidvania игра - биеш чудовища, отключваш нови места, откриваш нови оръжия, докато не стигнеш до крайния бос - самият разказвач",
         "links": {
-            "repoUrl": "https://github.com/GogoManev/pretty-bad-platformer-game",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/GogoManev/pretty-bad-platformer-game"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Георги Манев",
@@ -1962,10 +2046,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "PIONEER – нашата напълно автоматизирана стабилизирана ракета. В сърцето ѝ стои Arduino Nano – мини компютър, който в реално време обработва данните от два ключови сензора. MPU9250 следи наклона, ускорението и посоката чрез вграден акселерометър, жироскоп и магнетометър. BMP280 измерва атмосферното налягане, от което изчисляваме височината. Всички тези данни се използват от TVC системата – Thrust Vector Control – която управлява ъгъла на тягата, така че ракетата автоматично да се стабилизира по време на полет. PIONEER следи и реагира на всяко отклонение от курса, като постоянно регулира посоката си – бързо, прецизно и напълно автономно.",
         "links": {
-            "repoUrl": "https://github.com/JustZhivko/PIONEER-TUES-FEST-2025",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/JustZhivko/PIONEER-TUES-FEST-2025"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Живко Увалиев",
@@ -1984,7 +2070,7 @@ export const PROJECTS = [
                 "class": "8 А"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": null,
         "images": [
             project62$image1,
             project62$image2,
@@ -1998,10 +2084,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "– Колко пъти си писал „Кога сте свободни?“ и си получил... тишина?\nИли още по-лошо – 17 съобщения с „аз мога вторник“, „не, вторник не мога“, „а бе коя седмица беше това?“\n\nPlanTheMeet казва СТОП.\n\nВлизаш.\nВиждаш календара.\nПопълваш кога си свободен.\nИзбираш приятелите, с които искаш да излезеш –\nи… бум!\nПоказва ти дните, в които всички сте свободни.\nБез драми. Без бъркане на седмици. Без „А чакай... то било рождения ден на леля ми“.\n\nИ не спираме дотук.\nPlanTheMeet ти вади предложения къде да ходите –\nфестивали, барове, настолни игри, планина, киносалон с кресла като легла…\nИ всичко е съобразено с това къде иска да ходи всеки от групата.\n\nВсе едно Netflix и Google Calendar са си направили бебе... което обича да купонясва.\n\nChat с приятелите? Има.\nЛесна покана? С един клик.\nПриложение, което прави плановете вместо теб? Добре дошъл в бъдещето.\n\n📅 PlanTheMeet – защото животът е прекалено кратък за „Кой кога може?“",
         "links": {
-            "repoUrl": "https://github.com/Sveji/PlanTheMeet",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/Sveji/PlanTheMeet"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Мартин Велчев",
@@ -2033,10 +2121,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "Промедон е една платформър игра с инвъртната гравитация, в която целта е да излезеш на повърхността на океана ( и да приключиш нивата, разбира се)",
         "links": {
-            "repoUrl": "https://github.com/fimo3/promedon",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/fimo3/promedon"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Серафим Ковачевич",
@@ -2052,10 +2142,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Боксова круша, която измерва силата на удара, с която е ударена, като изчислява времето, за което крушата се мести от вертикално в хоризонтално състояние ",
         "links": {
-            "repoUrl": "https://github.com/TheUnforgivenI/PunchingArcadeMachine",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/TheUnforgivenI/PunchingArcadeMachine"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Мартин Йосифов",
@@ -2092,10 +2184,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "Q-bit съдържа симулатор на квантов компютър, позволяващ изпълнението на квантови алгоритми на класически хардуер, първия по рода си квантов “circuit-like” език за програмиране Q Assembly и автоматична система за менажиране на динамична памет за C и C++. Проектът има цел развитие и популяризиране на сферата на квантовите изчисления и подпомагане работата на изследователи и разработчици. Системата за менажиране се използва в целия проект и цели облекчаване и обезопасяване използването на езиците C и C++ чрез специално създадена архитектура, комбинираща структури на обхвати и управляващ-управляван. Control flow на Q Assembly е специално разработен и модулният компилатор позволява безпроблемни мултиплатформени възможности.",
         "links": {
-            "repoUrl": "https://github.com/dr-programmer/qbit",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/dr-programmer/qbit"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Дарий Топузов",
@@ -2117,17 +2211,19 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Raspberry Pi Handheld",
         "links": {
-            "repoUrl": "https://github.com/Bobisan/Raspberry-Pi-4B-handheld-TuesFest2025",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/Bobisan/Raspberry-Pi-4B-handheld-TuesFest2025"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Борис Стрински",
                 "class": "10 Г"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -2136,10 +2232,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "Уеб сайт за намерени и изгубени вещи.",
         "links": {
-            "repoUrl": "https://github.com/airifqiry/ReFinder",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/airifqiry/ReFinder"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Айрис Ясенова",
@@ -2158,7 +2256,7 @@ export const PROJECTS = [
                 "class": "8 Г"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -2167,10 +2265,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Потопете се във фантастичния свят на игрите с нашата конзола RICEBOX:\nИграйте в ръчен режим докато хардуерът на конзолата е стационарен. Това позволява използването и където и да е, когато и да е, без да отнема от производителността и\nПодвижният екран закрепен с магнити я прави лесна за пренос\nКонзолата има 4 оригинални игри направени от нас, достъпни на първия ден\nТези и всички следващи игри могат да бъдат изтеглени от нашия магазин\n\nОчакват се много обновления, включващи:\nПодобрен хардуер с повече възможности\nНови оригинални игри\nВъзможност за адаптиране на собствени игри за конзолата по достъпен начин\nВъзможност за игра на игри от преносима външна памет(с правилна адаптация)",
         "links": {
-            "repoUrl": "https://github.com/KNProNooob/RiceBOX",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/KNProNooob/RiceBOX"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Кристиан Николов",
@@ -2207,17 +2307,31 @@ export const PROJECTS = [
         "category": "software",
         "description": "RideMart е платформа за публикуване и търсене на обяви за продажба на мотори. Потребителите могат лесно да създават профил, както и да качват, редактират, изтриват и филтрират обяви според различни критерии. Обявите са категоризирани по тип, марка, модел и други характеристики, което улеснява откриването на подходящ мотор.",
         "links": {
-            "repoUrl": "Сървърна част на приложението - https://github.com/nikolasachkov/RideMart ; Клиентска част на приложението - https://github.com/nikolasachkov/RideMartUI",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "Сървърна",
+                "част",
+                "на",
+                "приложението",
+                "-",
+                "https://github.com/nikolasachkov/RideMart",
+                ";",
+                "Клиентска",
+                "част",
+                "на",
+                "приложението",
+                "-",
+                "https://github.com/nikolasachkov/RideMartUI"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Никола Сачков",
                 "class": "12 В"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -2226,10 +2340,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "AWS SageMaker monitorng model за predictive maintanance на уеб и мобилни проложения. На база на  предишни събития се предсказват бъдещи сривове в уеб и мобилни приложения посредством ARIMA ML Model. Цялата инфраструктура е деплойната в AWS облачна среда.",
         "links": {
-            "repoUrl": "https://gitlab.itgix.com/elsys/petar-petrov",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://gitlab.itgix.com/elsys/petar-petrov"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Петър Петров",
@@ -2251,17 +2367,19 @@ export const PROJECTS = [
         "category": "software",
         "description": "Забавна морска версия на класическата игра Морски шах, в която платноходки и параходи се състезават за победа. Показва чий е редът, обявява победителя и позволява рестарт по всяко време. Семпло, чисто и с морски дух. 🌊🚢",
         "links": {
-            "repoUrl": "https://github.com/KristiyanAbrashkov/SeaBattle_TuesFest.git",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/KristiyanAbrashkov/SeaBattle_TuesFest.git"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Кристиян Абрашков",
                 "class": "9 В"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": null,
         "images": [
             project72$image1,
             project72$image2,
@@ -2275,10 +2393,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Целта на Sense Sphere е да се осигури контрол над дома ни в наше отсъствие.\n \n1) Система за сигурност:\n - онлайн достъп до камерите постоянно\n - уведомява в реално време при наличието на необичайно движение\n2) Поливна система\n - грижи се за цветята, като ги полива, когато е необходимо и колкото е нужно, благодарение на сензори\n - уведомява при изчерпване на водата в резервоара\n3) Автоматична хранилка за животни\n - храни домашните любимци, в определен от потребителя час и количество\n - грижи се винаги да има вода в купичката\n - уведомява при изчерпване на запасите в резервоара\n4) Мобилно приложение\n - осигурява бърз достъп и контрол над трите системи от разстояние\n - изпраща известия при нужда",
         "links": {
-            "repoUrl": "https://github.com/Gabo1234567890/Sense-Sphere.git",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/Gabo1234567890/Sense-Sphere.git"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Габриел Ненов",
@@ -2293,7 +2413,7 @@ export const PROJECTS = [
                 "class": "11 А"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -2302,10 +2422,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Автоматизиране мишена за стрелба във форма на изънземно\nОтчита и показва резултати, в зависимост от къде по тялото попаднат изстрелите",
         "links": {
-            "repoUrl": "https://github.com/atanas-rujinov/shoot-alien",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/atanas-rujinov/shoot-alien"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Атанас Ружинов",
@@ -2320,7 +2442,7 @@ export const PROJECTS = [
                 "class": "11 В"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -2329,10 +2451,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "\"SignSmart\" позволява на потребителите да качват договор в различни формати (документ, изображение, текст или връзка) за анализ. AI ще анализира подробно договора, като идентифицира потенциално неблагоприятни клаузи за клиента. След това ще предостави ясно и кратко резюме на ключовите условия на договора, включително кратко описание на какво ще получи клиентът по договора.\nОсвен това системата ще предлага препоръки за по-добри алтернативни планове, като гарантира, че потребителят има достъп до по-благоприятни опции. Освен това, сайтът ще позволи на потребителите да сравняват два или три различни договора един до друг, позволявайки подробно сравнение на срокове и условия, за да се улесни процеса на вземане на информирано решение, какво ще получи клиентът по договора.",
         "links": {
-            "repoUrl": "https://github.com/ImpairedAsp5640/SignSmart",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/ImpairedAsp5640/SignSmart"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Александър Георгиев",
@@ -2355,7 +2479,7 @@ export const PROJECTS = [
                 "class": "8 Б"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": null,
         "images": [
             project75$image1,
             project75$image2,
@@ -2370,17 +2494,19 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Simon Said е електронна игра за памет и бързи реакции. Устройството издава четири различни звука, като играчът трябва да повтори последователността правилно. С всяко ниво комбинацията става по-дълга и трудна.",
         "links": {
-            "repoUrl": "https://github.com/HyperRaptor/Simon-Said",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/HyperRaptor/Simon-Said"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Симеон Алексиев",
                 "class": "11 А"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -2389,10 +2515,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "   Smart Bastoon е умен бастун, предназначен да подпомага на незрящи хора чрез интеграция на съвременни технологии. Основната му цел е да подобри мобилността и безопасността на незрящите хора, като им предостави надеждно средство за навигация и своевременно предупреждение за препятствия и опасности по пътя. Оборудван е с ултразвукови сензори за разпознаване на препятствия, ESP32-CAM за детекция на дупки по пътя, жироскоп при падане, вибрационен мотор, пиезо зумер и светодиод за осигуряване на тактилна, звукова и светлинна индикация.",
         "links": {
-            "repoUrl": "https://github.com/NickProgrammerGaming/SmartBastoon",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/NickProgrammerGaming/SmartBastoon"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Павел Симеонов",
@@ -2429,10 +2557,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Custom-built wearable smart glasses system by a highly specialized board that connects to your phone and use Al to assist you in real time. Capture text with the built-in camera, get instant answers from ChatGPT, navigate with step-by-step directions, track your movement, and never miss a calendar event.",
         "links": {
-            "repoUrl": "https://github.com/yasenOfficial/SmartGlasses",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/yasenOfficial/SmartGlasses"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Мария Конева ",
@@ -2456,10 +2586,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Подложка за чаша, която мери количество изпита вода за деня и подсеща потребителя да пие вода, ако не е пил от много време",
         "links": {
-            "repoUrl": "https://github.com/DunevTsvetomir/HACKTUES11",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/DunevTsvetomir/HACKTUES11"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Калоян Георгиев ",
@@ -2474,7 +2606,7 @@ export const PROJECTS = [
                 "class": "10 Г"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -2483,10 +2615,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Иновативно оледало, на което ще се изписва температурата в стаята, влагата и часа. Самото огледало ще се включва чрез сензор за движение.",
         "links": {
-            "repoUrl": "https://github.com/kebaaaaaa/SmartMirror",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/kebaaaaaa/SmartMirror"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Момчил Владимиров ",
@@ -2497,7 +2631,7 @@ export const PROJECTS = [
                 "class": "11 Б"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": null,
         "images": [
             project80$image1,
             project80$image2,
@@ -2510,10 +2644,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "Иновативен финансов сайт, който има за цел да подобри финансовата грамотност на потребителите, да им предостави полезна информация в сферата на инвестициите и финансите. Сайтът позволява получаване на инвестиционни съвети от собствено трениран изкуствен интелект,  полезни финансови калкулатори, водене на бележки, следене на актуалните валутни курсове и не на последно място възможност за разпределяне на месечен бюджет с помощта на изкуствен интелект.",
         "links": {
-            "repoUrl": "https://github.com/YavorPenev/TUES_FEST11_Legends.git",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/YavorPenev/TUES_FEST11_Legends.git"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Явор Пенев",
@@ -2549,10 +2685,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Целта на нашия проект е да помогнем на клиентите да следят разходите си, докато пазаруват, като общата сума от цените се показва на екрана върху количката им, което прави цялото им изживяване в магазина много по-лесно и бързо, и ограничава нуждата от касиери. ",
         "links": {
-            "repoUrl": "https://github.com/yorizova/HackTUES11",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/yorizova/HackTUES11"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Йоана Ризова",
@@ -2584,17 +2722,19 @@ export const PROJECTS = [
         "category": "software",
         "description": "Introducing new technology of scoring in Brazilian Jiu Jitsu. Its purpose is to remove the need of a human to enter the score manualy, using an AI integrated camera to make the scoring more accurate and unbiased. link to video: https://www.canva.com/join/mkd-bsw-tzt",
         "links": {
-            "repoUrl": "https://github.com/daravader/SmoothScore",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/daravader/SmoothScore"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Дара Панайотова ",
                 "class": "9 А"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -2603,10 +2743,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "Sofia Parking се цели да подпомогне с търсенето на паркомясто в столицата, като междувременно и намалява въглеродните емисии и спестява времето на хората.",
         "links": {
-            "repoUrl": "https://github.com/VenelinZhelev/SofiaParking",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/VenelinZhelev/SofiaParking"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Георги Манев",
@@ -2628,10 +2770,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Speakle е умна ръкавица, която позволява лесна комуникация между глухи и чуващи хора, като автоматично превежда жестовете в говор и превръща речта в текст. Проектът използва невронна мрежа за разпознаване на жестомимичен език и мобилно приложение, което осигурява ясна и точна комуникация в реално време. Speakle работи надеждно, като активира комуникацията само при сигурно разпознаване на жестовете, което предотвратява грешки. Целта на проекта е да подобри социалното взаимодействие и ежедневния живот на глухите хора, предоставяйки им увереност и независимост в общуването.",
         "links": {
-            "repoUrl": "https://github.com/KaloianPenchev/Speakle",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/KaloianPenchev/Speakle"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Калоян Пенчев",
@@ -2647,10 +2791,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "\"Sprout\" е иновативна роботизирана количка с дистанционно управление, предназначена за автоматизирано поливане и грижа за почвата. Тя съчетава функционалност, мобилност и интелигентност, за да улесни поддръжката на градини и селскостопански площи. Разполага с камера и контейнер за вода, от който с помощта на водна помпа, може да се поливат растения.",
         "links": {
-            "repoUrl": "https://github.com/VaskoVelev/Sprout",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/VaskoVelev/Sprout"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Васил Велев",
@@ -2669,7 +2815,7 @@ export const PROJECTS = [
                 "class": "11 А"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -2678,10 +2824,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "StampR е напълно функционална софтуерна платформа, специално разработена за защита на интелектуална собственост на бъдещите гурута - ТУЕСАРИ чрез удостоверяване на момента, в който е съществувало дадено цифрово съдържание (Квалифицираният Електронен Времеви Печат  -timestamp) и неговият приносител.  StampeR.eu гарантира автентичността и собствеността на дигитално съдържание. Работи в 3 режима: напълно безплатен – със собствено удостоверяване на време, с удостоверяване на време посредством безплатна международна timestamp услуга и чрез квалифицирана услуга за удостоверяване на време на БОРИКА АД, по стандарт „ETSI EN 319 422 Time-stamping protocol and time-stamp token profiles“,  “ ETSI EN 319 421 Policy and Security Requirements for Trust Service Providers issuing Time-Stamps” . При удостоверяването на оригнала, потребителя получава TST (Time Stamp Token) – електронно подписано удостоверение за съществуване на цифрово съдържание на електронен документ преди определен момент, посочен в удостоверението и за непроменимост на това съдържание след този момент, съдържащо SHA-256 HESH код, както и сериен номер които служат за последваща проверка на автентичност. Оригиналът също може да бъде проверен за автентичност.\n\nЧрез платформата може да се удостоверяват интелектуална собственост на софтуерен код, литературни произведения, фотографии, схеми, диаграми, музикални произведения и на практика всякакво цифрово съдържание.\n\nПлатформата поддържа потребителски профили и работи на LAMP стак, собствена Виртуална машина, VBOX виртуализация, Caddy proxy с SSL, собствен домейн.",
         "links": {
-            "repoUrl": "https://github.com/boyanbgeorgiev/StampR",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/boyanbgeorgiev/StampR"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Боян Георгиев",
@@ -2692,7 +2840,7 @@ export const PROJECTS = [
                 "class": "9 А"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -2701,10 +2849,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "Startify is a mobile app that connects entrepreneurs, investors, and clients. It allows you to create a business idea and provides the necessary documentation to help you develop it into a company. Additionally, you can invest in existing ideas or companies with legal documents ensuring your investment's security. The app also enables you to find partners to collaborate on your idea or join someone else's venture. Moreover, Startify can schedule meetings with investors or team members based on their availability, ensuring efficient time management. Furthermore, you can always chat with anyone!",
         "links": {
-            "repoUrl": "https://github.com/Gabo1234567890/Startify.git",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/Gabo1234567890/Startify.git"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Таня Колева",
@@ -2715,7 +2865,7 @@ export const PROJECTS = [
                 "class": "11 А"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -2724,10 +2874,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "Интензивна sci-fi shooter игра, в която играчът трябва да избяга от зловеща фабрика, използвайки бързи движения и експериментални оръжия. Динамични преследвания, платформинг с физика и хаотични битки срещу механични чудовища.",
         "links": {
-            "repoUrl": "https://github.com/Toxic-Fuel/Steel-Storm",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/Toxic-Fuel/Steel-Storm"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Йордан Йончев",
@@ -2765,10 +2917,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "\"The Grande Experience\" е интерактивен уебсайт, посветен на Ариана Гранде. Проектът представя нейната биография, дискография, концерти, участие във филма Wicked и нейната лимитирана Swarovski колекция. Сайтът включва галерия, динамични менюта с информация за албумите и песни с директни връзки към Spotify. Дизайнът е модерен, с визуални ефекти и приятна навигация, насочена към феновете и любителите на поп музиката.",
         "links": {
-            "repoUrl": "https://github.com/plamenyalamov/ProjectAriana.git",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/plamenyalamov/ProjectAriana.git"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Пламен Ялъмов",
@@ -2784,10 +2938,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "TimeLink е уеб платформа за размяна на услуги, където вместо пари се използват Time Tokens, насърчавайки взаимопомощ между поколенията.",
         "links": {
-            "repoUrl": "https://github.com/ekaterinakrunewa/Buff-Buhtichki-hacktues11",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/ekaterinakrunewa/Buff-Buhtichki-hacktues11"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Сияна Топузова",
@@ -2806,7 +2962,7 @@ export const PROJECTS = [
                 "class": "9 Б"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -2815,10 +2971,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "Toilet Finder е уеб приложение, създадено с цел да улесни намирането на обществени тоалетни. Потребителите могат да добавят нови локации на картата, да оценяват тоалетните, да подават сигнали за проблеми и да отбелязват важни характеристики – като наличие на тоалетна хартия, достъпност за хора с увреждания и други. Проектът цели да създаде полезна и актуална общностна карта за всички.\nТова е курсов проект по Разработка на софтуер.",
         "links": {
-            "repoUrl": "https://github.com/atanas-rujinov/toilet-finder",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/atanas-rujinov/toilet-finder"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Атанас Ружинов",
@@ -2834,10 +2992,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "Тренираш и печелиш награди",
         "links": {
-            "repoUrl": "https://github.com/FoxVl2/TUES-FEST.git",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/FoxVl2/TUES-FEST.git"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Владимир Живков",
@@ -2856,7 +3016,7 @@ export const PROJECTS = [
                 "class": "8 В"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -2865,10 +3025,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "IOT Health device, който анализира урина. Чрез измерването на показатели като pH, цвят и чистота и сравняването им с референтни стойности показва на човека дали е в нормата чрез светодиоди. След това данните се анализират  чрез изкуствен интелект и се изготвя диагноза. Всичко това се изпраща на имейла на потребителя, за да бъде максимално лесно за него.",
         "links": {
-            "repoUrl": "https://github.com/zlati-coding/cak_cak_cak_cak",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/zlati-coding/cak_cak_cak_cak"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Даниел Икономов",
@@ -2898,10 +3060,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "IoT система от свързани устройства в помощ на медицинските екипи и пациентите.",
         "links": {
-            "repoUrl": "https://github.com/Mladen-Robotics/VitalLink.git",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/Mladen-Robotics/VitalLink.git"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Младен Михалков",
@@ -2923,10 +3087,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "3D volumetric display, работещ на принципа на молитви и късмет",
         "links": {
-            "repoUrl": "https://github.com/DebelToni/vrutka",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/DebelToni/vrutka"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Стоян Иванов",
@@ -2960,10 +3126,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "WayPoint е система за управление на доставки, създадена да улесни и оптимизира процеса на разнос. Автоматично разпределя пратки към шофьори, изчислява най-ефективните маршрути и осигурява проследяване в реално време. Waypoint намалява разходите и спестява време.",
         "links": {
-            "repoUrl": "https://github.com/SectorCT/WayPoint",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/SectorCT/WayPoint"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Светослав Илиев",
@@ -2986,7 +3154,7 @@ export const PROJECTS = [
                 "class": "11 В"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -2995,10 +3163,12 @@ export const PROJECTS = [
         "category": "software",
         "description": ",,За думите'' e мобилно приложение, чиято цел е да обогати езиковата култура на потребителите. Функционалността ,,дума на седмицата“ предоставя нова дума, придружена от описание и пример за употреба. Всеки ден потребителите получават тестови задачи, с които да тренират знанията си по български език. Резултатите от ежедневните тестове се представят на потребителите под формата на диаграми, които позволяват да се проследи прогресът. В процес на разработка е блогът, където ще се намира информация за различни правила в българския език.",
         "links": {
-            "repoUrl": "https://github.com/ZaDumiteOrg",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/ZaDumiteOrg"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Екатерина Димитрова",
@@ -3014,17 +3184,19 @@ export const PROJECTS = [
         "category": "networks",
         "description": "Изграждане на мрежа за пренос на данни свързваща три офиса в България",
         "links": {
-            "repoUrl": "https://github.com/Papaya345/TUESFEST2025",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/Papaya345/TUESFEST2025"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Михаел Иванов",
                 "class": "12 Г"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": null,
         "images": [
             project100$image1
         ]
@@ -3035,17 +3207,19 @@ export const PROJECTS = [
         "category": "networks",
         "description": "Това е проект, разработен като дипломна работа, който използва решение на Cisco за динамично изграждане на сигурни виртуални частни мрежи(VPNs).\n\nРешението използва топология hub and spoke, като се конфигурират статични тунели между hub-а(R1) и всички spoke-ове (R3,R4,R5). Когато spoke-овете искат да комуникират помежду си питат hub-a чрез NHRP за тунелния адрес на съседа и динамично се изгражда тунел между двата spoke-a.",
         "links": {
-            "repoUrl": "https://github.com/inevg/dmvpn_diploma",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/inevg/dmvpn_diploma"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Иоан Евгениев",
                 "class": "12 Г"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -3054,17 +3228,19 @@ export const PROJECTS = [
         "category": "networks",
         "description": "Дипломната работа представя мрежова архитектура, състояща се от 10 маршрутизатора. Устройствата са разпределени в 2 автономни системи - AS1618 и AS65135.\nAS1618 представлява \"гръбнакът\" на топологията, докато в AS65135 са поместени маршрутизаторите, които симулират клиентите - получателите на multicast мрежовия трафик.\nЗа изграждането на мрежовата архитектура са използвани MPLS, OSPF и iBGP за маршрутизация във вътрешната автономна система, а eBGP е използван за установяване на свързаност между автономните системи. За управление на multicast трафика са използвани протоколите PIM и IGMP.",
         "links": {
-            "repoUrl": "https://github.com/StefyVP/Multicast-traffic.git",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/StefyVP/Multicast-traffic.git"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Стефани Пенчева",
                 "class": "12 Г"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -3073,10 +3249,12 @@ export const PROJECTS = [
         "category": "networks",
         "description": "Проектът демонстрира изграждането на мрежова архитектура, базирана на DMVPN решение, което осигурява сигурна и ефективна свързаност между един централен и три отдалечени офиса. Архитектурата е изградена чрез мрежовия симулатор GNS3. За успешната реализация на проекта са използвани протоколите BGP, mGRE, NHRP, IPsec, HSRP и IP SLA, които играят ключова роля за правилното функциониране на корпоративната мрежа.",
         "links": {
-            "repoUrl": "https://github.com/Boyan7577/Diplomna_Rabota",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/Boyan7577/Diplomna_Rabota"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Боян Жечев",
@@ -3095,10 +3273,12 @@ export const PROJECTS = [
         "category": "networks",
         "description": "Този проект се фокусира върху изграждането на мрежова инфраструктура, базирана на NNI (Network-to-Network Interface) Option A, с помощта на симулатора GNS3. Целта е да се демонстрират теоретични и практически подходи за изграждане на ефективни мрежови решения чрез симулации и прилагане на съвременни мрежови технологии. Проектът се фокусира върху основните мрежови модели OSI и TCP/IP, както и внедряването на динамични маршрутизационни протоколи като IS-IS и BGP. В допълнение, се разглеждат технологии като MPLS и VRF, които подобряват управлението на трафика и сигурността.",
         "links": {
-            "repoUrl": "https://github.com/GogoMilioni/NNI_Option_A",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/GogoMilioni/NNI_Option_A"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Георги Стоянов",
@@ -3116,10 +3296,12 @@ export const PROJECTS = [
         "category": "networks",
         "description": "Този проект е посветен на изграждането на свързаност между два отделни доставчика на услуги посредством Inter-AS Option C, дефиниран в RFC 4364. Основната цел е да се демонстрира как този подход може да бъде приложен за осигуряване на сигурна и ефективна комуникация между мрежите на различни доставчици.",
         "links": {
-            "repoUrl": "https://github.com/NickProgrammerGaming/MMMPLS-OptionC/tree/main",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/NickProgrammerGaming/MMMPLS-OptionC/tree/main"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Никола Кръстанов",
@@ -3138,10 +3320,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "НСТУЕС е уеб платформа, създадена специално за учениците от ТУЕС, която улеснява процеса по намиране и кандидатстване за ученически стажове след 11. клас. Проектът свързва ученици, ИТ компании и училищната администрация чрез интуитивен интерфейс, профили, автоматизирано кандидатстване, чат и проследяване на стажовете. НСТУЕС цели да създаде реална връзка между учениците и бизнеса, като дигитализира и улеснява целия процес.",
         "links": {
-            "repoUrl": "https://github.com/Paco2006/HCTYEC",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/Paco2006/HCTYEC"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Павел Симеонов",
@@ -3161,10 +3345,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "<h1>AnasOS</h1>\n\nДипломна Работа\nНаписана на Rust\n- Multiboot2 стандарт\n- Двоен Framebuffer\n- Реализирано Приложение \"Терминал\"\n- Създадена основа за Desktop Environment",
         "links": {
-            "repoUrl": "https://github.com/Mrgoblings/AnasOS",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/Mrgoblings/AnasOS"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Емил Момчев",
@@ -3180,17 +3366,19 @@ export const PROJECTS = [
         "category": "networks",
         "description": "Проектът представя моята дипломна работа. Тя е изградена по клиентски модел като цели да замени наличната iSCSI мрежа със Fibre Channel SAN. Целта на тази замяна е да се увеличи скоростта, надеждността и производителността за нуждите на съхранение на данни и техният достъп от клиента. Също важно е да се спомене и значителното увеличение в сигурността, чрез смяната на iSCSI, което е протокол за блоков достъп и преност на данни базиран под TCP/IP, на Fibre Channel, което е структура отделена от TCP/IP използвана в типичният интернет, което заличава един огромен вектор на атака. Оригиналната мрежа поддържа 10/25 Gb/s скорост на трафика, докато сегашната поддържа 32 Gb/s, което е увеличение в скоростта. Отделянето на специализирана мрежа също така елиминира съревноваването на Storage трафик с нормалният клиентски трафик, в случаят трафикът на нормалният работник в фирмата, което значително увеличава производителността. ",
         "links": {
-            "repoUrl": "https://github.com/Bai-Koko/SAN_Thesis",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/Bai-Koko/SAN_Thesis"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Константин Хаджийски",
                 "class": "12 Г"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -3199,10 +3387,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Проектът представя проектиране на декодер 74HC42 в интегрална форма - високоскоростен CMOS декодер, който преобразува 4-битов BCD код в десет активно ниски изхода. Реализацията включва създаване на базови логически елементи (OR, NAND, NOT), оптимизация чрез DC анализ и пълна физическа имплементация.\n\nВсеки елемент е верифициран чрез симулации, а физическата реализация преминава успешно DRC и LVS проверки, което гарантира производствената готовност на дизайна. Проектът демонстрира цялостния процес на създаване на интегрална схема - от схемотехническа реализация до финален топологичен проект.",
         "links": {
-            "repoUrl": "https://github.com/Chochi44/decoder-design.git",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/Chochi44/decoder-design.git"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Чавдара Белева",
@@ -3218,10 +3408,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Проектът представлява Arduino-управлявана роботизирана ръка с 6 серво мотора, която може да изписва думи чрез американския жестов език (ASL), да имитира движенията на човешка ръка в реално време чрез камера на лаптоп и да играе на Камък, Ножица, Хартия. С бутон се превключва между трите режима — ASL режим, при който ръката изписва думите буква по буква, огледален режим, при който ръката следва движенията на потребителя и гейминг режим, където потребителят може да играе на Кaмък, Ножица, Хартия с ръката, като победител е първият стигнал до 5 точки. Използва се Python за разпознаване на жестове с помощта на MediaPipe, а Arduino управлява моторите за реалистични движения на пръстите и китката.",
         "links": {
-            "repoUrl": "https://github.com/nikolpeneva/ruchko",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/nikolpeneva/ruchko"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Никол Пенева",
@@ -3241,10 +3433,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Светломер за фотоапарати, който пресмята правилните настройки за експозиция на снимките. Истински важно за любителите на а",
         "links": {
-            "repoUrl": "https://github.com/Bobisan/Lightmeter_TuesFest2025",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/Bobisan/Lightmeter_TuesFest2025"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Борис Стрински",
@@ -3255,7 +3449,7 @@ export const PROJECTS = [
                 "class": "10 Г"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -3264,17 +3458,19 @@ export const PROJECTS = [
         "category": "networks",
         "description": "Корпоративна мрежа, симулирана на GNS3, на два доставчика, към които са свързани по два офиса - на клиент 1 и клиент 2. Цел: да се установи разграничена комуникация между офисите.",
         "links": {
-            "repoUrl": "https://github.com/MagdalenaNikiforova/Inter-AS-option-C",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/MagdalenaNikiforova/Inter-AS-option-C"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Магдалена Никифорова",
                 "class": "12 Г"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -3283,10 +3479,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "Проектът представлява AI телефонен агент, който се обажда на хора с просрочени кредити. Потребителите - кредиторите, подават списък от лица с неизплатени задължения, заедно с всякакви данни, с които разполагат относно въпросните лица (например в JSON формат) , и нашето приложение им звъни през определено време. Агентът уточнява какви са причините за просрочването на задълженията и предлага опции за изплащане.",
         "links": {
-            "repoUrl": "https://github.com/atanas-rujinov/SIV-2",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/atanas-rujinov/SIV-2"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Атанас Ружинов",
@@ -3297,7 +3495,7 @@ export const PROJECTS = [
                 "class": "12 Б"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -3306,10 +3504,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Този проект предоставя решение на проблемите свързани с изграждането и поддръжката на електро-инсталацията на малки плавателни съдове с дължина между 4 и 12 метра, използвани за спорт и развлечение. Всички компоненти, използвани в изграждането на системата са евтини и достъпни на пазара. Чрез изграждането на LoRa базирана мрежа, контролираща електрическите консуматори се премахва голяма част от нужното окабеляване на електро-инсталацията. Така се улеснява изграждането и поддръжката и както и се намалява тежестта на кабелите, която е от значение при малки плавателни съдове.",
         "links": {
-            "repoUrl": "https://github.com/ViktorAlexiev/LoRa_boat",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/ViktorAlexiev/LoRa_boat"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Виктор Алексиев",
@@ -3335,10 +3535,13 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Иновативна касичка създадена с цел да помогне на малките деца, да се научат да спестяват и да развият полезни финансови навици.",
         "links": {
-            "repoUrl": "https://github.com/alt-plus-f4/kato-za-final https://github.com/alt-plus-f4/kato-za-final-embed",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/alt-plus-f4/kato-za-final",
+                "https://github.com/alt-plus-f4/kato-za-final-embed"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Мартин Андонов",
@@ -3361,7 +3564,7 @@ export const PROJECTS = [
                 "class": "12 Б"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": project115$thumbnail,
         "images": []
     },
     {
@@ -3370,10 +3573,13 @@ export const PROJECTS = [
         "category": "software",
         "description": "Дипломна работа на тема \"Мобилно приложение за Android, целящо да популяризира забележителностите около станциите на софийското метро\". Приложението Ви позволява да сканирате уникален QR код на всяка метростанция, който Ви показва всички забележителности около нея. Можете също така да се регистрирате като потребител, за да оставяте коментари или да предлагате нови места.",
         "links": {
-            "repoUrl": "https://github.com/NickZach2036/ELSYS-Diploma-thesis-Backend; https://github.com/NickZach2036/ELSYS-Diploma-thesis-Frontend",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/NickZach2036/ELSYS-Diploma-thesis-Backend;",
+                "https://github.com/NickZach2036/ELSYS-Diploma-thesis-Frontend"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Николай Захариев",
@@ -3392,10 +3598,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Струна е система за следене на правилна стойка. В днешно време все по-често се случва продължително време да сме изгърбени. Докато работим е особено лесно да забравиш да се изправиш и да работиш часове наред с неправилна стойка, която може да доведе до доста здравословни проблеми. Заради това нашият проект предлага решение, което да известява потребителите си, когато започнат да се изгърбват.",
         "links": {
-            "repoUrl": "https://github.com/Maycheto/Balkanskite_momi",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/Maycheto/Balkanskite_momi"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Диляна Василева",
@@ -3429,10 +3637,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Our product is a device which has a goal of stopping lazy procrastinating people from looking at their mobile phones by emitting annoying beeps. The project consists of 3 parts - a phone case, which tracks the motions of the phone, a watch, which beeps when the person is trying to get their phone and a web server, from which you can set your pomodoro timers.",
         "links": {
-            "repoUrl": "https://github.com/smookie77/DoroWatch",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/smookie77/DoroWatch"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Антоан Цонков",
@@ -3451,7 +3661,7 @@ export const PROJECTS = [
                 "class": "9 Г"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": null,
         "images": [
             project118$image1,
             project118$image2,
@@ -3465,10 +3675,12 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "SparMate е тренировъчен бот боксьор, който не само атакува, но и анализира вашата защита и контраатаки.\n\nБотът разполага с шест серво ръце, които симулират действията на противник. Скоростта и броят на ударите, сложността на комбинациите, както и броят на финтовете, могат да се регулират спрямо опита или предпочитанията на потребителя.\n\nРазбира се ще разполага и с пространство за нанасяне на удари от потребителя, които ще бъдат засичани със сензор за вибрации.\n\nПредната камера анализира формата на потребителя в реално време, търси за открития и нанася различни удари или комбинации с финтове към откритата зона на потребителя.\n\nГорната камера синхронизира данните си с тези от другата камера и ги изпраща на сървъра за допълнителна обработка и анализ, където потребителя може да види визуализация на формата си в сравнение с правилната такава и съвети от AI чатбота относно грешки във формата си и съответните подобрения които трябва да направи.\n\nВ сайта също така се следят данни като точност на Защита, точност на Атакуване , Скорост и Форма на всички видове удари и други движения, Време за реакция и индекс на подобряване на уменията. \n\nЦялата система се захранва от 20V 12A Адаптер свързан към електрическата мрежа от който излизат два понижаващи преобразувателя - един на 7.4V за сервомоторите и един на 5V за микроконтролера raspberry pi 4B... Сервомоториte са модел GXservo QY3240MG, а за контол над тях използваме шестнадесет-каналния драйвър за сервомотори Adafruit PCA 9685. За AI калкулиране на откритите зони и незабавното наказване на лоша форма в реално време използваме Raspberry PI Module 3 Wide camera, а за Дълбок анализ на сървъра използваме и GoPro 7. За броят на нанесените удари отговарят сензор за вибрации, а за броят на хванати такива и всички останали данни, които се изпращат към сървъра са отговорни камерите.",
         "links": {
-            "repoUrl": "https://github.com/hristobelchinov/sparmate",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/hristobelchinov/sparmate"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Христо Белчинов",
@@ -3498,10 +3710,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "Learneez е образoвателно уеб приложение, което подпомага ученици със затруднения в четенето поради дислексия да изпълняват задачите си.\n\nСайт: https://learneez.eu/",
         "links": {
-            "repoUrl": "https://github.com/MasterDavidG/Learneez",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/MasterDavidG/Learneez"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Давид Панамски",
@@ -3523,10 +3737,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "Raydar е 3D renderer, който използва ray tracing за постигане на фотореалистични резултати. Raydar е преносим и поддържа хардуерно ускорено проследяване на светлинни пътища, използвайки най-новите функционалности на съвременните видеокарти.\nСистемата за материали позволява параметрично управление на физически базиран материал и позволява постигането на основните материали – Diffuse, Specular, Metallic и Glass. Материалите са реализирани със съставна BSDF (двупосочна функция на разпределение на разсейването), чиито параметри се управляват свободно и индиректния пренос на светлината се изчислява посредством Монте Карло метод за числено интегриране.\nRaydar използва разширенията на Vulkan API за да поддържа различни видеокарти на различни производители. В случай че няма налична видеокарта, Raydar има резервна имплементация, която използва единствено наличния процесор.\n\nМожете да изтеглите Raydar сега на адрес: https://raydar.graphics\n\nВидеото използва следните сцени:\nMr. Elephant (Лиценз CC-BY)\nGlenn Melenhorst\nhttps://www.glennmelenhorst.com\n\nAgent 327 Barbershop (Лиценз CC-BY)\nBlender Studio\nhttps://studio.blender.org/",
         "links": {
-            "repoUrl": "https://github.com/bvpav/raydar/tree/festive",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/bvpav/raydar/tree/festive"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": "HPDWWzAmcfM",
         "contributors": [
             {
                 "name": "Божидар Павлов",
@@ -3548,17 +3764,19 @@ export const PROJECTS = [
         "category": "embedded",
         "description": "Air Control е система, с която може да се контролира температурата вкъщи автоматично. Това се постига като климатиците се пускат и спират автоматично, спрямо измерената температура в стаята.",
         "links": {
-            "repoUrl": "https://github.com/Samuuil/AirControl",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/Samuuil/AirControl"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Самуил Стоянов",
                 "class": "11 А"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": null,
         "images": [
             project123$image1
         ]
@@ -3569,17 +3787,19 @@ export const PROJECTS = [
         "category": "software",
         "description": "framework за разработка на websocket-и",
         "links": {
-            "repoUrl": "https://github.com/RadoslavTsvetanov/custom-express",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/RadoslavTsvetanov/custom-express"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Радослав Цветанов",
                 "class": "11 А"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     },
     {
@@ -3588,10 +3808,12 @@ export const PROJECTS = [
         "category": "software",
         "description": "по-лесно навигиране и информиране в системата на градския траспорт ",
         "links": {
-            "repoUrl": "https://github.com/RadoslavTsvetanov/Train-y",
-            "demoUrl": project3$thumbnail
+            "demoUrl": null,
+            "repoUrls": [
+                "https://github.com/RadoslavTsvetanov/Train-y"
+            ]
         },
-        "youtubeId": project3$thumbnail,
+        "youtubeId": null,
         "contributors": [
             {
                 "name": "Радослав Цветанов",
@@ -3606,7 +3828,7 @@ export const PROJECTS = [
                 "class": "12 А"
             }
         ],
-        "thumbnail": project3$thumbnail,
+        "thumbnail": DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
         "images": []
     }
 ];

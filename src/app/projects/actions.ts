@@ -1,9 +1,9 @@
 import React from 'react';
 import { unstable_cache } from 'next/cache';
 
-import TF2024ProjectsAdapter from '@/app/projects/adapter';
+import TF2025ProjectsAdapter from './adapter';
 
-const adapter = TF2024ProjectsAdapter();
+const adapter = TF2025ProjectsAdapter();
 
 // TODO: add cache
 export const getProjectById = React.cache(adapter.getProjectById);
