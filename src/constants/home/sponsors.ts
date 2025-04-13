@@ -243,14 +243,14 @@ const PARTNERS = [
 		description:
 			'Асоциацията на завършилите ТУЕС е неправителствена организация, която има за цел да обедини и подпомага общността от завършили и настоящи ученици в Технологично училище "Електронни Системи" към ТУ - София (ТУЕС), преподаватели и приятели на училището. Учредена е през декември 2014 и работи активно от средата на 2015, като вече наброява над 1,000 членове и се е превърнала в двигател на редица събития и инициативи, ключови за ТУЕС общността.',
 	},
-	{
-		name: 'Culligan Bulgaria',
-		logo: culligan,
-		url: 'https://www.culligan.bg/',
-		description:
-			'Culligan Bulgaria- всичко, от което се нуждаете, за да осигурите чиста, висококачествена вода за Вашия бизнес или домакинство. Водата, която обичате! Ние в Culligan се ангажираме да изградим по-добър, по-устойчив свят чрез подобряване както на социалното, така и на нашето въздействие върху околната среда. В Culligan вярваме, че по-чистата и по-здравословна вода може да допринесе за подобряване на живота на хората по света и е ключов двигател към решаването на някои от най-големите предизвикателства, които стоят в нашето бъдеще.',
-		supportedEditions: ['hacktues-security'],
-	},
+	// {
+	// 	name: 'Culligan Bulgaria',
+	// 	logo: culligan,
+	// 	url: 'https://www.culligan.bg/',
+	// 	description:
+	// 		'Culligan Bulgaria- всичко, от което се нуждаете, за да осигурите чиста, висококачествена вода за Вашия бизнес или домакинство. Водата, която обичате! Ние в Culligan се ангажираме да изградим по-добър, по-устойчив свят чрез подобряване както на социалното, така и на нашето въздействие върху околната среда. В Culligan вярваме, че по-чистата и по-здравословна вода може да допринесе за подобряване на живота на хората по света и е ключов двигател към решаването на някои от най-големите предизвикателства, които стоят в нашето бъдеще.',
+	// 	supportedEditions: ['hacktues-security'],
+	// },
 	{
 		name: 'Corporate Gifts',
 		logo: corporateLogo,
@@ -267,14 +267,14 @@ const PARTNERS = [
 			"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
 		supportedEditions: ['hacktues-security'],
 	},
-	// {
-	// 	name: 'JOKER MEDIA RENTAL',
-	// 	logo: jmrLogo,
-	// 	url: 'https://jokermedia-rental.net/',
-	// 	description:
-	// 		"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-	// 	supportedEditions: [],
-	// },
+	{
+		name: 'JOKER MEDIA RENTAL',
+		logo: jmrLogo,
+		url: 'https://jokermedia-rental.net/',
+		description:
+			"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+		supportedEditions: [],
+	},
 	{
 		name: 'Smartcom',
 		logo: smartcomLogo,
