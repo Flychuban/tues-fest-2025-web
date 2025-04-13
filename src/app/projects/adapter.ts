@@ -24,42 +24,9 @@ import project6$thumbnail from '@/../public/projects/6/thumbnail.webp';
 import project7$thumbnail from '@/../public/projects/7/thumbnail.webp';
 import project8$thumbnail from '@/../public/projects/8/thumbnail.webp';
 import project9$thumbnail from '@/../public/projects/9/thumbnail.webp';
+import project10$image1 from '@/../public/projects/10/1.webp';
 import project11$thumbnail from '@/../public/projects/11/thumbnail.webp';
 import project12$thumbnail from '@/../public/projects/12/thumbnail.webp';
-import project19$thumbnail from '@/../public/projects/19/thumbnail.webp';
-import project20$thumbnail from '@/../public/projects/20/thumbnail.webp';
-import project21$thumbnail from '@/../public/projects/21/thumbnail.webp';
-import project24$thumbnail from '@/../public/projects/24/thumbnail.webp';
-import project27$thumbnail from '@/../public/projects/27/thumbnail.webp';
-import project33$thumbnail from '@/../public/projects/33/thumbnail.webp';
-import project35$thumbnail from '@/../public/projects/35/thumbnail.webp';
-import project40$thumbnail from '@/../public/projects/40/thumbnail.webp';
-import project43$thumbnail from '@/../public/projects/43/thumbnail.webp';
-import project46$thumbnail from '@/../public/projects/46/thumbnail.webp';
-import project52$thumbnail from '@/../public/projects/52/thumbnail.webp';
-import project53$thumbnail from '@/../public/projects/53/thumbnail.webp';
-import project57$thumbnail from '@/../public/projects/57/thumbnail.webp';
-import project58$thumbnail from '@/../public/projects/58/thumbnail.webp';
-import project67$thumbnail from '@/../public/projects/67/thumbnail.webp';
-import project68$thumbnail from '@/../public/projects/68/thumbnail.webp';
-import project70$thumbnail from '@/../public/projects/70/thumbnail.webp';
-import project73$thumbnail from '@/../public/projects/73/thumbnail.webp';
-import project74$thumbnail from '@/../public/projects/74/thumbnail.webp';
-import project76$thumbnail from '@/../public/projects/76/thumbnail.webp';
-import project79$thumbnail from '@/../public/projects/79/thumbnail.webp';
-import project83$thumbnail from '@/../public/projects/83/thumbnail.webp';
-import project87$thumbnail from '@/../public/projects/87/thumbnail.webp';
-import project88$thumbnail from '@/../public/projects/88/thumbnail.webp';
-import project89$thumbnail from '@/../public/projects/89/thumbnail.webp';
-import project92$thumbnail from '@/../public/projects/92/thumbnail.webp';
-import project94$thumbnail from '@/../public/projects/94/thumbnail.webp';
-import project98$thumbnail from '@/../public/projects/98/thumbnail.webp';
-import project101$thumbnail from '@/../public/projects/101/thumbnail.webp';
-import project102$thumbnail from '@/../public/projects/102/thumbnail.webp';
-import project111$thumbnail from '@/../public/projects/111/thumbnail.webp';
-import project113$thumbnail from '@/../public/projects/113/thumbnail.webp';
-import project115$thumbnail from '@/../public/projects/115/thumbnail.webp';
-import project10$image1 from '@/../public/projects/10/1.webp';
 import project13$image1 from '@/../public/projects/13/1.webp';
 import project13$image2 from '@/../public/projects/13/2.webp';
 import project13$image3 from '@/../public/projects/13/3.webp';
@@ -80,18 +47,25 @@ import project17$image2 from '@/../public/projects/17/2.webp';
 import project17$image3 from '@/../public/projects/17/3.webp';
 import project17$image4 from '@/../public/projects/17/4.webp';
 import project18$thumbnail from '@/../public/projects/18/thumbnail.webp';
+import project19$thumbnail from '@/../public/projects/19/thumbnail.webp';
+import project20$thumbnail from '@/../public/projects/20/thumbnail.webp';
+import project21$thumbnail from '@/../public/projects/21/thumbnail.webp';
 import project22$image1 from '@/../public/projects/22/1.webp';
 import project22$image2 from '@/../public/projects/22/2.webp';
 import project22$image3 from '@/../public/projects/22/3.webp';
 import project22$thumbnail from '@/../public/projects/22/thumbnail.webp';
 import project23$thumbnail from '@/../public/projects/23/thumbnail.webp';
+import project24$thumbnail from '@/../public/projects/24/thumbnail.webp';
 import project25$thumbnail from '@/../public/projects/25/thumbnail.webp';
 import project26$image1 from '@/../public/projects/26/1.webp';
+import project27$thumbnail from '@/../public/projects/27/thumbnail.webp';
 import project28$thumbnail from '@/../public/projects/28/thumbnail.webp';
 import project30$thumbnail from '@/../public/projects/30/thumbnail.webp';
 import project31$thumbnail from '@/../public/projects/31/thumbnail.webp';
 import project32$thumbnail from '@/../public/projects/32/thumbnail.webp';
+import project33$thumbnail from '@/../public/projects/33/thumbnail.webp';
 import project34$thumbnail from '@/../public/projects/34/thumbnail.webp';
+import project35$thumbnail from '@/../public/projects/35/thumbnail.webp';
 import project36$image1 from '@/../public/projects/36/1.webp';
 import project36$image2 from '@/../public/projects/36/2.webp';
 import project36$image3 from '@/../public/projects/36/3.webp';
@@ -104,10 +78,13 @@ import project37$thumbnail from '@/../public/projects/37/thumbnail.webp';
 import project38$image1 from '@/../public/projects/38/1.webp';
 import project38$thumbnail from '@/../public/projects/38/thumbnail.webp';
 import project39$thumbnail from '@/../public/projects/39/thumbnail.webp';
+import project40$thumbnail from '@/../public/projects/40/thumbnail.webp';
 import project41$thumbnail from '@/../public/projects/41/thumbnail.webp';
 import project42$thumbnail from '@/../public/projects/42/thumbnail.webp';
+import project43$thumbnail from '@/../public/projects/43/thumbnail.webp';
 import project44$thumbnail from '@/../public/projects/44/thumbnail.webp';
 import project45$image1 from '@/../public/projects/45/1.webp';
+import project46$thumbnail from '@/../public/projects/46/thumbnail.webp';
 import project47$thumbnail from '@/../public/projects/47/thumbnail.webp';
 import project48$thumbnail from '@/../public/projects/48/thumbnail.webp';
 import project49$image1 from '@/../public/projects/49/1.webp';
@@ -121,12 +98,16 @@ import project50$image4 from '@/../public/projects/50/4.webp';
 import project50$image5 from '@/../public/projects/50/5.webp';
 import project51$image1 from '@/../public/projects/51/1.webp';
 import project51$image2 from '@/../public/projects/51/2.webp';
+import project52$thumbnail from '@/../public/projects/52/thumbnail.webp';
+import project53$thumbnail from '@/../public/projects/53/thumbnail.webp';
 import project54$image1 from '@/../public/projects/54/1.webp';
 import project54$image2 from '@/../public/projects/54/2.webp';
 import project54$image3 from '@/../public/projects/54/3.webp';
 import project54$thumbnail from '@/../public/projects/54/thumbnail.webp';
 import project55$thumbnail from '@/../public/projects/55/thumbnail.webp';
 import project56$thumbnail from '@/../public/projects/56/thumbnail.webp';
+import project57$thumbnail from '@/../public/projects/57/thumbnail.webp';
+import project58$thumbnail from '@/../public/projects/58/thumbnail.webp';
 import project59$image1 from '@/../public/projects/59/1.webp';
 import project59$image2 from '@/../public/projects/59/2.webp';
 import project59$image3 from '@/../public/projects/59/3.webp';
@@ -152,11 +133,14 @@ import project66$image3 from '@/../public/projects/66/3.webp';
 import project66$image4 from '@/../public/projects/66/4.webp';
 import project66$image5 from '@/../public/projects/66/5.webp';
 import project66$thumbnail from '@/../public/projects/66/thumbnail.webp';
+import project67$thumbnail from '@/../public/projects/67/thumbnail.webp';
+import project68$thumbnail from '@/../public/projects/68/thumbnail.webp';
 import project69$image1 from '@/../public/projects/69/1.webp';
 import project69$image2 from '@/../public/projects/69/2.webp';
 import project69$image3 from '@/../public/projects/69/3.webp';
 import project69$image4 from '@/../public/projects/69/4.webp';
 import project69$thumbnail from '@/../public/projects/69/thumbnail.webp';
+import project70$thumbnail from '@/../public/projects/70/thumbnail.webp';
 import project71$image1 from '@/../public/projects/71/1.webp';
 import project71$image2 from '@/../public/projects/71/2.webp';
 import project71$image3 from '@/../public/projects/71/3.webp';
@@ -167,17 +151,21 @@ import project72$image1 from '@/../public/projects/72/1.webp';
 import project72$image2 from '@/../public/projects/72/2.webp';
 import project72$image3 from '@/../public/projects/72/3.webp';
 import project72$image4 from '@/../public/projects/72/4.webp';
+import project73$thumbnail from '@/../public/projects/73/thumbnail.webp';
+import project74$thumbnail from '@/../public/projects/74/thumbnail.webp';
 import project75$image1 from '@/../public/projects/75/1.webp';
 import project75$image2 from '@/../public/projects/75/2.webp';
 import project75$image3 from '@/../public/projects/75/3.webp';
 import project75$image4 from '@/../public/projects/75/4.webp';
 import project75$image5 from '@/../public/projects/75/5.webp';
+import project76$thumbnail from '@/../public/projects/76/thumbnail.webp';
 import project77$image1 from '@/../public/projects/77/1.webp';
 import project77$image2 from '@/../public/projects/77/2.webp';
 import project77$image3 from '@/../public/projects/77/3.webp';
 import project77$image4 from '@/../public/projects/77/4.webp';
 import project77$thumbnail from '@/../public/projects/77/thumbnail.webp';
 import project78$thumbnail from '@/../public/projects/78/thumbnail.webp';
+import project79$thumbnail from '@/../public/projects/79/thumbnail.webp';
 import project80$image1 from '@/../public/projects/80/1.webp';
 import project80$image2 from '@/../public/projects/80/2.webp';
 import project80$image3 from '@/../public/projects/80/3.webp';
@@ -186,9 +174,13 @@ import project81$image2 from '@/../public/projects/81/2.webp';
 import project81$image3 from '@/../public/projects/81/3.webp';
 import project81$thumbnail from '@/../public/projects/81/thumbnail.webp';
 import project82$thumbnail from '@/../public/projects/82/thumbnail.webp';
+import project83$thumbnail from '@/../public/projects/83/thumbnail.webp';
 import project84$image1 from '@/../public/projects/84/1.webp';
 import project84$thumbnail from '@/../public/projects/84/thumbnail.webp';
 import project86$thumbnail from '@/../public/projects/86/thumbnail.webp';
+import project87$thumbnail from '@/../public/projects/87/thumbnail.webp';
+import project88$thumbnail from '@/../public/projects/88/thumbnail.webp';
+import project89$thumbnail from '@/../public/projects/89/thumbnail.webp';
 import project90$image1 from '@/../public/projects/90/1.webp';
 import project90$image2 from '@/../public/projects/90/2.webp';
 import project90$image3 from '@/../public/projects/90/3.webp';
@@ -196,15 +188,20 @@ import project90$image4 from '@/../public/projects/90/4.webp';
 import project90$image5 from '@/../public/projects/90/5.webp';
 import project90$thumbnail from '@/../public/projects/90/thumbnail.webp';
 import project91$thumbnail from '@/../public/projects/91/thumbnail.webp';
+import project92$thumbnail from '@/../public/projects/92/thumbnail.webp';
 import project93$thumbnail from '@/../public/projects/93/thumbnail.webp';
+import project94$thumbnail from '@/../public/projects/94/thumbnail.webp';
 import project95$image1 from '@/../public/projects/95/1.webp';
 import project95$thumbnail from '@/../public/projects/95/thumbnail.webp';
 import project96$image1 from '@/../public/projects/96/1.webp';
 import project96$thumbnail from '@/../public/projects/96/thumbnail.webp';
 import project97$image1 from '@/../public/projects/97/1.webp';
 import project97$thumbnail from '@/../public/projects/97/thumbnail.webp';
+import project98$thumbnail from '@/../public/projects/98/thumbnail.webp';
 import project99$thumbnail from '@/../public/projects/99/thumbnail.webp';
 import project100$image1 from '@/../public/projects/100/1.webp';
+import project101$thumbnail from '@/../public/projects/101/thumbnail.webp';
+import project102$thumbnail from '@/../public/projects/102/thumbnail.webp';
 import project103$image1 from '@/../public/projects/103/1.webp';
 import project103$image2 from '@/../public/projects/103/2.webp';
 import project103$thumbnail from '@/../public/projects/103/thumbnail.webp';
@@ -217,12 +214,15 @@ import project106$thumbnail from '@/../public/projects/106/thumbnail.webp';
 import project107$thumbnail from '@/../public/projects/107/thumbnail.webp';
 import project109$thumbnail from '@/../public/projects/109/thumbnail.webp';
 import project110$thumbnail from '@/../public/projects/110/thumbnail.webp';
+import project111$thumbnail from '@/../public/projects/111/thumbnail.webp';
+import project113$thumbnail from '@/../public/projects/113/thumbnail.webp';
 import project114$image1 from '@/../public/projects/114/1.webp';
 import project114$image2 from '@/../public/projects/114/2.webp';
 import project114$image3 from '@/../public/projects/114/3.webp';
 import project114$image4 from '@/../public/projects/114/4.webp';
 import project114$image5 from '@/../public/projects/114/5.webp';
 import project114$thumbnail from '@/../public/projects/114/thumbnail.webp';
+import project115$thumbnail from '@/../public/projects/115/thumbnail.webp';
 import project116$image1 from '@/../public/projects/116/1.webp';
 import project116$image2 from '@/../public/projects/116/2.webp';
 import project116$thumbnail from '@/../public/projects/116/thumbnail.webp';
@@ -408,7 +408,7 @@ export const PROJECTS = [
 		description: 'AeroSense е интелигентна система, която следи и подобрява качеството на въздуха в реално време.',
 		links: {
 			demoUrl: null,
-			repoUrls: ['https://github.com/stefan587/AeroSense/settings/access?guidance_task='],
+			repoUrls: ['https://github.com/stefan587/AeroSense'],
 		},
 		youtubeId: 'JyB83ALjIJ4',
 		contributors: [
@@ -695,7 +695,7 @@ export const PROJECTS = [
 		description: 'Приложения за ръководство за лични финанси',
 		links: {
 			demoUrl: null,
-			repoUrls: ['https://github.com/Simoo2010/HACKTUES.git'],
+			repoUrls: ['https://github.com/Simoo2010/HACKTUES'],
 		},
 		youtubeId: 'pLGuj4Gzp50',
 		contributors: [
@@ -1294,7 +1294,7 @@ export const PROJECTS = [
 		description: 'Приложение, което помага да станеш най-пространствената версия на себе си',
 		links: {
 			demoUrl: null,
-			repoUrls: ['https://github.com/Agorbanoff/Introduction-to-script-languages.git'],
+			repoUrls: ['https://github.com/Agorbanoff/Introduction-to-script-languages'],
 		},
 		youtubeId: 'yL5VpeyyCgU',
 		contributors: [
@@ -1341,7 +1341,7 @@ export const PROJECTS = [
 			'Healthy Sitting е иновативен проект, който използва изкуствен интелект за подобряване на стойката и здравето при седене. Системата анализира в реално време позата на потребителя чрез камера или сензори и дава персонализирана обратна връзка, за да насърчава правилно и здравословно седене. ',
 		links: {
 			demoUrl: null,
-			repoUrls: ['https://github.com/sanguineblade/HackTUES-pqsucniq-geng.git'],
+			repoUrls: ['https://github.com/sanguineblade/HackTUES-pqsucniq-geng'],
 		},
 		youtubeId: 'xAEwdKr4ZVw',
 		contributors: [
@@ -1549,10 +1549,7 @@ export const PROJECTS = [
 			'KYPOOO е проектът ми за дипломна работа :)\nЦелта ми е, чрез използване на платформи с отворен код, основно KYPO CRP, да създавам интерактивни обучения по киберсигурност, чрез които да се обучават хора на какъвто и да е етап в развитието си.\nКато за момента съм създала две обучения - Red Team (предлага практическо въведение в нападателните техники) и Blue Team (учи учениците как да защитят компрометирана система и да намалят уязвимостите на дадена система).\nНа деня на отворените врати ще мога да ви разкажа повече за KYPOOO - от това как съм подкарала платформара, до лично да тествате уменията си на живо ;)\n(на живо ще е по-добре обещавам Т-Т)',
 		links: {
 			demoUrl: null,
-			repoUrls: [
-				'https://gitlab.com/kypo9720603/red-team-kypo.git',
-				'https://gitlab.com/kypo9720603/blue-team-kypo.git',
-			],
+			repoUrls: ['https://gitlab.com/kypo9720603/red-team-kypo', 'https://gitlab.com/kypo9720603/blue-team-kypo'],
 		},
 		youtubeId: 'wLv_22RVRIU',
 		contributors: [
@@ -2148,10 +2145,7 @@ export const PROJECTS = [
 			'RideMart е платформа за публикуване и търсене на обяви за продажба на мотори. Потребителите могат лесно да създават профил, както и да качват, редактират, изтриват и филтрират обяви според различни критерии. Обявите са категоризирани по тип, марка, модел и други характеристики, което улеснява откриването на подходящ мотор.',
 		links: {
 			demoUrl: null,
-			repoUrls: [
-				'https://github.com/nikolasachkov/RideMart',
-				'https://github.com/nikolasachkov/RideMartUI',
-			],
+			repoUrls: ['https://github.com/nikolasachkov/RideMart', 'https://github.com/nikolasachkov/RideMartUI'],
 		},
 		youtubeId: 'y3e0pTWshpo',
 		contributors: [
@@ -2191,7 +2185,7 @@ export const PROJECTS = [
 			'Забавна морска версия на класическата игра Морски шах, в която платноходки и параходи се състезават за победа. Показва чий е редът, обявява победителя и позволява рестарт по всяко време. Семпло, чисто и с морски дух. 🌊🚢',
 		links: {
 			demoUrl: null,
-			repoUrls: ['https://github.com/KristiyanAbrashkov/SeaBattle_TuesFest.git'],
+			repoUrls: ['https://github.com/KristiyanAbrashkov/SeaBattle_TuesFest'],
 		},
 		youtubeId: '0Xi3cSJKRao',
 		contributors: [
@@ -2211,7 +2205,7 @@ export const PROJECTS = [
 			'Целта на Sense Sphere е да се осигури контрол над дома ни в наше отсъствие.\n \n1) Система за сигурност:\n - онлайн достъп до камерите постоянно\n - уведомява в реално време при наличието на необичайно движение\n2) Поливна система\n - грижи се за цветята, като ги полива, когато е необходимо и колкото е нужно, благодарение на сензори\n - уведомява при изчерпване на водата в резервоара\n3) Автоматична хранилка за животни\n - храни домашните любимци, в определен от потребителя час и количество\n - грижи се винаги да има вода в купичката\n - уведомява при изчерпване на запасите в резервоара\n4) Мобилно приложение\n - осигурява бърз достъп и контрол над трите системи от разстояние\n - изпраща известия при нужда',
 		links: {
 			demoUrl: null,
-			repoUrls: ['https://github.com/Gabo1234567890/Sense-Sphere.git'],
+			repoUrls: ['https://github.com/Gabo1234567890/Sense-Sphere'],
 		},
 		youtubeId: 'aMMx0JJC1Ts',
 		contributors: [
@@ -2439,7 +2433,7 @@ export const PROJECTS = [
 			'Иновативен финансов сайт, който има за цел да подобри финансовата грамотност на потребителите, да им предостави полезна информация в сферата на инвестициите и финансите. Сайтът позволява получаване на инвестиционни съвети от собствено трениран изкуствен интелект,  полезни финансови калкулатори, водене на бележки, следене на актуалните валутни курсове и не на последно място възможност за разпределяне на месечен бюджет с помощта на изкуствен интелект.',
 		links: {
 			demoUrl: null,
-			repoUrls: ['https://github.com/YavorPenev/TUES_FEST11_Legends.git'],
+			repoUrls: ['https://github.com/YavorPenev/TUES_FEST11_Legends'],
 		},
 		youtubeId: 'MpxpUVjfFaE',
 		contributors: [
@@ -2631,7 +2625,7 @@ export const PROJECTS = [
 			"Startify is a mobile app that connects entrepreneurs, investors, and clients. It allows you to create a business idea and provides the necessary documentation to help you develop it into a company. Additionally, you can invest in existing ideas or companies with legal documents ensuring your investment's security. The app also enables you to find partners to collaborate on your idea or join someone else's venture. Moreover, Startify can schedule meetings with investors or team members based on their availability, ensuring efficient time management. Furthermore, you can always chat with anyone!",
 		links: {
 			demoUrl: null,
-			repoUrls: ['https://github.com/Gabo1234567890/Startify.git'],
+			repoUrls: ['https://github.com/Gabo1234567890/Startify'],
 		},
 		youtubeId: 'xeVlLBR_yaI',
 		contributors: [
@@ -2691,7 +2685,7 @@ export const PROJECTS = [
 			'"The Grande Experience" е интерактивен уебсайт, посветен на Ариана Гранде. Проектът представя нейната биография, дискография, концерти, участие във филма Wicked и нейната лимитирана Swarovski колекция. Сайтът включва галерия, динамични менюта с информация за албумите и песни с директни връзки към Spotify. Дизайнът е модерен, с визуални ефекти и приятна навигация, насочена към феновете и любителите на поп музиката.',
 		links: {
 			demoUrl: null,
-			repoUrls: ['https://github.com/plamenyalamov/ProjectAriana.git'],
+			repoUrls: ['https://github.com/plamenyalamov/ProjectAriana'],
 		},
 		youtubeId: 'UwO89LTxaVQ',
 		contributors: [
@@ -2762,7 +2756,7 @@ export const PROJECTS = [
 		description: 'Тренираш и печелиш награди',
 		links: {
 			demoUrl: null,
-			repoUrls: ['https://github.com/FoxVl2/TUES-FEST.git'],
+			repoUrls: ['https://github.com/FoxVl2/TUES-FEST'],
 		},
 		youtubeId: 'XjUTPzW50gs',
 		contributors: [
@@ -2825,7 +2819,7 @@ export const PROJECTS = [
 		description: 'IoT система от свързани устройства в помощ на медицинските екипи и пациентите.',
 		links: {
 			demoUrl: null,
-			repoUrls: ['https://github.com/Mladen-Robotics/VitalLink.git'],
+			repoUrls: ['https://github.com/Mladen-Robotics/VitalLink'],
 		},
 		youtubeId: 'xUofeEMr_Xs',
 		contributors: [
@@ -2979,7 +2973,7 @@ export const PROJECTS = [
 			'Дипломната работа представя мрежова архитектура, състояща се от 10 маршрутизатора. Устройствата са разпределени в 2 автономни системи - AS1618 и AS65135.\nAS1618 представлява "гръбнакът" на топологията, докато в AS65135 са поместени маршрутизаторите, които симулират клиентите - получателите на multicast мрежовия трафик.\nЗа изграждането на мрежовата архитектура са използвани MPLS, OSPF и iBGP за маршрутизация във вътрешната автономна система, а eBGP е използван за установяване на свързаност между автономните системи. За управление на multicast трафика са използвани протоколите PIM и IGMP.',
 		links: {
 			demoUrl: null,
-			repoUrls: ['https://github.com/StefyVP/Multicast-traffic.git'],
+			repoUrls: ['https://github.com/StefyVP/Multicast-traffic'],
 		},
 		youtubeId: '6JuTwWg5Ras',
 		contributors: [
@@ -3039,7 +3033,7 @@ export const PROJECTS = [
 			'Този проект е посветен на изграждането на свързаност между два отделни доставчика на услуги посредством Inter-AS Option C, дефиниран в RFC 4364. Основната цел е да се демонстрира как този подход може да бъде приложен за осигуряване на сигурна и ефективна комуникация между мрежите на различни доставчици.',
 		links: {
 			demoUrl: null,
-			repoUrls: ['https://github.com/NickProgrammerGaming/MMMPLS-OptionC/tree/main'],
+			repoUrls: ['https://github.com/NickProgrammerGaming/MMMPLS-OptionC'],
 		},
 		youtubeId: null,
 		contributors: [
@@ -3123,7 +3117,7 @@ export const PROJECTS = [
 			'Проектът представя проектиране на декодер 74HC42 в интегрална форма - високоскоростен CMOS декодер, който преобразува 4-битов BCD код в десет активно ниски изхода. Реализацията включва създаване на базови логически елементи (OR, NAND, NOT), оптимизация чрез DC анализ и пълна физическа имплементация.\n\nВсеки елемент е верифициран чрез симулации, а физическата реализация преминава успешно DRC и LVS проверки, което гарантира производствената готовност на дизайна. Проектът демонстрира цялостния процес на създаване на интегрална схема - от схемотехническа реализация до финален топологичен проект.',
 		links: {
 			demoUrl: null,
-			repoUrls: ['https://github.com/Chochi44/decoder-design.git'],
+			repoUrls: ['https://github.com/Chochi44/decoder-design'],
 		},
 		youtubeId: '1BAzn4cxExs',
 		contributors: [
@@ -3299,7 +3293,7 @@ export const PROJECTS = [
 		links: {
 			demoUrl: null,
 			repoUrls: [
-				'https://github.com/NickZach2036/ELSYS-Diploma-thesis-Backend;',
+				'https://github.com/NickZach2036/ELSYS-Diploma-thesis-Backend',
 				'https://github.com/NickZach2036/ELSYS-Diploma-thesis-Frontend',
 			],
 		},
