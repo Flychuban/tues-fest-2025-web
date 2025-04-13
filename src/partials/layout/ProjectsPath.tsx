@@ -1,53 +1,48 @@
 'use client';
 
-import { use, useEffect } from 'react';
+import React, { use, useEffect } from 'react';
 import Link from 'next/link';
 
+import {
+	Breadcrumb,
+	BreadcrumbItem,
+	BreadcrumbLink,
+	BreadcrumbList,
+	BreadcrumbPage,
+	BreadcrumbSeparator,
+} from '@/components/ui/breadcrumb';
 import { Card } from '@/components/ui/card';
 
-const ProjectsPath = ({
-	path,
-}: {
-	path:
-		| {
-				name: string;
-				url: string;
-		  }[]
-		| null
-		| undefined;
-}) => {
+export type PathItem = {
+	name: string;
+	url: string;
+};
+
+const ProjectsPath = ({ path }: { path?: PathItem[] | null | undefined }) => {
 	if (!path) return null;
 
 	return (
-		<section className="pt-28">
-			<div className="container">
-				<Card className="mx-4 rounded-lg border-2 bg-black px-8 py-5 text-white opacity-100">
-					<ul className="items-cente flex flex-wrap gap-3 text-ellipsis">
-						{path.map((item) => (
-							<>
-								{item?.url ? (
-									<>
-										<Link
-											key={item?.url}
-											href={item?.url || '#'}
-											className={`text-white ${item?.url && 'hover:text-primary'}`}
-										>
-											<li className="flex items-center text-base font-medium text-white">
-												{item?.name}
-												<span className="pl-3"> / </span>
-											</li>
-										</Link>
-									</>
-								) : (
-									<li key={'end'} className="flex items-center text-base font-medium text-white">
-										{item?.name}
-									</li>
-								)}
-							</>
+		<section>
+			<Card className="rounded-lg border-2 px-8 py-5">
+				<Breadcrumb>
+					<BreadcrumbList className="text-white">
+						{path.map((item, index) => (
+							<React.Fragment key={item?.url || `end-${index}`}>
+								<BreadcrumbItem>
+									{item?.url ? (
+										<BreadcrumbLink asChild className="hover:text-primary text-white">
+											<Link href={item.url}>{item.name}</Link>
+										</BreadcrumbLink>
+									) : (
+										<BreadcrumbPage className="text-white">{item?.name}</BreadcrumbPage>
+									)}
+								</BreadcrumbItem>
+								{index < path.length - 1 && <BreadcrumbSeparator className="text-white" />}
+							</React.Fragment>
 						))}
-					</ul>
-				</Card>
-			</div>
+					</BreadcrumbList>
+				</Breadcrumb>
+			</Card>
 		</section>
 	);
 };

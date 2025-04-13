@@ -5,6 +5,8 @@ import { StaticImageData } from 'next/image';
 import { TbChevronLeft, TbChevronRight, TbX } from 'react-icons/tb';
 import invariant from 'tiny-invariant';
 
+import { Card } from '@/components/ui/card';
+
 const GalleryModal = ({
 	images,
 	startingIndex,
@@ -175,7 +177,7 @@ const Gallery = ({ name, images }: { name: string; images: StaticImageData[] }) 
 
 	return (
 		<>
-			<div className="relative mx-auto flex h-64 w-full flex-col rounded-xl border-2 bg-black">
+			<Card className="relative mx-auto flex h-64 w-full flex-col">
 				<div className="h-full">
 					<div className="flex h-full shrink-0 flex-col gap-4">
 						<div className="flex h-full items-center justify-start gap-4 overflow-x-auto p-4">
@@ -197,7 +199,7 @@ const Gallery = ({ name, images }: { name: string; images: StaticImageData[] }) 
 						</div>
 					</div>
 				</div>
-			</div>
+			</Card>
 			{modal && <GalleryModal images={images} startingIndex={index} closeModal={closeModal} />}
 		</>
 	);

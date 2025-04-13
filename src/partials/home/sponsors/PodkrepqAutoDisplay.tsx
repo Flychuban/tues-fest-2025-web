@@ -15,7 +15,7 @@ import { Podkrepqsht } from '@/constants/home/sponsors';
 import { cn } from '@/lib/utils';
 
 const readMoreClasses =
-	'rounded-sm font-bold ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2';
+	'rounded-sm font-bold ring-offset-background cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2';
 const readMoreText = 'Покажи повече';
 
 export default function PodkrepqAutoDisplay({

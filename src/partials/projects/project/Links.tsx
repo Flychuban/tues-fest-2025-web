@@ -3,30 +3,29 @@ import Link from 'next/link';
 import { TbBrandGit, TbBrandGithub, TbBrandGoogleDrive, TbGlobe } from 'react-icons/tb';
 import invariant from 'tiny-invariant';
 
-import { type Links } from '@/app/_projects/[projectId]/page';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { type Links } from '@/app/projects/[projectId]/page';
 
 const Linky = ({ text, url, icon }: { text: string; url: string; icon: ReactNode }) => (
-	<Link
-		href={url}
-		target="_blank"
-		rel="noreferrer"
-		className="hover:bg-background-hover border-border hover:bg-background flex w-full items-center gap-2 rounded-xl border-2 bg-black px-4 py-2"
-	>
-		{icon}
-		<span className="text-md font-semibold">{text}</span>
-	</Link>
+	<Button asChild variant="outline" size="lg" className="w-full">
+		<Link href={url} target="_blank" rel="noreferrer">
+			{icon}
+			<span className="text-md font-semibold">{text}</span>
+		</Link>
+	</Button>
 );
 
 const LinksContainer = ({ links }: { links: Links }) => (
-	<div className="m-auto mx-auto mt-4 w-[96%] text-white opacity-100 md:w-[90%] lg:w-[70%]">
-		<div className="  rounded-xl border-2 bg-black">
-			<div className="flex flex-col gap-4 px-8 py-4">
+	<div className="m-auto mx-auto mt-4 w-[96%] md:w-[90%] lg:w-[80%]">
+		<Card>
+			<CardContent className="flex flex-col gap-4 px-8 py-4">
 				<div className="flex gap-4">
 					<GithubLink repoUrls={links.repoUrls} />
 					{links.demoUrl && <Linky text="Уебсайт" url={links.demoUrl} icon={<TbGlobe size={28} />} />}
 				</div>
-			</div>
-		</div>
+			</CardContent>
+		</Card>
 	</div>
 );
 
