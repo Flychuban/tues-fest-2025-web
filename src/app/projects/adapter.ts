@@ -257,17 +257,17 @@ import project122$thumbnail from '@/../public/projects/122/thumbnail.webp';
 import project123$image1 from '@/../public/projects/123/1.webp';
 import project125$thumbnail from '@/../public/projects/125/thumbnail.webp';
 
-type ProjectAdapter = {}; // TODO: import predefined
+type ProjectAdapter = object; // TODO: import predefined
 
 export default function TF2025ProjectsAdapter() {
 	return {
-		async getProjects() {
+		async getProjects(this: void) {
 			return PROJECTS;
 		},
-		async getProjectsByCategory(category: string) {
+		async getProjectsByCategory(this: void, category: string) {
 			return PROJECTS.filter((project) => project.category === category);
 		},
-		async getProjectById(id: number) {
+		async getProjectById(this: void, id: number) {
 			return PROJECTS.find((project) => project.id === id) ?? null;
 		},
 	} satisfies ProjectAdapter;
@@ -1043,7 +1043,7 @@ export const PROJECTS = [
 			demoUrl: null,
 			repoUrls: ['https://github.com/AntonStankov/fairganize'],
 		},
-		youtubeId: "TCkyNMFz204",
+		youtubeId: 'TCkyNMFz204',
 		contributors: [
 			{
 				name: 'Борис Стоянов',
@@ -1874,7 +1874,7 @@ export const PROJECTS = [
 			demoUrl: null,
 			repoUrls: ['https://github.com/Ilinats/wireless-kindle-page-turner'],
 		},
-		youtubeId: "JKYIB7W6iO4",
+		youtubeId: 'JKYIB7W6iO4',
 		contributors: [
 			{
 				name: 'Илина Цанова',
@@ -3104,7 +3104,7 @@ export const PROJECTS = [
 			demoUrl: null,
 			repoUrls: ['https://github.com/Bai-Koko/SAN_Thesis'],
 		},
-		youtubeId: "a18mdmiHkRQ",
+		youtubeId: 'a18mdmiHkRQ',
 		contributors: [
 			{
 				name: 'Константин Хаджийски',
@@ -3192,7 +3192,7 @@ export const PROJECTS = [
 			demoUrl: null,
 			repoUrls: ['https://github.com/MagdalenaNikiforova/Inter-AS-option-C'],
 		},
-		youtubeId: "zboIDIcsTTQ",
+		youtubeId: 'zboIDIcsTTQ',
 		contributors: [
 			{
 				name: 'Магдалена Никифорова',
@@ -3458,7 +3458,7 @@ export const PROJECTS = [
 			demoUrl: null,
 			repoUrls: ['https://github.com/Samuuil/AirControl'],
 		},
-		youtubeId: "68uRfQ1YLfs",
+		youtubeId: '68uRfQ1YLfs',
 		contributors: [
 			{
 				name: 'Самуил Стоянов',
@@ -3496,7 +3496,7 @@ export const PROJECTS = [
 			demoUrl: null,
 			repoUrls: ['https://github.com/RadoslavTsvetanov/Train-y'],
 		},
-		youtubeId: "XvYByolhAk8",
+		youtubeId: 'XvYByolhAk8',
 		contributors: [
 			{
 				name: 'Радослав Цветанов',
