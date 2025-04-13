@@ -60,6 +60,7 @@ import project25$thumbnail from '@/../public/projects/25/thumbnail.webp';
 import project26$image1 from '@/../public/projects/26/1.webp';
 import project27$thumbnail from '@/../public/projects/27/thumbnail.webp';
 import project28$thumbnail from '@/../public/projects/28/thumbnail.webp';
+import project29$thumbnail from '@/../public/projects/29/thumbnail.webp';
 import project30$thumbnail from '@/../public/projects/30/thumbnail.webp';
 import project31$thumbnail from '@/../public/projects/31/thumbnail.webp';
 import project32$thumbnail from '@/../public/projects/32/thumbnail.webp';
@@ -113,6 +114,7 @@ import project59$image2 from '@/../public/projects/59/2.webp';
 import project59$image3 from '@/../public/projects/59/3.webp';
 import project59$image4 from '@/../public/projects/59/4.webp';
 import project59$thumbnail from '@/../public/projects/59/thumbnail.webp';
+import project60$thumbnail from '@/../public/projects/60/thumbnail.webp';
 import project61$image1 from '@/../public/projects/61/1.webp';
 import project61$image2 from '@/../public/projects/61/2.webp';
 import project61$thumbnail from '@/../public/projects/61/thumbnail.webp';
@@ -212,9 +214,11 @@ import project105$image2 from '@/../public/projects/105/2.webp';
 import project105$thumbnail from '@/../public/projects/105/thumbnail.webp';
 import project106$thumbnail from '@/../public/projects/106/thumbnail.webp';
 import project107$thumbnail from '@/../public/projects/107/thumbnail.webp';
+import project108$thumbnail from '@/../public/projects/108/thumbnail.webp';
 import project109$thumbnail from '@/../public/projects/109/thumbnail.webp';
 import project110$thumbnail from '@/../public/projects/110/thumbnail.webp';
 import project111$thumbnail from '@/../public/projects/111/thumbnail.webp';
+import project112$thumbnail from '@/../public/projects/112/thumbnail.webp';
 import project113$thumbnail from '@/../public/projects/113/thumbnail.webp';
 import project114$image1 from '@/../public/projects/114/1.webp';
 import project114$image2 from '@/../public/projects/114/2.webp';
@@ -251,6 +255,7 @@ import project122$image4 from '@/../public/projects/122/4.webp';
 import project122$image5 from '@/../public/projects/122/5.webp';
 import project122$thumbnail from '@/../public/projects/122/thumbnail.webp';
 import project123$image1 from '@/../public/projects/123/1.webp';
+import project125$thumbnail from '@/../public/projects/125/thumbnail.webp';
 
 type ProjectAdapter = {}; // TODO: import predefined
 
@@ -1030,7 +1035,7 @@ export const PROJECTS = [
 	},
 	{
 		id: 29,
-		title: 'Fariganize',
+		title: 'Fairganize',
 		category: 'software',
 		description:
 			'Fairganize е платформа, която ви позволява да създадете свой собствен дигитален DAO — децентрализирана и прозрачна организация, в която решенията се вземат от общността, а не от централен лидер. Създавайте предложения, провеждайте избори и общувайте честно и автономно — всичко това, захранвано от Internet Computer.\nFairganize е Dapp, деплойнът върху Internet Computer Blockchain.',
@@ -1038,7 +1043,7 @@ export const PROJECTS = [
 			demoUrl: null,
 			repoUrls: ['https://github.com/AntonStankov/fairganize'],
 		},
-		youtubeId: null,
+		youtubeId: "TCkyNMFz204",
 		contributors: [
 			{
 				name: 'Борис Стоянов',
@@ -1049,7 +1054,7 @@ export const PROJECTS = [
 				class: '11 Г',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project29$thumbnail,
 		images: [],
 	},
 	{
@@ -1869,14 +1874,14 @@ export const PROJECTS = [
 			demoUrl: null,
 			repoUrls: ['https://github.com/Ilinats/wireless-kindle-page-turner'],
 		},
-		youtubeId: null,
+		youtubeId: "JKYIB7W6iO4",
 		contributors: [
 			{
 				name: 'Илина Цанова',
 				class: '11 А',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project60$thumbnail,
 		images: [],
 	},
 	{
@@ -3099,14 +3104,14 @@ export const PROJECTS = [
 			demoUrl: null,
 			repoUrls: ['https://github.com/Bai-Koko/SAN_Thesis'],
 		},
-		youtubeId: null,
+		youtubeId: "a18mdmiHkRQ",
 		contributors: [
 			{
 				name: 'Константин Хаджийски',
 				class: '12 Г',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project108$thumbnail,
 		images: [],
 	},
 	{
@@ -3187,14 +3192,14 @@ export const PROJECTS = [
 			demoUrl: null,
 			repoUrls: ['https://github.com/MagdalenaNikiforova/Inter-AS-option-C'],
 		},
-		youtubeId: null,
+		youtubeId: "zboIDIcsTTQ",
 		contributors: [
 			{
 				name: 'Магдалена Никифорова',
 				class: '12 Г',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project112$thumbnail,
 		images: [],
 	},
 	{
@@ -3453,7 +3458,7 @@ export const PROJECTS = [
 			demoUrl: null,
 			repoUrls: ['https://github.com/Samuuil/AirControl'],
 		},
-		youtubeId: null,
+		youtubeId: "68uRfQ1YLfs",
 		contributors: [
 			{
 				name: 'Самуил Стоянов',
@@ -3491,7 +3496,7 @@ export const PROJECTS = [
 			demoUrl: null,
 			repoUrls: ['https://github.com/RadoslavTsvetanov/Train-y'],
 		},
-		youtubeId: null,
+		youtubeId: "XvYByolhAk8",
 		contributors: [
 			{
 				name: 'Радослав Цветанов',
@@ -3506,7 +3511,7 @@ export const PROJECTS = [
 				class: '12 А',
 			},
 		],
-		thumbnail: DELETE_ME_PLACEHOLDER_FALLBACK_IMAGE,
+		thumbnail: project125$thumbnail,
 		images: [],
 	},
 ];
