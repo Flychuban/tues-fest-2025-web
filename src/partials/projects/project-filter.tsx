@@ -24,7 +24,7 @@ const CategoryLink = ({ text, href, current }: { text: string; href: string; cur
 export function ProjectFilter({ current }: { current: (typeof CATEGORIES)[number]['text'] | null }) {
 	return (
 		<section>
-			<Card className="rounded-lg border-2 px-5 py-4">
+			<Card className="rounded-lg px-5 py-4">
 				<div className="z-50 -mx-4 flex flex-wrap items-center justify-between">
 					<div className="w-full px-4">
 						<div className="flex flex-wrap justify-center gap-4 overflow-x-auto lg:justify-start">
