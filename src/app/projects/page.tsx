@@ -1,3 +1,5 @@
+import { NuqsAdapter } from 'nuqs/adapters/next';
+
 import { TF_TITLE } from '@/constants/seo';
 import ProjectsPath, { type PathItem } from '@/partials/layout/ProjectsPath';
 import { ProjectContainer } from '@/partials/projects/project-container';
@@ -25,9 +27,11 @@ const ProjectsPage = async () => {
 		<ProjectContainer>
 			<ProjectsPath path={PATH} />
 
-			<ProjectFilter current="Всички" />
+			<NuqsAdapter>
+				<ProjectFilter current="Всички" />
 
-			<ProjectList projects={projects} />
+				<ProjectList projects={projects} />
+			</NuqsAdapter>
 		</ProjectContainer>
 	);
 };
