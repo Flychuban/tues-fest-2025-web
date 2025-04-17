@@ -1322,7 +1322,7 @@ export const PROJECTS = [
 		description: 'Сайт за самодиагноза на спортни травми.',
 		links: {
 			demoUrl: null,
-			repoUrls: [],
+			repoUrls: ['https://github.com/ISrbz/HealthMap'],
 		},
 		youtubeId: 'cFWG4ZlXdZw',
 		contributors: [
