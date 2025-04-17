@@ -1217,9 +1217,7 @@ export const PROJECTS = [
 		links: {
 			demoUrl: null,
 			repoUrls: [
-				'https://github.com/BorimirGanchev/RouteOptimizer-Teraform',
-				'https://github.com/BorimirGanchev/RouteOptimizer-Backend',
-				'https://github.com/BorimirGanchev/RouteOptimizer-Frontend',
+                'https://gist.github.com/BorimirGanchev/9d676afcdd5aec9108fc6181a906ca7c'
 			],
 		},
 		youtubeId: 'q5ye-4ZcoD4',
