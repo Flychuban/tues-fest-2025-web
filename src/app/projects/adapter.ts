@@ -295,7 +295,7 @@ export const PROJECTS = [
 				class: '11 В',
 			},
 			{
-				name: 'л',
+				name: 'Светослав Илиев',
 				class: '11 В',
 			},
 			{
@@ -1419,7 +1419,7 @@ export const PROJECTS = [
 				class: '11 Г',
 			},
 			{
-				name: 'Иван Ламбве',
+				name: 'Иван Ламбев',
 				class: '11 Г',
 			},
 			{
@@ -2132,11 +2132,11 @@ export const PROJECTS = [
 			},
 			{
 				name: 'Александър Стоянов',
-				class: '11 Б',
+				class: '11 A',
 			},
 			{
 				name: 'Тони Ангелов',
-				class: '11 Б',
+				class: '11 A',
 			},
 		],
 		thumbnail: project69$thumbnail,
