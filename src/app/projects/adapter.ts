@@ -437,7 +437,7 @@ export const PROJECTS = [
 			'Роботизиран асистент, състоящ се от 2 механизирани ръце, които взаимодействат със околната му среда. Използва камери, за да разбира средата му по-добре и взима решения с изкуствен интелект. Можеш свободно да говориш с него, а и той ще те познае ;)',
 		links: {
 			demoUrl: null,
-			repoUrls: ['github.com/AGIBotTF'],
+			repoUrls: ['https://github.com/AGIBotTF'],
 		},
 		youtubeId: '3Mx1ZGoJDiA',
 		contributors: [
