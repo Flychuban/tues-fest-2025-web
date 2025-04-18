@@ -1,52 +1,33 @@
 import { transliterate } from 'transliteration';
 
-type StringKey<T> = {
-	[K in keyof T]: T[K] extends string ? K : never;
-}[keyof T];
-
-function temp<T>(t: T, tKey: StringKey<T>) {
-	const x = t[tKey];
-}
-
-export function filterItems<Item>(items: Item[], searchTermString: string, searchKeys: StringKey<Item>[]) {
+export function filterItems<Item>(items: Item[], searchTermString: string, searchValuesFn: (item: Item) => string[]) {
+	const searchTerms = searchTermString
+		.trim()
+		.toLowerCase()
+		.split(/ +/)
+		.map<[string, string]>((t) => [t, transliterate(t)]);
 	return items
 		.map((item) => {
-			const score = searchKeys.reduce((acc, key, keyIndex) => {
-				const x = item[key];
-				const remainder = searchKeys.length - keyIndex;
+			const score = searchTerms.reduce((acc, [term, transliteratedTerm]) => {
+				const haystack = searchValuesFn(item).join('').toLowerCase();
+				const length = haystack.length;
 
-				// FIXME: weird type assertion
-				const value = (item[key] as string).toLowerCase();
-				const transliteratedValue = transliterate(value);
+				const ORIGINAL_MATCH_SCORE = 100;
+				const TRANSLITERATED_MATCH_SCORE = 50;
+
+				const ogMatchIndex = haystack.indexOf(term);
+				const trValueMatchIndex = transliterate(haystack).indexOf(term);
+				const trTermMatchIndex = haystack.indexOf(transliteratedTerm);
+
+				const ogMatchCoeff = ogMatchIndex === -1 ? 0 : length - ogMatchIndex;
+				const trValueMatchCoeff = trValueMatchIndex === -1 ? 0 : length - trValueMatchIndex;
+				const trTermMatchCoeff = trTermMatchIndex === -1 ? 0 : length - trTermMatchIndex;
+
 				return (
 					acc +
-					searchTermString
-						.toLowerCase()
-						.split(/ +/)
-						.reduce((acc, term) => {
-							const matchIdx = value.indexOf(term);
-							if (matchIdx === 0) {
-								return acc + remainder * 40;
-							} else if (matchIdx > 0) {
-								return acc + remainder * 30;
-							}
-
-							const transliteratedValueMatchIdx = transliteratedValue.indexOf(term);
-							if (transliteratedValueMatchIdx === 0) {
-								return acc + remainder * 20;
-							} else if (transliteratedValueMatchIdx > 0) {
-								return acc + remainder * 10;
-							}
-
-							const transliteratedTermMatchIdx = value.indexOf(transliterate(term));
-							if (transliteratedTermMatchIdx === 0) {
-								return acc + remainder * 20;
-							} else if (transliteratedTermMatchIdx > 0) {
-								return acc + remainder * 10;
-							}
-
-							return acc;
-						}, 0)
+					ogMatchCoeff * ORIGINAL_MATCH_SCORE +
+					trValueMatchCoeff * TRANSLITERATED_MATCH_SCORE +
+					trTermMatchCoeff * TRANSLITERATED_MATCH_SCORE
 				);
 			}, 0);
 

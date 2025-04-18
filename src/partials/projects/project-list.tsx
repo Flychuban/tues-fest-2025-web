@@ -16,7 +16,7 @@ export function ProjectList({ projects }: { projects: ProjectType[] }) {
 				? filterItems(
 						projects.sort((a, b) => a.id - b.id),
 						search,
-						['title', 'description']
+						(p) => [p.title, p.description, ...p.contributors.flatMap((c) => [c.name, c.class])]
 					)
 				: projects,
 		[search, projects]
