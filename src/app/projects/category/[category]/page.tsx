@@ -1,6 +1,5 @@
 import { Metadata, ResolvingMetadata } from 'next';
 import { redirect } from 'next/navigation';
-import { NuqsAdapter } from 'nuqs/adapters/next';
 
 import { isProjectCategory, PROJECT_CATEGORIES, PROJECT_CATEGORY_MAP } from '@/constants/projects';
 import { TF_TITLE } from '@/constants/seo';
@@ -84,12 +83,10 @@ export default async function ProjectsPage(props: PageProps) {
 		<ProjectContainer>
 			<ProjectsPath path={[...PATH, { name: PROJECT_CATEGORIES[category], url: '' }]} />
 
-			<NuqsAdapter>
-				{/* HACK: weird inconsistency in the names, this is a code smell... */}
-				<ProjectFilter current={category === 'networks' ? 'Мрежи' : PROJECT_CATEGORIES[category]} />
+			{/* HACK: weird inconsistency in the names, this is a code smell... */}
+			<ProjectFilter current={category === 'networks' ? 'Мрежи' : PROJECT_CATEGORIES[category]} />
 
-				<ProjectList projects={projects} />
-			</NuqsAdapter>
+			<ProjectList projects={projects} />
 		</ProjectContainer>
 	);
 }
