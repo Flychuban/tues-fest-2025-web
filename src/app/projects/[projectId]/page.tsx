@@ -147,10 +147,10 @@ const ProjectPage = async (props: { params: Promise<{ projectId: string }> }) =>
 						</div>
 						<CardDescription className="prose prose-sm prose-slate sm:prose-lg mx-auto max-w-none">
 							<ScrollArea
-								className={cn(
-									project.description.length > 250 ? 'h-[175px]' : '',
-									'relative [mask-image:linear-gradient(to_bottom,transparent,black_20px,black_calc(100%-40px),transparent)]'
-								)}
+								className={cn({
+									'relative h-[175px] [mask-image:linear-gradient(to_bottom,transparent,black_20px,black_calc(100%-40px),transparent)]':
+										project.description.length > 250,
+								})}
 							>
 								<ProjectDescription description={project.description} />
 							</ScrollArea>
