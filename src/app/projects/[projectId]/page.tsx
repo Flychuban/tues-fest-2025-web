@@ -3,7 +3,9 @@ import { notFound } from 'next/navigation';
 import invariant from 'tiny-invariant';
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { ScrollArea } from '@/components/ui/scroll-area';
 import { OG_METADATA, TF_TITLE, TWITTER_METADATA } from '@/constants/seo';
+import { cn } from '@/lib/utils';
 import ProjectsPath from '@/partials/layout/ProjectsPath';
 import { ProjectContainer } from '@/partials/projects/project-container';
 import Contributors from '@/partials/projects/project/Contributors';
@@ -143,15 +145,16 @@ const ProjectPage = async (props: { params: Promise<{ projectId: string }> }) =>
 								category={project.category}
 							/>
 						</div>
-						{/* {project.description.length > 250 ? (
-							<ScrollArea className="text-md my-4 h-[150px] overflow-y-scroll sm:text-lg">
+						<CardDescription className="prose prose-sm prose-slate sm:prose-lg mx-auto max-w-none">
+							<ScrollArea
+								className={cn(
+									project.description.length > 250 ? 'h-[175px]' : '',
+									'relative [mask-image:linear-gradient(to_bottom,transparent,black_20px,black_calc(100%-40px),transparent)]'
+								)}
+							>
 								<ProjectDescription description={project.description} />
 							</ScrollArea>
-						) : ( */}
-						<CardDescription className="prose prose-sm prose-slate sm:prose-lg mx-auto max-w-none">
-							<ProjectDescription description={project.description} />
 						</CardDescription>
-						{/* )} */}
 						<Contributors contributors={project.contributors} />
 					</CardContent>
 				</Card>
