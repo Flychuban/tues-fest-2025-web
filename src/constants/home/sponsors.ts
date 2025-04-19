@@ -34,6 +34,8 @@ import culligan from '@/sponsors/partners/culligan.jpg';
 import greenCherryLogo from '@/sponsors/partners/green_cherry.png';
 import jmrLogo from '@/sponsors/partners/joker-media-rental.png';
 import smartcomLogo from '@/sponsors/partners/smartcom.png';
+import roobarLogo from '@/sponsors/partners/roobar_logo.png';
+import nezavisimostLogo from '@/sponsors/partners/nezavisimost_logo.png';
 import sofiaTechParkLogo from '@/sponsors/partners/sofia-tech-park.png';
 
 
@@ -276,6 +278,13 @@ const PARTNERS = [
 		supportedEditions: [],
 	},
 	{
+		name: 'Roobar',
+		logo: roobarLogo,
+		url: 'https://smartorganic.com/roobar/',
+		description:
+			"Roobar е бранд, създаден за всички, които искат здравословен и вкусен снак без компромиси. Нашите барчета са 100% органични, веган и създадени само с истински съставки – без скрити изненади, чиста енергия. От суперзаредени суперхрани до балансирани протеинови изкушения и шоколадово удоволствие – имаме вкус за всеки момент. Независимо дали си в движение, след тренировка или просто ти се хапва нещо полезно и вкусно, Roobar е тук, за да ти даде силата на природата в едно барче."
+	},
+	{
 		name: 'Smartcom',
 		logo: smartcomLogo,
 		url: 'https://smartcom.bg/',
@@ -290,6 +299,13 @@ const PARTNERS = [
 			'hacktues-3',
 		],
 	},
+	{
+		name: 'Музей за историята на София',
+		logo: nezavisimostLogo,
+		url: 'https://sofiahistorymuseum.bg/bg/',
+		description:
+			"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+	}
 	// {
 	// 	name: 'Sofia Tech Park',
 	// 	logo: sofiaTechParkLogo,
