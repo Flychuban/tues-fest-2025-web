@@ -82,15 +82,12 @@ function SearchInput(props: { search: string | null; setSearch: (search: string 
 		<div className="grow-1 relative flex items-center lg:max-w-lg">
 			<Input
 				ref={inputRef}
-				className="h-10 pl-8 lg:pr-7"
+				className="h-10 pl-8"
 				placeholder="Търси сред проектите..."
 				value={props.search ?? ''}
 				onChange={(e) => props.setSearch(e.target.value || null)}
 			/>
 			<Search className="pointer-events-none absolute left-2 top-1/2 size-4 -translate-y-1/2 select-none opacity-50" />
-			<kbd className="pointer-events-none absolute right-2 top-1/2 hidden size-4 -translate-y-1/2 select-none text-sm tracking-widest opacity-60 lg:inline-flex">
-				⌘F
-			</kbd>
 		</div>
 	);
 }
