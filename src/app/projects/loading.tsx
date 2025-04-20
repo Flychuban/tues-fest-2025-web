@@ -1,7 +1,7 @@
 import { TF_TITLE } from '@/constants/seo';
 import ProjectsPath from '@/partials/layout/ProjectsPath';
 import { ProjectContainer } from '@/partials/projects/project-container';
-import { ProjectFilter } from '@/partials/projects/project-filter';
+import { ProjectFilter } from '@/partials/projects/project-filter/static';
 
 const PATH: {
 	name: string;

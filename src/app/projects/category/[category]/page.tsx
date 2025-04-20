@@ -1,11 +1,11 @@
 import { Metadata, ResolvingMetadata } from 'next';
 import { redirect } from 'next/navigation';
 
-import { isProjectCategory, PROJECT_CATEGORIES, PROJECT_CATEGORY_MAP } from '@/constants/projects';
+import { isProjectCategory, PROJECT_CATEGORIES } from '@/constants/projects';
 import { TF_TITLE } from '@/constants/seo';
 import ProjectsPath, { PathItem } from '@/partials/layout/ProjectsPath';
 import { ProjectContainer } from '@/partials/projects/project-container';
-import { ProjectFilter } from '@/partials/projects/project-filter';
+import { InteractiveProjectFilter, ProjectFilter } from '@/partials/projects/project-filter/static';
 import { ProjectList } from '@/partials/projects/project-list';
 import { getProjectsByCategory } from '../../actions';
 
@@ -84,7 +84,7 @@ export default async function ProjectsPage(props: PageProps) {
 			<ProjectsPath path={[...PATH, { name: PROJECT_CATEGORIES[category], url: '' }]} />
 
 			{/* HACK: weird inconsistency in the names, this is a code smell... */}
-			<ProjectFilter current={category === 'networks' ? 'Мрежи' : PROJECT_CATEGORIES[category]} />
+			<InteractiveProjectFilter current={category === 'networks' ? 'Мрежи' : PROJECT_CATEGORIES[category]} />
 
 			<ProjectList projects={projects} />
 		</ProjectContainer>
