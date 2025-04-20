@@ -1,8 +1,8 @@
 import { Suspense } from 'react';
 
 import { CategoryLinkText, FilterLinkList, FilterSectionContainer } from '@/components/filter-section';
+import { InteractiveFilterLinkList, InteractiveSearchInput } from '@/components/interactive-filter';
 import { SearchInput } from '@/components/ui/search-input';
-import { InteractiveFilterLinkList, InteractiveSearchInput } from './client-only';
 
 export function ProjectFilter({ current }: { current: CategoryLinkText | null }) {
 	return (
