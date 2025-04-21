@@ -117,7 +117,7 @@ const GalleryModal = ({
 			<div ref={modalRef} className="relative h-full w-full max-w-screen-lg">
 				<div className="absolute left-0 top-12 z-[1001] p-4">
 					<button
-						className="hover:bg-background-hover border-border bg-background flex items-center gap-2 rounded-xl border-2 px-4 py-2"
+						className="hover:bg-background-hover border-border bg-background flex items-center gap-2 rounded-xl px-4 py-2"
 						onClick={closeModal}
 					>
 						<TbX className="h-6 w-6" />
@@ -126,7 +126,7 @@ const GalleryModal = ({
 				</div>
 				<div className="absolute left-0 top-1/2 z-[1001] p-4 !pl-10">
 					<button
-						className="border-border bg-background hover:bg-border flex items-center gap-2 rounded-xl border-2 px-4 py-2 transition-all duration-300 ease-in-out"
+						className="border-border bg-background hover:bg-border flex items-center gap-2 rounded-xl px-4 py-2 transition-all duration-300 ease-in-out"
 						onClick={prev}
 					>
 						<span className="text-sm">
@@ -136,7 +136,7 @@ const GalleryModal = ({
 				</div>
 				<div className="absolute right-0 top-1/2 z-[1001] p-4 pr-10">
 					<button
-						className="border-border bg-background hover:bg-border flex items-center gap-2 rounded-xl border-2 px-4 py-2 transition-all duration-300 ease-in-out"
+						className="border-border bg-background hover:bg-border flex items-center gap-2 rounded-xl px-4 py-2 transition-all duration-300 ease-in-out"
 						onClick={next}
 					>
 						<span className="text-sm">
@@ -184,7 +184,7 @@ const Gallery = ({ name, images }: { name: string; images: StaticImageData[] }) 
 							{images.map((image, index) => (
 								<div
 									key={image.src}
-									className="border-border !aspect-square h-full shrink-0 overflow-hidden rounded-xl border-2"
+									className="border-border !aspect-square h-full shrink-0 overflow-hidden rounded-xl"
 								>
 									<img
 										src={image.src}

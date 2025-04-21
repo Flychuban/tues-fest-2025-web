@@ -1,9 +1,10 @@
+import { readFile } from 'node:fs/promises';
+import { join } from 'node:path';
+
 import { ImageResponse } from 'next/og';
 
 import { TF_YEAR } from '@/constants/event';
 import { TF_TITLE } from '@/constants/seo';
-
-export const runtime = 'edge';
 
 // Image metadata
 export const alt = TF_TITLE;
@@ -17,8 +18,8 @@ export const contentType = 'image/png';
 // Image generation
 export default async function Image() {
 	const [glitchFontData, rubikMonoOneData] = await Promise.all([
-		fetch(new URL('../assets/fonts/glitch.otf', import.meta.url)).then((res) => res.arrayBuffer()),
-		fetch(new URL('../assets/fonts/RubikMonoOne-Regular.ttf', import.meta.url)).then((res) => res.arrayBuffer()),
+		readFile(join(process.cwd(), 'src/assets/fonts/glitch.otf')),
+		readFile(join(process.cwd(), 'src/assets/fonts/RubikMonoOne-Regular.ttf')),
 	]);
 
 	return new ImageResponse(

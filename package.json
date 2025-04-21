@@ -41,6 +41,7 @@
 		"next": "15.2.4",
 		"next-sitemap": "^4.2.3",
 		"nodemailer": "^6.10.0",
+		"nuqs": "^2.4.3",
 		"postgres": "^3.4.5",
 		"react": "19.1.0",
 		"react-dom": "19.1.0",

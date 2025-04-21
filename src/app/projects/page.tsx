@@ -1,7 +1,7 @@
 import { TF_TITLE } from '@/constants/seo';
 import ProjectsPath, { type PathItem } from '@/partials/layout/ProjectsPath';
 import { ProjectContainer } from '@/partials/projects/project-container';
-import { ProjectFilter } from '@/partials/projects/project-filter';
+import { InteractiveProjectFilter } from '@/partials/projects/project-filter/static';
 import { ProjectList } from '@/partials/projects/project-list';
 import { getProjects } from './actions';
 
@@ -25,7 +25,7 @@ const ProjectsPage = async () => {
 		<ProjectContainer>
 			<ProjectsPath path={PATH} />
 
-			<ProjectFilter current="Всички" />
+			<InteractiveProjectFilter current="Всички" />
 
 			<ProjectList projects={projects} />
 		</ProjectContainer>

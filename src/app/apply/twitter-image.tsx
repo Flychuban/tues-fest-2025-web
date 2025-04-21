@@ -1,8 +1,9 @@
+import { readFile } from 'node:fs/promises';
+import { join } from 'node:path';
+
 import { ImageResponse } from 'next/og';
 
 import { TwitterTitleImage } from '@/partials/opengraph/title-image';
-
-export const runtime = 'edge';
 
 // Image metadata
 export const alt = 'Прием в ТУЕС';
@@ -16,14 +17,12 @@ export const contentType = 'image/png';
 // Image generation
 export default async function Image() {
 	const [glitchFontData, rubikMonoOneData, waveImage] = await Promise.all([
-		fetch(new URL('../../assets/fonts/glitch.otf', import.meta.url)).then((res) => res.arrayBuffer()),
-		fetch(new URL('../../assets/fonts/RubikMonoOne-Regular.ttf', import.meta.url)).then((res) => res.arrayBuffer()),
-		fetch(new URL('../../assets/wave-37.jpg', import.meta.url))
-			.then((res) => res.arrayBuffer())
-			.then((buffer) => {
-				const base64 = Buffer.from(buffer).toString('base64');
-				return `data:image/jpeg;base64,${base64}`;
-			}),
+		readFile(join(process.cwd(), 'src/assets/fonts/glitch.otf')),
+		readFile(join(process.cwd(), 'src/assets/fonts/RubikMonoOne-Regular.ttf')),
+		readFile(join(process.cwd(), 'src/assets/wave-37.jpg')).then((buffer) => {
+			const base64 = buffer.toString('base64');
+			return `data:image/jpeg;base64,${base64}`;
+		}),
 	]);
 
 	return new ImageResponse(<TwitterTitleImage title={alt} waveImageUrl={waveImage} headingSize="sm" />, {

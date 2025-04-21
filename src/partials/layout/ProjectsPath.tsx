@@ -23,7 +23,7 @@ const ProjectsPath = ({ path }: { path?: PathItem[] | null | undefined }) => {
 
 	return (
 		<section>
-			<Card className="rounded-lg border-2 px-8 py-5">
+			<Card className="rounded-lg px-8 py-5">
 				<Breadcrumb>
 					<BreadcrumbList className="text-white">
 						{path.map((item, index) => (
