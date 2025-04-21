@@ -11,7 +11,7 @@ export const size = {
 	height: 600, // Optimized for Twitter's 2:1 aspect ratio
 };
 
-export const contentType = 'image/png';
+export const contentType = 'image/jpeg';
 
 // Image generation
 export default async function Image() {
