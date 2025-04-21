@@ -1,8 +1,9 @@
+import { readFile } from 'node:fs/promises';
+import { join } from 'node:path';
+
 import { ImageResponse } from 'next/og';
 
 import { TF_DATE_STRING_SHORT, TF_LOCATION, TF_YEAR } from '@/constants/event';
-
-export const runtime = 'edge';
 
 // Image metadata
 export const alt = 'Локация';
@@ -11,20 +12,18 @@ export const size = {
 	height: 600, // Optimized for Twitter's 2:1 aspect ratio
 };
 
-export const contentType = 'image/jpeg';
+export const contentType = 'image/png';
 
 // Image generation
 export default async function Image() {
 	const [geistFontData, glitchFontData, rubikMonoOneData, waveImage] = await Promise.all([
-		fetch(new URL('../../assets/fonts/Geist-Bold.otf', import.meta.url)).then((res) => res.arrayBuffer()),
-		fetch(new URL('../../assets/fonts/glitch.otf', import.meta.url)).then((res) => res.arrayBuffer()),
-		fetch(new URL('../../assets/fonts/RubikMonoOne-Regular.ttf', import.meta.url)).then((res) => res.arrayBuffer()),
-		fetch(new URL('../../assets/wave-37.jpg', import.meta.url))
-			.then((res) => res.arrayBuffer())
-			.then((buffer) => {
-				const base64 = Buffer.from(buffer).toString('base64');
-				return `data:image/jpeg;base64,${base64}`;
-			}),
+		readFile(join(process.cwd(), 'src/assets/fonts/Geist-Bold.otf')),
+		readFile(join(process.cwd(), 'src/assets/fonts/glitch.otf')),
+		readFile(join(process.cwd(), 'src/assets/fonts/RubikMonoOne-Regular.ttf')),
+		readFile(join(process.cwd(), 'src/assets/wave-37.jpg')).then((buffer) => {
+			const base64 = buffer.toString('base64');
+			return `data:image/jpeg;base64,${base64}`;
+		}),
 	]);
 
 	return new ImageResponse(
@@ -45,44 +44,23 @@ export default async function Image() {
 				{/* Content - All centered for Twitter */}
 				<div tw="flex flex-col items-center justify-center text-center relative z-10 px-8">
 					{/* Logo with enhanced visibility */}
-					<div tw="flex flex-col items-center mb-4">
-						<span style={{ fontFamily: 'Glitch' }} tw="text-[#e11d48] block text-7xl">
+					<h1 tw="flex flex-col items-center">
+						<span style={{ fontFamily: 'Glitch' }} tw="text-[#e11d48] block text-8xl">
 							TUES FEST
 						</span>
-						<span style={{ fontFamily: 'Glitch' }} tw="text-6xl text-[#6366f1]">
+						<span style={{ fontFamily: 'Glitch' }} tw="text-7xl text-[#6366f1]">
 							{TF_YEAR}
 						</span>
-					</div>
-
-					{/* Main Title - Larger and more prominent with enhanced gradient */}
-					<h1
-						style={{
-							fontFamily: 'Rubik Mono One',
-							backgroundImage: 'linear-gradient(to right, #ff1b6b, #45caff)',
-							color: 'transparent',
-							backgroundClip: 'text',
-							WebkitBackgroundClip: 'text',
-							WebkitTextFillColor: 'transparent',
-							textShadow: '0 0 30px rgba(255,27,107,0.3), 0 0 25px rgba(69,202,255,0.3)',
-						}}
-						tw="font-black leading-tight mb-4 text-8xl"
-					>
-						{alt}
 					</h1>
 
-					{/* Location subtitle */}
-					<p tw="text-4xl text-[#f8fafc]/90 tracking-widest mb-6">
-						{TF_LOCATION}, {TF_DATE_STRING_SHORT}
+					<p style={{ fontFamily: 'Rubik Mono One' }} tw="text-[#f8fafc]/90 mt-12 text-4xl tracking-widest">
+						{alt}
 					</p>
 
-					{/* Enhanced call to action with visual element */}
-					<div tw="flex flex-col items-center">
-						<div tw="flex items-center justify-center bg-[#6366f1] px-6 py-3 rounded-lg shadow-lg transform rotate-1">
-							<p style={{ fontFamily: 'Rubik Mono One' }} tw="text-2xl text-white tracking-wider">
-								Научете повече
-							</p>
-						</div>
-					</div>
+					{/* Twitter-specific call to action */}
+					<p style={{ fontFamily: 'Rubik Mono One' }} tw="mt-16 text-2xl text-[#f8fafc]/80 tracking">
+						{TF_DATE_STRING_SHORT}, {TF_LOCATION}
+					</p>
 				</div>
 			</div>
 		),
