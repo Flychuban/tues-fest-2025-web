@@ -15,12 +15,7 @@ import { GeistSans } from 'geist/font/sans';
 import { Toaster } from '@/components/ui/sonner';
 import { TF_YEAR } from '@/constants/event';
 import { FIRST_ARCHIVE_YEAR, KEYWORDS, OG_METADATA, TF_DESCRIPTION, TWITTER_METADATA } from '@/constants/seo';
-import VoteProvider from '@/context/vote';
 import { cn } from '@/lib/utils';
-import VotingLayout from '@/partials/layout/Voting';
-
-// import VoteProvider from '@/context/vote';
-// import VotingLayout from '@/partials/layout/Voting';
 
 export const viewport: Viewport = {
 	themeColor: '#141420',
@@ -90,12 +85,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				)}
 			>
 				<Navigation />
-				<VoteProvider>
-					<main className="mx-auto min-h-[calc(100vh-var(--header-height)-var(--footer-height))] max-w-screen-2xl">
-						{children}
-					</main>
-					<VotingLayout />
-				</VoteProvider>
+
+				<main className="mx-auto min-h-[calc(100vh-var(--header-height)-var(--footer-height))] max-w-screen-2xl">
+					{children}
+				</main>
+
 				<Toaster />
 				<Footer />
 				<Analytics />

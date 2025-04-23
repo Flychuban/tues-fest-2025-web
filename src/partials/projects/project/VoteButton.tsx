@@ -1,48 +1,83 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
-import { useVoteContext } from '@/context/vote';
+import { StaticImageData } from 'next/image';
+import { Check } from 'lucide-react';
 
-const VoteButton = ({
+import {
+	AlertDialog,
+	AlertDialogContent,
+	AlertDialogDescription,
+	AlertDialogFooter,
+	AlertDialogHeader,
+	AlertDialogTitle,
+	AlertDialogTrigger,
+} from '@/components/ui/alert-dialog';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { cn } from '@/lib/utils';
+import { useProjectVoteStatus, useToggleProjectSelect } from '@/stores/vote';
+
+export function VoteSelectProjectButton({
 	id,
-	name,
+	title,
 	thumbnail,
 	category,
+	className,
+	size = 'lg',
+	...props
 }: {
 	id: number;
-	name: string;
-	thumbnail: string;
+	title: string;
+	thumbnail: StaticImageData;
 	category: string;
-}) => {
-	const { getVotes, addVote, removeVote } = useVoteContext();
-
-	const vote = Object.values(getVotes()).find((v) => v?.id === id);
-
-	const handleVote = () => {
-		void addVote(category, id, name, thumbnail);
-	};
-
-	const handleUnvote = () => {
-		if (!vote?.category) return;
-		void removeVote(vote.category);
-	};
-
-	const handleClick = () => {
-		if (vote) {
-			handleUnvote();
-		} else {
-			handleVote();
-		}
-	};
+	className?: string;
+	size?: 'default' | 'sm' | 'lg' | 'xl' | 'icon';
+}) {
+	const { isSelected, hasReachedVoteLimit } = useProjectVoteStatus(id);
+	const toggleProjectSelect = useToggleProjectSelect();
 
 	return (
-		// @ts-expect-error because this will be removed in the future
-		null && (
-			<Button className="bg-sand text-black" onClick={handleClick} size="lg">
-				{!vote ? 'Гласувай' : 'Премахни глас'}
+		<VoteLimitReachedDialog projectId={id} {...props}>
+			<Button
+				variant={isSelected ? 'secondary' : 'default'}
+				className={cn(
+					className,
+					'cursor-pointer',
+					isSelected && 'border-primary bg-secondary/80 hover:bg-secondary/90 border-2'
+				)}
+				size={size}
+				onClick={() => toggleProjectSelect({ id, title, thumbnail, category })}
+				{...props}
+			>
+				{isSelected ? (
+					<>
+						<Check className="size-4" />
+						Премахни глас
+					</>
+				) : (
+					'Гласувай'
+				)}
 			</Button>
-		)
+		</VoteLimitReachedDialog>
 	);
-};
+}
 
-export default VoteButton;
+interface VoteLimitReachedDialogProps extends React.ComponentProps<typeof AlertDialogTrigger> {
+	projectId: number;
+}
+
+function VoteLimitReachedDialog({ projectId, ...alertDialogTriggerProps }: VoteLimitReachedDialogProps) {
+	const { isSelected, hasReachedVoteLimit } = useProjectVoteStatus(projectId);
+
+	return (
+		<AlertDialog open={hasReachedVoteLimit && !isSelected ? undefined : false}>
+			<AlertDialogTrigger {...alertDialogTriggerProps} />
+			<AlertDialogContent className="sm:max-w-[425px]">
+				<AlertDialogHeader>
+					<AlertDialogTitle>Edit profile</AlertDialogTitle>
+				</AlertDialogHeader>
+			</AlertDialogContent>
+		</AlertDialog>
+	);
+}

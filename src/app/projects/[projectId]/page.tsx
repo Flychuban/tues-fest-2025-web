@@ -13,7 +13,7 @@ import { ProjectDescription } from '@/partials/projects/project/Description';
 import Gallery from '@/partials/projects/project/Gallery';
 import LinksContainer from '@/partials/projects/project/Links';
 import Video from '@/partials/projects/project/Video';
-import VoteButton from '@/partials/projects/project/VoteButton';
+import { VoteSelectProjectButton } from '@/partials/projects/project/VoteButton';
 import { getProjectById, getProjects } from '../actions';
 
 export type Links = {
@@ -138,9 +138,9 @@ const ProjectPage = async (props: { params: Promise<{ projectId: string }> }) =>
 							</div>
 						)}
 						<div className="mt-4">
-							<VoteButton
+							<VoteSelectProjectButton
 								id={project.id}
-								name={project.title}
+								title={project.title}
 								thumbnail={thumbnail.src}
 								category={project.category}
 							/>
