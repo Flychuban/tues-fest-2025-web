@@ -12,7 +12,7 @@ import { Rubik_Mono_One } from 'next/font/google';
 import localFont from 'next/font/local';
 import { GeistSans } from 'geist/font/sans';
 
-import { Toaster } from '@/components/ui/toaster';
+import { Toaster } from '@/components/ui/sonner';
 import { TF_YEAR } from '@/constants/event';
 import { FIRST_ARCHIVE_YEAR, KEYWORDS, OG_METADATA, TF_DESCRIPTION, TWITTER_METADATA } from '@/constants/seo';
 import VoteProvider from '@/context/vote';
