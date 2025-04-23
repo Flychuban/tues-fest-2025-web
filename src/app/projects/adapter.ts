@@ -67,6 +67,11 @@ import project32$thumbnail from '@/../public/projects/32/thumbnail.webp';
 import project33$thumbnail from '@/../public/projects/33/thumbnail.webp';
 import project34$thumbnail from '@/../public/projects/34/thumbnail.webp';
 import project35$thumbnail from '@/../public/projects/35/thumbnail.webp';
+import project35$image1 from '@/../public/projects/35/1.png';
+import project35$image2 from '@/../public/projects/35/2.png';
+import project35$image3 from '@/../public/projects/35/3.png';
+import project35$image4 from '@/../public/projects/35/4.png';
+import project35$image5 from '@/../public/projects/35/5.png';
 import project36$image1 from '@/../public/projects/36/1.webp';
 import project36$image2 from '@/../public/projects/36/2.webp';
 import project36$image3 from '@/../public/projects/36/3.webp';
@@ -1228,7 +1233,7 @@ export const PROJECTS = [
 			},
 		],
 		thumbnail: project35$thumbnail,
-		images: [],
+		images: [project35$image1, project35$image2, project35$image3, project35$image4, project35$image5],
 	},
 	{
 		id: 36,
