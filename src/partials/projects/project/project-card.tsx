@@ -53,7 +53,7 @@ export const ProjectCard = ({ project }: { project: ProjectType }) => {
 const YoutubeLink = ({ href }: { href: string }) => {
 	return (
 		<div className="hover:text-primary m-1 rounded-lg p-1 transition-all duration-100 hover:scale-110">
-			<Link href={href}>
+			<Link href={href} target="_blank">
 				<FaYoutube size={32} />
 			</Link>
 		</div>

@@ -19,25 +19,31 @@ const useVoteStore = create(
 				votes: [] as LocalVotedProject[],
 			},
 			(set, get) => ({
-				toggleProjectSelected: (project: LocalVotedProject) => {
+				selectProject: (project: LocalVotedProject) => {
 					const currentVotes = get().votes;
-					const hasReachedVoteLimit = currentVotes.length >= PROJECT_VOTE_LIMIT;
-					const isSelected = isProjectSelected(project.id, currentVotes);
+					const canAddVote =
+						!isProjectSelected(project.id, currentVotes) && currentVotes.length < PROJECT_VOTE_LIMIT;
 
-					if (!isSelected && !hasReachedVoteLimit) {
+					if (canAddVote) {
 						set({
 							votes: [...currentVotes, project],
 						});
-					} else if (isSelected) {
-						set({
-							votes: currentVotes.filter((vote) => vote.id !== project.id),
-						});
+						return true;
 					}
+					return false;
+				},
+				deselectProject: (projectId: number) => {
+					set((state) => ({
+						votes: state.votes.filter((vote) => vote.id !== projectId),
+					}));
 				},
 				replaceProject: (replaceId: number, project: LocalVotedProject) => {
 					set((state) => ({
 						votes: state.votes.map((vote) => (vote.id === replaceId ? project : vote)),
 					}));
+				},
+				canAddVote: () => {
+					return get().votes.length < PROJECT_VOTE_LIMIT;
 				},
 			})
 		),
@@ -57,8 +63,10 @@ export const useProjectVoteStatus = (projectId: number) => {
 	};
 };
 
-export const useToggleProjectSelect = () => useVoteStore((state) => state.toggleProjectSelected);
+export const useSelectProject = () => useVoteStore((state) => state.selectProject);
+export const useDeselectProject = () => useVoteStore((state) => state.deselectProject);
 export const useReplaceProject = () => useVoteStore((state) => state.replaceProject);
+export const useCanAddVote = () => useVoteStore((state) => state.canAddVote);
 
 function isProjectSelected(projectId: number, votes: LocalVotedProject[]) {
 	return votes.some((vote) => vote.id === projectId);
