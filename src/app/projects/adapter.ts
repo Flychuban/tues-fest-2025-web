@@ -92,7 +92,7 @@ import project44$thumbnail from '@/../public/projects/44/thumbnail.webp';
 import project45$image1 from '@/../public/projects/45/1.webp';
 import project46$thumbnail from '@/../public/projects/46/thumbnail.webp';
 import project47$thumbnail from '@/../public/projects/47/thumbnail.webp';
-import project48$thumbnail from '@/../public/projects/48/thumbnail.webp';
+import project48$thumbnai from '@/../public/projects/48/thumbnail.webp';
 import project49$image1 from '@/../public/projects/49/1.webp';
 import project49$image2 from '@/../public/projects/49/2.webp';
 import project49$image3 from '@/../public/projects/49/3.webp';
@@ -662,42 +662,42 @@ export const PROJECTS = [
 		thumbnail: project13$thumbnail,
 		images: [project13$image1, project13$image2, project13$image3, project13$image4, project13$image5],
 	},
-	{
-		id: 14,
-		title: 'Cable Undefined',
-		category: 'embedded',
-		description:
-			'Проектът "Cable Undefined" представлява иновативно решение, което съчетава хардуер, софтуер и изкуствен интелект, за да улесни създаването и управлението на електронни схеми. Чрез използването на интелигентна матрица от мултиплексори, системата елиминира необходимостта от физически кабели, като предлага модерна и ефективна алтернатива за прототипиране. Уеб платформата осигурява интуитивен интерфейс за проектиране, диагностика и съвместна работа в реално време.',
-		links: {
-			demoUrl: null,
-			repoUrls: ['https://github.com/Ne-Se-Chete/CableUndefined-Embedded'],
-		},
-		youtubeId: 'PlZsPEHdY-o',
-		contributors: [
-			{
-				name: 'Борислав Миланов',
-				class: '12 Б',
-			},
-			{
-				name: 'Ясен Цветков',
-				class: '11 Б',
-			},
-			{
-				name: 'Валери Тодоров',
-				class: '12 Б',
-			},
-			{
-				name: 'Томислав Иванов',
-				class: '12 Б',
-			},
-			{
-				name: 'Симеон Симеонов',
-				class: '12 Б',
-			},
-		],
-		thumbnail: project14$thumbnail,
-		images: [project14$image1, project14$image2, project14$image3, project14$image4],
-	},
+	// {
+	// 	id: 14,
+	// 	title: 'Cable Undefined',
+	// 	category: 'embedded',
+	// 	description:
+	// 		'Проектът "Cable Undefined" представлява иновативно решение, което съчетава хардуер, софтуер и изкуствен интелект, за да улесни създаването и управлението на електронни схеми. Чрез използването на интелигентна матрица от мултиплексори, системата елиминира необходимостта от физически кабели, като предлага модерна и ефективна алтернатива за прототипиране. Уеб платформата осигурява интуитивен интерфейс за проектиране, диагностика и съвместна работа в реално време.',
+	// 	links: {
+	// 		demoUrl: null,
+	// 		repoUrls: ['https://github.com/Ne-Se-Chete/CableUndefined-Embedded'],
+	// 	},
+	// 	youtubeId: 'PlZsPEHdY-o',
+	// 	contributors: [
+	// 		{
+	// 			name: 'Борислав Миланов',
+	// 			class: '12 Б',
+	// 		},
+	// 		{
+	// 			name: 'Ясен Цветков',
+	// 			class: '11 Б',
+	// 		},
+	// 		{
+	// 			name: 'Валери Тодоров',
+	// 			class: '12 Б',
+	// 		},
+	// 		{
+	// 			name: 'Томислав Иванов',
+	// 			class: '12 Б',
+	// 		},
+	// 		{
+	// 			name: 'Симеон Симеонов',
+	// 			class: '12 Б',
+	// 		},
+	// 	],
+	// 	thumbnail: project14$thumbnail,
+	// 	images: [project14$image1, project14$image2, project14$image3, project14$image4],
+	// },
 	{
 		id: 15,
 		title: 'CashMate',
