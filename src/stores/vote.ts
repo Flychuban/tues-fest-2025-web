@@ -1,4 +1,5 @@
 import { StaticImageData } from 'next/image';
+import { toast } from 'sonner';
 import { create } from 'zustand';
 import { combine, persist } from 'zustand/middleware';
 
@@ -28,6 +29,7 @@ const useVoteStore = create(
 						set({
 							votes: [...currentVotes, project],
 						});
+						toast.success('Проектът е избран успешно');
 						return true;
 					}
 					return false;
@@ -36,14 +38,14 @@ const useVoteStore = create(
 					set((state) => ({
 						votes: state.votes.filter((vote) => vote.id !== projectId),
 					}));
+					toast.success('Проектът е премахнат успешно');
 				},
 				replaceProject: (replaceId: number, project: LocalVotedProject) => {
+					const replaceProject = get().votes.find((vote) => vote.id === replaceId);
 					set((state) => ({
 						votes: state.votes.map((vote) => (vote.id === replaceId ? project : vote)),
 					}));
-				},
-				canAddVote: () => {
-					return get().votes.length < PROJECT_VOTE_LIMIT;
+					return replaceProject;
 				},
 			})
 		),
@@ -66,7 +68,6 @@ export const useProjectVoteStatus = (projectId: number) => {
 export const useSelectProject = () => useVoteStore((state) => state.selectProject);
 export const useDeselectProject = () => useVoteStore((state) => state.deselectProject);
 export const useReplaceProject = () => useVoteStore((state) => state.replaceProject);
-export const useCanAddVote = () => useVoteStore((state) => state.canAddVote);
 
 function isProjectSelected(projectId: number, votes: LocalVotedProject[]) {
 	return votes.some((vote) => vote.id === projectId);

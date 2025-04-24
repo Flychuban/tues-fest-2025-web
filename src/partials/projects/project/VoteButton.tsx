@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import { ArrowRightLeft, Check } from 'lucide-react';
+import { toast } from 'sonner';
 
 import {
 	AlertDialog,
@@ -77,9 +78,19 @@ export function VoteSelectProjectButton({
 
 	function handleConfirmReplace() {
 		if (selectedReplaceId !== null) {
-			replaceProject(selectedReplaceId, project);
+			const replacedProject = replaceProject(selectedReplaceId, project);
 			setIsDialogOpen(false);
 			setSelectedReplaceId(null);
+			if (replacedProject) {
+				toast.success('Проектът е заменен успешно', {
+					action: {
+						label: 'Отмени',
+						onClick: () => {
+							replaceProject(id, replacedProject);
+						},
+					},
+				});
+			}
 		}
 	}
 
