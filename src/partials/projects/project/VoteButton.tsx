@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { StaticImageData } from 'next/image';
-import { Check } from 'lucide-react';
+import Image, { StaticImageData } from 'next/image';
+import { ArrowRightLeft, Check } from 'lucide-react';
 
 import {
 	AlertDialog,
@@ -16,11 +16,20 @@ import {
 	AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
 import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { ScrollArea } from '@/components/ui/scroll-area';
 import { PROJECT_VOTE_LIMIT } from '@/constants/voting';
 import { cn } from '@/lib/utils';
-import { LocalVotedProject, useDeselectProject, useProjectVoteStatus, useSelectProject } from '@/stores/vote';
+import {
+	LocalVotedProject,
+	useDeselectProject,
+	useProjectVoteStatus,
+	useReplaceProject,
+	useSelectProject,
+	useVotedProjects,
+} from '@/stores/vote';
 
 export function VoteSelectProjectButton({
 	id,
@@ -41,7 +50,10 @@ export function VoteSelectProjectButton({
 	const { isSelected, hasReachedVoteLimit } = useProjectVoteStatus(id);
 	const selectProject = useSelectProject();
 	const deselectProject = useDeselectProject();
+	const replaceProject = useReplaceProject();
+	const votedProjects = useVotedProjects();
 	const [isDialogOpen, setIsDialogOpen] = useState(false);
+	const [selectedReplaceId, setSelectedReplaceId] = useState<number | null>(null);
 
 	const project: LocalVotedProject = { id, title, thumbnail, category };
 
@@ -61,6 +73,14 @@ export function VoteSelectProjectButton({
 	function handleConfirmDeselect() {
 		deselectProject(id);
 		setIsDialogOpen(false);
+	}
+
+	function handleConfirmReplace() {
+		if (selectedReplaceId !== null) {
+			replaceProject(selectedReplaceId, project);
+			setIsDialogOpen(false);
+			setSelectedReplaceId(null);
+		}
 	}
 
 	return (
@@ -100,26 +120,75 @@ export function VoteSelectProjectButton({
 					</AlertDialogFooter>
 				</AlertDialogContent>
 			) : hasReachedVoteLimit ? (
-				<AlertDialogContent>
+				<AlertDialogContent className="max-h-[95vh] overflow-y-auto sm:max-w-2xl">
 					<AlertDialogHeader>
 						<AlertDialogTitle>Достигнахте максималния брой гласове</AlertDialogTitle>
 						<AlertDialogDescription>
 							Можете да гласувате за най-много {PROJECT_VOTE_LIMIT} проекта. За да добавите{' '}
-							<ProjectTitle title={title} /> към гласовете си, трябва да премахнете някой от избраните
-							проекти.
+							<ProjectTitle title={title} /> към гласовете си, изберете кой проект искате да замените:
 						</AlertDialogDescription>
 					</AlertDialogHeader>
-					<AlertDialogFooter>
-						<AlertDialogCancel>Откажи</AlertDialogCancel>
-						<AlertDialogAction asChild>
-							<Button
-								onClick={() => {
-									setIsDialogOpen(false);
-									// TODO: Navigate to votes page or show vote management UI
+
+					<div
+						className="grid grid-cols-1 gap-4 p-1 sm:grid-cols-2 md:grid-cols-3"
+						role="radiogroup"
+						aria-label="Изберете проект за замяна"
+					>
+						{votedProjects.map((votedProject) => (
+							<Card
+								key={votedProject.id}
+								className={cn(
+									'group relative cursor-pointer overflow-hidden transition-all duration-300',
+									selectedReplaceId === votedProject.id && 'ring-primary ring-2'
+								)}
+								onClick={() => setSelectedReplaceId(votedProject.id)}
+								onKeyDown={(e) => {
+									if (e.key === 'Enter' || e.key === ' ') {
+										e.preventDefault();
+										setSelectedReplaceId(votedProject.id);
+									}
 								}}
+								role="radio"
+								aria-checked={selectedReplaceId === votedProject.id}
+								tabIndex={0}
 							>
-								Управлявай гласове
-							</Button>
+								<div className="relative aspect-video">
+									<Image
+										src={votedProject.thumbnail}
+										alt={`Снимка на проект ${votedProject.title}`}
+										className="object-cover"
+										fill
+										sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+									/>
+									<div
+										className={cn(
+											'absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 transition-opacity duration-300',
+											selectedReplaceId === votedProject.id && 'opacity-100',
+											'group-hover:opacity-100'
+										)}
+										aria-hidden="true"
+									>
+										<ArrowRightLeft
+											className={cn(
+												'size-8 text-white opacity-0 transition-opacity duration-300',
+												selectedReplaceId === votedProject.id && 'opacity-100',
+												'group-hover:opacity-100'
+											)}
+										/>
+									</div>
+								</div>
+								<div className="p-3">
+									<h3 className="line-clamp-2 text-sm font-medium">{votedProject.title}</h3>
+									<p className="text-muted-foreground mt-1 text-xs">{votedProject.category}</p>
+								</div>
+							</Card>
+						))}
+					</div>
+
+					<AlertDialogFooter className="mt-4">
+						<AlertDialogCancel onClick={() => setSelectedReplaceId(null)}>Откажи</AlertDialogCancel>
+						<AlertDialogAction onClick={handleConfirmReplace} disabled={selectedReplaceId === null}>
+							Замени
 						</AlertDialogAction>
 					</AlertDialogFooter>
 				</AlertDialogContent>
