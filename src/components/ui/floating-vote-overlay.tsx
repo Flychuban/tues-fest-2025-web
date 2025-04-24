@@ -1,0 +1,154 @@
+'use client';
+
+import Image from 'next/image';
+import { Check, ChevronRight, X } from 'lucide-react';
+
+import { Button } from '@/components/ui/button';
+import { Progress } from '@/components/ui/progress';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import { Separator } from '@/components/ui/separator';
+import {
+	Sheet,
+	SheetClose,
+	SheetContent,
+	SheetDescription,
+	SheetFooter,
+	SheetHeader,
+	SheetTitle,
+	SheetTrigger,
+} from '@/components/ui/sheet';
+import { PROJECT_CATEGORIES } from '@/constants/projects';
+import { PROJECT_VOTE_LIMIT } from '@/constants/voting';
+import { cn } from '@/lib/utils';
+import { useDeselectProject, useVotedProjects } from '@/stores/vote';
+
+export function FloatingVoteOverlay() {
+	const votedProjects = useVotedProjects();
+	const deselectProject = useDeselectProject();
+	const selectedCount = votedProjects.length;
+
+	if (selectedCount === 0) return null;
+
+	const progress = (selectedCount / PROJECT_VOTE_LIMIT) * 100;
+	const isMaxSelected = selectedCount === PROJECT_VOTE_LIMIT;
+
+	return (
+		<div className="fixed inset-x-0 bottom-0 z-50">
+			<div
+				className={cn(
+					'bg-card/50 flex justify-center border-t py-3 shadow-lg backdrop-blur-xl transition-all duration-300',
+					isMaxSelected && 'bg-primary/50'
+				)}
+			>
+				<Sheet>
+					<SheetTrigger asChild>
+						<Button variant={isMaxSelected ? 'default' : 'ghost'} className="relative h-12 gap-2 px-6">
+							<div className="flex items-center gap-3">
+								<div className="flex items-center gap-2">
+									<div className="relative flex h-6 w-6 items-center justify-center">
+										{isMaxSelected ? (
+											<Check className="text-primary-foreground size-4" />
+										) : (
+											<>
+												<div className="absolute inset-0">
+													<Progress value={progress} className="h-6 w-6 rounded-full" />
+												</div>
+												<span
+													className={cn(
+														'relative text-sm font-medium',
+														isMaxSelected ? 'text-primary-foreground' : 'text-foreground'
+													)}
+												>
+													{selectedCount}
+												</span>
+											</>
+										)}
+									</div>
+									<span
+										className={cn(
+											'text-sm font-medium',
+											isMaxSelected ? 'text-primary-foreground' : 'text-foreground'
+										)}
+									>
+										{isMaxSelected
+											? 'Запишете своя глас'
+											: `Още ${PROJECT_VOTE_LIMIT - selectedCount} ${
+													PROJECT_VOTE_LIMIT - selectedCount === 1 ? 'проект' : 'проекта'
+												}`}
+									</span>
+								</div>
+								<ChevronRight
+									className={cn(
+										'size-4 transition-transform',
+										isMaxSelected ? 'text-primary-foreground' : 'text-muted-foreground'
+									)}
+								/>
+							</div>
+						</Button>
+					</SheetTrigger>
+					<SheetContent>
+						<SheetHeader>
+							<SheetTitle>Избрани проекти</SheetTitle>
+							<SheetDescription>
+								{selectedCount === PROJECT_VOTE_LIMIT
+									? 'Готови сте да запишете своя глас'
+									: `Може да изберете още ${PROJECT_VOTE_LIMIT - selectedCount} ${
+											PROJECT_VOTE_LIMIT - selectedCount === 1 ? 'проект' : 'проекта'
+										}`}
+							</SheetDescription>
+						</SheetHeader>
+
+						<ScrollArea className="flex-1">
+							<div className="space-y-4 px-4">
+								{votedProjects.map((project) => (
+									<div
+										key={project.id}
+										className="bg-card/50 group relative flex gap-4 rounded-lg border p-3 backdrop-blur-sm"
+									>
+										<div className="relative aspect-video w-32 shrink-0 overflow-hidden rounded-md">
+											<Image
+												src={project.thumbnail}
+												alt={`Снимка на ${project.title}`}
+												className="object-cover"
+												fill
+												sizes="128px"
+											/>
+										</div>
+										<div className="flex flex-1 flex-col justify-between gap-1">
+											<div>
+												<h3 className="line-clamp-1 font-medium">{project.title}</h3>
+												<p className="text-muted-foreground line-clamp-1 text-sm">
+													{PROJECT_CATEGORIES[project.category]}
+												</p>
+											</div>
+											<button
+												className="ring-offset-background focus:ring-ring data-[state=open]:bg-secondary rounded-xs focus:outline-hidden absolute right-4 top-4 opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none"
+												onClick={() => deselectProject(project.id)}
+											>
+												<X className="size-4" />
+												<span className="sr-only">Премахни проект</span>
+											</button>
+										</div>
+									</div>
+								))}
+							</div>
+						</ScrollArea>
+
+						<SheetFooter>
+							<Separator />
+							<SheetClose asChild>
+								<Button className="w-full" size="lg" disabled={selectedCount === 0}>
+									{selectedCount === 0
+										? 'Изберете поне един проект'
+										: `Запиши ${selectedCount} ${
+												selectedCount === 1 ? 'избран проект' : 'избрани проекта'
+											}`}
+								</Button>
+							</SheetClose>
+						</SheetFooter>
+					</SheetContent>
+				</Sheet>
+			</div>
+		</div>
+	);
+}

@@ -4,13 +4,14 @@ import { create } from 'zustand';
 import { combine, persist } from 'zustand/middleware';
 
 import { TF_YEAR } from '@/constants/event';
+import { ProjectCategory } from '@/constants/projects';
 import { PROJECT_VOTE_LIMIT } from '@/constants/voting';
 
 export type LocalVotedProject = {
 	id: number;
 	title: string;
 	thumbnail: StaticImageData;
-	category: string;
+	category: ProjectCategory;
 };
 
 const useVoteStore = create(
