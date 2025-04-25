@@ -340,9 +340,20 @@ function RegisterVoterStep(props: { onVerificationEmailSent: () => void }) {
 	);
 }
 
-function SendVerificationEmailStep() {
+function SendVerificationEmailStep(props: { onVerificationEmailSent: () => void }) {
 	const trpc = useTRPC();
 	const { data: currentVoter } = useSuspenseQuery(trpc.voting.getCurrentVoter.queryOptions());
+	const queryClient = useQueryClient();
+	const resendVerificationCode = useMutation(
+		trpc.voting.resendVerificationCode.mutationOptions({
+			onSuccess: () => {
+				props.onVerificationEmailSent();
+			},
+			onSettled: () => {
+				queryClient.invalidateQueries(trpc.voting.getCurrentVoter.queryOptions());
+			},
+		})
+	);
 
 	const form = useForm<z.infer<typeof verificationEmailFormSchema>>({
 		resolver: zodResolver(verificationEmailFormSchema),
@@ -354,9 +365,13 @@ function SendVerificationEmailStep() {
 	const email = form.watch('email');
 	const isComplete = email.length > 0;
 
+	const handleSubmit = form.handleSubmit(async (data) => {
+		await resendVerificationCode.mutateAsync(data);
+	});
+
 	return (
 		<Form {...form}>
-			<form className="space-y-6">
+			<form onSubmit={handleSubmit} className="space-y-6">
 				<FormField
 					control={form.control}
 					name="email"
@@ -531,7 +546,9 @@ function RegisterVoterButton({ ...props }: React.ComponentPropsWithoutRef<typeof
 				{step === 'register' && (
 					<RegisterVoterStep onVerificationEmailSent={() => setWasVerificationEmailSent(true)} />
 				)}
-				{step === 'send-verification-email' && <SendVerificationEmailStep />}
+				{step === 'send-verification-email' && (
+					<SendVerificationEmailStep onVerificationEmailSent={() => setWasVerificationEmailSent(true)} />
+				)}
 				{step === 'enter-verification-code' && <EnterVerificationCodeStep />}
 				{step === 'success' && <SuccessStep />}
 			</DialogContent>
