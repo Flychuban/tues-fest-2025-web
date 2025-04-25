@@ -21,7 +21,7 @@ import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { ProjectCategory } from '@/constants/projects';
+import { PROJECT_CATEGORIES, ProjectCategory } from '@/constants/projects';
 import { PROJECT_VOTE_LIMIT } from '@/constants/voting';
 import { cn } from '@/lib/utils';
 import {
@@ -184,7 +184,9 @@ export function VoteSelectProjectButton({
 								</div>
 								<div className="p-3">
 									<h3 className="line-clamp-2 text-sm font-medium">{votedProject.title}</h3>
-									<p className="text-muted-foreground mt-1 text-xs">{votedProject.category}</p>
+									<p className="text-muted-foreground mt-1 text-xs">
+										{PROJECT_CATEGORIES[votedProject.category]}
+									</p>
 								</div>
 							</Card>
 						))}
