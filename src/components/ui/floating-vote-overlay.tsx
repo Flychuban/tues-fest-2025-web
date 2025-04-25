@@ -28,7 +28,7 @@ import { useDeselectProject, useVotedProjects } from '@/stores/vote';
 
 export function FloatingVoteOverlay() {
 	const trpc = useTRPC();
-	const { data: currentVoter } = useQuery(trpc.voting.getCurrentVoter.queryOptions(true));
+	const { data: currentVoter } = useQuery(trpc.voting.getCurrentVoter.queryOptions());
 	const votedProjects = useVotedProjects();
 	const deselectProject = useDeselectProject();
 	const selectedCount = votedProjects.length;
@@ -92,7 +92,7 @@ export function FloatingVoteOverlay() {
 													}`
 											: isMaxSelected
 												? 'Запишете своя глас'
-												: `Избрахте ${PROJECT_VOTE_LIMIT - selectedCount} проекта ${
+												: `Избрахте ${PROJECT_VOTE_LIMIT - selectedCount} ${
 														PROJECT_VOTE_LIMIT - selectedCount === 1 ? 'проект' : 'проекта'
 													}`}
 									</span>
@@ -108,10 +108,12 @@ export function FloatingVoteOverlay() {
 					</SheetTrigger>
 					<SheetContent>
 						<SheetHeader>
-							<SheetTitle>Избрани проекти</SheetTitle>
+							<SheetTitle>Вашият глас</SheetTitle>
 							<SheetDescription>
 								{selectedCount === PROJECT_VOTE_LIMIT
-									? 'Готови сте да запишете своя глас'
+									? !hasVoted || hasUnsavedChanges
+										? 'Готови сте да запишете своя глас'
+										: `Вие избрахте ${selectedCount} проекта`
 									: `Може да изберете още ${PROJECT_VOTE_LIMIT - selectedCount} ${
 											PROJECT_VOTE_LIMIT - selectedCount === 1 ? 'проект' : 'проекта'
 										}`}
@@ -126,18 +128,29 @@ export function FloatingVoteOverlay() {
 											key={project.id}
 											className="bg-card/50 group relative flex gap-4 rounded-lg border p-3 backdrop-blur-sm"
 										>
-											<div className="relative aspect-video w-32 shrink-0 overflow-hidden rounded-md">
-												<Image
-													src={project.thumbnail}
-													alt={`Снимка на ${project.title}`}
-													className="object-cover"
-													fill
-													sizes="128px"
-												/>
-											</div>
+											<SheetClose
+												asChild
+												className="relative aspect-video w-32 shrink-0 overflow-hidden rounded-md"
+											>
+												<Link href={`/projects/${project.id}`}>
+													<Image
+														src={project.thumbnail}
+														alt={`Снимка на ${project.title}`}
+														className="object-cover"
+														fill
+														sizes="128px"
+													/>
+												</Link>
+											</SheetClose>
 											<div className="flex flex-1 flex-col justify-between gap-1">
 												<div>
-													<h3 className="line-clamp-1 font-medium">{project.title}</h3>
+													<h3 className="line-clamp-1 font-medium">
+														<SheetClose asChild>
+															<Link href={`/projects/${project.id}`}>
+																{project.title}
+															</Link>
+														</SheetClose>
+													</h3>
 													<p className="text-muted-foreground line-clamp-1 text-sm">
 														{PROJECT_CATEGORIES[project.category]}
 													</p>

@@ -3,8 +3,8 @@ import { z } from 'zod';
 import { createTRPCRouter, publicVotingProcedure } from '../trpc';
 
 export const votingRouter = createTRPCRouter({
-	getCurrentVoter: publicVotingProcedure.input(z.boolean()).query(async ({ ctx, input }) => {
-		if (!input) return null;
+	getCurrentVoter: publicVotingProcedure.query(async ({ ctx: _ctx }) => {
+		if (true) return null;
 
 		return {
 			id: 'lerjgldfgj',
