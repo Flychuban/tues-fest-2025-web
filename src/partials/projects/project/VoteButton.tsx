@@ -21,6 +21,7 @@ import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { ProjectCategory } from '@/constants/projects';
 import { PROJECT_VOTE_LIMIT } from '@/constants/voting';
 import { cn } from '@/lib/utils';
 import {
@@ -33,30 +34,22 @@ import {
 } from '@/stores/vote';
 
 export function VoteSelectProjectButton({
-	id,
-	title,
-	thumbnail,
-	category,
+	project,
 	className,
 	size = 'lg',
 	...props
 }: {
-	id: number;
-	title: string;
-	thumbnail: StaticImageData;
-	category: string;
+	project: LocalVotedProject;
 	className?: string;
 	size?: React.ComponentProps<typeof Button>['size'];
 }) {
-	const { isSelected, hasReachedVoteLimit } = useProjectVoteStatus(id);
+	const { isSelected, hasReachedVoteLimit } = useProjectVoteStatus(project.id);
 	const selectProject = useSelectProject();
 	const deselectProject = useDeselectProject();
 	const replaceProject = useReplaceProject();
 	const votedProjects = useVotedProjects();
 	const [isDialogOpen, setIsDialogOpen] = useState(false);
 	const [selectedReplaceId, setSelectedReplaceId] = useState<number | null>(null);
-
-	const project: LocalVotedProject = { id, title, thumbnail, category };
 
 	function handleClick() {
 		if (isSelected) {
@@ -72,7 +65,7 @@ export function VoteSelectProjectButton({
 	}
 
 	function handleConfirmDeselect() {
-		deselectProject(id);
+		deselectProject(project.id);
 		setIsDialogOpen(false);
 	}
 
@@ -86,7 +79,7 @@ export function VoteSelectProjectButton({
 					action: {
 						label: 'Отмени',
 						onClick: () => {
-							replaceProject(id, replacedProject);
+							replaceProject(project.id, replacedProject);
 						},
 					},
 				});
@@ -122,7 +115,7 @@ export function VoteSelectProjectButton({
 					<AlertDialogHeader>
 						<AlertDialogTitle>Премахни глас</AlertDialogTitle>
 						<AlertDialogDescription>
-							Сигурни ли сте, че искате да премахнете гласа си за <ProjectTitle title={title} />?
+							Сигурни ли сте, че искате да премахнете гласа си за <ProjectTitle title={project.title} />?
 						</AlertDialogDescription>
 					</AlertDialogHeader>
 					<AlertDialogFooter>
@@ -136,7 +129,8 @@ export function VoteSelectProjectButton({
 						<AlertDialogTitle>Достигнахте максималния брой гласове</AlertDialogTitle>
 						<AlertDialogDescription>
 							Можете да гласувате за най-много {PROJECT_VOTE_LIMIT} проекта. За да добавите{' '}
-							<ProjectTitle title={title} /> към гласовете си, изберете кой проект искате да замените:
+							<ProjectTitle title={project.title} /> към гласовете си, изберете кой проект искате да
+							замените:
 						</AlertDialogDescription>
 					</AlertDialogHeader>
 

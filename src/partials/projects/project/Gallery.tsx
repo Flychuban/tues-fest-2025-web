@@ -12,7 +12,7 @@ const GalleryModal = ({
 	startingIndex,
 	closeModal,
 }: {
-	images: StaticImageData[];
+	images: readonly StaticImageData[];
 	startingIndex: number;
 	closeModal: () => void;
 }) => {
@@ -162,7 +162,7 @@ const GalleryModal = ({
 	);
 };
 
-const Gallery = ({ name, images }: { name: string; images: StaticImageData[] }) => {
+const Gallery = ({ name, images }: { name: string; images: readonly StaticImageData[] }) => {
 	const [modal, setModal] = useState(false);
 	const [index, setIndex] = useState(0);
 

@@ -4,7 +4,7 @@ import { InteractiveFilteredProjects } from '@/components/interactive-filter';
 import { ProjectType } from '@/app/projects/actions';
 import { ProjectCard } from './project/project-card';
 
-export function ProjectList({ projects }: { projects: ProjectType[] }) {
+export function ProjectList({ projects }: { projects: readonly ProjectType[] }) {
 	const projectCards = projects.map((project) => <ProjectCard key={project.title} project={project} />);
 
 	return (

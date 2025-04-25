@@ -17,7 +17,7 @@ import { VoteSelectProjectButton } from '@/partials/projects/project/VoteButton'
 import { getProjectById, getProjects } from '../actions';
 
 export type Links = {
-	repoUrls: string[];
+	repoUrls: readonly string[];
 	demoUrl: string | null;
 };
 
@@ -139,10 +139,12 @@ const ProjectPage = async (props: { params: Promise<{ projectId: string }> }) =>
 						)}
 						<div className="mt-4">
 							<VoteSelectProjectButton
-								id={project.id}
-								title={project.title}
-								thumbnail={thumbnail.src}
-								category={project.category}
+								project={{
+									id: project.id,
+									title: project.title,
+									thumbnail,
+									category: project.category,
+								}}
 							/>
 						</div>
 						<CardDescription className="prose prose-sm prose-slate sm:prose-lg mx-auto max-w-none">
