@@ -15,6 +15,7 @@ import { GeistSans } from 'geist/font/sans';
 import { Toaster } from '@/components/ui/sonner';
 import { TF_YEAR } from '@/constants/event';
 import { FIRST_ARCHIVE_YEAR, KEYWORDS, OG_METADATA, TF_DESCRIPTION, TWITTER_METADATA } from '@/constants/seo';
+import { GrowthBookServerProvider } from '@/lib/growthbook/react/server';
 import { cn } from '@/lib/utils';
 
 export const viewport: Viewport = {
@@ -84,15 +85,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 					'dark h-full w-screen items-center justify-center overflow-hidden overflow-x-hidden overflow-y-scroll bg-[url(../assets/wave-36.jpg)] bg-cover bg-fixed bg-center lg:bg-[url(../assets/wave-39.jpg)]'
 				)}
 			>
-				<Navigation />
+				<GrowthBookServerProvider>
+					<Navigation />
 
-				<main className="mx-auto min-h-[calc(100vh-var(--header-height)-var(--footer-height))] max-w-screen-2xl">
-					{children}
-				</main>
+					<main className="mx-auto min-h-[calc(100vh-var(--header-height)-var(--footer-height))] max-w-screen-2xl">
+						{children}
+					</main>
 
-				<Toaster />
-				<Footer />
-				<Analytics />
+					<Toaster />
+					<Footer />
+					<Analytics />
+				</GrowthBookServerProvider>
 			</body>
 		</html>
 	);
