@@ -5,6 +5,7 @@ import invariant from 'tiny-invariant';
 
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import type { ProjectType } from '@/app/projects/actions';
+import { IfTFFeatureOn } from '@/lib/growthbook/react/client';
 import { VoteSelectProjectButton } from './VoteButton';
 
 export const ProjectCard = ({ project }: { project: ProjectType }) => {
@@ -36,18 +37,20 @@ export const ProjectCard = ({ project }: { project: ProjectType }) => {
 					<YoutubeLink href={`https://www.youtube.com/watch?v=${encodeURIComponent(project.youtubeId)}`} />
 				)}
 			</CardHeader>
-			<CardFooter className="pt-0">
-				<VoteSelectProjectButton
-					project={{
-						id: project.id,
-						title: project.title,
-						thumbnail,
-						category: project.category,
-					}}
-					className="bg-primary hover:bg-primary/90 text-primary-foreground w-full font-medium transition-all duration-300 group-hover:scale-[1.02]"
-					size="lg"
-				/>
-			</CardFooter>
+			<IfTFFeatureOn feature="project-voting">
+				<CardFooter className="pt-0">
+					<VoteSelectProjectButton
+						project={{
+							id: project.id,
+							title: project.title,
+							thumbnail,
+							category: project.category,
+						}}
+						className="bg-primary hover:bg-primary/90 text-primary-foreground w-full font-medium transition-all duration-300 group-hover:scale-[1.02]"
+						size="lg"
+					/>
+				</CardFooter>
+			</IfTFFeatureOn>
 		</Card>
 	);
 };

@@ -5,6 +5,7 @@ import invariant from 'tiny-invariant';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { OG_METADATA, TF_TITLE, TWITTER_METADATA } from '@/constants/seo';
+import { IfTFFeatureOn } from '@/lib/growthbook/react/client';
 import { cn } from '@/lib/utils';
 import ProjectsPath from '@/partials/layout/ProjectsPath';
 import { ProjectContainer } from '@/partials/projects/project-container';
@@ -149,29 +150,32 @@ const ProjectPage = async (props: { params: Promise<{ projectId: string }> }) =>
 								</ScrollArea>
 							</CardDescription>
 
-							<div className="bg-primary/5 relative flex flex-col gap-4 rounded-xl border p-6">
-								<div className="flex items-start justify-between gap-4">
-									<div className="space-y-1">
-										<h3 className="font-semibold">
-											Гласувай за {project.contributors.length > 1 ? 'нас' : 'мен'}!
-										</h3>
-										<p className="text-muted-foreground text-sm">
-											Ако смяташ, че {project.contributors.length > 1 ? 'нашия' : 'моя'} проект
-											заслужава да спечели наградата за избор на публиката, гласувай за него сега!
-										</p>
+							<IfTFFeatureOn feature="project-voting">
+								<div className="bg-primary/5 relative flex flex-col gap-4 rounded-xl border p-6">
+									<div className="flex items-start justify-between gap-4">
+										<div className="space-y-1">
+											<h3 className="font-semibold">
+												Гласувай за {project.contributors.length > 1 ? 'нас' : 'мен'}!
+											</h3>
+											<p className="text-muted-foreground text-sm">
+												Ако смяташ, че {project.contributors.length > 1 ? 'нашият' : 'моят'}{' '}
+												проект заслужава да спечели наградата за избор на публиката, гласувай за
+												него сега!
+											</p>
+										</div>
 									</div>
+									<VoteSelectProjectButton
+										project={{
+											id: project.id,
+											title: project.title,
+											thumbnail,
+											category: project.category,
+										}}
+										className="w-full"
+										size="lg"
+									/>
 								</div>
-								<VoteSelectProjectButton
-									project={{
-										id: project.id,
-										title: project.title,
-										thumbnail,
-										category: project.category,
-									}}
-									className="w-full"
-									size="lg"
-								/>
-							</div>
+							</IfTFFeatureOn>
 						</div>
 						<Contributors contributors={project.contributors} />
 					</CardContent>
