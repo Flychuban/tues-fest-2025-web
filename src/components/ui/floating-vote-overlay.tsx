@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useMutation, useQuery, useQueryClient, useSuspenseQuery } from '@tanstack/react-query';
+import { REGEXP_ONLY_DIGITS } from 'input-otp';
 import { Check, ChevronRight, X } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -251,7 +252,7 @@ export function FloatingVoteOverlay() {
 	);
 }
 
-function RegisterVoterStep() {
+function RegisterVoterStep(props: { onVerificationEmailSent: () => void }) {
 	const form = useForm<z.infer<typeof registerFormSchema>>({
 		resolver: zodResolver(registerFormSchema),
 		defaultValues: {
@@ -264,6 +265,7 @@ function RegisterVoterStep() {
 	const registerVoter = useMutation(
 		trpc.voting.registerVoter.mutationOptions({
 			onSuccess: (_data, variables) => {
+				props.onVerificationEmailSent();
 				const previousVoter = queryClient.getQueryData(trpc.voting.getCurrentVoter.queryKey());
 				if (!previousVoter) {
 					queryClient.setQueryData(trpc.voting.getCurrentVoter.queryKey(), {
@@ -272,6 +274,8 @@ function RegisterVoterStep() {
 						votedProjectIds: [],
 					});
 				}
+			},
+			onSettled: () => {
 				queryClient.invalidateQueries(trpc.voting.getCurrentVoter.queryOptions());
 			},
 			trpc: {
@@ -394,12 +398,13 @@ function EnterVerificationCodeStep() {
 					name="code"
 					render={({ field }) => (
 						<FormItem className="space-y-6">
-							<FormLabel>Код за потвърждение</FormLabel>
+							<FormLabel className="sr-only">Код за потвърждение</FormLabel>
 							<FormControl>
 								<div className="flex justify-center">
 									<InputOTP
 										maxLength={VOTE_VERIFICATION_CODE_LENGTH}
 										value={field.value}
+										pattern={REGEXP_ONLY_DIGITS}
 										onChange={field.onChange}
 										onBlur={field.onBlur}
 										name={field.name}
@@ -523,7 +528,9 @@ function RegisterVoterButton({ ...props }: React.ComponentPropsWithoutRef<typeof
 					)}
 				</DialogHeader>
 
-				{step === 'register' && <RegisterVoterStep />}
+				{step === 'register' && (
+					<RegisterVoterStep onVerificationEmailSent={() => setWasVerificationEmailSent(true)} />
+				)}
 				{step === 'send-verification-email' && <SendVerificationEmailStep />}
 				{step === 'enter-verification-code' && <EnterVerificationCodeStep />}
 				{step === 'success' && <SuccessStep />}
