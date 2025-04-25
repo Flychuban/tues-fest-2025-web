@@ -16,6 +16,7 @@ import { Toaster } from '@/components/ui/sonner';
 import { TF_YEAR } from '@/constants/event';
 import { FIRST_ARCHIVE_YEAR, KEYWORDS, OG_METADATA, TF_DESCRIPTION, TWITTER_METADATA } from '@/constants/seo';
 import { GrowthBookServerProvider } from '@/lib/growthbook/react/server';
+import { TRPCReactProvider } from '@/lib/trpc/react';
 import { cn } from '@/lib/utils';
 
 export const viewport: Viewport = {
@@ -86,15 +87,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				)}
 			>
 				<GrowthBookServerProvider>
-					<Navigation />
+					<TRPCReactProvider>
+						<Navigation />
 
-					<main className="mx-auto min-h-[calc(100vh-var(--header-height)-var(--footer-height))] max-w-screen-2xl">
-						{children}
-					</main>
+						<main className="mx-auto min-h-[calc(100vh-var(--header-height)-var(--footer-height))] max-w-screen-2xl">
+							{children}
+						</main>
 
-					<Toaster />
-					<Footer />
-					<Analytics />
+						<Toaster />
+						<Footer />
+						<Analytics />
+					</TRPCReactProvider>
 				</GrowthBookServerProvider>
 			</body>
 		</html>

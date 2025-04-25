@@ -22,7 +22,8 @@ const getQueryClient = () => {
 	return clientQueryClientSingleton;
 };
 
-export const { TRPCProvider, useTRPC } = createTRPCContext<AppRouter>();
+const { TRPCProvider, useTRPC } = createTRPCContext<AppRouter>();
+export { useTRPC };
 
 /**
  * Inference helper for inputs.
