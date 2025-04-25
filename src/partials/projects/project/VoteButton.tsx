@@ -106,7 +106,7 @@ export function VoteSelectProjectButton({
 						Премахни глас
 					</>
 				) : (
-					'Гласувай'
+					'Избери за гласване'
 				)}
 			</Button>
 

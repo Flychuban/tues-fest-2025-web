@@ -137,26 +137,42 @@ const ProjectPage = async (props: { params: Promise<{ projectId: string }> }) =>
 								/>
 							</div>
 						)}
-						<div className="mt-4">
-							<VoteSelectProjectButton
-								project={{
-									id: project.id,
-									title: project.title,
-									thumbnail,
-									category: project.category,
-								}}
-							/>
+						<div className="grid gap-6 md:grid-cols-[2fr,1fr]">
+							<CardDescription className="prose prose-sm prose-slate sm:prose-lg max-w-none">
+								<ScrollArea
+									className={cn({
+										'relative h-[175px] [mask-image:linear-gradient(to_bottom,transparent,black_20px,black_calc(100%-40px),transparent)]':
+											project.description.length > 250,
+									})}
+								>
+									<ProjectDescription description={project.description} />
+								</ScrollArea>
+							</CardDescription>
+
+							<div className="bg-primary/5 relative flex flex-col gap-4 rounded-xl border p-6">
+								<div className="flex items-start justify-between gap-4">
+									<div className="space-y-1">
+										<h3 className="font-semibold">
+											Гласувай за {project.contributors.length > 1 ? 'нас' : 'мен'}!
+										</h3>
+										<p className="text-muted-foreground text-sm">
+											Ако смяташ, че {project.contributors.length > 1 ? 'нашия' : 'моя'} проект
+											заслужава да спечели наградата за избор на публиката, гласувай за него сега!
+										</p>
+									</div>
+								</div>
+								<VoteSelectProjectButton
+									project={{
+										id: project.id,
+										title: project.title,
+										thumbnail,
+										category: project.category,
+									}}
+									className="w-full"
+									size="lg"
+								/>
+							</div>
 						</div>
-						<CardDescription className="prose prose-sm prose-slate sm:prose-lg mx-auto max-w-none">
-							<ScrollArea
-								className={cn({
-									'relative h-[175px] [mask-image:linear-gradient(to_bottom,transparent,black_20px,black_calc(100%-40px),transparent)]':
-										project.description.length > 250,
-								})}
-							>
-								<ProjectDescription description={project.description} />
-							</ScrollArea>
-						</CardDescription>
 						<Contributors contributors={project.contributors} />
 					</CardContent>
 				</Card>
