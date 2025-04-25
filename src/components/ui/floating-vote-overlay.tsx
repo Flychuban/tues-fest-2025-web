@@ -1,12 +1,18 @@
 'use client';
 
-import { useMemo } from 'react';
+import { Suspense, useMemo, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useQuery } from '@tanstack/react-query';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useMutation, useQuery, useQueryClient, useSuspenseQuery } from '@tanstack/react-query';
 import { Check, ChevronRight, X } from 'lucide-react';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
 
 import { Button } from '@/components/ui/button';
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import { InputOTP, InputOTPGroup, InputOTPSlot } from '@/components/ui/input-otp';
 import { Progress } from '@/components/ui/progress';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Separator } from '@/components/ui/separator';
@@ -21,10 +27,47 @@ import {
 	SheetTrigger,
 } from '@/components/ui/sheet';
 import { PROJECT_CATEGORIES } from '@/constants/projects';
-import { PROJECT_VOTE_LIMIT } from '@/constants/voting';
+import { PROJECT_VOTE_LIMIT, VOTE_VERIFICATION_CODE_LENGTH } from '@/constants/voting';
 import { useTRPC } from '@/lib/trpc/react';
 import { cn } from '@/lib/utils';
 import { useDeselectProject, useVotedProjects } from '@/stores/vote';
+import { Alert, AlertDescription, AlertTitle } from './alert';
+import {
+	Dialog,
+	DialogClose,
+	DialogContent,
+	DialogDescription,
+	DialogHeader,
+	DialogTitle,
+	DialogTrigger,
+} from './dialog';
+import { Skeleton } from './skeleton';
+
+const registerFormSchema = z.object({
+	name: z.string().min(2, {
+		message: 'Името трябва да е поне 2 символа.',
+	}),
+	email: z.string().email({
+		message: 'Моля, въведете валиден имейл адрес.',
+	}),
+});
+
+const verificationEmailFormSchema = z.object({
+	email: z.string().email({
+		message: 'Моля, въведете валиден имейл адрес.',
+	}),
+});
+
+const verificationCodeFormSchema = z.object({
+	code: z
+		.string()
+		.length(VOTE_VERIFICATION_CODE_LENGTH, {
+			message: `Кодът трябва да е точно ${VOTE_VERIFICATION_CODE_LENGTH} цифри.`,
+		})
+		.regex(/^\d+$/, {
+			message: 'Кодът трябва да съдържа само цифри.',
+		}),
+});
 
 export function FloatingVoteOverlay() {
 	const trpc = useTRPC();
@@ -36,9 +79,9 @@ export function FloatingVoteOverlay() {
 	const progress = (selectedCount / PROJECT_VOTE_LIMIT) * 100;
 	const isMaxSelected = selectedCount === PROJECT_VOTE_LIMIT;
 
-	const hasVoted = !!currentVoter;
+	const hasVoted = currentVoter && currentVoter.isVerified && currentVoter.votedProjectIds.length > 0;
 	const hasUnsavedChanges = useMemo(() => {
-		const savedIdSet = new Set(currentVoter?.votes ?? []);
+		const savedIdSet = new Set(currentVoter?.votedProjectIds ?? []);
 		const localIdSet = new Set(votedProjects.map((project) => project.id));
 
 		if (savedIdSet.size !== localIdSet.size) return true;
@@ -186,9 +229,9 @@ export function FloatingVoteOverlay() {
 								</div>
 							)}
 							{!hasVoted ? (
-								<SheetClose asChild>
+								<Suspense fallback={<Skeleton className="h-10 w-full" />}>
 									<RegisterVoterButton />
-								</SheetClose>
+								</Suspense>
 							) : hasUnsavedChanges ? (
 								<SheetClose asChild>
 									<SaveVotesButton />
@@ -208,16 +251,284 @@ export function FloatingVoteOverlay() {
 	);
 }
 
-function RegisterVoterButton(props: React.ComponentProps<typeof Button>) {
+function RegisterVoterStep() {
+	const form = useForm<z.infer<typeof registerFormSchema>>({
+		resolver: zodResolver(registerFormSchema),
+		defaultValues: {
+			name: '',
+			email: '',
+		},
+	});
+
+	const trpc = useTRPC();
+	const registerVoter = useMutation(
+		trpc.voting.registerVoter.mutationOptions({
+			onSuccess: (_data, variables) => {
+				const previousVoter = queryClient.getQueryData(trpc.voting.getCurrentVoter.queryKey());
+				if (!previousVoter) {
+					queryClient.setQueryData(trpc.voting.getCurrentVoter.queryKey(), {
+						isVerified: false,
+						email: variables.email,
+						votedProjectIds: [],
+					});
+				}
+				queryClient.invalidateQueries(trpc.voting.getCurrentVoter.queryOptions());
+			},
+			trpc: {
+				context: { disableStreaming: true },
+			},
+		})
+	);
+	const queryClient = useQueryClient();
+
+	const name = form.watch('name');
+	const email = form.watch('email');
+	const isComplete = name.length >= 2 && email.length > 0;
+
+	const handleSubmit = form.handleSubmit(async (data) => {
+		await registerVoter.mutateAsync(data);
+	});
+
+	return (
+		<Form {...form}>
+			<form onSubmit={handleSubmit} className="space-y-6">
+				{registerVoter.isError && (
+					<Alert variant="destructive">
+						<AlertTitle>Възникна грешка</AlertTitle>
+						<AlertDescription>{registerVoter.error.message}</AlertDescription>
+					</Alert>
+				)}
+				<FormField
+					control={form.control}
+					name="name"
+					render={({ field }) => (
+						<FormItem>
+							<FormLabel>Име</FormLabel>
+							<FormControl>
+								<Input placeholder="Иван Иванов" {...field} />
+							</FormControl>
+							<FormDescription>
+								Вашето име ще бъде използвано за идентификация на гласа ви.
+							</FormDescription>
+							<FormMessage />
+						</FormItem>
+					)}
+				/>
+				<FormField
+					control={form.control}
+					name="email"
+					render={({ field }) => (
+						<FormItem>
+							<FormLabel>Имейл адрес</FormLabel>
+							<FormControl>
+								<Input type="email" placeholder="ivan@example.com" {...field} />
+							</FormControl>
+							<FormDescription>На този адрес ще получите код за потвърждение.</FormDescription>
+							<FormMessage />
+						</FormItem>
+					)}
+				/>
+				<Button type="submit" className="w-full" disabled={!isComplete || registerVoter.isPending}>
+					Изпрати код за потвърждение
+				</Button>
+			</form>
+		</Form>
+	);
+}
+
+function SendVerificationEmailStep() {
+	const trpc = useTRPC();
+	const { data: currentVoter } = useSuspenseQuery(trpc.voting.getCurrentVoter.queryOptions());
+
+	const form = useForm<z.infer<typeof verificationEmailFormSchema>>({
+		resolver: zodResolver(verificationEmailFormSchema),
+		defaultValues: {
+			email: currentVoter?.email ?? '',
+		},
+	});
+
+	const email = form.watch('email');
+	const isComplete = email.length > 0;
+
+	return (
+		<Form {...form}>
+			<form className="space-y-6">
+				<FormField
+					control={form.control}
+					name="email"
+					render={({ field }) => (
+						<FormItem>
+							<FormLabel>Имейл адрес</FormLabel>
+							<FormControl>
+								<Input type="email" placeholder="ivan@example.com" {...field} />
+							</FormControl>
+							<FormDescription>Можете да промените имейл адреса си, ако желаете.</FormDescription>
+							<FormMessage />
+						</FormItem>
+					)}
+				/>
+				<Button type="submit" className="w-full" disabled={!isComplete}>
+					Изпрати нов код за потвърждение
+				</Button>
+			</form>
+		</Form>
+	);
+}
+
+function EnterVerificationCodeStep() {
+	const form = useForm<z.infer<typeof verificationCodeFormSchema>>({
+		resolver: zodResolver(verificationCodeFormSchema),
+		defaultValues: {
+			code: '',
+		},
+	});
+
+	const code = form.watch('code');
+	const isComplete = code.length === VOTE_VERIFICATION_CODE_LENGTH;
+
+	return (
+		<Form {...form}>
+			<form className="space-y-8">
+				<FormField
+					control={form.control}
+					name="code"
+					render={({ field }) => (
+						<FormItem className="space-y-6">
+							<FormLabel>Код за потвърждение</FormLabel>
+							<FormControl>
+								<div className="flex justify-center">
+									<InputOTP
+										maxLength={VOTE_VERIFICATION_CODE_LENGTH}
+										value={field.value}
+										onChange={field.onChange}
+										onBlur={field.onBlur}
+										name={field.name}
+									>
+										<InputOTPGroup>
+											{Array.from({ length: Math.ceil(VOTE_VERIFICATION_CODE_LENGTH / 2) }).map(
+												(_, i) => (
+													<InputOTPSlot key={i} index={i} />
+												)
+											)}
+										</InputOTPGroup>
+										<InputOTPGroup>
+											{Array.from({ length: Math.floor(VOTE_VERIFICATION_CODE_LENGTH / 2) }).map(
+												(_, i) => (
+													<InputOTPSlot
+														key={i + Math.ceil(VOTE_VERIFICATION_CODE_LENGTH / 2)}
+														index={i + Math.ceil(VOTE_VERIFICATION_CODE_LENGTH / 2)}
+													/>
+												)
+											)}
+										</InputOTPGroup>
+									</InputOTP>
+								</div>
+							</FormControl>
+							<FormDescription className="text-center">
+								Въведете {VOTE_VERIFICATION_CODE_LENGTH}-цифрения код, който получихте на имейла си.
+							</FormDescription>
+							<FormMessage className="text-center" />
+						</FormItem>
+					)}
+				/>
+				<Button type="submit" className="w-full" disabled={!isComplete}>
+					Потвърди код
+				</Button>
+			</form>
+		</Form>
+	);
+}
+
+function SuccessStep() {
+	return (
+		<div className="flex flex-col items-center gap-8 py-6">
+			<div className="bg-primary flex h-16 w-16 items-center justify-center rounded-full">
+				<Check className="text-primary-foreground size-8" />
+			</div>
+			<div className="space-y-4 text-center">
+				<div>
+					<p className="text-xl font-medium">Успешно потвърдихте своя глас!</p>
+					<p className="text-muted-foreground mt-2">
+						Вашият глас е записан и ще бъде отчетен при крайното класиране.
+					</p>
+				</div>
+				<p className="text-muted-foreground text-sm">
+					До края на гласуването можете да добавяте или премахвате проекти от своя глас. Използвайте бутона
+					„Промени глас“, за да запазите промените си.
+				</p>
+			</div>
+			<SheetClose asChild>
+				<DialogClose asChild>
+					<Button asChild className="w-full" size="lg">
+						<Link href="/projects">Разгледай още проекти</Link>
+					</Button>
+				</DialogClose>
+			</SheetClose>
+		</div>
+	);
+}
+
+function RegisterVoterButton({ ...props }: React.ComponentPropsWithoutRef<typeof Button>) {
+	const trpc = useTRPC();
+	const { data: currentVoter } = useSuspenseQuery(trpc.voting.getCurrentVoter.queryOptions());
+	const [wasVerificationEmailSent, setWasVerificationEmailSent] = useState(false);
 	const votedProjects = useVotedProjects();
 	const selectedCount = votedProjects.length;
 
+	const step = !currentVoter
+		? ('register' as const)
+		: !wasVerificationEmailSent
+			? ('send-verification-email' as const)
+			: !currentVoter.isVerified
+				? ('enter-verification-code' as const)
+				: ('success' as const);
+
 	return (
-		<Button className="w-full" size="lg" disabled={selectedCount === 0} {...props}>
-			{selectedCount === 0
-				? 'Изберете поне един проект'
-				: `Гласувайте за ${selectedCount} ${selectedCount === 1 ? 'проект' : 'проекта'}`}
-		</Button>
+		<Dialog>
+			<DialogTrigger asChild>
+				<Button className="w-full" size="lg" disabled={selectedCount === 0} {...props}>
+					{selectedCount === 0
+						? 'Изберете поне един проект'
+						: `Гласувайте за ${selectedCount} ${selectedCount === 1 ? 'проект' : 'проекта'}`}
+				</Button>
+			</DialogTrigger>
+			<DialogContent>
+				<DialogHeader>
+					{step === 'register' ? (
+						<>
+							<DialogTitle>Потвърждение на имейл</DialogTitle>
+							<DialogDescription>
+								За да гласувате, е необходимо да потвърдите вашия имейл адрес.
+							</DialogDescription>
+						</>
+					) : step === 'send-verification-email' ? (
+						<>
+							<DialogTitle>Потвърждение на имейл</DialogTitle>
+							<DialogDescription>
+								Моля, въведете вашия имейл адрес, за да можете да гласувате.
+							</DialogDescription>
+						</>
+					) : step === 'enter-verification-code' ? (
+						<>
+							<DialogTitle>Въведете кода за потвърждение</DialogTitle>
+							<DialogDescription>
+								Моля, въведете кода за потвърждение, който ви е изпратен на имейла ви.
+							</DialogDescription>
+						</>
+					) : (
+						<>
+							<DialogTitle>Успешно потвърждение</DialogTitle>
+							<DialogDescription>Вашият глас е успешно потвърден и записан.</DialogDescription>
+						</>
+					)}
+				</DialogHeader>
+
+				{step === 'register' && <RegisterVoterStep />}
+				{step === 'send-verification-email' && <SendVerificationEmailStep />}
+				{step === 'enter-verification-code' && <EnterVerificationCodeStep />}
+				{step === 'success' && <SuccessStep />}
+			</DialogContent>
+		</Dialog>
 	);
 }
 
@@ -227,7 +538,7 @@ function SaveVotesButton(props: React.ComponentProps<typeof Button>) {
 
 	return (
 		<Button className="w-full" size="lg" disabled={selectedCount === 0} {...props}>
-			Запазете промените
+			Промени глас
 		</Button>
 	);
 }

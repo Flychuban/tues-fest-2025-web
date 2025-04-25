@@ -10,9 +10,9 @@ import { initTRPC, TRPCError } from '@trpc/server';
 import superjson from 'superjson';
 import { ZodError } from 'zod';
 
+import { TFFeature } from '@/lib/growthbook/features';
 import { growthbook } from '@/lib/growthbook/server';
-
-// import { db } from "@/server/db";
+import { db } from '@/server/db';
 
 /**
  * 1. CONTEXT
@@ -28,7 +28,7 @@ import { growthbook } from '@/lib/growthbook/server';
  */
 export const createTRPCContext = async (opts: { headers: Headers }) => {
 	return {
-		// db,
+		db,
 		...opts,
 	};
 };
@@ -101,9 +101,23 @@ const rateLimitMiddleware = t.middleware(async ({ next }) => {
 	return next();
 });
 
-const voterMiddleware = t.middleware(async ({ next }) => {
-	return next();
-});
+export const growthbookFeatureMiddleware = (feature: TFFeature, disabledMessage: string) =>
+	t.middleware(async ({ ctx, next }) => {
+		const gb = await growthbook();
+		if (gb.isOff(feature)) {
+			throw new TRPCError({
+				code: 'FORBIDDEN',
+				message: disabledMessage,
+			});
+		}
+
+		return next({
+			ctx: {
+				...ctx,
+				gb,
+			},
+		});
+	});
 
 /**
  * Public (unauthenticated) procedure
@@ -113,21 +127,3 @@ const voterMiddleware = t.middleware(async ({ next }) => {
  * are logged in.
  */
 export const publicProcedure = t.procedure.use(timingMiddleware).use(rateLimitMiddleware);
-
-export const publicVotingProcedure = publicProcedure.use(async ({ next, ctx }) => {
-	const gb = await growthbook();
-
-	if (gb.isOff('project-voting')) {
-		throw new TRPCError({
-			code: 'FORBIDDEN',
-			message: 'Гласуването за проекти не е позволено по това време',
-		});
-	}
-
-	return next({
-		ctx: {
-			...ctx,
-			gb,
-		},
-	});
-});

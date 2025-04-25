@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { QueryClientProvider, type QueryClient } from '@tanstack/react-query';
-import { createTRPCClient, httpBatchStreamLink, loggerLink } from '@trpc/client';
+import { createTRPCClient, httpBatchLink, httpBatchStreamLink, loggerLink, splitLink } from '@trpc/client';
 import { type inferRouterInputs, type inferRouterOutputs } from '@trpc/server';
 import { createTRPCContext } from '@trpc/tanstack-react-query';
 import SuperJSON from 'superjson';
@@ -50,14 +50,28 @@ export function TRPCReactProvider(props: { children: React.ReactNode }) {
 						process.env.NODE_ENV === 'development' ||
 						(op.direction === 'down' && op.result instanceof Error),
 				}),
-				httpBatchStreamLink({
-					transformer: SuperJSON,
-					url: getBaseUrl() + '/t',
-					headers: () => {
-						const headers = new Headers();
-						headers.set('x-trpc-source', 'nextjs-react');
-						return headers;
-					},
+				splitLink({
+					// HACK: This is a workaround to prevent the registerVoter mutation from being streamed
+					// because it sets the cookie, but headers cannot be set on the stream.
+					condition: (op) => !op.context.disableStreaming,
+					true: httpBatchStreamLink({
+						transformer: SuperJSON,
+						url: getBaseUrl() + '/t',
+						headers: () => {
+							const headers = new Headers();
+							headers.set('x-trpc-source', 'nextjs-react');
+							return headers;
+						},
+					}),
+					false: httpBatchLink({
+						transformer: SuperJSON,
+						url: getBaseUrl() + '/t',
+						headers: () => {
+							const headers = new Headers();
+							headers.set('x-trpc-source', 'nextjs-react');
+							return headers;
+						},
+					}),
 				}),
 			],
 		})
