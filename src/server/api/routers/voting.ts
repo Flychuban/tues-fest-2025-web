@@ -6,6 +6,8 @@ import { TRPCError } from '@trpc/server';
 import { and, eq, not } from 'drizzle-orm';
 import { Duration } from 'effect';
 import { env } from 'env.mjs';
+import invariant from 'tiny-invariant';
+import { isEmail, normalizeEmail } from 'validator';
 import { z } from 'zod';
 
 import { getProjects } from '@/app/projects/actions';
@@ -18,7 +20,9 @@ import {
 	VOTE_VERIFICATION_EMAIL_COOLDOWN_DURATION,
 } from '@/constants/voting';
 import { voters, votes } from '@/server/db/schema';
-import { Mailer } from '@/server/mail';
+import { Mailer } from '@/server/email';
+import { renderEmail } from '@/server/email/render';
+import VerificationCodeEmail from '@/server/email/templates/verification-code-email';
 import { createTRPCRouter, growthbookFeatureMiddleware, publicProcedure } from '../trpc';
 
 const COOKIE_PREFIX = env.NODE_ENV !== 'development' ? '__Secure-' : '_';
@@ -80,6 +84,13 @@ const protectedVotingProcedure = publicVotingProcedure.use(async ({ next, ctx })
 	});
 });
 
+const emailSchema = z
+	.string()
+	.trim()
+	.refine((val) => isEmail(val), {
+		message: 'Невалиден имейл адрес',
+	});
+
 export const votingRouter = createTRPCRouter({
 	getCurrentVoter: publicVotingProcedure.query(async ({ ctx }) => {
 		if (!ctx.voter) return null;
@@ -95,7 +106,7 @@ export const votingRouter = createTRPCRouter({
 		.input(
 			z.object({
 				name: z.string().trim(),
-				email: z.string().email().trim(),
+				email: emailSchema,
 			})
 		)
 		.mutation(async ({ ctx, input }) => {
@@ -110,8 +121,11 @@ export const votingRouter = createTRPCRouter({
 				// If however, this email was already verified or banned, we need to silently refuse them to register again.
 				// This is to prevent a malicious user from registering a lot of emails and then verifying them in one go.
 				// We can't notify the user that this email is used to prevent brute force attacks, attempting to find out which emails have been used, as well as to give limited information to potential attackers.
+				const normalizedEmail = normalizeEmail(input.email);
+				invariant(normalizedEmail !== false, 'Could not normalize email address');
+
 				const existingVoter = await tx.query.voters.findFirst({
-					where: eq(voters.email, input.email),
+					where: eq(voters.normalizedEmail, normalizedEmail),
 					columns: {
 						verifiedAt: true,
 						isBanned: true,
@@ -124,7 +138,12 @@ export const votingRouter = createTRPCRouter({
 					],
 				});
 				const isSuspicious = isVerificationRequestSuspicious(existingVoter);
-				const verificationResult = sendNewVerificationCodeAfter(input.email, isSuspicious, ctx.mailer);
+				const verificationResult = sendNewVerificationCodeAfter(
+					input.email,
+					input.name,
+					isSuspicious,
+					ctx.mailer
+				);
 
 				if (!isSuspicious) {
 					// If this request is not suspicious, we will let this voter proceed. However, we need to invalidate any existing verification code to prevent the user from verifying again with a previously sent, but unused code.
@@ -140,6 +159,8 @@ export const votingRouter = createTRPCRouter({
 					.insert(voters)
 					.values({
 						name: input.name,
+						email: input.email,
+						normalizedEmail,
 						isBanned: existingVoter?.isBanned ?? false,
 						...verificationResult,
 					})
@@ -164,7 +185,7 @@ export const votingRouter = createTRPCRouter({
 		}),
 
 	resendVerificationCode: protectedVotingProcedure
-		.input(z.object({ email: z.string().email().optional() }))
+		.input(z.object({ email: emailSchema.optional() }))
 		.mutation(async ({ ctx, input }) => {
 			if (ctx.voter.verifiedAt !== null) {
 				throw new TRPCError({ code: 'BAD_REQUEST', message: 'Вече сте потвърдили Вашия имейл' });
@@ -173,14 +194,24 @@ export const votingRouter = createTRPCRouter({
 			const isSuspicious = isVerificationRequestSuspicious(ctx.voter);
 			const verificationResult = sendNewVerificationCodeAfter(
 				input.email ?? ctx.voter.email,
+				ctx.voter.name,
 				isSuspicious,
 				ctx.mailer
 			);
+
+			let normalizedEmail = ctx.voter.normalizedEmail;
+			if (input.email) {
+				const newNormalizedEmail = normalizeEmail(input.email);
+				invariant(newNormalizedEmail !== false, 'Could not normalize email address');
+				normalizedEmail = newNormalizedEmail;
+			}
 
 			await ctx.db
 				.update(voters)
 				.set({
 					...verificationResult,
+					email: input.email ?? ctx.voter.email,
+					normalizedEmail,
 				})
 				.where(eq(voters.id, ctx.voter.id));
 
@@ -269,21 +300,32 @@ function isVerificationRequestSuspicious(
 	return isSuspicious;
 }
 
-function sendNewVerificationCodeAfter(email: string, isSuspicious: boolean, mailer: Mailer) {
+function sendNewVerificationCodeAfter(email: string, name: string, isSuspicious: boolean, mailer: Mailer) {
 	const realGeneratedCode = generateVerificationCode();
 
 	if (!isSuspicious) {
 		after(async () => {
+			const { html, text } = await renderEmail(VerificationCodeEmail, {
+				email,
+				name,
+				verificationCode: realGeneratedCode,
+				verificationCodeExpiresAt: new Date(
+					Date.now() + Duration.toMillis(VOTE_VERIFICATION_CODE_EXPIRATION_DURATION)
+				),
+				verificationCodeExpiryMinutes: Duration.toMinutes(VOTE_VERIFICATION_CODE_EXPIRATION_DURATION),
+			});
+
 			await mailer.sendMail({
 				from: env.EMAIL_SMTP_FROM,
 				to: email,
 				subject: `[${TF_TITLE}] Вашият код за потвърждение: ${realGeneratedCode}`,
+				html,
+				text,
 			});
 		});
 	}
 
 	return {
-		email,
 		verificationCode: isSuspicious ? impossibleCode : realGeneratedCode,
 		verificationEmailSentAt: isSuspicious
 			? new Date(Date.now() + Duration.toMillis(VOTE_VERIFICATION_EMAIL_COOLDOWN_DURATION) / 2)

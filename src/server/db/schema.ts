@@ -28,6 +28,7 @@ export const voters = createTable(
 
 		name: d.varchar({ length: 256 }).notNull(),
 		email: d.varchar({ length: 256 }).notNull(),
+		normalizedEmail: d.varchar({ length: 256 }).notNull(),
 
 		verificationCode: d.char({ length: VOTE_VERIFICATION_CODE_LENGTH }).notNull(),
 		verificationCodeExpiresAt: d.timestamp({ withTimezone: true }).notNull(),
@@ -42,7 +43,12 @@ export const voters = createTable(
 			.notNull(),
 		updatedAt: d.timestamp({ withTimezone: true }).$onUpdate(() => new Date()),
 	}),
-	(t) => [index('name_idx').on(t.name), index('public_id_idx').on(t.publicId), index('email_idx').on(t.email)]
+	(t) => [
+		index('name_idx').on(t.name),
+		index('public_id_idx').on(t.publicId),
+		index('email_idx').on(t.email),
+		index('normalized_email_idx').on(t.normalizedEmail),
+	]
 );
 
 export const voterRelations = relations(voters, ({ many }) => ({

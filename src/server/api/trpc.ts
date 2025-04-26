@@ -13,7 +13,7 @@ import { ZodError } from 'zod';
 import { TFFeature } from '@/lib/growthbook/features';
 import { growthbook } from '@/lib/growthbook/server';
 import { db } from '@/server/db';
-import { mailer } from '../mail';
+import { mailer } from '@/server/email';
 
 /**
  * 1. CONTEXT

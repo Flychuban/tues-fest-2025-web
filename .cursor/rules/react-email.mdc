@@ -1,0 +1,996 @@
+---
+description: 
+globs: src/server/email/**/*
+alwaysApply: false
+---
+# React Email Usage Guide for TUES Fest 2025
+
+This rule provides a comprehensive, practical summary for creating effective, on-brand emails using React Email in this project. It covers best practices, color usage, and project-specific conventions. **Email templates are placed in `src/server/email/templates`.**
+
+---
+
+## 1. Project Setup
+- The project is already configured for React Email. No installation is required.
+- Email templates must be placed in `src/server/email/templates`.
+- Use the `renderEmail` function from `@/server/email/render` to render emails. This function is async and returns both HTML and plaintext versions.
+
+---
+
+## 2. Writing Email Templates
+- Use React Email components (e.g., `<Html>`, `<Head>`, `<Preview>`, `<Section>`, `<Row>`, `<Column>`, `<Text>`, `<Button>`, etc.).
+- **Do NOT use React DOM components or project UI components.** Only use React Email's email-safe components.
+- Compose layouts using `<Section>`, `<Row>`, and `<Column>` for maximum compatibility (these generate table-based layouts).
+- All styles must be **inline** (e.g., `style={{ color: '#e11d48' }}`), as most email clients do not support external or embedded CSS.
+- **Font families from the design system are NOT available in emails.** Use web-safe fonts (e.g., Arial, Helvetica, sans-serif) as fallbacks.
+- **Always use the polite singular form "вие" (with lowercase "в") in Bulgarian emails.**
+- **All emails must be written in well-formed, grammatically correct Bulgarian, following the official language rules.**
+- **Personalize emails with a `name` prop for the recipient.**
+- **For verification codes or similar, always take a prop for the code expiry duration in minutes and display it dynamically.**
+
+---
+
+## 3. Color Usage
+Use the following hex codes for all colors in emails. Do not use CSS variables or named colors.
+
+| Purpose                | Color (Hex)   | Usage Example                        |
+|---|---|-----|
+| Primary Action         | #e11d48       | Button, CTA, highlights              |
+| Accent/Secondary       | #6366f1       | Button, links, secondary highlights  |
+| Background (Dark)      | #020817       | Section backgrounds                  |
+| Card Background        | #232c3d       | Glassmorphism card backgrounds       |
+| Text (on dark bg)      | #f8fafc       | Main text, code text                 |
+| Muted Text             | #94a3b8       | Footers, disclaimers                 |
+| Border/Divider         | #334155       | Section dividers, card borders       |
+| Secondary Background   | #1e293b       | Card backgrounds, subtle areas       |
+
+**Always use hex codes in inline styles.**
+
+You can use the image `https://tuesfest.bg/logo/motto.png` to show a logo in the footer or header. **For TUES Fest, the motto logo should be placed outside the main card, above or below it, and should not be stretched. Use the original size (294x122 px for half-size, or 588x245 px for full-size).**
+
+---
+
+## 4. Best Practices
+- **No JavaScript or interactivity**: Email clients do not support JS.
+- **Keep layouts simple**: Avoid complex CSS, use table-based layouts.
+- **Test in multiple clients**: Always preview emails in Gmail, Outlook, Apple Mail, and mobile clients.
+- **Use `<Preview>`**: Set preview text for better inbox appearance.
+- **Images**: Use absolute URLs, always set `alt` text, and host images on a reliable CDN.
+- **Accessibility**: Use semantic HTML, descriptive `alt` attributes, and ensure sufficient color contrast.
+- **Responsiveness**: Use simple, percentage-based widths. Avoid advanced media queries.
+- **For verification or voting emails:**
+  - Start with a greeting using the recipient's name.
+  - Clearly state the context (e.g., voting for the public's choice award at TUES Fest).
+  - Display the code in a prominent, centered, glassmorphism-styled card (use #232c3d, rounded corners, subtle border, and blur effect).
+  - The code should be styled in white (#f8fafc) and large font, not red.
+  - Mention the code expiry dynamically using a prop.
+  - Add a friendly closing from the TUES Fest organizers.
+  - In the footer, mention the recipient's email and why they received the message, with instructions to ignore if not recognized.
+
+---
+
+## 5. Rendering and Sending Emails
+- Use the `renderEmail` function from `@/server/email/render` to render your email template.
+- `renderEmail` is **async** and returns an object with both `html` and `text` (plaintext) versions.
+- Example usage:
+
+```js
+import { renderEmail } from '@/server/email/render';
+import MyEmailTemplate from './templates/MyEmailTemplate';
+
+const { html, text } = await renderEmail(<MyEmailTemplate someProp={value} />);
+// Send `html` and `text` with your email provider
+```
+
+- Integrate with your chosen email provider (e.g., Nodemailer, SendGrid, SES) using the rendered HTML and plaintext.
+
+---
+
+## 6. References
+- [React Email Introduction](mdc:https:/react.email/docs/introduction.md)
+- [React Email Components](mdc:https:/react.email/components)
+- [Render Utility](mdc:https:/react.email/docs/utilities/render.md)
+- [Integration Guides](mdc:https:/react.email/docs/integrations/overview.md)
+- [Templates Gallery](mdc:https:/demo.react.email/preview/notifications/vercel-invite-user)
+
+---
+
+## 7. Usage Examples
+
+See the latest templates in [src/server/email/templates](mdc:src/server/email/templates) for up-to-date, project-specific examples, including dynamic expiry, glassmorphism card, and Bulgarian language usage.
+
+```tsx
+import { Section, Row, Text, Column, Link, Img } from "@react-email/components";
+
+<Section className="my-[16px]">
+  <Section className="mt-[42px]">
+    <Row>
+      <Text className="m-0 text-[16px] font-semibold leading-[24px] text-indigo-600">
+        Our products
+      </Text>
+      <Text className="m-0 mt-[8px] text-[24px] font-semibold leading-[32px] text-gray-900">
+        Elegant Style
+      </Text>
+      <Text className="mt-[8px] text-[16px] leading-[24px] text-gray-500">
+        We spent two years in development to bring you the next generation of
+        our award-winning home brew grinder. From the finest pour-overs to the
+        coarsest cold brews, your coffee will never be the same again.
+      </Text>
+    </Row>
+  </Section>
+  <Section className="mt-[16px]">
+    <Row className="mt-[16px]">
+      <Column className="w-[50%] pr-[8px]">
+        <Link href="#">
+          <Img
+            alt="Stagg Electric Kettle"
+            className="w-full rounded-[12px] object-cover"
+            height={288}
+            src="https://react.email/static/stagg-eletric-kettle.jpg"
+          />
+        </Link>
+      </Column>
+      <Column className="w-[50%] pl-[8px]">
+        <Link href="#">
+          <Img
+            alt="Ode Grinder"
+            className="w-full rounded-[12px] object-cover"
+            height={288}
+            src="https://react.email/static/ode-grinder.jpg"
+          />
+        </Link>
+      </Column>
+    </Row>
+    <Row className="mt-[16px]">
+      <Column className="w-[50%] pr-[8px]">
+        <Link href="#">
+          <Img
+            alt="Atmos Vacuum Canister"
+            className="w-full rounded-[12px] object-cover"
+            height={288}
+            src="https://react.email/static/atmos-vacuum-canister.jpg"
+          />
+        </Link>
+      </Column>
+      <Column className="w-[50%] pl-[8px]">
+        <Link href="#">
+          <Img
+            alt="Clyde Electric Kettle"
+            className="w-full rounded-[12px] object-cover"
+            height={288}
+            src="https://react.email/static/clyde-electric-kettle.jpg"
+          />
+        </Link>
+      </Column>
+    </Row>
+  </Section>
+</Section>
+```
+
+```tsx
+import { Section, Row, Text, Link, Img, Column } from "@react-email/components";
+
+<Section className="my-[16px]">
+  <Section>
+    <Row>
+      <Text className="m-0 text-[16px] font-semibold leading-[24px] text-indigo-600">
+        Drinkware
+      </Text>
+      <Text className="m-0 mt-[8px] text-[24px] font-semibold leading-[32px] text-gray-900">
+        Ceramic Mugs
+      </Text>
+      <Text className="mt-[8px] text-[16px] leading-[24px] text-gray-500">
+        Picasso your pour with a sleek ceramic cup designed for beautiful
+        espresso drinks. Engineered for the outdoors and designed to enhance
+        the taste of your libation of choice.
+      </Text>
+    </Row>
+  </Section>
+  <Section className="mt-[16px]">
+    <Link href="#">
+      <Img
+        alt="Mugs Collection"
+        className="rounded-[12px] object-cover"
+        height={288}
+        src="https://react.email/static/mugs-collection.jpg"
+        width="100%"
+      />
+    </Link>
+    <Row className="mt-[16px]">
+      <Column className="w-1/2 pr-[8px]">
+        <Link href="#">
+          <Img
+            alt="Monty Art Cup - 1"
+            className="rounded-[12px] object-cover"
+            height={288}
+            src="https://react.email/static/monty-art-cup-1.jpg"
+            width="100%"
+          />
+        </Link>
+      </Column>
+      <Column className="w-1/2 pl-[8px]">
+        <Link href="#">
+          <Img
+            alt="Monty Art Cup - 2"
+            className="rounded-[12px] object-cover"
+            height={288}
+            src="https://react.email/static/monty-art-cup-2.jpg"
+            width="100%"
+          />
+        </Link>
+      </Column>
+    </Row>
+  </Section>
+</Section>
+```
+
+2. Ecommerce
+
+```tsx
+import { Section, Img, Text, Heading, Button } from "@react-email/components";
+
+<Section className="my-[16px]">
+  <Img
+    alt="Braun Collection"
+    className="w-full rounded-[12px] object-cover"
+    height={320}
+    src="https://react.email/static/braun-collection.jpg"
+  />
+  <Section className="mt-[32px] text-center">
+    <Text className="mt-[16px] text-[18px] font-semibold leading-[28px] text-indigo-600">
+      Classic Watches
+    </Text>
+    <Heading
+      as="h1"
+      className="text-[36px] font-semibold leading-[40px] tracking-[0.4px] text-gray-900"
+    >
+      Elegant Comfort
+    </Heading>
+    <Text className="mt-[8px] text-[16px] leading-[24px] text-gray-500">
+      Dieter Rams' work has an outstanding quality which distinguishes it from
+      the vast majority of industrial design of the entire 20th Century.
+    </Text>
+    <Text className="text-[16px] font-semibold leading-[24px] text-gray-900">
+      $210.00
+    </Text>
+    <Button
+      className="mt-[16px] rounded-[8px] bg-indigo-600 px-[24px] py-[12px] font-semibold text-white"
+      href="https://react.email"
+    >
+      Buy now
+    </Button>
+  </Section>
+</Section>
+```
+
+3. Articles
+
+```tsx
+import { Section, Row, Text, Column, Img } from "@react-email/components";
+
+<Section className="my-[16px]">
+  <Row>
+    <Text className="m-0 text-[20px] font-semibold leading-[28px] text-gray-900">
+      Elevate Outdoor Living
+    </Text>
+    <Text className="mt-[8px] text-[16px] leading-[24px] text-gray-500">
+      Take your outdoor space to new heights with our premium outdoor
+      furniture, designed to elevate your alfresco experience.
+    </Text>
+  </Row>
+  <Row className="mt-[16px]">
+    <Column
+      className="box-border w-[50%] pr-[8px] align-baseline"
+      colSpan={1}
+    >
+      <Img
+        alt="A picture of a pink background with varios items laid out. Shoes, lipstick, sunglasses, some leafs and part of a purse."
+        className="w-full rounded-[8px] object-cover"
+        height="180"
+        src="https://react.email/static/outdoor-living.jpg"
+      />
+      <Text className="text-[16px] font-semibold leading-[24px] text-indigo-600">
+        What's new
+      </Text>
+      <Text className="m-0 text-[20px] font-semibold leading-[28px] text-gray-900">
+        Multifunctional Marvels
+      </Text>
+      <Text className="mb-0 mt-[8px] text-[16px] leading-[24px] text-gray-500">
+        Discover the innovative world of multifunctional furniture, where
+        style meets practicality, offering creative solutions for maximizing
+        space and enhancing functionality in your home
+      </Text>
+    </Column>
+    <Column
+      className="box-border w-[50%] pl-[8px] align-baseline"
+      colSpan={1}
+    >
+      <Img
+        alt="A picture of a pink background with varios items laid out. Shoes, lipstick, sunglasses, some leafs and part of a purse."
+        className="w-full rounded-[8px] object-cover"
+        height="180"
+        src="https://react.email/static/outdoor-living.jpg"
+      />
+      <Text className="text-[16px] font-semibold leading-[24px] text-indigo-600">
+        What's new
+      </Text>
+      <Text className="m-0 text-[20px] font-semibold leading-[28px] text-gray-900">
+        Timeless Classics
+      </Text>
+      <Text className="mb-0 mt-[8px] text-[16px] leading-[24px] text-gray-500">
+        Step into the world of timeless classics as we explore iconic
+        furniture pieces that have stood the test of time, adding enduring
+        elegance and sophistication to any interior
+      </Text>
+    </Column>
+  </Row>
+</Section>
+```
+
+4. Buttons
+
+```tsx
+import { Row, Column, Button } from "@react-email/components";
+
+<Row>
+  <Column align="center">
+    <Row>
+      <td align="center" className="w-1/2 pr-[16px]" colSpan={1}>
+        <Button
+          className="box-border w-full rounded-[8px] bg-indigo-600 px-[20px] py-[12px] text-center font-semibold text-white"
+          href="https://react.email"
+        >
+          Login
+        </Button>
+      </td>
+      <td align="center" className="w-1/2 pl-[16px]" colSpan={1}>
+        <Button
+          className="box-border w-full rounded-[8px] border border-solid border-gray-200 bg-white px-[20px] py-[12px] text-center font-semibold text-gray-900"
+          href="https://react.email"
+        >
+          Sign up
+        </Button>
+      </td>
+    </Row>
+  </Column>
+</Row>
+```
+
+5. Footer with two columns
+
+```tsx
+import { Section, Row, Column, Img, Text, Link } from "@react-email/components";
+
+<Section>
+  <Row>
+    <Column colSpan={4}>
+      <Img
+        alt="React Email logo"
+        height="42"
+        src="https://react.email/static/logo-without-background.png"
+      />
+      <Text className="my-[8px] text-[16px] font-semibold leading-[24px] text-gray-900">
+        Acme corporation
+      </Text>
+      <Text className="mb-[0px] mt-[4px] text-[16px] leading-[24px] text-gray-500">
+        Think different
+      </Text>
+    </Column>
+    <Column align="left" className="table-cell align-bottom">
+      <Row className="table-cell h-[44px] w-[56px] align-bottom">
+        <Column className="pr-[8px]">
+          <Link href="#">
+            <Img
+              alt="Facebook"
+              height="36"
+              src="https://react.email/static/facebook-logo.png"
+              width="36"
+            />
+          </Link>
+        </Column>
+        <Column className="pr-[8px]">
+          <Link href="#">
+            <Img alt="X" height="36" src="https://react.email/static/x-logo.png" width="36" />
+          </Link>
+        </Column>
+        <Column>
+          <Link href="#">
+            <Img
+              alt="Instagram"
+              height="36"
+              src="https://react.email/static/instagram-logo.png"
+              width="36"
+            />
+          </Link>
+        </Column>
+      </Row>
+      <Row>
+        <Text className="my-[8px] text-[16px] font-semibold leading-[24px] text-gray-500">
+          123 Main Street Anytown, CA 12345
+        </Text>
+        <Text className="mb-[0px] mt-[4px] text-[16px] font-semibold leading-[24px] text-gray-500">
+          mail@example.com +123456789
+        </Text>
+      </Row>
+    </Column>
+  </Row>
+</Section>
+```
+
+6. Divider
+
+```tsx
+import { Text, Hr } from "@react-email/components";
+
+<>
+  <Text>Before divider</Text>
+  <Hr className="my-[16px] border-t-2 border-gray-300" />
+  <Text>After divider</Text>
+</>
+```
+
+```tsx
+import { Row, Column, Hr } from "@react-email/components";
+
+<>
+  <Row>
+    <Column>First column</Column>
+    <Column>Second column</Column>
+  </Row>
+  <Hr className="my-[16px] border-gray-300" />
+  <Row>
+    <Column>First column</Column>
+    <Column>Second column</Column>
+  </Row>
+</>
+```
+
+7. Features
+
+```tsx
+import { Section, Row, Text, Hr, Column, Img } from "@react-email/components";
+
+<Section className="my-[16px]">
+  <Section>
+    <Row>
+      <Text className="m-0 text-[24px] font-semibold leading-[32px] text-gray-900">
+        Functional Style
+      </Text>
+      <Text className="mt-[8px] text-[16px] leading-[24px] text-gray-500">
+        Combine practicality and style effortlessly with our furniture,
+        offering functional designs that enhance your living space.
+      </Text>
+    </Row>
+  </Section>
+  <Section>
+    <Hr className="mx-0 my-[32px] w-full border border-solid !border-gray-300" />
+    <Section>
+      <Row>
+        <Column className="align-baseline">
+          <Img
+            alt="heart icon"
+            height="48"
+            src="https://react.email/static/heart-icon.png"
+            width="48"
+          />
+        </Column>
+        <Column className="w-[85%]">
+          <Text className="m-0 text-[20px] font-semibold leading-[28px] text-gray-900">
+            Versatile Comfort
+          </Text>
+          <Text className="m-0 mt-[8px] text-[16px] leading-[24px] text-gray-500">
+            Experience ultimate comfort and versatility with our furniture
+            collection, designed to adapt to your ever-changing needs.
+          </Text>
+        </Column>
+      </Row>
+    </Section>
+    <Hr className="mx-0 my-[32px] w-full border border-solid !border-gray-300" />
+    <Section>
+      <Row>
+        <Column className="align-baseline">
+          <Img
+            alt="rocket icon"
+            height="48"
+            src="https://react.email/static/rocket-icon.png"
+            width="48"
+          />
+        </Column>
+        <Column className="w-[85%]">
+          <Text className="m-0 text-[20px] font-semibold leading-[28px] text-gray-900">
+            Luxurious Retreat
+          </Text>
+          <Text className="m-0 mt-[8px] text-[16px] leading-[24px] text-gray-500">
+            Transform your space into a haven of relaxation with our indulgent
+            furniture collection.
+          </Text>
+        </Column>
+      </Row>
+    </Section>
+    <Hr className="mx-0 my-[32px] w-full border border-solid !border-gray-300" />
+  </Section>
+</Section>
+```
+
+8. Grid
+
+```tsx
+import { Row, Column } from "@react-email/components";
+
+<Row>
+  <Column align="center" className="h-[40px] w-1/3 bg-orange-400/60">
+    1/3
+  </Column>
+  <Column align="center" className="h-[40px] w-1/3 bg-emerald-400/60">
+    1/3
+  </Column>
+  <Column align="center" className="h-[40px] w-1/3 bg-cyan-400/60">
+    1/3
+  </Column>
+</Row>
+```
+
+```tsx
+import { Row, Column } from "@react-email/components";
+
+<>
+  <Row cellSpacing={8}>
+    <Column align="center" className="h-[40px] w-1/2 bg-emerald-400/60">
+      1/2
+    </Column>
+    <Column align="center" className="h-[40px] w-1/2 bg-cyan-400/60">
+      1/2
+    </Column>
+  </Row>
+  <Row>
+    <Column align="center" className="h-[40px] w-1/3 bg-pink-400/60">
+      1/3
+    </Column>
+    <Column align="center" className="h-[40px] w-2/3 bg-purple-400/60">
+      2/3
+    </Column>
+  </Row>
+</>
+```
+
+9. Multiple Headings
+
+```tsx
+import { Heading } from "@react-email/components";
+
+<>
+  <Heading as="h1" className="text-center">
+    Jordan Walke
+  </Heading>
+  <Heading as="h2" className="text-center">
+    Andrew Clark
+  </Heading>
+  <Heading as="h3" className="text-center">
+    Dan Abramov
+  </Heading>
+  <Heading as="h4" className="text-center">
+    Jason Bonta
+  </Heading>
+  <Heading as="h5" className="text-center">
+    Joe Savona
+  </Heading>
+  <Heading as="h6" className="text-center">
+    Josh Story
+  </Heading>
+</>
+```
+
+10. Image
+
+```tsx
+import { Img } from "@react-email/components";
+
+<>
+  <Img
+    alt="Atoms Vacuum Canister"
+    className="rounded-[12px] [margin:12px_auto_12px]"
+    height={150}
+    src="https://react.email/static/atmos-vacuum-canister.jpg"
+  />
+  <Img
+    alt="Atoms Vacuum Canister"
+    className="rounded-[12px] [margin:12px_auto_12px]"
+    height={200}
+    src="https://react.email/static/atmos-vacuum-canister.jpg"
+  />
+  <Img
+    alt="Atoms Vacuum Canister"
+    className="rounded-[12px] [margin:12px_auto_12px]"
+    height={250}
+    src="https://react.email/static/atmos-vacuum-canister.jpg"
+  />
+</>
+```
+
+11. Markdown
+
+```tsx
+import { Markdown } from "@react-email/components";
+
+<Markdown
+  markdownCustomStyles={{
+    h1: { color: 'red' },
+    h2: { color: 'blue' },
+    codeInline: { background: 'grey' },
+  }}
+>
+  {`## Hello, this is my email template
+
+This is meant to be rendered as a paragraph. There is no way around it.
+
+### Another heading that I wrote
+      `}
+</Markdown>
+```
+
+12. Marketing - Bento Grid
+
+```tsx
+import { Html, Head, Preview, Body, Container, Section, Row, Column, Heading, Text, Link, Img } from "@react-email/components";
+
+<Html>
+  <Head />
+  <Preview>Coffee Storage</Preview>
+  <Body>
+    <Container className="bg-white rounded-[8px] mx-auto max-w-[900px] overflow-hidden p-0">
+      <Section>
+        <Row className="bg-[rgb(41,37,36)] border-separate [border-spacing:24px] m-0 table-fixed w-full">
+          <Column className="pl-[12px]">
+            <Heading
+              as="h1"
+              className="text-white text-[28px] font-bold mb-[10px]"
+            >
+              Coffee Storage
+            </Heading>
+            <Text className="text-white/60 text-[14px] leading-[20px] m-0">
+              Keep your coffee fresher for longer with innovative technology.
+            </Text>
+            <Link
+              href="#"
+              className="text-white/80 block text-[14px] leading-[20px] font-semibold mt-[12px] no-underline"
+            >
+              Shop now →
+            </Link>
+          </Column>
+          <Column className="w-[42%] h-[250px]">
+            <Img
+              src="https://react.email/static/coffee-bean-storage.jpg"
+              alt="Coffee Bean Storage"
+              className="rounded-[4px] h-full -mr-[6px] object-cover object-center w-full"
+            />
+          </Column>
+        </Row>
+      </Section>
+      <Section className="mb-[24px]">
+        <Row className="border-separate [border-spacing:12px] table-fixed w-full">
+          {[
+            {
+              imageUrl: '/static/atmos-vacuum-canister.jpg',
+              altText: 'Auto-Sealing Vacuum Canister',
+              title: 'Auto-Sealing Vacuum Canister',
+              description:
+                'A container that automatically creates an airtight seal with a button press.',
+              linkUrl: '#',
+            },
+            {
+              imageUrl: '/static/vacuum-canister-clear-glass-bundle.jpg',
+              altText: '3-Pack Vacuum Containers',
+              title: '3-Pack Vacuum Containers',
+              description:
+                'Keep your coffee fresher for longer with this set of high-performance vacuum containers.',
+              linkUrl: '#',
+            },
+          ].map((product) => (
+            <Column key={product.title} className="mx-auto max-w-[180px]">
+              <Img
+                src={product.imageUrl}
+                alt={product.altText}
+                className="rounded-[4px] mb-[18px] w-full"
+              />
+              <div>
+                <Heading
+                  as="h2"
+                  className="text-[14px] leading-[20px] font-bold mb-[8px]"
+                >
+                  {product.title}
+                </Heading>
+                <Text className="text-gray-500 text-[12px] leading-[20px] m-0 pr-[12px]">
+                  {product.description}
+                </Text>
+              </div>
+            </Column>
+          ))}
+        </Row>
+      </Section>
+    </Container>
+  </Body>
+</Html>
+```
+
+13. Pricing - Two tiers with emphasized tier
+
+```tsx
+import { Html, Head, Preview, Body, Container, Section, Heading, Text, Button, Hr } from "@react-email/components";
+
+<Html>
+  <Head />
+  <Preview>Choose the right plan for you</Preview>
+  <Body>
+    <Container className="bg-white rounded-[8px] mx-auto max-w-[600px] p-[24px]">
+      <Section className="mb-[42px]">
+        <Heading className="text-[24px] leading-[32px] mb-[12px] text-center">
+          Choose the right plan for you
+        </Heading>
+        <Text className="text-gray-500 text-[14px] leading-[20px] mx-auto max-w-[500px] text-center">
+          Choose an affordable plan with top features to engage audiences,
+          build loyalty, and boost sales.
+        </Text>
+      </Section>
+      <Section className="flex items-start gap-[20px] justify-center pb-[24px]">
+        {[
+          {
+            title: 'Hobby',
+            price: 29,
+            highlighted: false,
+            description: 'The perfect plan for getting started.',
+            features: [
+              '25 products',
+              'Up to 10,000 subscribers',
+              'Advanced analytics',
+              '24-hour support response time',
+            ],
+            buttonText: 'Get started today',
+            buttonUrl: '#',
+          },
+          {
+            title: 'Enterprise',
+            price: 99,
+            highlighted: true,
+            description: 'Dedicated support and enterprise ready.',
+            features: [
+              'Unlimited products',
+              'Unlimited subscribers',
+              'Advanced analytics',
+              'Dedicated support representative',
+              'Marketing automations',
+              'Custom integrations',
+            ],
+            buttonText: 'Get started today',
+            buttonUrl: '#',
+          },
+        ].map((plan) => (
+          <Section
+            key={plan.title}
+            className={`${
+              plan.highlighted
+                ? 'bg-[rgb(16,24,40)] border-[rgb(16,24,40)] text-gray-300 mb-[12px]'
+                : 'bg-white border-gray-300 text-gray-600 mb-[24px]'
+            } rounded-[8px] border border-solid p-[24px] text-left w-full`}
+          >
+            <Text
+              className={`${
+                plan.highlighted
+                  ? 'text-[rgb(124,134,255)]'
+                  : 'text-[rgb(79,70,229)]'
+              } text-[14px] leading-[20px] font-semibold mb-[16px]`}
+            >
+              {plan.title}
+            </Text>
+            <Text className="text-[28px] font-bold mb-[8px] mt-0">
+              <span
+                className={`${
+                  plan.highlighted ? 'text-white' : 'text-[rgb(16,24,40)]'
+                }`}
+              >
+                ${plan.price}
+              </span>{' '}
+              <span className="text-[14px] leading-[20px]">/ month</span>
+            </Text>
+            <Text className="mt-[12px] mb-[24px]">{plan.description}</Text>
+            <ul className="text-[12px] leading-[20px] mb-[30px] pl-[14px]">
+              {plan.features.map((feature) => (
+                <li key={feature} className="mb-[8px]">
+                  {feature}
+                </li>
+              ))}
+            </ul>
+            <Button
+              href={plan.buttonUrl}
+              className="bg-indigo-600 rounded-[8px] box-border text-white inline-block font-semibold m-0 max-w-full p-[12px] text-center w-full"
+            >
+              {plan.buttonText}
+            </Button>
+          </Section>
+        ))}
+      </Section>
+      <Hr className="mt-0" />
+      <Text className="text-gray-500 text-[12px] leading-[16px] font-medium mt-[30px] text-center">
+        Customer Experience Research Team
+      </Text>
+    </Container>
+  </Body>
+</Html>
+```
+
+14. List with image on left
+
+```tsx
+import { Html, Head, Preview, Body, Container, Heading, Section, Row, Column, Img, Text, Link } from "@react-email/components";
+
+<Html>
+  <Head />
+  <Preview>How Our Service Works: 5 Simple Steps</Preview>
+  <Body className="bg-white">
+    <Container className="mx-auto max-w-[600px] rounded-[8px] bg-white px-[24px] pt-[24px] pb-0">
+      <Heading
+        as="h1"
+        className="mb-[42px] text-center text-[24px] leading-[32px]"
+      >
+        How Our Service Works: 5 Simple Steps
+      </Heading>
+      {[
+        {
+          number: 1,
+          imageUrl: '/static/stagg-eletric-kettle.jpg',
+          title: 'Start Your Search',
+          description:
+            'Search for the products you need or upload your list of requirements.',
+          learnMoreLink: '#',
+        },
+        {
+          number: 2,
+          imageUrl: '/static/atmos-vacuum-canister.jpg',
+          title: 'Compare & Save',
+          description:
+            'Compare prices and offers from different suppliers to find the best deals.',
+          learnMoreLink: '#',
+        },
+        {
+          number: 3,
+          imageUrl: '/static/bundle-collection.jpg',
+          title: 'Build Your Cart',
+          description:
+            'Select your desired items and add them to your shopping cart.',
+          learnMoreLink: '#',
+        },
+        {
+          number: 4,
+          imageUrl: '/static/clara-french-press.jpg',
+          title: 'Enjoy The Benefits',
+          description:
+            'Receive your products and enjoy the savings and convenience of our service.',
+          learnMoreLink: '#',
+        },
+      ].map((step) => (
+        <Section className="mb-[30px]">
+          <Row className="mb-[24px]">
+            <Column className="w-2/5 pr-[24px]">
+              <Img
+                src={step.imageUrl}
+                width="100%"
+                height="168px"
+                alt={`Step image - ${step.number}`}
+                className="block w-full rounded-[4px] object-cover object-center"
+              />
+            </Column>
+            <Column className="w-3/5 pr-[24px]">
+              <div className="mb-[18px] flex h-[24px] w-[24px] items-center justify-center rounded-full bg-indigo-600 font-semibold text-white text-[12px] leading-none">
+                {step.number}
+              </div>
+              <Heading
+                as="h2"
+                className="mt-0 mb-[8px] font-bold text-[20px] leading-none"
+              >
+                {step.title}
+              </Heading>
+              <Text className="m-0 text-gray-500 text-[14px] leading-[24px]">
+                {step.description}
+              </Text>
+              <Link
+                href={step.learnMoreLink}
+                className="mt-[12px] block font-semibold text-indigo-600 text-[14px] no-underline"
+              >
+                Learn more →
+              </Link>
+            </Column>
+          </Row>
+        </Section>
+      ))}
+    </Container>
+  </Body>
+</Html>
+```
+
+15. Feedback
+
+```tsx
+import { Html, Head, Preview, Body, Container, Section, Heading, Text, Hr, Button } from "@react-email/components";
+
+<Html>
+  <Head />
+  <Preview>Customer Reviews</Preview>
+  <Body>
+    <Container className="mx-auto max-w-[400px] rounded-[8px] bg-white px-[42px] py-[24px]">
+      <Section>
+        <Heading as="h1" className="text-[24px] leading-[32px]">
+          Customer Reviews
+        </Heading>
+        <div className="mt-[12px] flex flex-col">
+          <Text className="hidden">4 out of 5 stars</Text>
+        </div>
+        <Section className="my-[24px]">
+          <Heading as="h2" className="hidden">
+            Review data
+          </Heading>
+          <dl className="m-0">
+            {[
+              { rating: 5, count: 1019 },
+              { rating: 4, count: 162 },
+              { rating: 3, count: 97 },
+              { rating: 2, count: 199 },
+              { rating: 1, count: 147 },
+            ].map((count) => (
+              <div
+                key={count.rating}
+                className="flex items-center text-[14px] leading-[20px]"
+              >
+                <dt className="flex flex-1 items-center">
+                  <Text className="w-[12px] font-medium text-gray-500">
+                    {count.rating}
+                    <span className="hidden"> star reviews</span>
+                  </Text>
+                  <div
+                    aria-hidden="true"
+                    className="ml-[4px] flex flex-1 items-center"
+                  >
+                    <div className="relative ml-[12px] flex-1">
+                      <div className="h-[12px] rounded-[6px] border border-gray-200 bg-gray-100" />
+                      {count.count > 0 && (
+                        <div
+                          className="absolute top-0 bottom-0 rounded-[6px] bg-indigo-600"
+                          style={{
+                            width: `calc(${count.count} / ${1624} * 100%)`,
+                          }}
+                        />
+                      )}
+                    </div>
+                  </div>
+                </dt>
+                <dd className="ml-[12px] text-right font-medium text-gray-500 text-[12px] [font-variant-numeric:tabular-nums] leading-none">
+                  {Math.round((count.count / 1624) * 100)}%
+                </dd>
+              </div>
+            ))}
+          </dl>
+          <Text className="mt-[14px] text-center text-gray-500 text-[12px] leading-[24px]">
+            Based on <span className="font-semibold">1624</span> Reviews
+          </Text>
+        </Section>
+        <Hr />
+        <Section className="mt-[30px]">
+          <Heading
+            as="h3"
+            className="mb-[12px] font-medium text-gray-900 text-[18px] leading-[24px]"
+          >
+            Share your thoughts
+          </Heading>
+          <Text className="m-0 text-gray-500 text-[14px] leading-[20px]">
+            If you've used this product, share your thoughts with other
+            customers
+          </Text>
+          <Button
+            href="#"
+            className="mt-[26px] mb-[24px] inline-block w-full rounded-[8px] bg-indigo-600 p-3 text-center box-border font-semibold text-white"
+          >
+            Write a review
+          </Button>
+        </Section>
+      </Section>
+    </Container>
+  </Body>
+</Html>
+```
