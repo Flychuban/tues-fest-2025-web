@@ -158,9 +158,9 @@ const ProjectPage = async (props: { params: Promise<{ projectId: string }> }) =>
 												Гласувай за {project.contributors.length > 1 ? 'нас' : 'мен'}!
 											</h3>
 											<p className="text-muted-foreground text-sm">
-												Ако смяташ, че {project.contributors.length > 1 ? 'нашият' : 'моят'}{' '}
-												проект заслужава да спечели наградата за избор на публиката, гласувай за
-												него сега!
+												Ако смяташ, че проектът {project.contributors.length > 1 ? 'ни' : 'ми'}{' '}
+												заслужава да спечели наградата за избор на публиката, гласувай за него
+												сега!
 											</p>
 										</div>
 									</div>

@@ -231,7 +231,8 @@ export function FloatingVoteOverlay() {
 								<div className="flex flex-col gap-2 py-1">
 									<p className="text-lg font-medium">Вашият глас е запазен</p>
 									<p className="text-muted-foreground text-sm">
-										Все още можете да добавяте и премахвате проекти към него до края на гласуването.
+										Все още можете да добавяте и премахвате проекти към него до затварянето на
+										гласуването.
 									</p>
 								</div>
 							)}
