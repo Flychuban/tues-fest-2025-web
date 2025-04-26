@@ -92,7 +92,7 @@ import project44$thumbnail from '@/../public/projects/44/thumbnail.webp';
 import project45$image1 from '@/../public/projects/45/1.webp';
 import project46$thumbnail from '@/../public/projects/46/thumbnail.webp';
 import project47$thumbnail from '@/../public/projects/47/thumbnail.webp';
-import project48$thumbnai from '@/../public/projects/48/thumbnail.webp';
+import project48$thumbnail from '@/../public/projects/48/thumbnail.webp';
 import project49$image1 from '@/../public/projects/49/1.webp';
 import project49$image2 from '@/../public/projects/49/2.webp';
 import project49$image3 from '@/../public/projects/49/3.webp';
