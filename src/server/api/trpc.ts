@@ -13,6 +13,7 @@ import { ZodError } from 'zod';
 import { TFFeature } from '@/lib/growthbook/features';
 import { growthbook } from '@/lib/growthbook/server';
 import { db } from '@/server/db';
+import { mailer } from '../mail';
 
 /**
  * 1. CONTEXT
@@ -29,6 +30,7 @@ import { db } from '@/server/db';
 export const createTRPCContext = async (opts: { headers: Headers }) => {
 	return {
 		db,
+		mailer,
 		...opts,
 	};
 };

@@ -1,6 +1,7 @@
 import { randomInt } from 'node:crypto';
 
 import { cookies } from 'next/headers';
+import { after } from 'next/server';
 import { TRPCError } from '@trpc/server';
 import { and, eq, not } from 'drizzle-orm';
 import { Duration } from 'effect';
@@ -9,6 +10,7 @@ import { z } from 'zod';
 
 import { getProjects } from '@/app/projects/actions';
 import { TF_YEAR_SHORT } from '@/constants/event';
+import { TF_TITLE } from '@/constants/seo';
 import {
 	PROJECT_VOTE_LIMIT,
 	VOTE_VERIFICATION_CODE_EXPIRATION_DURATION,
@@ -16,6 +18,7 @@ import {
 	VOTE_VERIFICATION_EMAIL_COOLDOWN_DURATION,
 } from '@/constants/voting';
 import { voters, votes } from '@/server/db/schema';
+import { Mailer } from '@/server/mail';
 import { createTRPCRouter, growthbookFeatureMiddleware, publicProcedure } from '../trpc';
 
 const COOKIE_PREFIX = env.NODE_ENV !== 'development' ? '__Secure-' : '_';
@@ -121,7 +124,7 @@ export const votingRouter = createTRPCRouter({
 					],
 				});
 				const isSuspicious = isVerificationRequestSuspicious(existingVoter);
-				const verificationResult = await sendNewVerificationCode(input.email, isSuspicious);
+				const verificationResult = sendNewVerificationCodeAfter(input.email, isSuspicious, ctx.mailer);
 
 				if (!isSuspicious) {
 					// If this request is not suspicious, we will let this voter proceed. However, we need to invalidate any existing verification code to prevent the user from verifying again with a previously sent, but unused code.
@@ -168,7 +171,11 @@ export const votingRouter = createTRPCRouter({
 			}
 
 			const isSuspicious = isVerificationRequestSuspicious(ctx.voter);
-			const verificationResult = await sendNewVerificationCode(input.email ?? ctx.voter.email, isSuspicious);
+			const verificationResult = sendNewVerificationCodeAfter(
+				input.email ?? ctx.voter.email,
+				isSuspicious,
+				ctx.mailer
+			);
 
 			await ctx.db
 				.update(voters)
@@ -262,10 +269,22 @@ function isVerificationRequestSuspicious(
 	return isSuspicious;
 }
 
-async function sendNewVerificationCode(email: string, isSuspicious: boolean) {
+function sendNewVerificationCodeAfter(email: string, isSuspicious: boolean, mailer: Mailer) {
+	const realGeneratedCode = generateVerificationCode();
+
+	if (!isSuspicious) {
+		after(async () => {
+			await mailer.sendMail({
+				from: env.EMAIL_SMTP_FROM,
+				to: email,
+				subject: `[${TF_TITLE}] Вашият код за потвърждение: ${realGeneratedCode}`,
+			});
+		});
+	}
+
 	return {
 		email,
-		verificationCode: isSuspicious ? impossibleCode : generateVerificationCode(),
+		verificationCode: isSuspicious ? impossibleCode : realGeneratedCode,
 		verificationEmailSentAt: isSuspicious
 			? new Date(Date.now() + Duration.toMillis(VOTE_VERIFICATION_EMAIL_COOLDOWN_DURATION) / 2)
 			: new Date(),
