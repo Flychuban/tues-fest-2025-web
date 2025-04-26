@@ -654,7 +654,7 @@ function SaveVotesButton(props: React.ComponentProps<typeof Button>) {
 		trpc.voting.updateVotes.mutationOptions({
 			onSuccess: (_data, variables) => {
 				// Optimistically update the current voter query
-				queryClient.setQueryData(trpc.voting.getCurrentVoter.queryKey(), (voter: any) => {
+				queryClient.setQueryData(trpc.voting.getCurrentVoter.queryKey(), (voter) => {
 					if (!voter) return voter;
 					return {
 						...voter,
