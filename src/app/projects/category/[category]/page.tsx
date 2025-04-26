@@ -77,7 +77,7 @@ export default async function ProjectsPage(props: PageProps) {
 
 	const projects = await getProjectsByCategory(category);
 
-	projects?.sort(() => Math.random() - 0.5);
+	const shuffledProjects = [...projects].sort(() => Math.random() - 0.5);
 
 	return (
 		<ProjectContainer>
@@ -86,7 +86,7 @@ export default async function ProjectsPage(props: PageProps) {
 			{/* HACK: weird inconsistency in the names, this is a code smell... */}
 			<InteractiveProjectFilter current={category === 'networks' ? 'Мрежи' : PROJECT_CATEGORIES[category]} />
 
-			<ProjectList projects={projects} />
+			<ProjectList projects={shuffledProjects} />
 		</ProjectContainer>
 	);
 }

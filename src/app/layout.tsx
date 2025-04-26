@@ -12,15 +12,12 @@ import { Rubik_Mono_One } from 'next/font/google';
 import localFont from 'next/font/local';
 import { GeistSans } from 'geist/font/sans';
 
-import { Toaster } from '@/components/ui/toaster';
+import { Toaster } from '@/components/ui/sonner';
 import { TF_YEAR } from '@/constants/event';
 import { FIRST_ARCHIVE_YEAR, KEYWORDS, OG_METADATA, TF_DESCRIPTION, TWITTER_METADATA } from '@/constants/seo';
-import VoteProvider from '@/context/vote';
+import { GrowthBookServerProvider } from '@/lib/growthbook/react/server';
+import { TRPCReactProvider } from '@/lib/trpc/react';
 import { cn } from '@/lib/utils';
-import VotingLayout from '@/partials/layout/Voting';
-
-// import VoteProvider from '@/context/vote';
-// import VotingLayout from '@/partials/layout/Voting';
 
 export const viewport: Viewport = {
 	themeColor: '#141420',
@@ -89,16 +86,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 					'dark h-full w-screen items-center justify-center overflow-hidden overflow-x-hidden overflow-y-scroll bg-[url(../assets/wave-36.jpg)] bg-cover bg-fixed bg-center lg:bg-[url(../assets/wave-39.jpg)]'
 				)}
 			>
-				<Navigation />
-				<VoteProvider>
-					<main className="mx-auto min-h-[calc(100vh-var(--header-height)-var(--footer-height))] max-w-screen-2xl">
-						{children}
-					</main>
-					<VotingLayout />
-				</VoteProvider>
-				<Toaster />
-				<Footer />
-				<Analytics />
+				<GrowthBookServerProvider>
+					<TRPCReactProvider>
+						<Navigation />
+
+						<main className="mx-auto min-h-[calc(100vh-var(--header-height)-var(--footer-height))] max-w-screen-2xl">
+							{children}
+						</main>
+
+						<Toaster />
+						<Footer />
+						<Analytics />
+					</TRPCReactProvider>
+				</GrowthBookServerProvider>
 			</body>
 		</html>
 	);

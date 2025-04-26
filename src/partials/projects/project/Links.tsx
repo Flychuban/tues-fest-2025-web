@@ -16,7 +16,7 @@ const Linky = ({ text, url, icon }: { text: string; url: string; icon: ReactNode
 	</Button>
 );
 
-const LinksContainer = ({ links }: { links: Links }) => (
+const LinksContainer = ({ links }: { links: Readonly<Links> }) => (
 	<div className="m-auto mx-auto mt-4 w-[96%] md:w-[90%] lg:w-[80%]">
 		<Card>
 			<CardContent className="flex flex-col gap-4 px-8 py-4">
@@ -39,7 +39,7 @@ const GithubIcon = ({ repoUrl, size }: { repoUrl: string; size: number }) => {
 	return <TbBrandGit size={size} />;
 };
 
-const GithubLink = ({ repoUrls }: { repoUrls: string[] }) => {
+const GithubLink = ({ repoUrls }: { repoUrls: readonly string[] }) => {
 	if (repoUrls.length !== 1) {
 		return (
 			<>

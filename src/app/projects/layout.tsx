@@ -1,7 +1,9 @@
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
 
+import { FloatingVoteOverlay } from '@/components/ui/floating-vote-overlay';
 import { TF_DATE_STRING, TF_LOCATION, TF_YEAR } from '@/constants/event';
 import { OG_METADATA, TF_TITLE, TWITTER_METADATA } from '@/constants/seo';
+import { IfTFFeatureOn } from '@/lib/growthbook/react/client';
 
 export const metadata = {
 	metadataBase: new URL('https://tuesfest.bg/'),
@@ -45,5 +47,12 @@ export const metadata = {
 };
 
 export default function ProjectsLayout({ children }: { children: React.ReactNode }) {
-	return <NuqsAdapter>{children}</NuqsAdapter>;
+	return (
+		<NuqsAdapter>
+			{children}
+			<IfTFFeatureOn feature="project-voting">
+				<FloatingVoteOverlay />
+			</IfTFFeatureOn>
+		</NuqsAdapter>
+	);
 }

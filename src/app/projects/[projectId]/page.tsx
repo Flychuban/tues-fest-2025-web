@@ -5,6 +5,7 @@ import invariant from 'tiny-invariant';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { OG_METADATA, TF_TITLE, TWITTER_METADATA } from '@/constants/seo';
+import { IfTFFeatureOn } from '@/lib/growthbook/react/client';
 import { cn } from '@/lib/utils';
 import ProjectsPath from '@/partials/layout/ProjectsPath';
 import { ProjectContainer } from '@/partials/projects/project-container';
@@ -13,11 +14,11 @@ import { ProjectDescription } from '@/partials/projects/project/Description';
 import Gallery from '@/partials/projects/project/Gallery';
 import LinksContainer from '@/partials/projects/project/Links';
 import Video from '@/partials/projects/project/Video';
-import VoteButton from '@/partials/projects/project/VoteButton';
+import { VoteSelectProjectButton } from '@/partials/projects/project/VoteButton';
 import { getProjectById, getProjects } from '../actions';
 
 export type Links = {
-	repoUrls: string[];
+	repoUrls: readonly string[];
 	demoUrl: string | null;
 };
 
@@ -137,24 +138,45 @@ const ProjectPage = async (props: { params: Promise<{ projectId: string }> }) =>
 								/>
 							</div>
 						)}
-						<div className="mt-4">
-							<VoteButton
-								id={project.id}
-								name={project.title}
-								thumbnail={thumbnail.src}
-								category={project.category}
-							/>
+						<div className="grid gap-6 md:grid-cols-[2fr,1fr]">
+							<CardDescription className="prose prose-sm prose-slate sm:prose-lg max-w-none">
+								<ScrollArea
+									className={cn({
+										'relative h-[175px] [mask-image:linear-gradient(to_bottom,transparent,black_20px,black_calc(100%-40px),transparent)]':
+											project.description.length > 250,
+									})}
+								>
+									<ProjectDescription description={project.description} />
+								</ScrollArea>
+							</CardDescription>
+
+							<IfTFFeatureOn feature="project-voting">
+								<div className="bg-primary/5 relative flex flex-col gap-4 rounded-xl border p-6">
+									<div className="flex items-start justify-between gap-4">
+										<div className="space-y-1">
+											<h3 className="font-semibold">
+												Гласувай за {project.contributors.length > 1 ? 'нас' : 'мен'}!
+											</h3>
+											<p className="text-muted-foreground text-sm">
+												Ако смяташ, че проектът {project.contributors.length > 1 ? 'ни' : 'ми'}{' '}
+												заслужава да спечели наградата за избор на публиката, гласувай за него
+												сега!
+											</p>
+										</div>
+									</div>
+									<VoteSelectProjectButton
+										project={{
+											id: project.id,
+											title: project.title,
+											thumbnail,
+											category: project.category,
+										}}
+										className="w-full"
+										size="lg"
+									/>
+								</div>
+							</IfTFFeatureOn>
 						</div>
-						<CardDescription className="prose prose-sm prose-slate sm:prose-lg mx-auto max-w-none">
-							<ScrollArea
-								className={cn({
-									'relative h-[175px] [mask-image:linear-gradient(to_bottom,transparent,black_20px,black_calc(100%-40px),transparent)]':
-										project.description.length > 250,
-								})}
-							>
-								<ProjectDescription description={project.description} />
-							</ScrollArea>
-						</CardDescription>
 						<Contributors contributors={project.contributors} />
 					</CardContent>
 				</Card>

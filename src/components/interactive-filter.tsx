@@ -29,7 +29,7 @@ export function InteractiveSearchInput() {
 
 // HACK: If the site uses a DB, we cannot import this module on the client
 const projectsPromise = import('@/app/projects/adapter').then(
-	(module) => new Map(module.PROJECTS.map((project) => [project.id, project]))
+	(module) => new Map(module.PROJECTS.map((project) => [project.id as number, project]))
 );
 
 export function InteractiveFilteredProjects({

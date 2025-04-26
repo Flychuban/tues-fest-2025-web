@@ -151,7 +151,7 @@ const Countdown = () => {
 							{format(countdown.hours)}
 						</span>
 						<span className="text-muted-foreground xs:text-sm text-xl font-light sm:text-base md:text-lg">
-							{countdown.hours === 1 ? 'час' : 'часове'}
+							{countdown.hours === 1 ? 'час' : 'часа'}
 						</span>
 					</li>
 					<li className="border-border bg-card text-card-foreground xs:h-20 xs:w-20 flex h-32 w-32 flex-col items-center justify-center rounded-xl border shadow-sm transition-all sm:h-24 sm:w-24 md:h-28 md:w-28">

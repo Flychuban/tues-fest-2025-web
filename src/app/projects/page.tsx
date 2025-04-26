@@ -18,8 +18,7 @@ const PATH: PathItem[] = [
 
 const ProjectsPage = async () => {
 	const projects = await getProjects();
-	//shuffle projects
-	projects.sort(() => Math.random() - 0.5);
+	const shuffledProjects = [...projects].sort(() => Math.random() - 0.5);
 
 	return (
 		<ProjectContainer>
@@ -27,7 +26,7 @@ const ProjectsPage = async () => {
 
 			<InteractiveProjectFilter current="Всички" />
 
-			<ProjectList projects={projects} />
+			<ProjectList projects={shuffledProjects} />
 		</ProjectContainer>
 	);
 };

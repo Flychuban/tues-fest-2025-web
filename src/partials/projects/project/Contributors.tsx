@@ -2,7 +2,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { Contributor } from '@/app/projects/[projectId]/page';
 import { cn } from '@/lib/utils';
 
-const Contributors = ({ contributors }: { contributors: Contributor[] }) => (
+const Contributors = ({ contributors }: { contributors: readonly Contributor[] }) => (
 	<div className="w-full max-w-screen-lg">
 		<div className="flex flex-col gap-4 px-8 py-4">
 			<div className="flex flex-wrap items-center justify-center gap-4">

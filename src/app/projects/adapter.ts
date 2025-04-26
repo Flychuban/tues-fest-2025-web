@@ -1221,9 +1221,7 @@ export const PROJECTS = [
 			'Проектът Forza Ferrari представлява иновативно бизнес решение за куриерски фирми, което цели да осигури по-бързо и по-ефективно доставяне на пратки до крайните потребители.',
 		links: {
 			demoUrl: null,
-			repoUrls: [
-                'https://gist.github.com/BorimirGanchev/9d676afcdd5aec9108fc6181a906ca7c'
-			],
+			repoUrls: ['https://gist.github.com/BorimirGanchev/9d676afcdd5aec9108fc6181a906ca7c'],
 		},
 		youtubeId: 'q5ye-4ZcoD4',
 		contributors: [
@@ -3517,4 +3515,4 @@ export const PROJECTS = [
 		thumbnail: project125$thumbnail,
 		images: [],
 	},
-];
+] as const;
