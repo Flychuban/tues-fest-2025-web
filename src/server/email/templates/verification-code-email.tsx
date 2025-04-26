@@ -39,7 +39,7 @@ export default function VerificationCodeEmail({
 					<Section style={contentSection}>
 						<Heading style={h1}>Здравейте, {name}!</Heading>
 						<Text style={mainText}>
-							Започнахте процеса по гласуване за наградата {'"Избор на публиката"'} в {TF_TITLE}. За да
+							Започнахте процеса по гласуване за наградата {'"Избор на публиката"'} на {TF_TITLE}. За да
 							потвърдите вашия глас, моля въведете следния код в уебсайта:
 						</Text>
 
