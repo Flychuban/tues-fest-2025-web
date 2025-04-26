@@ -433,6 +433,7 @@ function EnterVerificationCodeStep(props: { onBackToEmailStep: () => void }) {
 						isVerified: true,
 						votedProjectIds: votedProjects.map((p) => p.id),
 					}));
+					queryClient.invalidateQueries(trpc.voting.getCurrentVoter.queryOptions());
 				} else {
 					form.setError('code', { message: 'Грешен код за потвърждение' });
 				}

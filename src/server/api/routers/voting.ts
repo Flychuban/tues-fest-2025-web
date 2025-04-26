@@ -2,16 +2,16 @@ import { randomInt } from 'node:crypto';
 
 import { cookies } from 'next/headers';
 import { TRPCError } from '@trpc/server';
-import { eq } from 'drizzle-orm';
+import { and, eq, not } from 'drizzle-orm';
 import { Duration } from 'effect';
 import { env } from 'env.mjs';
-import invariant from 'tiny-invariant';
 import { z } from 'zod';
 
 import { getProjects } from '@/app/projects/actions';
 import { TF_YEAR_SHORT } from '@/constants/event';
 import {
 	PROJECT_VOTE_LIMIT,
+	VOTE_VERIFICATION_CODE_EXPIRATION_DURATION,
 	VOTE_VERIFICATION_CODE_LENGTH,
 	VOTE_VERIFICATION_EMAIL_COOLDOWN_DURATION,
 } from '@/constants/voting';
@@ -114,9 +114,9 @@ export const votingRouter = createTRPCRouter({
 						isBanned: true,
 						verificationEmailSentAt: true,
 					},
-					orderBy: (voters, { desc }) => [
+					orderBy: (voters, { desc, asc }) => [
 						desc(voters.isBanned),
-						desc(voters.verifiedAt),
+						asc(voters.verifiedAt),
 						desc(voters.verificationEmailSentAt),
 					],
 				});
@@ -137,6 +137,7 @@ export const votingRouter = createTRPCRouter({
 					.insert(voters)
 					.values({
 						name: input.name,
+						isBanned: existingVoter?.isBanned ?? false,
 						...verificationResult,
 					})
 					.returning({
@@ -211,6 +212,13 @@ export const votingRouter = createTRPCRouter({
 					await tx
 						.update(voters)
 						.set({
+							verificationCode: impossibleCode,
+						})
+						.where(and(eq(voters.email, ctx.voter.email), not(eq(voters.id, ctx.voter.id))));
+
+					await tx
+						.update(voters)
+						.set({
 							verifiedAt: new Date(),
 						})
 						.where(eq(voters.id, ctx.voter.id));
@@ -258,10 +266,10 @@ async function sendNewVerificationCode(email: string, isSuspicious: boolean) {
 	return {
 		email,
 		verificationCode: isSuspicious ? impossibleCode : generateVerificationCode(),
-		verificationCodeExpiresAt: isSuspicious ? new Date(0) : undefined,
 		verificationEmailSentAt: isSuspicious
 			? new Date(Date.now() + Duration.toMillis(VOTE_VERIFICATION_EMAIL_COOLDOWN_DURATION) / 2)
 			: new Date(),
+		verificationCodeExpiresAt: new Date(Date.now() + Duration.toMillis(VOTE_VERIFICATION_CODE_EXPIRATION_DURATION)),
 	};
 }
 

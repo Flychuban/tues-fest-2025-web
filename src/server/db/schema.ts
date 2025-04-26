@@ -3,11 +3,10 @@
 
 import { relations, sql } from 'drizzle-orm';
 import { index, pgEnum, pgSequence, pgTableCreator } from 'drizzle-orm/pg-core';
-import { Duration } from 'effect';
 import { ulid } from 'ulid';
 
 import { TF_YEAR_SHORT } from '@/constants/event';
-import { VOTE_VERIFICATION_CODE_EXPIRATION_DURATION, VOTE_VERIFICATION_CODE_LENGTH } from '@/constants/voting';
+import { VOTE_VERIFICATION_CODE_LENGTH } from '@/constants/voting';
 
 /**
  * This is an example of how to use the multi-project schema feature of Drizzle ORM. Use the same
@@ -31,10 +30,7 @@ export const voters = createTable(
 		email: d.varchar({ length: 256 }).notNull(),
 
 		verificationCode: d.char({ length: VOTE_VERIFICATION_CODE_LENGTH }).notNull(),
-		verificationCodeExpiresAt: d
-			.timestamp({ withTimezone: true })
-			.$defaultFn(() => new Date(Date.now() + Duration.toMillis(VOTE_VERIFICATION_CODE_EXPIRATION_DURATION)))
-			.notNull(),
+		verificationCodeExpiresAt: d.timestamp({ withTimezone: true }).notNull(),
 		verificationEmailSentAt: d.timestamp({ withTimezone: true }),
 		verifiedAt: d.timestamp({ withTimezone: true }),
 
