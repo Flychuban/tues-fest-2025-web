@@ -1,13 +1,15 @@
 'use client';
 
-import { Suspense, useMemo, useState } from 'react';
+import { Suspense, useEffect, useMemo, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useMutation, useQuery, useQueryClient, useSuspenseQuery } from '@tanstack/react-query';
+import { Duration } from 'effect';
 import { REGEXP_ONLY_DIGITS } from 'input-otp';
 import { Check, ChevronRight, X } from 'lucide-react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'sonner';
 import { z } from 'zod';
 
 import { Button } from '@/components/ui/button';
@@ -28,7 +30,11 @@ import {
 	SheetTrigger,
 } from '@/components/ui/sheet';
 import { PROJECT_CATEGORIES } from '@/constants/projects';
-import { PROJECT_VOTE_LIMIT, VOTE_VERIFICATION_CODE_LENGTH } from '@/constants/voting';
+import {
+	PROJECT_VOTE_LIMIT,
+	VOTE_VERIFICATION_CODE_LENGTH,
+	VOTE_VERIFICATION_EMAIL_COOLDOWN_DURATION,
+} from '@/constants/voting';
 import { useTRPC } from '@/lib/trpc/react';
 import { cn } from '@/lib/utils';
 import { useDeselectProject, useVotedProjects } from '@/stores/vote';
@@ -386,7 +392,7 @@ function SendVerificationEmailStep(props: { onVerificationEmailSent: () => void 
 						</FormItem>
 					)}
 				/>
-				<Button type="submit" className="w-full" disabled={!isComplete}>
+				<Button type="submit" className="w-full" disabled={!isComplete || resendVerificationCode.isPending}>
 					Изпрати нов код за потвърждение
 				</Button>
 			</form>
@@ -394,7 +400,7 @@ function SendVerificationEmailStep(props: { onVerificationEmailSent: () => void 
 	);
 }
 
-function EnterVerificationCodeStep() {
+function EnterVerificationCodeStep(props: { onBackToEmailStep: () => void }) {
 	const form = useForm<z.infer<typeof verificationCodeFormSchema>>({
 		resolver: zodResolver(verificationCodeFormSchema),
 		defaultValues: {
@@ -405,9 +411,57 @@ function EnterVerificationCodeStep() {
 	const code = form.watch('code');
 	const isComplete = code.length === VOTE_VERIFICATION_CODE_LENGTH;
 
+	const trpc = useTRPC();
+	const queryClient = useQueryClient();
+	const votedProjects = useVotedProjects();
+	const [showEmailTroubleshooting, setShowEmailTroubleshooting] = useState(false);
+
+	const resendVerificationCode = useMutation(
+		trpc.voting.resendVerificationCode.mutationOptions({
+			onSuccess: () => {
+				setShowEmailTroubleshooting(false);
+			},
+		})
+	);
+
+	const verifyVoter = useMutation(
+		trpc.voting.verifyVoter.mutationOptions({
+			onSuccess: (data) => {
+				if (data.matches) {
+					queryClient.setQueryData(trpc.voting.getCurrentVoter.queryKey(), (voter: any) => ({
+						...voter,
+						isVerified: true,
+						votedProjectIds: votedProjects.map((p) => p.id),
+					}));
+				} else {
+					form.setError('code', { message: 'Грешен код за потвърждение' });
+				}
+			},
+			onError: (error) => {
+				toast.error('Възникна грешка при потвърждаването на гласа ви.', {
+					description: error.message,
+				});
+			},
+		})
+	);
+
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setShowEmailTroubleshooting(true);
+		}, Duration.toMillis(VOTE_VERIFICATION_EMAIL_COOLDOWN_DURATION));
+		return () => clearTimeout(timer);
+	}, []);
+
+	const handleSubmit = form.handleSubmit(async (data) => {
+		await verifyVoter.mutateAsync({
+			verificationCode: data.code,
+			selectedProjectIds: new Set(votedProjects.map((p) => p.id)),
+		});
+	});
+
 	return (
 		<Form {...form}>
-			<form className="space-y-8">
+			<form onSubmit={handleSubmit} className="space-y-8">
 				<FormField
 					control={form.control}
 					name="code"
@@ -418,11 +472,8 @@ function EnterVerificationCodeStep() {
 								<div className="flex justify-center">
 									<InputOTP
 										maxLength={VOTE_VERIFICATION_CODE_LENGTH}
-										value={field.value}
 										pattern={REGEXP_ONLY_DIGITS}
-										onChange={field.onChange}
-										onBlur={field.onBlur}
-										name={field.name}
+										{...field}
 									>
 										<InputOTPGroup>
 											{Array.from({ length: Math.ceil(VOTE_VERIFICATION_CODE_LENGTH / 2) }).map(
@@ -451,8 +502,43 @@ function EnterVerificationCodeStep() {
 						</FormItem>
 					)}
 				/>
-				<Button type="submit" className="w-full" disabled={!isComplete}>
-					Потвърди код
+
+				{showEmailTroubleshooting && (
+					<div className="space-y-4">
+						<Separator />
+						<div className="space-y-3 text-center">
+							<p className="text-muted-foreground">Не получавате имейла?</p>
+							{resendVerificationCode.isSuccess ? (
+								<p className="text-muted-foreground text-sm">
+									Изпратихме нов код. Моля, проверете и папката със спам.
+								</p>
+							) : (
+								<div className="flex flex-col gap-2">
+									<Button
+										type="button"
+										variant="link"
+										className="text-muted-foreground hover:text-foreground"
+										disabled={resendVerificationCode.isPending}
+										onClick={() => resendVerificationCode.mutate({})}
+									>
+										{resendVerificationCode.isPending ? 'Изпращане...' : 'Изпрати нов код'}
+									</Button>
+									<Button
+										type="button"
+										variant="link"
+										className="text-muted-foreground hover:text-foreground"
+										onClick={props.onBackToEmailStep}
+									>
+										Опитай с друг имейл
+									</Button>
+								</div>
+							)}
+						</div>
+					</div>
+				)}
+
+				<Button type="submit" className="w-full" disabled={!isComplete || verifyVoter.isPending}>
+					{verifyVoter.isPending ? 'Потвърждаване...' : 'Потвърди код'}
 				</Button>
 			</form>
 		</Form>
@@ -474,7 +560,7 @@ function SuccessStep() {
 				</div>
 				<p className="text-muted-foreground text-sm">
 					До края на гласуването можете да добавяте или премахвате проекти от своя глас. Използвайте бутона
-					„Промени глас“, за да запазите промените си.
+					{'"Промени глас"'}, за да запазите промените си.
 				</p>
 			</div>
 			<SheetClose asChild>
@@ -488,7 +574,7 @@ function SuccessStep() {
 	);
 }
 
-function RegisterVoterButton({ ...props }: React.ComponentPropsWithoutRef<typeof Button>) {
+function RegisterVoterButton(props: React.ComponentPropsWithoutRef<typeof Button>) {
 	const trpc = useTRPC();
 	const { data: currentVoter } = useSuspenseQuery(trpc.voting.getCurrentVoter.queryOptions());
 	const [wasVerificationEmailSent, setWasVerificationEmailSent] = useState(false);
@@ -497,11 +583,11 @@ function RegisterVoterButton({ ...props }: React.ComponentPropsWithoutRef<typeof
 
 	const step = !currentVoter
 		? ('register' as const)
-		: !wasVerificationEmailSent
-			? ('send-verification-email' as const)
-			: !currentVoter.isVerified
-				? ('enter-verification-code' as const)
-				: ('success' as const);
+		: currentVoter.isVerified
+			? ('success' as const)
+			: !wasVerificationEmailSent
+				? ('send-verification-email' as const)
+				: ('enter-verification-code' as const);
 
 	return (
 		<Dialog>
@@ -549,7 +635,9 @@ function RegisterVoterButton({ ...props }: React.ComponentPropsWithoutRef<typeof
 				{step === 'send-verification-email' && (
 					<SendVerificationEmailStep onVerificationEmailSent={() => setWasVerificationEmailSent(true)} />
 				)}
-				{step === 'enter-verification-code' && <EnterVerificationCodeStep />}
+				{step === 'enter-verification-code' && (
+					<EnterVerificationCodeStep onBackToEmailStep={() => setWasVerificationEmailSent(false)} />
+				)}
 				{step === 'success' && <SuccessStep />}
 			</DialogContent>
 		</Dialog>

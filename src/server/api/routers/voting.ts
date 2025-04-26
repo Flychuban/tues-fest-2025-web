@@ -5,20 +5,21 @@ import { TRPCError } from '@trpc/server';
 import { eq } from 'drizzle-orm';
 import { Duration } from 'effect';
 import { env } from 'env.mjs';
+import invariant from 'tiny-invariant';
 import { z } from 'zod';
 
+import { getProjects } from '@/app/projects/actions';
 import { TF_YEAR_SHORT } from '@/constants/event';
 import {
 	PROJECT_VOTE_LIMIT,
 	VOTE_VERIFICATION_CODE_LENGTH,
 	VOTE_VERIFICATION_EMAIL_COOLDOWN_DURATION,
 } from '@/constants/voting';
-import { db } from '@/server/db';
-import { voters } from '@/server/db/schema';
+import { voters, votes } from '@/server/db/schema';
 import { createTRPCRouter, growthbookFeatureMiddleware, publicProcedure } from '../trpc';
 
-const COOKIE_PREFIX = env.NODE_ENV !== 'development' ? '__Secure-' : '';
-const PUBLIC_VOTER_ID_COOKIE_NAME = `${COOKIE_PREFIX}tf${TF_YEAR_SHORT}_voter_id`;
+const COOKIE_PREFIX = env.NODE_ENV !== 'development' ? '__Secure-' : '_';
+const PUBLIC_VOTER_ID_COOKIE_NAME = `${COOKIE_PREFIX}tf${TF_YEAR_SHORT}_voter_ref`;
 
 const publicVotingProcedure = publicProcedure
 	.use(growthbookFeatureMiddleware('project-voting', 'Гласуването за проекти не е позволено по това време'))
@@ -34,6 +35,13 @@ const publicVotingProcedure = publicProcedure
 
 			const voter = await ctx.db.query.voters.findFirst({
 				where: eq(voters.publicId, voterId),
+				with: {
+					votes: {
+						columns: {
+							projectId: true,
+						},
+					},
+				},
 			});
 
 			if (!voter) {
@@ -75,10 +83,11 @@ export const votingRouter = createTRPCRouter({
 
 		return {
 			isVerified: ctx.voter.verifiedAt !== null,
-			votedProjectIds: [] as number[],
+			votedProjectIds: ctx.voter.votes.map((vote) => vote.projectId),
 			email: ctx.voter.email,
 		};
 	}),
+
 	registerVoter: publicVotingProcedure
 		.input(
 			z.object({
@@ -91,31 +100,51 @@ export const votingRouter = createTRPCRouter({
 				throw new TRPCError({ code: 'BAD_REQUEST', message: 'Вече сте регистриран' });
 			}
 
-			const existingVoter = await ctx.db.query.voters.findFirst({
-				where: eq(voters.email, input.email),
-				columns: {
-					verifiedAt: true,
-					isBanned: true,
-					verificationEmailSentAt: true,
-				},
-				orderBy: (voters, { desc }) => [
-					desc(voters.isBanned),
-					desc(voters.verifiedAt),
-					desc(voters.verificationEmailSentAt),
-				],
-			});
-			const verificationResult = await sendVerificationCode(input.email, existingVoter);
+			const newVoter = await ctx.db.transaction(async (tx) => {
+				// If this email was already used, we need to check if it's suspicious.
+				// It's possible that a user may have tried to use this email on another device,
+				// but they never completed the verification process. In that case it's safe to proceed again.
+				// If however, this email was already verified or banned, we need to silently refuse them to register again.
+				// This is to prevent a malicious user from registering a lot of emails and then verifying them in one go.
+				// We can't notify the user that this email is used to prevent brute force attacks, attempting to find out which emails have been used, as well as to give limited information to potential attackers.
+				const existingVoter = await tx.query.voters.findFirst({
+					where: eq(voters.email, input.email),
+					columns: {
+						verifiedAt: true,
+						isBanned: true,
+						verificationEmailSentAt: true,
+					},
+					orderBy: (voters, { desc }) => [
+						desc(voters.isBanned),
+						desc(voters.verifiedAt),
+						desc(voters.verificationEmailSentAt),
+					],
+				});
+				const isSuspicious = isVerificationRequestSuspicious(existingVoter);
+				const verificationResult = await sendNewVerificationCode(input.email, isSuspicious);
 
-			const newVoter = await ctx.db
-				.insert(voters)
-				.values({
-					name: input.name,
-					...verificationResult,
-				})
-				.returning({
-					publicId: voters.publicId,
-				})
-				.then(([voter]) => voter);
+				if (!isSuspicious) {
+					// If this request is not suspicious, we will let this voter proceed. However, we need to invalidate any existing verification code to prevent the user from verifying again with a previously sent, but unused code.
+					await tx
+						.update(voters)
+						.set({
+							verificationCode: impossibleCode,
+						})
+						.where(eq(voters.email, input.email));
+				}
+
+				return await tx
+					.insert(voters)
+					.values({
+						name: input.name,
+						...verificationResult,
+					})
+					.returning({
+						publicId: voters.publicId,
+					})
+					.then(([voter]) => voter);
+			});
+
 			if (!newVoter) {
 				throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Възникна неочаквана грешка' });
 			}
@@ -124,19 +153,21 @@ export const votingRouter = createTRPCRouter({
 				secure: env.NODE_ENV !== 'development',
 				httpOnly: true,
 				sameSite: 'lax',
-				expires: new Date(Date.now() + Duration.toMillis('30 days')),
+				maxAge: Duration.toSeconds('30 days'),
 			});
 
 			return REVERSE_ENGINEERING_PROTECTION_MESSAGE;
 		}),
+
 	resendVerificationCode: protectedVotingProcedure
-		.input(z.object({ email: z.string().email() }))
+		.input(z.object({ email: z.string().email().optional() }))
 		.mutation(async ({ ctx, input }) => {
 			if (ctx.voter.verifiedAt !== null) {
 				throw new TRPCError({ code: 'BAD_REQUEST', message: 'Вече сте потвърдили Вашия имейл' });
 			}
 
-			const verificationResult = await sendVerificationCode(input.email, ctx.voter);
+			const isSuspicious = isVerificationRequestSuspicious(ctx.voter);
+			const verificationResult = await sendNewVerificationCode(input.email ?? ctx.voter.email, isSuspicious);
 
 			await ctx.db
 				.update(voters)
@@ -147,10 +178,11 @@ export const votingRouter = createTRPCRouter({
 
 			return REVERSE_ENGINEERING_PROTECTION_MESSAGE;
 		}),
+
 	verifyVoter: protectedVotingProcedure
 		.input(
 			z.object({
-				verificationCode: z.string().length(VOTE_VERIFICATION_CODE_LENGTH),
+				verificationCode: z.string().regex(/^\d+$/).length(VOTE_VERIFICATION_CODE_LENGTH),
 				selectedProjectIds: z.set(z.number()).min(1).max(PROJECT_VOTE_LIMIT),
 			})
 		)
@@ -161,42 +193,83 @@ export const votingRouter = createTRPCRouter({
 			if (ctx.voter.verificationCodeExpiresAt < new Date()) {
 				throw new TRPCError({ code: 'BAD_REQUEST', message: 'Кодът за потвърждение е изтекъл' });
 			}
-
-			const isVerificationCodeValid = ctx.voter.verificationCode === input.verificationCode;
-			if (isVerificationCodeValid) {
-				await ctx.db
-					.update(voters)
-					.set({
-						verifiedAt: new Date(),
-					})
-					.where(eq(voters.id, ctx.voter.id));
+			const projects = new Set(
+				await getProjects().then((projects) => projects.map((project): number => project.id))
+			);
+			const selectedProjects = Array.from(input.selectedProjectIds);
+			if (selectedProjects.some((id) => !projects.has(id))) {
+				throw new TRPCError({ code: 'BAD_REQUEST', message: 'Невалиден списък с проекти' });
 			}
 
-			return isVerificationCodeValid;
+			const verificationCodeMatches = ctx.voter.verificationCode === input.verificationCode;
+			if (verificationCodeMatches) {
+				if (ctx.voter.votes.length > 0) {
+					throw new Error('Voter has voted before they got verified! This should never happen!');
+				}
+
+				await ctx.db.transaction(async (tx) => {
+					await tx
+						.update(voters)
+						.set({
+							verifiedAt: new Date(),
+						})
+						.where(eq(voters.id, ctx.voter.id));
+
+					await tx.insert(votes).values(
+						selectedProjects.map((projectId) => ({
+							projectId,
+							voterId: ctx.voter.id,
+						}))
+					);
+				});
+			}
+			return { warning: REVERSE_ENGINEERING_PROTECTION_MESSAGE, matches: verificationCodeMatches };
 		}),
 });
 
-async function sendVerificationCode(
-	email: string,
+function isVerificationRequestSuspicious(
 	existingVoter: { verificationEmailSentAt: Date | null; verifiedAt: Date | null; isBanned: boolean } | undefined
 ) {
+	if (!existingVoter) {
+		// First time we see this email, so it's considered safe.
+		return false;
+	}
+
+	const hasVerifiedBefore = existingVoter.verifiedAt !== null;
+	const wasBannedBefore = existingVoter.isBanned;
 	const emailWasSentTooSoon =
-		existingVoter?.verificationEmailSentAt &&
+		!!existingVoter.verificationEmailSentAt &&
 		existingVoter.verificationEmailSentAt >
 			new Date(Date.now() - Duration.toMillis(VOTE_VERIFICATION_EMAIL_COOLDOWN_DURATION));
-	const shouldSilentlyRefuseToRegister =
-		(existingVoter && existingVoter?.verifiedAt !== null) || existingVoter?.isBanned || emailWasSentTooSoon;
 
+	const isSuspicious = hasVerifiedBefore || wasBannedBefore || emailWasSentTooSoon;
+
+	console.log('is suspicious decision', {
+		existingVoter,
+		hasVerifiedBefore,
+		wasBannedBefore,
+		emailWasSentTooSoon,
+		isSuspicious,
+	});
+	return isSuspicious;
+}
+
+async function sendNewVerificationCode(email: string, isSuspicious: boolean) {
 	return {
 		email,
-		verificationCode: shouldSilentlyRefuseToRegister ? 'XXXXXX' : generateVerificationCode(),
-		verificationCodeExpiresAt: shouldSilentlyRefuseToRegister ? new Date(0) : undefined,
+		verificationCode: isSuspicious ? impossibleCode : generateVerificationCode(),
+		verificationCodeExpiresAt: isSuspicious ? new Date(0) : undefined,
+		verificationEmailSentAt: isSuspicious
+			? new Date(Date.now() + Duration.toMillis(VOTE_VERIFICATION_EMAIL_COOLDOWN_DURATION) / 2)
+			: new Date(),
 	};
 }
 
 function generateVerificationCode() {
 	return Array.from({ length: VOTE_VERIFICATION_CODE_LENGTH }, () => randomInt(0, 10).toString()).join('');
 }
+
+const impossibleCode = Array.from({ length: VOTE_VERIFICATION_CODE_LENGTH }, () => 'X').join('');
 
 const REVERSE_ENGINEERING_PROTECTION_MESSAGE =
 	'Тази функция е САМО за вътрешно използване и всеки опит за манипулиране на гласовете ще бъде санкциониран подобаващо! Организационният екип на TUES Fest запазва правото си да дисквалифицира всеки замесен участник или екип.';

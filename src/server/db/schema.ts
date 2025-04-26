@@ -1,7 +1,7 @@
 // Example model schema from the Drizzle docs
 // https://orm.drizzle.team/docs/sql-schema-declaration
 
-import { sql } from 'drizzle-orm';
+import { relations, sql } from 'drizzle-orm';
 import { index, pgEnum, pgSequence, pgTableCreator } from 'drizzle-orm/pg-core';
 import { Duration } from 'effect';
 import { ulid } from 'ulid';
@@ -48,6 +48,30 @@ export const voters = createTable(
 	}),
 	(t) => [index('name_idx').on(t.name), index('public_id_idx').on(t.publicId), index('email_idx').on(t.email)]
 );
+
+export const voterRelations = relations(voters, ({ many }) => ({
+	votes: many(votes),
+}));
+
+export const votes = createTable('votes', (d) => ({
+	id: d.integer().primaryKey().generatedByDefaultAsIdentity(),
+	projectId: d.integer().notNull(),
+	voterId: d
+		.integer()
+		.notNull()
+		.references(() => voters.id),
+	createdAt: d
+		.timestamp({ withTimezone: true })
+		.default(sql`CURRENT_TIMESTAMP`)
+		.notNull(),
+}));
+
+export const votesRelations = relations(votes, ({ one }) => ({
+	voter: one(voters, {
+		fields: [votes.voterId],
+		references: [voters.id],
+	}),
+}));
 
 // FIXME: drizzle-kit really wants to delete these, so even though they are not used, they must be defined here as well
 // This is because we are sharing the same schema for multiple projects
