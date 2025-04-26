@@ -282,7 +282,7 @@ function RegisterVoterStep(props: { onVerificationEmailSent: () => void }) {
 				}
 			},
 			onSettled: () => {
-				queryClient.invalidateQueries(trpc.voting.getCurrentVoter.queryOptions());
+				void queryClient.invalidateQueries(trpc.voting.getCurrentVoter.queryOptions());
 			},
 			trpc: {
 				context: { disableStreaming: true },
@@ -356,7 +356,7 @@ function SendVerificationEmailStep(props: { onVerificationEmailSent: () => void 
 				props.onVerificationEmailSent();
 			},
 			onSettled: () => {
-				queryClient.invalidateQueries(trpc.voting.getCurrentVoter.queryOptions());
+				void queryClient.invalidateQueries(trpc.voting.getCurrentVoter.queryOptions());
 			},
 		})
 	);
@@ -428,12 +428,13 @@ function EnterVerificationCodeStep(props: { onBackToEmailStep: () => void }) {
 		trpc.voting.verifyVoter.mutationOptions({
 			onSuccess: (data) => {
 				if (data.matches) {
-					queryClient.setQueryData(trpc.voting.getCurrentVoter.queryKey(), (voter: any) => ({
+					queryClient.setQueryData(trpc.voting.getCurrentVoter.queryKey(), (voter) => ({
+						email: voter?.email ?? '',
 						...voter,
 						isVerified: true,
 						votedProjectIds: votedProjects.map((p) => p.id),
 					}));
-					queryClient.invalidateQueries(trpc.voting.getCurrentVoter.queryOptions());
+					void void queryClient.invalidateQueries(trpc.voting.getCurrentVoter.queryOptions());
 				} else {
 					form.setError('code', { message: 'Грешен код за потвърждение' });
 				}
