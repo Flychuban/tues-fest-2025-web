@@ -240,9 +240,7 @@ export function FloatingVoteOverlay() {
 									<RegisterVoterButton />
 								</Suspense>
 							) : hasUnsavedChanges ? (
-								<SheetClose asChild>
-									<SaveVotesButton />
-								</SheetClose>
+								<SaveVotesButton />
 							) : (
 								<SheetClose asChild>
 									<Button className="w-full" size="lg" variant="outline" asChild>
@@ -647,12 +645,44 @@ function RegisterVoterButton(props: React.ComponentPropsWithoutRef<typeof Button
 }
 
 function SaveVotesButton(props: React.ComponentProps<typeof Button>) {
+	const trpc = useTRPC();
+	const queryClient = useQueryClient();
 	const votedProjects = useVotedProjects();
 	const selectedCount = votedProjects.length;
 
+	const updateVotes = useMutation(
+		trpc.voting.updateVotes.mutationOptions({
+			onSuccess: (_data, variables) => {
+				// Optimistically update the current voter query
+				queryClient.setQueryData(trpc.voting.getCurrentVoter.queryKey(), (voter: any) => {
+					if (!voter) return voter;
+					return {
+						...voter,
+						votedProjectIds: Array.from(variables.selectedProjectIds),
+					};
+				});
+			},
+			onSettled: () => {
+				void queryClient.invalidateQueries(trpc.voting.getCurrentVoter.queryOptions());
+			},
+		})
+	);
+
+	const handleClick = async () => {
+		await updateVotes.mutateAsync({
+			selectedProjectIds: new Set(votedProjects.map((p) => p.id)),
+		});
+	};
+
 	return (
-		<Button className="w-full" size="lg" disabled={selectedCount === 0} {...props}>
-			Промени глас
+		<Button
+			className="w-full"
+			size="lg"
+			disabled={selectedCount === 0 || updateVotes.isPending}
+			onClick={handleClick}
+			{...props}
+		>
+			{updateVotes.isPending ? 'Запазване...' : 'Промени глас'}
 		</Button>
 	);
 }

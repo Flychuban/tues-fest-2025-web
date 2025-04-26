@@ -222,7 +222,7 @@ export const votingRouter = createTRPCRouter({
 		.input(
 			z.object({
 				verificationCode: z.string().regex(/^\d+$/).length(VOTE_VERIFICATION_CODE_LENGTH),
-				selectedProjectIds: z.set(z.number()).min(1).max(PROJECT_VOTE_LIMIT),
+				selectedProjectIds: z.set(z.number().int().positive()).min(1).max(PROJECT_VOTE_LIMIT),
 			})
 		)
 		.mutation(async ({ ctx, input }) => {
@@ -270,6 +270,28 @@ export const votingRouter = createTRPCRouter({
 				});
 			}
 			return { warning: REVERSE_ENGINEERING_PROTECTION_MESSAGE, matches: verificationCodeMatches };
+		}),
+
+	updateVotes: protectedVotingProcedure
+		.input(z.object({ selectedProjectIds: z.set(z.number().int().positive()).min(1).max(PROJECT_VOTE_LIMIT) }))
+		.mutation(async ({ ctx, input }) => {
+			if (ctx.voter.verifiedAt === null) {
+				throw new TRPCError({
+					code: 'BAD_REQUEST',
+					message: 'Не можете да гласувате преди да потвърдите вашия имейл',
+				});
+			}
+
+			const selectedProjects = Array.from(input.selectedProjectIds);
+			await ctx.db.transaction(async (tx) => {
+				await tx.delete(votes).where(eq(votes.voterId, ctx.voter.id));
+				await tx.insert(votes).values(
+					selectedProjects.map((projectId) => ({
+						projectId,
+						voterId: ctx.voter.id,
+					}))
+				);
+			});
 		}),
 });
 
