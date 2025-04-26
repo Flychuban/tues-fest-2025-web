@@ -19,6 +19,7 @@ import {
 	VOTE_VERIFICATION_CODE_LENGTH,
 	VOTE_VERIFICATION_EMAIL_COOLDOWN_DURATION,
 } from '@/constants/voting';
+import { type Database } from '@/server/db';
 import { voters, votes } from '@/server/db/schema';
 import { Mailer } from '@/server/email';
 import { renderEmail } from '@/server/email/render';
@@ -114,31 +115,19 @@ export const votingRouter = createTRPCRouter({
 				throw new TRPCError({ code: 'BAD_REQUEST', message: 'Вече сте регистриран' });
 			}
 
-			const newVoter = await ctx.db.transaction(async (tx) => {
-				// If this email was already used, we need to check if it's suspicious.
-				// It's possible that a user may have tried to use this email on another device,
-				// but they never completed the verification process. In that case it's safe to proceed again.
-				// If however, this email was already verified or banned, we need to silently refuse them to register again.
-				// This is to prevent a malicious user from registering a lot of emails and then verifying them in one go.
-				// We can't notify the user that this email is used to prevent brute force attacks, attempting to find out which emails have been used, as well as to give limited information to potential attackers.
-				const normalizedEmail = normalizeEmail(input.email);
-				invariant(normalizedEmail !== false, 'Could not normalize email address');
+			// If this email was already used, we need to check if it's suspicious.
+			// It's possible that a user may have tried to use this email on another device,
+			// but they never completed the verification process. In that case it's safe to proceed again.
+			// If however, this email was already verified or banned, we need to silently refuse them to register again.
+			// This is to prevent a malicious user from registering a lot of emails and then verifying them in one go.
+			// We can't notify the user that this email is used to prevent brute force attacks, attempting to find out which emails have been used, as well as to give limited information to potential attackers.
+			const normalizedEmail = normalizeEmail(input.email);
+			invariant(normalizedEmail !== false, 'Could not normalize email address');
 
-				const existingVoter = await tx.query.voters.findFirst({
-					where: eq(voters.normalizedEmail, normalizedEmail),
-					columns: {
-						verifiedAt: true,
-						isBanned: true,
-						verificationEmailSentAt: true,
-					},
-					orderBy: (voters, { desc, asc }) => [
-						desc(voters.isBanned),
-						asc(voters.verifiedAt),
-						desc(voters.verificationEmailSentAt),
-					],
-				});
-				const isSuspicious = isVerificationRequestSuspicious(existingVoter);
-				const verificationResult = sendNewVerificationCodeAfter(
+			const { isSuspicious, existingVoters } = await isVerificationRequestSuspicious(normalizedEmail, ctx.db);
+
+			const newVoter = await ctx.db.transaction(async (tx) => {
+				const verificationResult = sendNewVerificationCodeAfterRequest(
 					input.email,
 					input.name,
 					isSuspicious,
@@ -161,7 +150,7 @@ export const votingRouter = createTRPCRouter({
 						name: input.name,
 						email: input.email,
 						normalizedEmail,
-						isBanned: existingVoter?.isBanned ?? false,
+						isBanned: existingVoters.some((voter) => voter.isBanned),
 						...verificationResult,
 					})
 					.returning({
@@ -191,20 +180,23 @@ export const votingRouter = createTRPCRouter({
 				throw new TRPCError({ code: 'BAD_REQUEST', message: 'Вече сте потвърдили Вашия имейл' });
 			}
 
-			const isSuspicious = isVerificationRequestSuspicious(ctx.voter);
-			const verificationResult = sendNewVerificationCodeAfter(
-				input.email ?? ctx.voter.email,
-				ctx.voter.name,
-				isSuspicious,
-				ctx.mailer
-			);
-
+			let isSuspicious =
+				isExistingVoterSuspicious(ctx.voter) ||
+				(await isVerificationRequestSuspicious(ctx.voter.normalizedEmail, ctx.db)).isSuspicious;
 			let normalizedEmail = ctx.voter.normalizedEmail;
 			if (input.email) {
 				const newNormalizedEmail = normalizeEmail(input.email);
 				invariant(newNormalizedEmail !== false, 'Could not normalize email address');
 				normalizedEmail = newNormalizedEmail;
+				isSuspicious ||= (await isVerificationRequestSuspicious(newNormalizedEmail, ctx.db)).isSuspicious;
 			}
+
+			const verificationResult = sendNewVerificationCodeAfterRequest(
+				input.email ?? ctx.voter.email,
+				ctx.voter.name,
+				isSuspicious,
+				ctx.mailer
+			);
 
 			await ctx.db
 				.update(voters)
@@ -295,7 +287,19 @@ export const votingRouter = createTRPCRouter({
 		}),
 });
 
-function isVerificationRequestSuspicious(
+async function isVerificationRequestSuspicious(normalizedEmail: string, db: Database) {
+	const existingVoters = await db.query.voters.findMany({
+		where: eq(voters.normalizedEmail, normalizedEmail),
+		columns: {
+			verifiedAt: true,
+			isBanned: true,
+			verificationEmailSentAt: true,
+		},
+	});
+	return { isSuspicious: existingVoters.some(isExistingVoterSuspicious), existingVoters };
+}
+
+function isExistingVoterSuspicious(
 	existingVoter: { verificationEmailSentAt: Date | null; verifiedAt: Date | null; isBanned: boolean } | undefined
 ) {
 	if (!existingVoter) {
@@ -322,7 +326,7 @@ function isVerificationRequestSuspicious(
 	return isSuspicious;
 }
 
-function sendNewVerificationCodeAfter(email: string, name: string, isSuspicious: boolean, mailer: Mailer) {
+function sendNewVerificationCodeAfterRequest(email: string, name: string, isSuspicious: boolean, mailer: Mailer) {
 	const realGeneratedCode = generateVerificationCode();
 
 	if (!isSuspicious) {
@@ -363,4 +367,4 @@ function generateVerificationCode() {
 const impossibleCode = Array.from({ length: VOTE_VERIFICATION_CODE_LENGTH }, () => 'X').join('');
 
 const REVERSE_ENGINEERING_PROTECTION_MESSAGE =
-	'Тази функция е САМО за вътрешно използване и всеки опит за манипулиране на гласовете ще бъде санкциониран подобаващо! Организационният екип на TUES Fest запазва правото си да дисквалифицира всеки замесен участник или екип.';
+	'Тази услуга е САМО за вътрешно използване и всеки опит за манипулиране на гласовете ще бъде санкциониран подобаващо! Организационният екип на TUES Fest запазва правото си да дисквалифицира всеки замесен участник или екип.';
