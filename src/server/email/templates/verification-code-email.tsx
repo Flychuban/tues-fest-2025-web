@@ -12,7 +12,8 @@ interface VerificationEmailProps {
 	verificationCodeExpiryMinutes: number;
 }
 
-const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000';
+// const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERVEL_URL}` : 'http://localhost:3000';
+const baseUrl = 'https://tuesfest.bg';
 
 export default function VerificationCodeEmail({
 	verificationCode,
