@@ -142,8 +142,8 @@ export function FloatingVoteOverlay() {
 													}`
 											: isMaxSelected
 												? 'Запишете своя глас'
-												: `Избрахте ${PROJECT_VOTE_LIMIT - selectedCount} ${
-														PROJECT_VOTE_LIMIT - selectedCount === 1 ? 'проект' : 'проекта'
+												: `Избрахте ${selectedCount} ${
+														selectedCount === 1 ? 'проект' : 'проекта'
 													}`}
 									</span>
 								</div>
