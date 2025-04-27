@@ -25,10 +25,10 @@ const Countdown = () => {
 		const day = hour * 24;
 
 		// calculate
-		const textDay = Math.floor(gap / day);
-		const textHour = Math.floor((gap % day) / hour);
-		const textMinute = Math.floor((gap % hour) / minute);
-		const textSecond = Math.floor((gap % minute) / second);
+		const textDay = Math.max(0, Math.floor(gap / day));
+		const textHour = Math.max(0, Math.floor((gap % day) / hour));
+		const textMinute = Math.max(0, Math.floor((gap % hour) / minute));
+		const textSecond = Math.max(0, Math.floor((gap % minute) / second));
 
 		setCountdown({
 			days: textDay,
