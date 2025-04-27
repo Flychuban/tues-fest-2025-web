@@ -1,5 +1,4 @@
 import { StaticImageData } from 'next/image';
-import { toast } from 'sonner';
 import { create } from 'zustand';
 import { combine, persist } from 'zustand/middleware';
 
@@ -30,7 +29,6 @@ const useVoteStore = create(
 						set({
 							votes: [...currentVotes, project],
 						});
-						toast.success('Проектът е избран успешно');
 						return true;
 					}
 					return false;
@@ -39,7 +37,6 @@ const useVoteStore = create(
 					set((state) => ({
 						votes: state.votes.filter((vote) => vote.id !== projectId),
 					}));
-					toast.success('Проектът е премахнат успешно');
 				},
 				replaceProject: (replaceId: number, project: LocalVotedProject) => {
 					const replaceProject = get().votes.find((vote) => vote.id === replaceId);
